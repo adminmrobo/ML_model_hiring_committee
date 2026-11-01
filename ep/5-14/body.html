@@ -1,0 +1,538 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-14 면접<span class="dept">비지도 본부 › 차원축소팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-14 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 PC 기호가 그려진 지원자 PCA의 사원증이 떠 있고, 그 옆에서 비스듬히 퍼진 점 구름 위로 막대(축)가 천천히 돌다가 점들이 가장 길게 늘어서는 방향에 멈춘다. 점마다 축 위로 그림자가 떨어진다. 박사가 '64칸을 두 축으로'라고 말하고, 초파리 연구원이 팔짱을 낀다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>PCA — 64칸을 가장 퍼진 두 축으로 돌려 세운다</h1>
+        <p class="lede" style="margin-top:14px">공장 현장 일지와 시험 성적서에 손으로 쓴 숫자가 1,797장 쌓여 있다. 한 장은 8×8 = <b>64칸</b>의 밝기다. 사람 눈에는 그림이지만 컴퓨터에게는 숫자 64개, 곧 <b>64차원 공간의 점 하나</b>다. 64차원은 그릴 수도, 훑어볼 수도 없다.</p>
+        <p class="lede">오늘의 지원자 PCA(Principal Component Analysis, 주성분 분석)는 <b>그림자 놀이</b>를 한다. 점 구름에 빛을 비추고 벽(축)을 돌려, 그림자가 <b>가장 길게 퍼지는 방향</b>을 첫 번째 축으로 고른다. 그 축과 직각인 방향 중 또 가장 퍼진 쪽이 두 번째 축이다. 이 두 축에 비친 그림자가 곧 64칸 글씨의 <b>2차원 지도</b>다. 정답(무슨 숫자인지)은 한 번도 보지 않는다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m1">01 그림자 놀이</a><span class="arr">→</span><a href="#comps">04 성분 그림</a><span class="arr">→</span><a href="#mapCard">05 2D 지도</a><span class="arr">→</span><a href="#iv14">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>64 → 2</b><span>64칸 글씨를 축 두 개짜리 지도로</span></div>
+            <div><b id="heroEv">28.5%</b><span>두 축이 담은 퍼짐(설명된 분산)</span></div>
+            <div><b>정답 0장</b><span>학습에 쓴 이름표. 정답은 채점 봉투 속</span></div>
+            <div><b id="heroLine">5-NN 18.1%</b><span>넘어야 할 합격선 (매뉴얼 씨의 2D 지도)</span></div>
+          </div>
+          <p class="foot">실기 과제는 손글씨 숫자 1,797장(scikit-learn <code>load_digits</code>)이다. 정답 0~9는 학습에 쓰지 않고 채점에만 쓴다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="magic" data-move="pop" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>차원축소팀 첫 지원자예요. 할 일은 64칸 글씨 1,797장을 한 장의 지도로 펼치는 것. 지도에서 가까운 글씨끼리 같은 숫자면 좋은 지도입니다. 합격선은 매뉴얼 씨가 그린 지도의 5-NN 정확도 18.1%.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="ledger" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>정답이 든 채점 봉투는 제가 쥐고 있어요. 지원자는 봉투를 못 봅니다. 지도를 다 그린 뒤에만 열어서, 지도 위 가까운 다섯 장의 정답으로 맞혀 보는 점수(5-NN)를 매길게요.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="arms" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>64개를 2개로 줄인다고? 그럼 62개 몫은 버리는 거잖아. 뭘 버렸는지, 버린 탓에 서로 다른 숫자가 지도에서 겹치지는 않는지 볼 거야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>축 하나가 숫자 64개짜리 방향이지? 평균까지 합쳐도 외울 숫자가 몇백 개야. 계산도 64×64 표 하나 푸는 거면, 이번 지원자는 연봉이 싸겠는데.</div></div>
+      <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>저는 숫자 두 개로 지도를 그렸습니다. 제1조 잉크가 얼마나 많은가, 제2조 위쪽이 얼마나 무거운가. 두 숫자는 제가 골랐습니다. 지원자는 축을 누가 고르는지 궁금합니다.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">PC</span><div class="bub"><span class="who">지원자 · PCA</span>안녕하십니까. 주성분 분석입니다. 저도 숫자 두 개로 지도를 그립니다. 다만 그 두 숫자를 사람이 고르지 않고, 1,797장이 가장 넓게 퍼지는 방향을 데이터에서 찾아 고릅니다. 정답은 보지 않습니다.</div></div>
+    </div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-1_knn.html">5-1 KNN</a> — 가까운 이웃 k개에게 묻는다. 이 편의 채점 도구(5-NN)다 · <a href="5-10_kmeans.html">5-10 K-Means</a> — 같은 손글씨를 정답 없이 묶는다. 05장 업무 점수에 쓴다</span>
+      <span><a href="5-13_gmm.html">5-13 GMM</a> — 64칸 그대로는 불안정해서 이 지원자가 줄인 30축 위에서 일한다</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-8_unsupervised_nine.html" target="_blank" rel="noopener">패밀리 조직도 4-8 비지도 아홉</a> · <a href="https://adminmrobo.github.io/AI_image_classification/4-2_cat_human.html" target="_blank" rel="noopener">이미지 분류 4-2 고양이 vs 사람</a> — 사진도 숫자 행렬이다</span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — PCA를 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="PCA 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-14 · 지원서<br>지원자 번호 APP-14<br>지원 부서 비지도 본부 › 차원축소팀</div>
+      <div class="sh-title">Principal Component Analysis<small>PCA · 주성분 분석 · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">PC</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m2">
+        <h3>1. 글씨 한 장 = 점 하나 <small>64 Pixels = 64 Dimensions</small></h3>
+        <p class="d">8×8 밝기 64개를 한 줄로 펴면, 글씨 한 장은 64차원 공간의 점 하나다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="왼쪽에 8×8 칸으로 된 숫자 0 그림이 있고, 화살표를 따라 오른쪽에서 64칸짜리 긴 띠로 펴진다. 띠 아래에 x₁, x₂, …, x₆₄라고 적혀 있다">
+          <defs><marker id="p1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="p1b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <g fill="#111"><rect x="30" y="14" width="9" height="9" fill-opacity=".3"/><rect x="39" y="14" width="9" height="9" fill-opacity=".8"/><rect x="48" y="14" width="9" height="9" fill-opacity=".6"/><rect x="21" y="23" width="9" height="9" fill-opacity=".8"/><rect x="57" y="23" width="9" height="9" fill-opacity=".9"/><rect x="21" y="32" width="9" height="9"/><rect x="66" y="32" width="9" height="9" fill-opacity=".5"/><rect x="21" y="41" width="9" height="9" fill-opacity=".7"/><rect x="66" y="41" width="9" height="9" fill-opacity=".5"/><rect x="21" y="50" width="9" height="9" fill-opacity=".5"/><rect x="66" y="50" width="9" height="9" fill-opacity=".5"/><rect x="21" y="59" width="9" height="9" fill-opacity=".7"/><rect x="57" y="59" width="9" height="9" fill-opacity=".8"/><rect x="30" y="68" width="9" height="9" fill-opacity=".9"/><rect x="39" y="68" width="9" height="9" fill-opacity=".6"/><rect x="48" y="68" width="9" height="9" fill-opacity=".8"/><rect x="39" y="77" width="9" height="9" fill-opacity=".4"/></g>
+          <rect x="12" y="14" width="72" height="72" fill="none" stroke="#111" stroke-width="1.4"/>
+          <text x="48" y="102" text-anchor="middle" font-size="12">8 × 8 칸</text>
+          <path d="M94,50 L132,50" stroke="#1f6fe5" stroke-width="2.4" marker-end="url(#p1b)"/><text x="113" y="42" text-anchor="middle" font-size="11" fill="#1f6fe5">펴기</text>
+          <g fill="none" stroke="#111" stroke-width="1"><rect x="140" y="40" width="150" height="20"/></g>
+          <g fill="#111"><rect x="146" y="40" width="5" height="20" fill-opacity=".3"/><rect x="151" y="40" width="5" height="20" fill-opacity=".8"/><rect x="156" y="40" width="5" height="20" fill-opacity=".6"/><rect x="176" y="40" width="5" height="20" fill-opacity=".8"/><rect x="186" y="40" width="5" height="20" fill-opacity=".9"/><rect x="201" y="40" width="5" height="20"/><rect x="226" y="40" width="5" height="20" fill-opacity=".5"/><rect x="241" y="40" width="5" height="20" fill-opacity=".7"/><rect x="266" y="40" width="5" height="20" fill-opacity=".5"/><rect x="281" y="40" width="5" height="20" fill-opacity=".9"/></g>
+          <g font-size="12" font-style="italic" font-family="serif"><text x="142" y="76">x₁</text><text x="160" y="76">x₂</text><text x="206" y="76">⋯</text><text x="270" y="76">x₆₄</text></g>
+          <rect x="20" y="114" width="262" height="30" rx="7" fill="#fff" stroke="#111" stroke-width="1.4"/><text x="151" y="134" text-anchor="middle" font-size="12.5">1,797장 = 64차원 공간의 점 1,797개</text>
+        </svg>
+        <span class="go">→ 02 실기 과제지</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>2. 그림자 놀이 <small>Projection</small></h3>
+        <p class="d">점 구름에 빛을 비춰 벽(축)에 그림자를 떨군다. 그림자의 위치가 새 좌표다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="비스듬한 타원 모양의 검은 점 구름 위에 파란 직선(축)이 지난다. 점마다 축 위로 수직인 점선이 내려와 파란 작은 점(그림자)에 닿는다. 왼쪽 위에 해 모양의 빛이 있다">
+          <circle cx="26" cy="24" r="10" fill="#fff" stroke="#111" stroke-width="1.6"/><g stroke="#111" stroke-width="1.4"><path d="M26,8 L26,4 M26,40 L26,44 M10,24 L6,24 M42,24 L46,24 M15,13 L12,10 M37,35 L40,38 M37,13 L40,10 M15,35 L12,38"/></g>
+          <path d="M40,128 L270,28" stroke="#1f6fe5" stroke-width="2.6"/>
+          <g stroke="#8b93a3" stroke-width="1.2" stroke-dasharray="3 3"><path d="M73,92 L81.4,110.0"/><path d="M113,114 L106.7,99.0"/><path d="M122,66 L132.0,88.0"/><path d="M164,98 L155.0,78.0"/><path d="M173,50 L180.3,67.0"/><path d="M211,75 L203.3,57.0"/><path d="M225,32 L230.9,45.0"/></g>
+          <g fill="#111"><circle cx="73" cy="92" r="4.5"/><circle cx="113" cy="114" r="4.5"/><circle cx="122" cy="66" r="4.5"/><circle cx="164" cy="98" r="4.5"/><circle cx="173" cy="50" r="4.5"/><circle cx="211" cy="75" r="4.5"/><circle cx="225" cy="32" r="4.5"/></g>
+          <g fill="#1f6fe5"><circle cx="81.4" cy="110.0" r="3.4"/><circle cx="106.7" cy="99.0" r="3.4"/><circle cx="132.0" cy="88.0" r="3.4"/><circle cx="155.0" cy="78.0" r="3.4"/><circle cx="180.3" cy="67.0" r="3.4"/><circle cx="203.3" cy="57.0" r="3.4"/><circle cx="230.9" cy="45.0" r="3.4"/></g>
+          <text x="276" y="30" font-size="12" fill="#1f6fe5">축</text>
+          <text x="150" y="144" text-anchor="middle" font-size="12">그림자의 위치 = 그 축의 점수(좌표)</text>
+        </svg>
+        <div class="fbox"><span class="mth">z = (x − 평균) · v</span><br><span style="font-size:13px">v = 길이 1인 축 방향</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>3. 가장 퍼진 방향 <small>1st Principal Component</small></h3>
+        <p class="d">그림자가 가장 길게 퍼지는 쪽으로 벽을 돌린다. 그 방향이 첫 번째 주성분이다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="같은 점 구름에 축 두 개. 파란 굵은 축은 구름의 긴 쪽을 따라가고 그 위 그림자가 넓게 퍼져 '분산 큼'. 회색 축은 짧은 쪽을 따라가 그림자가 좁게 모여 '분산 작음'">
+          <ellipse cx="150" cy="70" rx="104" ry="34" transform="rotate(-22 150 70)" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1" stroke-dasharray="3 3"/>
+          <g fill="#111"><circle cx="78" cy="102" r="3.6"/><circle cx="104" cy="86" r="3.6"/><circle cx="120" cy="96" r="3.6"/><circle cx="140" cy="70" r="3.6"/><circle cx="160" cy="76" r="3.6"/><circle cx="176" cy="54" r="3.6"/><circle cx="196" cy="58" r="3.6"/><circle cx="222" cy="38" r="3.6"/><circle cx="130" cy="82" r="3.6"/><circle cx="186" cy="68" r="3.6"/></g>
+          <path d="M48,112 L252,28" stroke="#1f6fe5" stroke-width="3" marker-end="url(#p1b)"/>
+          <path d="M126,22 L168,124" stroke="#8b93a3" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="290" y="14" font-size="12" fill="#1f6fe5" text-anchor="end">PC1 · 그림자 넓다</text><text x="172" y="134" font-size="12" fill="#6b7280">그림자 좁다</text>
+        </svg>
+        <div class="fbox"><span class="mth">v₁ = argmax<sub>|v|=1</sub> Var(z)</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>4. 두 번째 축은 직각으로 <small>Orthogonal Axes</small></h3>
+        <p class="d">첫 축과 직각인 방향 가운데 또 가장 퍼진 쪽. 축끼리는 정보를 겹쳐 담지 않는다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="타원 점 구름 위에 파란 긴 화살표 PC1과, 그것과 직각인 파란 짧은 화살표 PC2가 구름 가운데(평균)에서 뻗어 나간다. 두 화살표 사이에 직각 표시가 있다">
+          <ellipse cx="150" cy="72" rx="110" ry="40" transform="rotate(-20 150 72)" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1" stroke-dasharray="3 3"/>
+          <g fill="#111"><circle cx="80" cy="96" r="3.4"/><circle cx="110" cy="92" r="3.4"/><circle cx="128" cy="62" r="3.4"/><circle cx="150" cy="84" r="3.4"/><circle cx="170" cy="58" r="3.4"/><circle cx="194" cy="66" r="3.4"/><circle cx="214" cy="42" r="3.4"/><circle cx="144" cy="54" r="3.4"/><circle cx="160" cy="98" r="3.4"/></g>
+          <path d="M150,72 L248,36" stroke="#1f6fe5" stroke-width="3" marker-end="url(#p1b)"/>
+          <path d="M150,72 L134,28" stroke="#1f6fe5" stroke-width="3" marker-end="url(#p1b)"/>
+          <path d="M159,69 L156,61 L147,64" fill="none" stroke="#111" stroke-width="1.4"/>
+          <circle cx="150" cy="72" r="4" fill="#fff" stroke="#111" stroke-width="2"/>
+          <g font-size="12.5" fill="#1f6fe5"><text x="236" y="58">PC1</text><text x="104" y="24">PC2</text></g><text x="160" y="92" font-size="11.5">평균</text>
+          <text x="150" y="134" text-anchor="middle" font-size="12">v₁ · v₂ = 0 · 점수 z₁과 z₂는 상관이 0</text>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>5. 공분산과 고유벡터 <small>Covariance · Eigenvectors</small></h3>
+        <p class="d">64칸끼리 함께 밝아지는 정도를 64×64 표로 만들고, 그 표의 고유벡터를 구한다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽에 64×64 공분산 행렬을 뜻하는 칸 많은 정사각형(대각선 쪽이 진하다)이 있고, 오른쪽에 C v = λ v 식과, 고유값 λ가 큰 순서로 막대가 줄어드는 그림이 있다">
+          <g><rect x="16" y="14" width="96" height="96" fill="#fff" stroke="#111" stroke-width="1.4"/>
+          <g fill="#1f6fe5"><rect x="16" y="14" width="12" height="12" fill-opacity=".9"/><rect x="28" y="26" width="12" height="12" fill-opacity=".8"/><rect x="40" y="38" width="12" height="12" fill-opacity=".9"/><rect x="52" y="50" width="12" height="12" fill-opacity=".7"/><rect x="64" y="62" width="12" height="12" fill-opacity=".9"/><rect x="76" y="74" width="12" height="12" fill-opacity=".8"/><rect x="88" y="86" width="12" height="12" fill-opacity=".7"/><rect x="100" y="98" width="12" height="12" fill-opacity=".9"/><rect x="28" y="14" width="12" height="12" fill-opacity=".4"/><rect x="16" y="26" width="12" height="12" fill-opacity=".4"/><rect x="52" y="38" width="12" height="12" fill-opacity=".3"/><rect x="40" y="50" width="12" height="12" fill-opacity=".3"/><rect x="76" y="62" width="12" height="12" fill-opacity=".35"/><rect x="64" y="74" width="12" height="12" fill-opacity=".35"/><rect x="88" y="26" width="12" height="12" fill-opacity=".2"/><rect x="28" y="86" width="12" height="12" fill-opacity=".2"/></g>
+          <g fill="#c0392b"><rect x="64" y="26" width="12" height="12" fill-opacity=".35"/><rect x="28" y="62" width="12" height="12" fill-opacity=".35"/><rect x="100" y="50" width="12" height="12" fill-opacity=".25"/><rect x="52" y="98" width="12" height="12" fill-opacity=".25"/></g></g>
+          <text x="64" y="128" text-anchor="middle" font-size="12">C (64 × 64)</text>
+          <text x="210" y="34" text-anchor="middle" font-size="18" font-style="italic" font-family="serif">C v = λ v</text>
+          <g fill="#1f6fe5"><rect x="140" y="56" width="14" height="54"/><rect x="158" y="61" width="14" height="49"/><rect x="176" y="68" width="14" height="42"/><rect x="194" y="80" width="14" height="30"/><rect x="212" y="89" width="14" height="21"/><rect x="230" y="95" width="14" height="15"/><rect x="248" y="100" width="14" height="10"/><rect x="266" y="104" width="14" height="6"/></g>
+          <path d="M136,110 L288,110" stroke="#111" stroke-width="1.4"/><text x="212" y="128" text-anchor="middle" font-size="12">λ₁ ≥ λ₂ ≥ ⋯ = 각 축의 분산</text>
+        </svg>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>6. 설명된 분산 <small>Explained Variance Ratio</small></h3>
+        <p class="d">축 k개가 전체 퍼짐의 몇 %를 담나. 숫자 글씨는 2축 28.5%, 21축이면 90%.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="가로축 성분 수(1~64), 세로축 누적 설명된 분산(0~100%). 곡선이 가파르게 오르다 완만해진다. 2성분에 28.5%, 21성분에 90% 점이 찍혀 있고 90% 높이에 점선이 있다">
+          <path d="M30,126 L30,10" stroke="#111" stroke-width="2" marker-end="url(#p1a)"/><path d="M30,126 L292,126" stroke="#111" stroke-width="2" marker-end="url(#p1a)"/>
+          <path d="M30,24 L284,24" stroke="#8b93a3" stroke-width="1.2" stroke-dasharray="4 4"/><text x="34" y="20" font-size="11">90%</text>
+          <path d="M34,109 L38,94 L42,81 L50,65 L70,43 L82,36 L114,25 L146,20 L190,15 L284,14" fill="none" stroke="#1f6fe5" stroke-width="3"/>
+          <circle cx="38" cy="94" r="4.5" fill="#c0392b"/><text x="46" y="102" font-size="12" fill="#c0392b">2성분 28.5%</text>
+          <circle cx="114" cy="25" r="4.5" fill="#1f6fe5"/><text x="120" y="42" font-size="12" fill="#1f6fe5">21성분 90%</text>
+          <text x="160" y="144" text-anchor="middle" font-size="12">성분 수 → (64개면 100%)</text>
+        </svg>
+        <div class="fbox"><span class="mth">λ<sub>k</sub> ÷ (λ<sub>1</sub> + ⋯ + λ<sub>64</sub>)</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#comps">
+        <h3>7. 성분 그림 <small>Components as Images</small></h3>
+        <p class="d">성분도 64칸이라 8×8로 접으면 그림이다. 파랑은 밝게, 빨강은 어둡게 바꾸는 칸.</p>
+        <svg viewBox="0 0 300 130" role="img" aria-label="8×8 칸 그림 세 장. 왼쪽은 1,797장의 평균 글씨로 가운데가 흐릿한 둥근 덩어리다. 가운데는 성분 1로 아래 왼쪽 칸이 파랑, 위아래 가장자리 칸이 빨강이다. 오른쪽은 성분 2로 가운데 세로줄이 파랑, 오른쪽 아래가 빨강이다">
+          <rect x="30.0" y="30.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.33"/><rect x="38.0" y="30.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.74"/><rect x="46.0" y="30.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.74"/><rect x="54.0" y="30.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.36"/><rect x="62.0" y="30.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.09"/><rect x="22.0" y="38.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.12"/><rect x="30.0" y="38.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.65"/><rect x="38.0" y="38.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.75"/><rect x="46.0" y="38.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.64"/><rect x="54.0" y="38.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.51"/><rect x="62.0" y="38.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.12"/><rect x="22.0" y="46.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.16"/><rect x="30.0" y="46.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.62"/><rect x="38.0" y="46.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.44"/><rect x="46.0" y="46.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.44"/><rect x="54.0" y="46.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.49"/><rect x="62.0" y="46.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.11"/><rect x="22.0" y="54.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.15"/><rect x="30.0" y="54.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.57"/><rect x="38.0" y="54.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.55"/><rect x="46.0" y="54.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.62"/><rect x="54.0" y="54.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.47"/><rect x="62.0" y="54.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.14"/><rect x="22.0" y="62.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.15"/><rect x="30.0" y="62.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.48"/><rect x="38.0" y="62.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.57"/><rect x="46.0" y="62.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.64"/><rect x="54.0" y="62.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.55"/><rect x="62.0" y="62.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.18"/><rect x="22.0" y="70.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.10"/><rect x="30.0" y="70.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.43"/><rect x="38.0" y="70.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.45"/><rect x="46.0" y="70.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.48"/><rect x="54.0" y="70.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.51"/><rect x="62.0" y="70.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.22"/><rect x="22.0" y="78.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.04"/><rect x="30.0" y="78.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.47"/><rect x="38.0" y="78.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.60"/><rect x="46.0" y="78.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.59"/><rect x="54.0" y="78.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.55"/><rect x="62.0" y="78.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.23"/><rect x="30.0" y="86.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.35"/><rect x="38.0" y="86.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.76"/><rect x="46.0" y="86.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.74"/><rect x="54.0" y="86.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.42"/><rect x="62.0" y="86.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.13"/><rect x="70.0" y="86.0" width="8.3" height="8.3" fill="#111" fill-opacity="0.02"/><rect x="14" y="30" width="64" height="64" fill="none" stroke="#111" stroke-width="1"/><rect x="134.0" y="30.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.61"/><rect x="142.0" y="30.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.37"/><rect x="150.0" y="30.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.09"/><rect x="158.0" y="30.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.26"/><rect x="126.0" y="38.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.32"/><rect x="134.0" y="38.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.66"/><rect x="142.0" y="38.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.40"/><rect x="150.0" y="38.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.13"/><rect x="158.0" y="38.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.59"/><rect x="126.0" y="46.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.22"/><rect x="134.0" y="46.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.23"/><rect x="142.0" y="46.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.59"/><rect x="150.0" y="46.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.47"/><rect x="158.0" y="46.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.44"/><rect x="166.0" y="46.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.08"/><rect x="126.0" y="54.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.17"/><rect x="134.0" y="54.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.69"/><rect x="142.0" y="54.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.10"/><rect x="150.0" y="54.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.57"/><rect x="158.0" y="54.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.12"/><rect x="166.0" y="54.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.14"/><rect x="126.0" y="62.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.43"/><rect x="134.0" y="62.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="1.00"/><rect x="142.0" y="62.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.45"/><rect x="150.0" y="62.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.23"/><rect x="158.0" y="62.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.10"/><rect x="126.0" y="70.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.29"/><rect x="134.0" y="70.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.82"/><rect x="142.0" y="70.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.67"/><rect x="150.0" y="70.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.57"/><rect x="166.0" y="70.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.10"/><rect x="134.0" y="78.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.15"/><rect x="142.0" y="78.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.25"/><rect x="150.0" y="78.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.29"/><rect x="158.0" y="78.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.37"/><rect x="166.0" y="78.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.17"/><rect x="134.0" y="86.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.64"/><rect x="142.0" y="86.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.38"/><rect x="158.0" y="86.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.24"/><rect x="166.0" y="86.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.10"/><rect x="118" y="30" width="64" height="64" fill="none" stroke="#111" stroke-width="1"/><rect x="238.0" y="30.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.16"/><rect x="254.0" y="30.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.18"/><rect x="262.0" y="30.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.39"/><rect x="270.0" y="30.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.21"/><rect x="230.0" y="38.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.07"/><rect x="238.0" y="38.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.20"/><rect x="254.0" y="38.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.30"/><rect x="262.0" y="38.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.17"/><rect x="270.0" y="38.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.20"/><rect x="230.0" y="46.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.12"/><rect x="238.0" y="46.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.66"/><rect x="246.0" y="46.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.16"/><rect x="254.0" y="46.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.75"/><rect x="270.0" y="46.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.09"/><rect x="230.0" y="54.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.26"/><rect x="238.0" y="54.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.62"/><rect x="246.0" y="54.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.46"/><rect x="254.0" y="54.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.87"/><rect x="262.0" y="54.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.17"/><rect x="270.0" y="54.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.22"/><rect x="230.0" y="62.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.29"/><rect x="238.0" y="62.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.29"/><rect x="246.0" y="62.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.90"/><rect x="254.0" y="62.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.95"/><rect x="262.0" y="62.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.55"/><rect x="270.0" y="62.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.42"/><rect x="230.0" y="70.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.17"/><rect x="238.0" y="70.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.43"/><rect x="246.0" y="70.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.89"/><rect x="254.0" y="70.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="1.00"/><rect x="262.0" y="70.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.80"/><rect x="270.0" y="70.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.72"/><rect x="238.0" y="78.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.51"/><rect x="246.0" y="78.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.40"/><rect x="254.0" y="78.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.32"/><rect x="262.0" y="78.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.95"/><rect x="270.0" y="78.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.49"/><rect x="238.0" y="86.0" width="8.3" height="8.3" fill="#1f6fe5" fill-opacity="0.23"/><rect x="254.0" y="86.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.64"/><rect x="262.0" y="86.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.59"/><rect x="270.0" y="86.0" width="8.3" height="8.3" fill="#c0392b" fill-opacity="0.06"/><rect x="222" y="30" width="64" height="64" fill="none" stroke="#111" stroke-width="1"/>
+          <g font-size="12" text-anchor="middle"><text x="46" y="20">평균 글씨</text><text x="150" y="20">성분 1 · 14.9%</text><text x="254" y="20">성분 2 · 13.6%</text></g>
+          <g font-size="16" text-anchor="middle"><text x="98" y="68">+</text><text x="202" y="68">+</text></g>
+          <text x="150" y="122" text-anchor="middle" font-size="12">글씨 ≈ 평균 + z₁·성분1 + z₂·성분2 + ⋯</text>
+        </svg>
+        <span class="go">→ 04 성분 그림</span>
+      </a>
+      <a class="pn" href="#recon">
+        <h3>8. 복원과 버린 정보 <small>Reconstruction</small></h3>
+        <p class="d">점수 몇 개로 글씨를 되살린다. 성분이 적으면 흐리다. 그 차이가 버린 정보다.</p>
+        <svg viewBox="0 0 300 120" role="img" aria-label="숫자 0 글씨가 네 번 나란히 있다. 맨 왼쪽은 원본, 다음은 2성분으로 복원해 흐릿하고 뭉개졌고, 10성분 복원은 거의 알아볼 만하며, 21성분 복원은 원본과 거의 같다. 아래에 픽셀당 제곱 오차 8.41, 2.13, 0.70이 적혀 있다">
+          <rect x="28.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.31"/><rect x="35.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.81"/><rect x="42.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.56"/><rect x="49.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.06"/><rect x="28.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.81"/><rect x="35.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.94"/><rect x="42.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.62"/><rect x="49.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.94"/><rect x="56.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.31"/><rect x="21.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.19"/><rect x="28.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.94"/><rect x="35.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.12"/><rect x="49.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.69"/><rect x="56.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.50"/><rect x="21.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.25"/><rect x="28.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.75"/><rect x="49.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.50"/><rect x="56.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.50"/><rect x="21.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.31"/><rect x="28.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.50"/><rect x="49.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.56"/><rect x="56.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.50"/><rect x="21.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.25"/><rect x="28.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.69"/><rect x="42.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.06"/><rect x="49.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.75"/><rect x="56.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.44"/><rect x="21.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.12"/><rect x="28.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.88"/><rect x="35.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.31"/><rect x="42.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.62"/><rect x="49.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.75"/><rect x="28.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.38"/><rect x="35.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.81"/><rect x="42.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.62"/><rect x="14" y="26" width="56" height="56" fill="none" stroke="#111" stroke-width="1"/><rect x="100.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.28"/><rect x="107.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.74"/><rect x="114.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.67"/><rect x="121.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.21"/><rect x="93.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.11"/><rect x="100.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.75"/><rect x="107.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.73"/><rect x="114.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.52"/><rect x="121.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.46"/><rect x="128.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.04"/><rect x="93.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.22"/><rect x="100.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.88"/><rect x="107.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.36"/><rect x="114.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.16"/><rect x="121.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.49"/><rect x="128.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.15"/><rect x="93.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.25"/><rect x="100.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.80"/><rect x="107.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.37"/><rect x="114.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.29"/><rect x="121.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.54"/><rect x="128.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.23"/><rect x="93.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.25"/><rect x="100.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.57"/><rect x="107.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.19"/><rect x="114.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.26"/><rect x="121.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.76"/><rect x="128.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.35"/><rect x="93.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.16"/><rect x="100.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.58"/><rect x="107.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.07"/><rect x="114.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.06"/><rect x="121.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.83"/><rect x="128.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.51"/><rect x="93.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.06"/><rect x="100.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.68"/><rect x="107.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.43"/><rect x="114.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.45"/><rect x="121.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.94"/><rect x="128.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.44"/><rect x="100.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.27"/><rect x="107.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.79"/><rect x="114.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="1.00"/><rect x="121.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.66"/><rect x="128.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.16"/><rect x="86" y="26" width="56" height="56" fill="none" stroke="#111" stroke-width="1"/><rect x="172.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.38"/><rect x="179.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.81"/><rect x="186.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.76"/><rect x="193.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.34"/><rect x="200.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.08"/><rect x="165.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.11"/><rect x="172.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.88"/><rect x="179.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.74"/><rect x="186.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.59"/><rect x="193.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.72"/><rect x="200.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.14"/><rect x="165.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.24"/><rect x="172.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.89"/><rect x="179.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.17"/><rect x="186.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.05"/><rect x="193.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.75"/><rect x="200.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.28"/><rect x="165.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.31"/><rect x="172.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.75"/><rect x="193.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.70"/><rect x="200.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.44"/><rect x="165.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.38"/><rect x="172.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.63"/><rect x="193.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.65"/><rect x="200.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.45"/><rect x="165.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.28"/><rect x="172.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.74"/><rect x="179.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.08"/><rect x="186.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.12"/><rect x="193.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.72"/><rect x="200.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.31"/><rect x="165.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.11"/><rect x="172.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.82"/><rect x="179.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.50"/><rect x="186.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.64"/><rect x="193.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.73"/><rect x="200.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.06"/><rect x="165.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.02"/><rect x="172.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.40"/><rect x="179.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.87"/><rect x="186.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.74"/><rect x="193.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.19"/><rect x="158" y="26" width="56" height="56" fill="none" stroke="#111" stroke-width="1"/><rect x="244.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.33"/><rect x="251.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.77"/><rect x="258.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.54"/><rect x="265.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.13"/><rect x="272.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.13"/><rect x="279.0" y="26.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.04"/><rect x="237.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.04"/><rect x="244.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.87"/><rect x="251.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.82"/><rect x="258.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.70"/><rect x="265.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.76"/><rect x="272.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.27"/><rect x="279.0" y="33.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.04"/><rect x="237.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.15"/><rect x="244.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.93"/><rect x="251.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.14"/><rect x="265.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.80"/><rect x="272.0" y="40.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.38"/><rect x="237.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.24"/><rect x="244.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.73"/><rect x="265.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.57"/><rect x="272.0" y="47.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.44"/><rect x="237.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.30"/><rect x="244.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.55"/><rect x="258.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.02"/><rect x="265.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.58"/><rect x="272.0" y="54.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.41"/><rect x="237.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.22"/><rect x="244.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.71"/><rect x="258.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.09"/><rect x="265.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.71"/><rect x="272.0" y="61.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.37"/><rect x="237.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.10"/><rect x="244.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.88"/><rect x="251.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.40"/><rect x="258.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.59"/><rect x="265.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.69"/><rect x="272.0" y="68.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.06"/><rect x="244.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.33"/><rect x="251.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.88"/><rect x="258.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.72"/><rect x="265.0" y="75.0" width="7.3" height="7.3" fill="#111" fill-opacity="0.06"/><rect x="230" y="26" width="56" height="56" fill="none" stroke="#111" stroke-width="1"/>
+          <g font-size="11.5" text-anchor="middle"><text x="42" y="18">원본</text><text x="114" y="18">2성분</text><text x="186" y="18">10성분</text><text x="258" y="18">21성분</text>
+          <g fill="#c0392b" font-family="IBM Plex Mono, monospace"><text x="114" y="98">오차 8.41</text><text x="186" y="98">2.13</text><text x="258" y="98">0.70</text></g></g>
+          <text x="150" y="116" text-anchor="middle" font-size="11.5">픽셀당 제곱 오차 (이 한 장, 밝기 0~16)</text>
+        </svg>
+        <div class="fbox"><span class="mth">x̂ = 평균 + Σ<sub>k</sub> z<sub>k</sub> v<sub>k</sub></span></div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m6">
+        <h3>9. 쓰임과 한계 <small>Map · Preprocessing · Linear Only</small></h3>
+        <p class="d">지도, 압축, 다른 지원자의 전처리. 다만 축은 늘 곧은 직선이다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="위쪽: 64칸 상자에서 PCA 상자를 지나 세 갈래 화살표가 '2D 지도', '압축', 'GMM 전처리(30축)'로 간다. 아래쪽: 돌돌 말린 리본 모양 점들 위에 곧은 파란 축이 지나가며 리본의 겹이 한 점으로 포개진다. '곧은 축으로는 말린 것을 못 편다 → 5-15'">
+          <rect x="6" y="14" width="56" height="26" rx="5" fill="#fff" stroke="#111" stroke-width="1.4"/><text x="34" y="31" text-anchor="middle" font-size="12">64칸</text>
+          <path d="M62,27 L84,27" stroke="#111" stroke-width="1.6" marker-end="url(#p1a)"/>
+          <rect x="88" y="14" width="50" height="26" rx="5" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="113" y="31" text-anchor="middle" font-size="12">PCA</text>
+          <g stroke="#1f6fe5" stroke-width="1.8" fill="none"><path d="M138,22 L176,10" marker-end="url(#p1b)"/><path d="M138,27 L176,27" marker-end="url(#p1b)"/><path d="M138,32 L176,46" marker-end="url(#p1b)"/></g>
+          <g font-size="11.5"><text x="182" y="14">2D 지도 (05장)</text><text x="182" y="31">압축 · 잡음 줄이기</text><text x="182" y="50">GMM 전처리 (5-13)</text></g>
+          <path d="M40,118 C40,84 96,80 100,104 C104,128 60,132 58,110 C56,92 80,92 82,104" fill="none" stroke="#111" stroke-width="5" stroke-opacity=".35"/>
+          <path d="M20,96 L130,96" stroke="#1f6fe5" stroke-width="2.6"/>
+          <text x="140" y="96" font-size="12">곧은 축으로는 말린 것을</text><text x="140" y="112" font-size="12">못 편다 → 5-15 t-SNE·UMAP</text>
+        </svg>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "무엇을 받나"(64칸 글씨), 2~4번이 "어떻게 축을 고르나"(그림자, 가장 퍼진 방향, 직각인 두 번째 축), 5~6번이 "어떻게 계산하고 얼마나 담았나"(공분산의 고유벡터, 설명된 분산), 7~8번이 "축이 무엇이고 무엇을 버렸나"(성분 그림, 복원), 9번이 "어디에 쓰고 어디서 막히나"다. 이 면접은 01장(2·3·4번) → 02장(1번) → 04장(5·6·7번) → 05장(8번) → 06장(9번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 그림자가 가장 길게 늘어지는 쪽으로</h2>
+    <p class="lin">평균을 가운데로 → 축을 돌려 그림자의 퍼짐을 잰다 → 가장 퍼진 방향이 축 1 → 그와 직각인 방향이 축 2</p>
+  </div>
+  <div id="comicIntro"></div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">PC</span><div class="bub"><span class="who">지원자 · PCA</span>64차원은 그릴 수 없으니 두 칸만 먼저 보여 드리겠습니다. 아래 그림은 1,797장의 두 칸(1행 5열, 2행 5열) 밝기입니다. 막대를 돌려 그림자가 가장 넓게 퍼지는 곳을 찾아보십시오. 제가 64칸에서 하는 일이 바로 그것입니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 손글씨 1,797장의 두 칸 밝기, 축을 돌려 그림자 퍼짐(분산) 재기</span>
+    <div class="cwrap"><canvas class="fig" id="shCv" aria-label="왼쪽 그림: 가로축은 1행 5열 칸의 밝기, 세로축은 2행 5열 칸의 밝기인 산점도. 평균을 지나는 파란 막대(축)가 있고 몇몇 점에서 막대로 수직 점선이 내려와 그림자가 찍힌다. 아래 띠에 모든 점의 그림자가 한 줄로 늘어선다. 오른쪽 그림: 가로축 축의 각도(0~180도), 세로축 그림자의 분산인 물결 곡선과 지금 각도의 표시"></canvas></div>
+    <div class="ctrls">
+      <label>축의 각도 <input type="range" id="shAng" min="0" max="179" step="1" value="120"><output id="shAngO">120°</output></label>
+      <button class="btn blue" id="shFind">가장 퍼진 방향 찾기</button>
+      <button class="btn" id="shSecond">두 번째 축 보기</button>
+    </div>
+    <div class="caption" id="shInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>왜 "가장 퍼진" 방향인가</h4>
+      <p>그림자가 한 점에 몰리면 글씨끼리 구별이 안 된다. 그림자가 넓게 퍼질수록 글씨마다 다른 자리를 얻는다. 퍼짐을 재는 숫자가 <b>분산</b>이다. PCA는 분산이 가장 큰 방향을 첫 번째 축(<b>주성분 1</b>)으로 고른다. 이렇게 고르면 그 축 하나로 되살릴 때 잃는 정보(제곱 오차)가 가장 작다. "가장 퍼진 방향"과 "가장 덜 잃는 방향"은 같은 말이다.</p>
+      <div class="eq">축 1 = 그림자 분산이 최대인 방향 = 복원 오차가 최소인 방향</div>
+    </div>
+    <div class="explain">
+      <h4>두 번째 축은 직각으로, 정답 없이</h4>
+      <p>두 번째 축은 첫 축과 <b>직각</b>인 방향 가운데 다시 가장 퍼진 방향이다. 직각이라 두 축의 점수는 서로 상관이 0이고, 같은 정보를 두 번 담지 않는다. 64칸이면 이렇게 축을 64개까지 세울 수 있다. 그중 앞의 몇 개만 남기는 것이 차원 축소다. 이 모든 과정에서 "이 글씨가 무슨 숫자인지"는 한 번도 쓰지 않는다. 그래서 <b>비지도</b> 학습이다.</p>
+      <div class="eq">축 2 ⊥ 축 1 · 축 3 ⊥ 축 1, 2 · ⋯ · 축 64</div>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 정답 없는 손글씨 1,797장</h2>
+    <p class="lin">한 장이 샘플, 64칸의 밝기(0~16)가 특징(X)이다. 정답(0~9)은 채점 봉투에 봉인한다</p>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 · 2차원 지도 그리기</span>
+      <h3>64칸 글씨를 2D 지도로 펼친다</h3>
+      <p style="margin:6px 0 0;font-size:15px">지원자는 정답을 보지 않고 글씨마다 좌표 두 개를 정한다. 지도가 좋은지는 다 그린 뒤에 봉투를 열어 잰다. 지도에서 가장 가까운 다섯 장의 정답으로 맞혀 보는 <b>5-NN 정확도</b>(5겹 교차 검증)다. 같은 숫자끼리 모인 지도일수록 높다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">합격선과 기준선</span>
+      <h3>매뉴얼 씨의 지도 18.1%</h3>
+      <p style="margin:6px 0 0;font-size:15px">매뉴얼 씨는 사람이 정한 두 숫자, <b>잉크 양</b>(64칸 밝기의 합)과 <b>위쪽 비율</b>(위 네 줄의 잉크 ÷ 전체)로 지도를 그렸다. 그 지도의 5-NN 정확도 <b id="lineDR">18.1%</b>가 합격선이다. 기준선은 가장 흔한 숫자만 답하기(10.2%)와 무작위 지도(약 10%)다.</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 실기 과제지 (글씨를 누르면 64칸 숫자를 본다)</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="envOpen" aria-pressed="false">채점 봉투 열기 (정답 보기)</button><button class="btn" id="digMore">다른 글씨 보기</button><span class="muted" style="font-size:13.5px" id="digNote"></span></div>
+    <div class="two" style="gap:12px">
+      <div class="cwrap"><canvas class="fig" id="digCv" aria-label="손글씨 숫자 여러 장을 8×8 칸 그림으로 바둑판처럼 늘어놓은 그림. 봉투를 열면 칸마다 정답 숫자가 색으로 표시된다. 고른 글씨는 파란 테두리로 표시된다"></canvas></div>
+      <div>
+        <div class="cwrap"><canvas class="fig" id="pxCv" aria-label="고른 글씨 한 장을 크게 그린 8×8 칸. 칸마다 밝기 숫자(0~16)가 적혀 있다"></canvas></div>
+        <div class="caption" id="pxInfo" aria-live="polite" style="font-family:var(--mono);font-size:12.5px;word-break:break-all"></div>
+      </div>
+    </div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>PCA가 과제지를 읽는 법</h4>
+      <p>PCA에게 글씨 한 장은 64칸 밝기의 <b>목록</b>일 뿐이다. 이웃한 칸이라는 것도, 그림이라는 것도 모른다. 대신 1,797장을 함께 보며 "어느 칸들이 <b>같이</b> 밝아지고 어두워지나"(공분산)를 센다. 가장자리 칸(맨 왼쪽·오른쪽 열)은 거의 늘 0이라 분산이 0에 가깝고, 축을 정하는 데 거의 끼지 못한다. 64칸은 모두 같은 단위(밝기 0~16)라서 <b>표준화하지 않는 것</b>이 기본이다. 표준화하면 거의 빈 가장자리 칸의 작은 떨림이 다른 칸만큼 커져 축을 흔든다(05장 다시 보기: 지도 60.3% → 51.4%).</p>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>한 줄에 샘플 하나, 열은 숫자인 표면 된다. Colab 코드(A장) 1번 칸의 <code>X</code>만 바꾼다. 정답이 없어도 된다(있으면 채점에만 쓴다).</li>
+        <li>열의 단위가 서로 다르면(온도 ℃, 압력 MPa, 시간 일) 먼저 <b>표준화</b>한다. 이 과제처럼 단위가 같을 때만 그대로 둔다. 큰 단위의 열이 축을 독차지하기 때문이다.</li>
+        <li>빈칸(결측값)이 있으면 PCA는 받지 않는다. 먼저 채운다.</li>
+        <li>글자로 된 열(공장, 원료 등급)은 PCA에 맞지 않는다. 원-핫으로 바꿀 수는 있지만 해석이 어려워진다.</li>
+        <li>사진처럼 열이 수천 개면 <code>svd_solver="randomized"</code>, 행이 너무 많아 메모리에 안 들어가면 <code>IncrementalPCA</code>를 쓴다(06장).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>제 지도를 보십시오. 잉크 양은 0에서 1,000 가까이, 위쪽 비율은 0에서 1까지입니다. 거리를 재면 잉크 양이 다 정해 버리지요. 그래서 제 지도는 사실상 잉크 한 줄입니다. 저도 나중에 알았습니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 매뉴얼 씨의 2D 지도 (가로 잉크 양, 세로 위쪽 비율) — 합격선</span>
+    <div class="cwrap"><canvas class="fig" id="manCv" aria-label="가로축 잉크 양(64칸 밝기의 합), 세로축 위쪽 비율(0~1)인 산점도 1,797점. 봉투를 열면 숫자마다 색이 다르고, 색들이 가로로 넓게 겹쳐 있다"></canvas></div>
+    <div class="legend" id="manLeg"></div>
+    <div class="caption" id="manInfo" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <span class="tag">표 · 실기 과제지 앞 40장 (전체 1,797장은 A장 Colab 코드로)</span>
+    <div class="datatb" id="digTbl" tabindex="0" aria-label="손글씨 픽셀 표"></div>
+    <p class="foot">파란 머리글이 특징(X) 64칸이다. 이름은 "행_열"(0부터). 맨 끝 "정답" 열은 채점 봉투다. 봉투를 열기 전에는 ?로 보인다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 버전 메모</p>
+  </div>
+  <p>PCA 코드는 세 줄이면 돈다. 그래서 틀려도 오류 없이 돈다. 행과 열을 뒤집어 넣어도, 분산과 분산 <b>비율</b>을 헷갈려도, 복원에서 평균을 빠뜨려도 숫자는 나온다. 위원회 규정은 같다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, scikit-learn만, 버전 출력) ② 데이터(모양, 열의 단위가 같은지, 정답이 있다면 채점에만) ③ 규정(표준화할지 말지와 그 까닭, 성분 수를 고르는 기준) ④ 출력(설명된 분산 곡선, 성분 그림, 복원, 2D 지도 점수) ⑤ 금지(정답으로 축 고르기, 훈련 점수로 지도 채점)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"손글씨 데이터 PCA 해서 그림 그려 줘." — AI가 습관처럼 표준화를 넣거나, 정답 색칠 그림만 보여 주고 "잘 나뉜다"고 끝내거나, 분산과 비율을 섞어 보고할 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 PCA도 계산 길이 바뀌어 왔다</h4>
+    <p>예전 코드에 보이는 <code>from sklearn.decomposition import RandomizedPCA</code>는 오래전에 없어졌다. 지금은 <code>PCA(svd_solver="randomized")</code>로 쓴다. scikit-learn 1.5부터는 행이 열보다 훨씬 많을 때 <code>svd_solver="auto"</code>가 공분산 행렬을 직접 푸는 <code>"covariance_eigh"</code>를 고를 수 있다. 이 페이지가 브라우저에서 하는 계산(04장)과 같은 길이다. 어느 길로 풀어도 축의 방향은 같지만 <b>부호(+/−)는 버전과 풀이 방법에 따라 뒤집힐 수 있다</b>. 지도가 좌우로 뒤집혀 나와도 틀린 것이 아니다.</p>
+    <p style="margin:0"><code>n_components</code>에는 정수(축 개수)뿐 아니라 0과 1 사이 소수(예: <code>0.9</code> = 90%를 담을 만큼), <code>"mle"</code>도 넣을 수 있다. <code>explained_variance_</code>는 축마다의 <b>분산</b>(단위가 있는 값), <code>explained_variance_ratio_</code>가 <b>비율</b>(합이 1)이다. AI가 둘을 바꿔 쓰는 일이 잦다. 인자와 속성 이름은 <b>내가 설치한 버전의 공식 문서</b>로 확인한다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Finding the axes</div>
+    <h2>수습 기간 — 축을 하나씩 찾는다</h2>
+    <p class="lin">평균 빼기 → 64×64 공분산 표 → 가장 퍼진 방향을 거듭 곱해 찾기 → 찾은 몫을 빼고 다음 축 → 몇 축까지 남길지 정하기</p>
+  </div>
+  <p>PCA의 수습은 짧다. 되풀이해 고쳐 가며 배우는 다른 지원자와 달리, 공분산 표 하나를 풀면 축이 정해진다. 그 "푸는 과정"을 눈으로 보려고, 아래에서는 가장 쉬운 방법인 <b>거듭제곱법</b>으로 축을 찾는다. 아무 방향에서나 시작해 공분산 표를 곱하고 길이를 1로 맞추기를 되풀이하면, 방향이 저절로 가장 퍼진 쪽으로 돌아선다.</p>
+  <div class="card">
+    <span class="tag">움직이는 그림 ① · 거듭제곱법으로 축 찾기 (1,797장 전체, 정답 없이, 이 브라우저에서 계산)</span>
+    <div class="cwrap"><canvas class="fig" id="powCv" aria-label="왼쪽: 지금 찾는 축의 방향을 8×8 칸 그림으로 그렸다. 파랑은 그 칸을 밝게, 빨강은 어둡게 바꾸는 방향이다. 처음에는 무작위 얼룩이다가 되풀이할수록 성분 그림으로 바뀐다. 오른쪽: 가로축 되풀이 횟수, 세로축 그 방향의 분산이 전체에서 차지하는 비율. 곡선이 빠르게 올라 정답 고유값 높이(점선)에 붙는다"></canvas></div>
+    <div class="ctrls">
+      <button class="btn blue" id="powPlay">▶ 축 1 찾기</button>
+      <button class="btn" id="powNext">다음 축 (찾은 몫 빼고)</button>
+      <button class="btn" id="powReset">처음으로</button>
+    </div>
+    <div class="caption" id="powInfo" aria-live="polite"></div>
+  </div>
+  <div class="card" id="comps">
+    <span class="tag">그림 · 평균 글씨와 성분 1 ~ 15 (파랑 = 그 칸을 밝게, 빨강 = 어둡게. 괄호는 설명된 분산)</span>
+    <div class="cwrap"><canvas class="fig" id="compCv" aria-label="8×8 칸 그림 16장. 첫 장은 회색 톤의 평균 글씨, 나머지 15장은 성분 1부터 15까지로 파랑과 빨강 얼룩이다. 앞 성분은 큰 덩어리, 뒤 성분일수록 잘게 쪼개진 무늬다"></canvas></div>
+    <div class="caption" id="compInfo"></div>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 ② · 몇 축까지 남길까 — 설명된 분산 (막대 = 축마다, 선 = 누적)</span>
+    <div class="cwrap"><canvas class="fig" id="scrCv" aria-label="가로축 성분 번호 1~64, 막대는 성분마다 설명된 분산 비율로 앞에서 크고 뒤로 갈수록 작아진다. 파란 선은 누적 비율로 빠르게 올라 64에서 100%가 된다. 고른 성분 수에 빨간 세로선이 있고, 80·90·95% 높이에 점선이 있다"></canvas></div>
+    <div class="ctrls"><label>남길 성분 수 <input type="range" id="scrK" min="1" max="64" step="1" value="2"><output id="scrKO">2</output></label>
+      <div class="choice" role="group" aria-label="빠른 선택" id="scrQuick"><button data-v="2" aria-pressed="true">2 (지도)</button><button data-v="10" aria-pressed="false">10</button><button data-v="21" aria-pressed="false">90%</button><button data-v="30" aria-pressed="false">30 (GMM용)</button></div></div>
+    <div class="caption" id="scrInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>"엘보"와 "90%" — 몇 축을 남기나</h4>
+      <p>정답 없이 정하는 규칙이 몇 가지 있다. ① 누적 비율이 80·90·95%에 닿는 곳(이 데이터는 13·21·29축). ② 막대가 갑자기 낮아져 팔꿈치(엘보)처럼 꺾이는 곳. 손글씨는 꺾임이 뚜렷하지 않다. ③ 쓰임새로 정한다. 사람이 볼 <b>지도</b>라면 2(또는 3)축, 다른 지원자에게 넘길 <b>전처리</b>라면 90~95%를 담는 20~30축이다. 이 면접의 과제는 지도라서 2축이다.</p>
+    </div>
+    <div class="explain">
+      <h4>고유값 = 그 축의 분산</h4>
+      <p>공분산 표 C에 축 방향 v를 곱하면 같은 방향으로 λ배 늘어난 벡터가 나온다(C v = λ v). 이 v가 <b>고유벡터</b>, λ가 <b>고유값</b>이다. λ는 그 축에 비친 그림자의 분산과 같다. 64개 고유값을 다 더하면 64칸 분산의 합(전체 퍼짐)이 되고, 그래서 λ ÷ 합이 "설명된 분산 비율"이다. 공분산 표는 대칭이라 고유벡터끼리 늘 직각이다. 01장의 "직각인 두 번째 축"이 여기서 나온다.</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="calc" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>장부 정리했어. 2D 지도 하나에 외울 숫자는 평균 64개 + 축 2개 × 64 = <b id="memN">192</b>개. 학습은 64×64 표를 한 번 만들고 푸는 게 다라서 이 브라우저에서 <b id="fitMs">-</b>ms. 새 글씨가 와도 곱셈 128번이면 지도에 찍혀. 되풀이 학습이 없으니 야근 수당도 없다!</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Evaluation</div>
+    <h2>성과 평가 — 채점 봉투를 연다</h2>
+    <p class="lin">정답 없이 재는 점수(설명된 분산, 복원 오차) → 봉투를 열어 재는 점수(2D 지도 5-NN) → 업무 점수(대표 10장으로 이름 붙이기)</p>
+  </div>
+  <div class="card">
+    <span class="tag">2D 지도 채점 · 1,797장, 5-NN 5겹 교차 검증 (성분 1·2, 브라우저 계산)</span>
+    <div id="evalStat"><p class="muted">계산 중…</p></div>
+  </div>
+  <div class="card" id="mapCard">
+    <span class="tag">그림 · PCA 2D 지도 — 가로 성분 1, 세로 성분 2 (점을 누르면 그 글씨와 2성분 복원을 본다)</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="mapEnv" aria-pressed="false">채점 봉투 열기 (숫자별 색)</button>
+      <div class="choice" role="group" aria-label="점 모양" id="mapMode"><button data-v="dot" aria-pressed="true">점</button><button data-v="img" aria-pressed="false">글씨 그림</button></div></div>
+    <div class="cwrap"><canvas class="fig" id="mapCv" aria-label="PCA 2D 지도. 1,797장이 가로 성분 1, 세로 성분 2 좌표에 찍혀 있다. 봉투를 열면 숫자마다 색이 다르다. 0은 아래, 4와 6은 오른쪽, 3과 9는 왼쪽, 1과 7은 위쪽에 모이고, 5와 8, 1은 가운데에서 여럿이 겹친다"></canvas></div>
+    <div class="legend" id="mapLeg"></div>
+    <div class="two" style="gap:12px;align-items:start">
+      <div class="cwrap"><canvas class="fig" id="pickCv" aria-label="지도에서 고른 글씨의 원본과 2성분 복원을 나란히 그린 작은 그림"></canvas></div>
+      <div class="caption" id="mapInfo" aria-live="polite" style="margin-top:0"></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">겹침 · 숫자별 5-NN 정확도 (봉투를 연 뒤에만 잴 수 있다)</span>
+    <div class="two" style="gap:12px"><div class="bars" id="digBars"></div><div class="caption" id="overlapInfo" style="margin-top:0"></div></div>
+  </div>
+  <div class="card" id="recon">
+    <span class="tag">버린 정보 · 복원 = 평균 + Σ(점수 × 성분). 성분 수를 바꿔 보기 (정답 없이 재는 점수)</span>
+    <div class="ctrls" style="margin:0 0 8px"><label>글씨 <select id="recPick" class="btn"></select></label><label>성분 수 <input type="range" id="recK" min="0" max="64" step="1" value="2"><output id="recKO">2</output></label></div>
+    <div class="cwrap"><canvas class="fig" id="recCv" aria-label="세 칸 그림: 원본 글씨, 고른 성분 수로 복원한 글씨, 둘의 차이(버린 정보)를 빨강과 파랑으로. 아래 줄에 0, 1, 2, 5, 10, 21, 64성분 복원이 작게 나란히 있다"></canvas></div>
+    <div class="caption" id="recInfo" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <span class="tag">축을 늘리면 · k성분 공간에서 5-NN (k = 2만 "지도"다. 나머지는 사람이 볼 수 없는 공간)</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn" id="kRun">1 · 2 · 3 · 5 · 10 · 30 · 64성분 채점하기 (2~3초)</button></div>
+    <div class="bars" id="kBars"><p class="muted">버튼을 누르면 성분 수마다 5-NN 5겹 채점을 한다.</p></div>
+    <div class="caption" id="kInfo"></div>
+  </div>
+  <div class="card">
+    <span class="tag">업무 점수 · 지도 위에서 10묶음 → 묶음마다 대표 한 장에만 사람이 이름 → 1,797장 전체에 퍼뜨리기</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn" id="bizAgain">다른 시작값으로 다시 묶기</button></div>
+    <div class="cwrap"><canvas class="fig" id="bizCv" aria-label="지도 위 10묶음의 대표 글씨 10장. 각 대표 아래에 사람이 붙인 이름과 그 묶음의 장수, 그 이름이 맞은 비율이 적혀 있다"></canvas></div>
+    <div id="bizStat"></div>
+    <div class="caption" id="bizInfo" aria-live="polite"></div>
+  </div>
+
+  <div class="interview" id="iv14"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 근무 조건(하이퍼파라미터), 다른 지원자의 전처리로서의 쓰임, 차원축소팀 지도 비교</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym" style="font-size:22px">PC</span><span class="no">APP-14 → EMP-0014</span><span class="nm">PCA (주성분 분석)</span><span class="rl">비지도 본부 › 차원축소팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">빠르고 정직한 곧은 자.</b> 같은 데이터면 늘 같은 축을 내고, 축의 뜻을 그림으로 보여 주며, 새 데이터도 곱셈 몇 번으로 지도에 올린다. 대신 곧은 축만 쓸 수 있어, 휘어 겹친 무리를 2축으로 펴지는 못한다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>빠르고 결과가 늘 같다.</b> 표 하나를 풀 뿐이라 되풀이 학습도, 시작값 운도 없다.</li>
+          <li><b>축의 뜻을 볼 수 있다.</b> 성분이 64칸 그림이라 "무엇을 보고 나눴나"를 보여 준다(04장).</li>
+          <li><b>새 데이터도 바로 지도에.</b> 평균을 빼고 축과 곱하면 끝(<code>transform</code>). 5-15 t-SNE는 못 한다.</li>
+          <li><b>버린 몫을 잴 수 있다.</b> 설명된 분산과 복원 오차로 "얼마를 버렸나"를 숫자로 말한다.</li>
+          <li><b>다른 지원자의 전처리로 좋다.</b> 잡음을 줄이고 차원을 낮춰 GMM·K-Means를 안정시킨다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>곧은 축만 쓴다.</b> 무리가 휘어 있거나 꼬여 있으면 2축 지도에서 겹친다(5·8·1이 한가운데 포개짐, 지도 <span class="pcAcc">60.3%</span>).</li>
+          <li><b>"퍼짐 = 중요함"이라 믿는다.</b> 가장 퍼진 방향이 숫자를 가르는 방향이라는 보장은 없다. 정답을 안 보니까.</li>
+          <li><b>단위에 민감하다.</b> 단위가 다른 열은 표준화가 필요하고, 같은 단위면 하지 않는 편이 낫다(02장).</li>
+          <li><b>성분은 섞여 있다.</b> 한 성분이 칸 64개에 +/−로 조금씩 걸쳐 있어 "이 성분은 곧 무엇"이라고 딱 잘라 말하기 어렵다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn PCA)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>n_components</code></td><td>None (전부)</td><td>남길 축 수. 정수면 그 개수, 0~1 소수면 그만큼의 분산을 담는 최소 개수(<code>0.9</code> → 이 데이터는 21), <code>"mle"</code>면 통계적으로 추정. 지도는 2, 전처리는 90~95%.</td></tr>
+        <tr><td><code>whiten</code></td><td>False</td><td>True면 축마다 점수를 그 축의 표준편차로 나눠 모든 축의 분산을 1로 맞춘다. 뒤에 거리 기반 모델을 붙일 때 작은 축까지 똑같이 키우므로 잡음도 커질 수 있다.</td></tr>
+        <tr><td><code>svd_solver</code></td><td>"auto"</td><td>푸는 방법. "full"(정확), "covariance_eigh"(행 ≫ 열일 때 빠름, 1.5부터), "randomized"(열이 수천 개일 때 빠른 근사), "arpack". 결과 축은 같고 부호만 다를 수 있다.</td></tr>
+        <tr><td><code>random_state</code></td><td>None</td><td>"randomized"·"arpack"에서만 쓰인다. 결과를 매번 같게 하려면 고정한다.</td></tr>
+        <tr><td>(전처리) <code>StandardScaler</code></td><td>—</td><td>PCA의 인자는 아니지만 가장 중요한 결정이다. 열의 단위가 다르면 넣고, 같으면 뺀다. 이 과제는 뺐다(넣으면 지도 51.4%).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card tw">
+    <span class="tag">차원축소팀 지도 비교 · 같은 1,797장, 같은 채점(2D 지도 5-NN 5겹)</span>
+    <table class="tb" id="teamTbl" style="font-size:14px;min-width:620px"></table>
+    <p class="foot" id="teamFoot"></p>
+  </div>
+  <div class="card tw">
+    <span class="tag">다른 지원자의 전처리 · PCA가 줄인 공간 위에서 일하는 군집팀</span>
+    <table class="tb" style="font-size:14px">
+      <thead><tr><th>쓰는 곳</th><th>무엇을 넘기나</th><th>결과 (ARI, 숨긴 정답과 겹침)</th></tr></thead>
+      <tbody id="preTbl"></tbody>
+    </table>
+    <p class="foot">ARI는 군집팀의 채점 점수다(1 완벽, 무작위 ≈ 0, 군집팀 합격선 0.108). 5-13 GMM은 64칸 그대로면 종 모양 하나에 64×64 공분산을 열 번 맞춰야 해서 불안정하다. PCA가 30축(분산 95.9%)으로 줄여 넘기면 군집팀 1위 점수가 나온다.</p>
+  </div>
+  <div class="card tw">
+    <span class="tag">같은 집안 · 축을 고르는 방법을 바꾼 친척들</span>
+    <table class="tb" style="font-size:14px">
+      <thead><tr><th>이름 (scikit-learn)</th><th>무엇이 다른가</th></tr></thead>
+      <tbody>
+        <tr><td><b>IncrementalPCA</b></td><td>데이터를 조각조각 나눠 읽으며 축을 고친다. 메모리에 다 안 들어가는 큰 데이터용.</td></tr>
+        <tr><td><b>TruncatedSVD</b></td><td>평균을 빼지 않고 분해한다. 대부분 0인 희소 행렬(단어 빈도표 등)에 쓴다. 문서에서는 LSA라고 부른다.</td></tr>
+        <tr><td><b>KernelPCA</b></td><td>커널로 공간을 휜 뒤 PCA를 한다(5-8 SVM의 커널 마술과 같은 생각). 곧은 축의 한계를 일부 넘지만, 커널과 γ를 골라야 하고 n×n 표를 풀어 무겁다.</td></tr>
+        <tr><td><b>SparsePCA</b> · <b>NMF</b></td><td>성분의 칸 대부분을 0으로(희소) 또는 모두 +로(NMF) 만들어 "이 성분은 이 획"처럼 읽기 쉽게 한다. 대신 분산은 덜 담는다.</td></tr>
+        <tr><td><b>FactorAnalysis</b> · <b>ICA</b></td><td>칸마다 다른 잡음을 따로 두거나(요인 분석), 축끼리 상관이 아니라 서로 "독립"이 되게 고른다(ICA, 섞인 신호 분리).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say fly"><img data-who="fly" data-mood="type" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>기록해 둘게. 지도 담당으로는 합격선을 세 배 넘었지만, 5랑 8이 한가운데서 포개지는 건 곧은 축의 한계야. 지도만 보고 "이 무리는 이 숫자" 하고 이름을 퍼뜨리면 절반 가까이 틀려. 대신 30축으로 넘기는 전처리 담당으로는 최고야.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">맞는 일 · 안 맞는 일</span>
+    <table class="tb" style="font-size:14px"><tbody>
+      <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>데이터를 처음 받았을 때 전체 모양을 훑어보는 첫 지도, 열이 많은 측정 데이터(센서 수십 개, 스펙트럼, 이미지)의 압축과 잡음 줄이기, 군집·분류 지원자 앞의 전처리, 서로 얽힌(상관이 큰) 열을 몇 개의 독립된 점수로 묶기, 공정 이상 감시(복원 오차가 갑자기 커지는 시편 찾기)</td></tr>
+      <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>휘거나 꼬인 무리를 2D로 깔끔하게 펴야 하는 일(5-15 t-SNE·UMAP), 열의 단위가 제각각인데 표준화를 못 하는 일, 축마다 "이것은 무엇"이라는 뚜렷한 이름이 필요한 보고서(희소 PCA·NMF가 낫다), 글자로 된 열이 많은 표</td></tr>
+      <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td>정답을 안 보는 지원자라서 "가장 퍼진 방향"이 "숫자를 가르는 방향"과 늘 같지는 않다. 정답이 있다면 LDA(선형 판별 분석)처럼 정답을 쓰는 축 고르기도 있다. 그것은 지도 본부의 일이다.</td></tr>
+    </tbody></table>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

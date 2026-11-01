@@ -4,7 +4,7 @@
 
 - 글: 안상선 ((주)M-Robo 대표)
 - 라이선스: CC BY-NC 4.0 (비상업적 이용, 출처 표기 필수) — [LICENSE.md](LICENSE.md)
-- 시작: [index.html](index.html)
+- 시작: [site/index.html](site/index.html)
 
 ## 언어 / Languages
 
@@ -12,12 +12,51 @@
 
 | 언어 | 폴더 |
 |---|---|
-| 한국어 (기본) | / |
-| English | en/ |
-| 中文 (简体) | zh/ |
-| 日本語 | ja/ |
-| Oʻzbekcha | uz/ |
-| Русский | ru/ |
+| 한국어 (기본) | site/ |
+| English | site/en/ |
+| 中文 (简体) | site/zh/ |
+| 日本語 | site/ja/ |
+| Oʻzbekcha | site/uz/ |
+| Русский | site/ru/ |
+
+## 이 묶음에 든 것
+
+완성된 사이트, 설명서, 재현 코드, 그리고 처음부터 다시 만드는 데 필요한 소스와 도구가 모두 들어 있습니다.
+
+| 폴더 · 파일 | 내용 |
+|---|---|
+| `site/` | 배포용 완성 사이트 — 6개 언어 × 17쪽(HTML 102개), 사이트용 README · LICENSE, .nojekyll. 이 폴더의 내용물을 GitHub Pages 저장소 맨 위에 올립니다 |
+| `docs/제작_재현_매뉴얼.md` | 최종본을 처음부터 같은 결과로 다시 만드는 단계별 절차와 체크리스트(한국어) |
+| `docs/모델채용위원회_컨셉_설정.md` | 설계의 원본: 컨셉, 등장인물, 말투, 편 구성, 연출, 데이터, 다국어 방식(한국어) |
+| `docs/작업지시_*.md` | 편 제작을 나눠 맡길 때 쓴 작업 지시서 3종(한국어) |
+| `local/` | 로컬 풀버전 코드 — 전 모델의 판정 숫자를 한 번에 다시 얻는다(1분 안팎) + 콘크리트 데이터 사본 |
+| `build.py · src/ · ep/ · assets/ · data/` | 사이트를 만드는 소스와 빌더(편마다 Colab 코드를 실제로 실행해 결과를 싣는다) |
+| `i18n/` | 번역 장치와 6개 언어 번역 카탈로그 · 용어집 · 언어별 규칙 |
+| `qa/ · tools/ · test/` | 점검 도구(화면 · 숫자 · 번역), 데이터 재생성, 브라우저 ML 엔진 대조 시험 |
+
+## 쓰는 법
+
+**사이트 보기 · 올리기** — site/index.html을 브라우저로 엽니다. 배포는 site/ 안의 내용물(.nojekyll 포함)을 저장소 맨 위에 올리면 됩니다.
+
+```
+cd site && python3 -m http.server 8000    # http://localhost:8000 — 언어 자동 전환까지 확인
+```
+
+**판정 숫자 재현** — 각 편 페이지 없이 15명 면접의 판정 숫자만 다시 얻습니다. 끝에 결산표(합격 12 · 보류 3)가 나옵니다.
+
+```
+pip install numpy pandas scikit-learn umap-learn
+python3 local/model_hiring_committee_full.py
+```
+
+**처음부터 다시 만들기** — docs/제작_재현_매뉴얼.md의 단계를 따릅니다. 핵심 명령은 아래와 같습니다.
+
+```
+python3 build.py              # out/ 에 6개 언어 페이지
+python3 qa/check_numbers.py   # 기준 숫자 확인
+python3 qa/check_pages.py     # 화면 점검 (pip install playwright)
+python3 make_site.py          # site/ 다시 만들기
+```
 
 ## 편 목록
 
@@ -25,22 +64,22 @@
 
 | 편 | 파일 | 제목 | 팀 | 판정 |
 |---|---|---|---|---|
-| 5-0 | [5-0_job_posting.html](5-0_job_posting.html) | 채용 공고 — 판단을 데이터로 | 채용 공고 | 보류 |
-| 5-1 | [5-1_knn.html](5-1_knn.html) | KNN | 입문팀 | 합격 |
-| 5-2 | [5-2_linear_regression.html](5-2_linear_regression.html) | 선형 회귀 | 회귀팀 | 보류 |
-| 5-3 | [5-3_polynomial_regularization.html](5-3_polynomial_regularization.html) | 다항 회귀와 규제 | 회귀팀 | 합격 |
-| 5-4 | [5-4_logistic_regression.html](5-4_logistic_regression.html) | 로지스틱 회귀 | 분류팀 | 합격 |
-| 5-5 | [5-5_naive_bayes.html](5-5_naive_bayes.html) | 나이브 베이즈 | 분류팀 | 보류 |
-| 5-6 | [5-6_decision_tree.html](5-6_decision_tree.html) | 결정 트리 | 겸용팀 | 합격 |
-| 5-7 | [5-7_random_forest.html](5-7_random_forest.html) | 랜덤 포레스트 | 겸용팀 | 합격 |
-| 5-8 | [5-8_svm.html](5-8_svm.html) | SVM | 겸용팀 | 합격 |
-| 5-9 | [5-9_gbm.html](5-9_gbm.html) | GBM | 겸용팀 | 합격 |
-| 5-10 | [5-10_kmeans.html](5-10_kmeans.html) | K-Means | 군집팀 | 합격 |
-| 5-11 | [5-11_hierarchical.html](5-11_hierarchical.html) | 계층적 군집 | 군집팀 | 합격 |
-| 5-12 | [5-12_dbscan.html](5-12_dbscan.html) | DBSCAN | 군집팀 | 보류 |
-| 5-13 | [5-13_gmm.html](5-13_gmm.html) | GMM | 군집팀 | 합격 |
-| 5-14 | [5-14_pca.html](5-14_pca.html) | PCA | 차원축소팀 | 합격 |
-| 5-15 | [5-15_tsne_umap.html](5-15_tsne_umap.html) | t-SNE · UMAP | 차원축소팀 | 합격 |
+| 5-0 | [site/5-0_job_posting.html](site/5-0_job_posting.html) | 채용 공고 — 판단을 데이터로 | 채용 공고 | 보류 |
+| 5-1 | [site/5-1_knn.html](site/5-1_knn.html) | KNN | 입문팀 | 합격 |
+| 5-2 | [site/5-2_linear_regression.html](site/5-2_linear_regression.html) | 선형 회귀 | 회귀팀 | 보류 |
+| 5-3 | [site/5-3_polynomial_regularization.html](site/5-3_polynomial_regularization.html) | 다항 회귀와 규제 | 회귀팀 | 합격 |
+| 5-4 | [site/5-4_logistic_regression.html](site/5-4_logistic_regression.html) | 로지스틱 회귀 | 분류팀 | 합격 |
+| 5-5 | [site/5-5_naive_bayes.html](site/5-5_naive_bayes.html) | 나이브 베이즈 | 분류팀 | 보류 |
+| 5-6 | [site/5-6_decision_tree.html](site/5-6_decision_tree.html) | 결정 트리 | 겸용팀 | 합격 |
+| 5-7 | [site/5-7_random_forest.html](site/5-7_random_forest.html) | 랜덤 포레스트 | 겸용팀 | 합격 |
+| 5-8 | [site/5-8_svm.html](site/5-8_svm.html) | SVM | 겸용팀 | 합격 |
+| 5-9 | [site/5-9_gbm.html](site/5-9_gbm.html) | GBM | 겸용팀 | 합격 |
+| 5-10 | [site/5-10_kmeans.html](site/5-10_kmeans.html) | K-Means | 군집팀 | 합격 |
+| 5-11 | [site/5-11_hierarchical.html](site/5-11_hierarchical.html) | 계층적 군집 | 군집팀 | 합격 |
+| 5-12 | [site/5-12_dbscan.html](site/5-12_dbscan.html) | DBSCAN | 군집팀 | 보류 |
+| 5-13 | [site/5-13_gmm.html](site/5-13_gmm.html) | GMM | 군집팀 | 합격 |
+| 5-14 | [site/5-14_pca.html](site/5-14_pca.html) | PCA | 차원축소팀 | 합격 |
+| 5-15 | [site/5-15_tsne_umap.html](site/5-15_tsne_umap.html) | t-SNE · UMAP | 차원축소팀 | 합격 |
 
 ## 각 편에 들어 있는 것
 
@@ -65,7 +104,46 @@ A concrete plant is hiring a new employee to make its quality calls. The candida
 
 - Author: Ahn Sangsun (CEO, M-Robo Co., Ltd.)
 - License: CC BY-NC 4.0 (non-commercial use, attribution required) — [LICENSE.md](LICENSE.md)
-- Start: [en/index.html](en/index.html)
+- Start: [site/en/index.html](site/en/index.html)
+
+## What's in this package
+
+The finished site, the documentation, the reproduction code, and every source file and tool needed to rebuild it from scratch.
+
+| Folder · file | Contents |
+|---|---|
+| `site/` | The finished site to publish — 6 languages × 17 pages (102 HTML files), site README · LICENSE, .nojekyll. Upload the contents of this folder to the root of a GitHub Pages repository |
+| `docs/제작_재현_매뉴얼.md` | Production manual: step-by-step procedure and checklists to rebuild the final edition exactly (Korean) |
+| `docs/모델채용위원회_컨셉_설정.md` | Design source: concept, characters, voice, episode plan, staging, data, translation method (Korean) |
+| `docs/작업지시_*.md` | Three work orders used to split episode production (Korean) |
+| `local/` | Full local code — reproduces every verdict number in one run (about a minute) + a copy of the concrete data |
+| `build.py · src/ · ep/ · assets/ · data/` | Site sources and builder (it really runs each episode's Colab code and embeds the output) |
+| `i18n/` | Translation machinery, catalogs for 6 languages, glossaries, per-language rules |
+| `qa/ · tools/ · test/` | Checks (pages, numbers, translations), data regeneration, browser ML engine tests |
+
+## How to use it
+
+**View or publish the site** — Open site/index.html in a browser. To publish, upload the contents of site/ (including .nojekyll) to the root of your repository.
+
+```
+cd site && python3 -m http.server 8000    # http://localhost:8000 — also tests automatic language switching
+```
+
+**Reproduce the numbers** — Get the verdict numbers of all 15 interviews without the pages. A final tally (12 hired · 3 on hold) is printed at the end.
+
+```
+pip install numpy pandas scikit-learn umap-learn
+python3 local/model_hiring_committee_full.py
+```
+
+**Rebuild from scratch** — Follow docs/제작_재현_매뉴얼.md. The core commands are:
+
+```
+python3 build.py              # pages for 6 languages in out/
+python3 qa/check_numbers.py   # reference numbers
+python3 qa/check_pages.py     # page checks (pip install playwright)
+python3 make_site.py          # rebuild site/
+```
 
 ## Episodes
 
@@ -73,22 +151,22 @@ Start with the full map in 5-0 Job Posting; every episode leads back to it. Cand
 
 | Ep. | File | Title | Team | Verdict |
 |---|---|---|---|---|
-| 5-0 | [en/5-0_job_posting.html](en/5-0_job_posting.html) | Job Posting — Decisions from Data | Job posting | On hold |
-| 5-1 | [en/5-1_knn.html](en/5-1_knn.html) | KNN | Starter Team | Hired |
-| 5-2 | [en/5-2_linear_regression.html](en/5-2_linear_regression.html) | Linear regression | Regression Team | On hold |
-| 5-3 | [en/5-3_polynomial_regularization.html](en/5-3_polynomial_regularization.html) | Polynomial regression and regularization | Regression Team | Hired |
-| 5-4 | [en/5-4_logistic_regression.html](en/5-4_logistic_regression.html) | Logistic regression | Classification Team | Hired |
-| 5-5 | [en/5-5_naive_bayes.html](en/5-5_naive_bayes.html) | Naive Bayes | Classification Team | On hold |
-| 5-6 | [en/5-6_decision_tree.html](en/5-6_decision_tree.html) | Decision tree | Dual-role Team | Hired |
-| 5-7 | [en/5-7_random_forest.html](en/5-7_random_forest.html) | Random forest | Dual-role Team | Hired |
-| 5-8 | [en/5-8_svm.html](en/5-8_svm.html) | SVM | Dual-role Team | Hired |
-| 5-9 | [en/5-9_gbm.html](en/5-9_gbm.html) | GBM | Dual-role Team | Hired |
-| 5-10 | [en/5-10_kmeans.html](en/5-10_kmeans.html) | K-Means | Clustering Team | Hired |
-| 5-11 | [en/5-11_hierarchical.html](en/5-11_hierarchical.html) | Hierarchical clustering | Clustering Team | Hired |
-| 5-12 | [en/5-12_dbscan.html](en/5-12_dbscan.html) | DBSCAN | Clustering Team | On hold |
-| 5-13 | [en/5-13_gmm.html](en/5-13_gmm.html) | GMM | Clustering Team | Hired |
-| 5-14 | [en/5-14_pca.html](en/5-14_pca.html) | PCA | Dimensionality Reduction Team | Hired |
-| 5-15 | [en/5-15_tsne_umap.html](en/5-15_tsne_umap.html) | T-SNE · UMAP | Dimensionality Reduction Team | Hired |
+| 5-0 | [site/en/5-0_job_posting.html](site/en/5-0_job_posting.html) | Job Posting — Decisions from Data | Job posting | On hold |
+| 5-1 | [site/en/5-1_knn.html](site/en/5-1_knn.html) | KNN | Starter Team | Hired |
+| 5-2 | [site/en/5-2_linear_regression.html](site/en/5-2_linear_regression.html) | Linear regression | Regression Team | On hold |
+| 5-3 | [site/en/5-3_polynomial_regularization.html](site/en/5-3_polynomial_regularization.html) | Polynomial regression and regularization | Regression Team | Hired |
+| 5-4 | [site/en/5-4_logistic_regression.html](site/en/5-4_logistic_regression.html) | Logistic regression | Classification Team | Hired |
+| 5-5 | [site/en/5-5_naive_bayes.html](site/en/5-5_naive_bayes.html) | Naive Bayes | Classification Team | On hold |
+| 5-6 | [site/en/5-6_decision_tree.html](site/en/5-6_decision_tree.html) | Decision tree | Dual-role Team | Hired |
+| 5-7 | [site/en/5-7_random_forest.html](site/en/5-7_random_forest.html) | Random forest | Dual-role Team | Hired |
+| 5-8 | [site/en/5-8_svm.html](site/en/5-8_svm.html) | SVM | Dual-role Team | Hired |
+| 5-9 | [site/en/5-9_gbm.html](site/en/5-9_gbm.html) | GBM | Dual-role Team | Hired |
+| 5-10 | [site/en/5-10_kmeans.html](site/en/5-10_kmeans.html) | K-Means | Clustering Team | Hired |
+| 5-11 | [site/en/5-11_hierarchical.html](site/en/5-11_hierarchical.html) | Hierarchical clustering | Clustering Team | Hired |
+| 5-12 | [site/en/5-12_dbscan.html](site/en/5-12_dbscan.html) | DBSCAN | Clustering Team | On hold |
+| 5-13 | [site/en/5-13_gmm.html](site/en/5-13_gmm.html) | GMM | Clustering Team | Hired |
+| 5-14 | [site/en/5-14_pca.html](site/en/5-14_pca.html) | PCA | Dimensionality Reduction Team | Hired |
+| 5-15 | [site/en/5-15_tsne_umap.html](site/en/5-15_tsne_umap.html) | T-SNE · UMAP | Dimensionality Reduction Team | Hired |
 
 ## In every episode
 
@@ -113,7 +191,46 @@ Each HTML file contains its images, data and scripts, so you just open it in a b
 
 - 作者：Ahn Sangsun（M-Robo 公司代表）
 - 许可：CC BY-NC 4.0（非商业使用，须注明出处） — [LICENSE.md](LICENSE.md)
-- 开始: [zh/index.html](zh/index.html)
+- 开始: [site/zh/index.html](site/zh/index.html)
+
+## 本资料包内容
+
+包含完成的网站、说明文档、复现代码，以及从零重建所需的全部源文件和工具。
+
+| 文件夹 · 文件 | 内容 |
+|---|---|
+| `site/` | 用于发布的完整网站 — 6 种语言 × 17 页（HTML 102 个）、网站用 README · LICENSE、.nojekyll。把此文件夹里的内容上传到 GitHub Pages 仓库根目录 |
+| `docs/제작_재현_매뉴얼.md` | 制作复现手册：按步骤以相同结果重建最终版的流程与检查清单（韩语） |
+| `docs/모델채용위원회_컨셉_설정.md` | 设计原稿：概念、人物、口吻、篇章结构、演出、数据、多语言方式（韩语） |
+| `docs/작업지시_*.md` | 分工制作篇章时使用的 3 份作业指示（韩语） |
+| `local/` | 本地完整代码 — 一次运行复现全部模型的判定数字（约 1 分钟）+ 混凝土数据副本 |
+| `build.py · src/ · ep/ · assets/ · data/` | 网站源文件与构建器（会实际运行每篇的 Colab 代码并嵌入结果） |
+| `i18n/` | 翻译机制、6 种语言的翻译目录、术语表、各语言规则 |
+| `qa/ · tools/ · test/` | 检查工具（页面 · 数字 · 翻译）、数据重新生成、浏览器 ML 引擎对照测试 |
+
+## 使用方法
+
+**查看 · 发布网站** — 用浏览器打开 site/index.html。发布时，把 site/ 里的内容（包括 .nojekyll）上传到仓库根目录即可。
+
+```
+cd site && python3 -m http.server 8000    # http://localhost:8000 — 可一并确认语言自动切换
+```
+
+**复现判定数字** — 不打开各篇页面，直接重新得到 15 位应聘者的判定数字。最后会输出汇总表（录用 12 · 待定 3）。
+
+```
+pip install numpy pandas scikit-learn umap-learn
+python3 local/model_hiring_committee_full.py
+```
+
+**从零重建** — 按照 docs/제작_재현_매뉴얼.md 的步骤进行。核心命令如下：
+
+```
+python3 build.py              # 在 out/ 生成 6 种语言页面
+python3 qa/check_numbers.py   # 确认基准数字
+python3 qa/check_pages.py     # 页面检查（pip install playwright）
+python3 make_site.py          # 重新生成 site/
+```
 
 ## 篇章目录
 
@@ -121,22 +238,22 @@ Each HTML file contains its images, data and scripts, so you just open it in a b
 
 | 篇 | 文件 | 标题 | 小组 | 判定 |
 |---|---|---|---|---|
-| 5-0 | [zh/5-0_job_posting.html](zh/5-0_job_posting.html) | 招聘启事 — 用数据做判断 | 招聘启事 | 待定 |
-| 5-1 | [zh/5-1_knn.html](zh/5-1_knn.html) | KNN | 入门组 | 录用 |
-| 5-2 | [zh/5-2_linear_regression.html](zh/5-2_linear_regression.html) | 线性回归 | 回归组 | 待定 |
-| 5-3 | [zh/5-3_polynomial_regularization.html](zh/5-3_polynomial_regularization.html) | 多项式回归与正则化 | 回归组 | 录用 |
-| 5-4 | [zh/5-4_logistic_regression.html](zh/5-4_logistic_regression.html) | 逻辑回归 | 分类组 | 录用 |
-| 5-5 | [zh/5-5_naive_bayes.html](zh/5-5_naive_bayes.html) | 朴素贝叶斯 | 分类组 | 待定 |
-| 5-6 | [zh/5-6_decision_tree.html](zh/5-6_decision_tree.html) | 决策树 | 两用组 | 录用 |
-| 5-7 | [zh/5-7_random_forest.html](zh/5-7_random_forest.html) | 随机森林 | 两用组 | 录用 |
-| 5-8 | [zh/5-8_svm.html](zh/5-8_svm.html) | SVM | 两用组 | 录用 |
-| 5-9 | [zh/5-9_gbm.html](zh/5-9_gbm.html) | GBM | 两用组 | 录用 |
-| 5-10 | [zh/5-10_kmeans.html](zh/5-10_kmeans.html) | K-Means | 聚类组 | 录用 |
-| 5-11 | [zh/5-11_hierarchical.html](zh/5-11_hierarchical.html) | 层次聚类 | 聚类组 | 录用 |
-| 5-12 | [zh/5-12_dbscan.html](zh/5-12_dbscan.html) | DBSCAN | 聚类组 | 待定 |
-| 5-13 | [zh/5-13_gmm.html](zh/5-13_gmm.html) | GMM | 聚类组 | 录用 |
-| 5-14 | [zh/5-14_pca.html](zh/5-14_pca.html) | PCA | 降维组 | 录用 |
-| 5-15 | [zh/5-15_tsne_umap.html](zh/5-15_tsne_umap.html) | T-SNE · UMAP | 降维组 | 录用 |
+| 5-0 | [site/zh/5-0_job_posting.html](site/zh/5-0_job_posting.html) | 招聘启事 — 用数据做判断 | 招聘启事 | 待定 |
+| 5-1 | [site/zh/5-1_knn.html](site/zh/5-1_knn.html) | KNN | 入门组 | 录用 |
+| 5-2 | [site/zh/5-2_linear_regression.html](site/zh/5-2_linear_regression.html) | 线性回归 | 回归组 | 待定 |
+| 5-3 | [site/zh/5-3_polynomial_regularization.html](site/zh/5-3_polynomial_regularization.html) | 多项式回归与正则化 | 回归组 | 录用 |
+| 5-4 | [site/zh/5-4_logistic_regression.html](site/zh/5-4_logistic_regression.html) | 逻辑回归 | 分类组 | 录用 |
+| 5-5 | [site/zh/5-5_naive_bayes.html](site/zh/5-5_naive_bayes.html) | 朴素贝叶斯 | 分类组 | 待定 |
+| 5-6 | [site/zh/5-6_decision_tree.html](site/zh/5-6_decision_tree.html) | 决策树 | 两用组 | 录用 |
+| 5-7 | [site/zh/5-7_random_forest.html](site/zh/5-7_random_forest.html) | 随机森林 | 两用组 | 录用 |
+| 5-8 | [site/zh/5-8_svm.html](site/zh/5-8_svm.html) | SVM | 两用组 | 录用 |
+| 5-9 | [site/zh/5-9_gbm.html](site/zh/5-9_gbm.html) | GBM | 两用组 | 录用 |
+| 5-10 | [site/zh/5-10_kmeans.html](site/zh/5-10_kmeans.html) | K-Means | 聚类组 | 录用 |
+| 5-11 | [site/zh/5-11_hierarchical.html](site/zh/5-11_hierarchical.html) | 层次聚类 | 聚类组 | 录用 |
+| 5-12 | [site/zh/5-12_dbscan.html](site/zh/5-12_dbscan.html) | DBSCAN | 聚类组 | 待定 |
+| 5-13 | [site/zh/5-13_gmm.html](site/zh/5-13_gmm.html) | GMM | 聚类组 | 录用 |
+| 5-14 | [site/zh/5-14_pca.html](site/zh/5-14_pca.html) | PCA | 降维组 | 录用 |
+| 5-15 | [site/zh/5-15_tsne_umap.html](site/zh/5-15_tsne_umap.html) | T-SNE · UMAP | 降维组 | 录用 |
 
 ## 每篇包含
 
@@ -161,7 +278,46 @@ Each HTML file contains its images, data and scripts, so you just open it in a b
 
 - 著者：アン・サンソン（株式会社 M-Robo 代表）
 - ライセンス：CC BY-NC 4.0（非営利利用、出典表示必須） — [LICENSE.md](LICENSE.md)
-- スタート: [ja/index.html](ja/index.html)
+- スタート: [site/ja/index.html](site/ja/index.html)
+
+## このパッケージの中身
+
+完成したサイト、説明書、再現コード、そしてゼロから作り直すためのソースとツールがすべて入っています。
+
+| フォルダ · ファイル | 内容 |
+|---|---|
+| `site/` | 公開用の完成サイト — 6言語 × 17ページ（HTML 102個）、サイト用 README · LICENSE、.nojekyll。このフォルダの中身を GitHub Pages リポジトリの最上位に置きます |
+| `docs/제작_재현_매뉴얼.md` | 制作再現マニュアル：最終版を同じ結果で作り直す手順とチェックリスト（韓国語） |
+| `docs/모델채용위원회_컨셉_설정.md` | 設計の原本：コンセプト、登場人物、口調、編の構成、演出、データ、多言語の方式（韓国語） |
+| `docs/작업지시_*.md` | 編の制作を分担したときの作業指示書 3種（韓国語） |
+| `local/` | ローカル完全版コード — 全モデルの判定数値を一度に再現（約1分）＋ コンクリートデータの写し |
+| `build.py · src/ · ep/ · assets/ · data/` | サイトのソースとビルダー（各編の Colab コードを実際に実行して結果を載せる） |
+| `i18n/` | 翻訳の仕組み、6言語の翻訳カタログ、用語集、言語別ルール |
+| `qa/ · tools/ · test/` | 点検ツール（画面 · 数値 · 翻訳）、データ再生成、ブラウザ ML エンジンの照合テスト |
+
+## 使い方
+
+**サイトを見る · 公開する** — site/index.html をブラウザで開きます。公開は site/ の中身（.nojekyll を含む）をリポジトリの最上位に置くだけです。
+
+```
+cd site && python3 -m http.server 8000    # http://localhost:8000 — 言語の自動切り替えも確認できる
+```
+
+**判定数値の再現** — 各編のページなしで、15名の面接の判定数値だけを得ます。最後に集計表（採用 12 · 保留 3）が出ます。
+
+```
+pip install numpy pandas scikit-learn umap-learn
+python3 local/model_hiring_committee_full.py
+```
+
+**ゼロから作り直す** — docs/제작_재현_매뉴얼.md の手順に従います。主なコマンドは次のとおりです。
+
+```
+python3 build.py              # out/ に6言語のページ
+python3 qa/check_numbers.py   # 基準数値の確認
+python3 qa/check_pages.py     # 画面点検（pip install playwright）
+python3 make_site.py          # site/ を作り直す
+```
 
 ## 編の一覧
 
@@ -169,22 +325,22 @@ Each HTML file contains its images, data and scripts, so you just open it in a b
 
 | 編 | ファイル | タイトル | チーム | 判定 |
 |---|---|---|---|---|
-| 5-0 | [ja/5-0_job_posting.html](ja/5-0_job_posting.html) | 求人票 — 判断をデータで | 求人票 | 保留 |
-| 5-1 | [ja/5-1_knn.html](ja/5-1_knn.html) | KNN | 入門チーム | 採用 |
-| 5-2 | [ja/5-2_linear_regression.html](ja/5-2_linear_regression.html) | 線形回帰 | 回帰チーム | 保留 |
-| 5-3 | [ja/5-3_polynomial_regularization.html](ja/5-3_polynomial_regularization.html) | 多項式回帰と正則化 | 回帰チーム | 採用 |
-| 5-4 | [ja/5-4_logistic_regression.html](ja/5-4_logistic_regression.html) | ロジスティック回帰 | 分類チーム | 採用 |
-| 5-5 | [ja/5-5_naive_bayes.html](ja/5-5_naive_bayes.html) | ナイーブベイズ | 分類チーム | 保留 |
-| 5-6 | [ja/5-6_decision_tree.html](ja/5-6_decision_tree.html) | 決定木 | 兼用チーム | 採用 |
-| 5-7 | [ja/5-7_random_forest.html](ja/5-7_random_forest.html) | ランダムフォレスト | 兼用チーム | 採用 |
-| 5-8 | [ja/5-8_svm.html](ja/5-8_svm.html) | SVM | 兼用チーム | 採用 |
-| 5-9 | [ja/5-9_gbm.html](ja/5-9_gbm.html) | GBM | 兼用チーム | 採用 |
-| 5-10 | [ja/5-10_kmeans.html](ja/5-10_kmeans.html) | K-Means | クラスタリングチーム | 採用 |
-| 5-11 | [ja/5-11_hierarchical.html](ja/5-11_hierarchical.html) | 階層的クラスタリング | クラスタリングチーム | 採用 |
-| 5-12 | [ja/5-12_dbscan.html](ja/5-12_dbscan.html) | DBSCAN | クラスタリングチーム | 保留 |
-| 5-13 | [ja/5-13_gmm.html](ja/5-13_gmm.html) | GMM | クラスタリングチーム | 採用 |
-| 5-14 | [ja/5-14_pca.html](ja/5-14_pca.html) | PCA | 次元削減チーム | 採用 |
-| 5-15 | [ja/5-15_tsne_umap.html](ja/5-15_tsne_umap.html) | T-SNE · UMAP | 次元削減チーム | 採用 |
+| 5-0 | [site/ja/5-0_job_posting.html](site/ja/5-0_job_posting.html) | 求人票 — 判断をデータで | 求人票 | 保留 |
+| 5-1 | [site/ja/5-1_knn.html](site/ja/5-1_knn.html) | KNN | 入門チーム | 採用 |
+| 5-2 | [site/ja/5-2_linear_regression.html](site/ja/5-2_linear_regression.html) | 線形回帰 | 回帰チーム | 保留 |
+| 5-3 | [site/ja/5-3_polynomial_regularization.html](site/ja/5-3_polynomial_regularization.html) | 多項式回帰と正則化 | 回帰チーム | 採用 |
+| 5-4 | [site/ja/5-4_logistic_regression.html](site/ja/5-4_logistic_regression.html) | ロジスティック回帰 | 分類チーム | 採用 |
+| 5-5 | [site/ja/5-5_naive_bayes.html](site/ja/5-5_naive_bayes.html) | ナイーブベイズ | 分類チーム | 保留 |
+| 5-6 | [site/ja/5-6_decision_tree.html](site/ja/5-6_decision_tree.html) | 決定木 | 兼用チーム | 採用 |
+| 5-7 | [site/ja/5-7_random_forest.html](site/ja/5-7_random_forest.html) | ランダムフォレスト | 兼用チーム | 採用 |
+| 5-8 | [site/ja/5-8_svm.html](site/ja/5-8_svm.html) | SVM | 兼用チーム | 採用 |
+| 5-9 | [site/ja/5-9_gbm.html](site/ja/5-9_gbm.html) | GBM | 兼用チーム | 採用 |
+| 5-10 | [site/ja/5-10_kmeans.html](site/ja/5-10_kmeans.html) | K-Means | クラスタリングチーム | 採用 |
+| 5-11 | [site/ja/5-11_hierarchical.html](site/ja/5-11_hierarchical.html) | 階層的クラスタリング | クラスタリングチーム | 採用 |
+| 5-12 | [site/ja/5-12_dbscan.html](site/ja/5-12_dbscan.html) | DBSCAN | クラスタリングチーム | 保留 |
+| 5-13 | [site/ja/5-13_gmm.html](site/ja/5-13_gmm.html) | GMM | クラスタリングチーム | 採用 |
+| 5-14 | [site/ja/5-14_pca.html](site/ja/5-14_pca.html) | PCA | 次元削減チーム | 採用 |
+| 5-15 | [site/ja/5-15_tsne_umap.html](site/ja/5-15_tsne_umap.html) | T-SNE · UMAP | 次元削減チーム | 採用 |
 
 ## 各編の内容
 
@@ -209,7 +365,46 @@ Beton zavodi sifat boʻyicha qarorlarni topshirish uchun yangi xodim qidirmoqda.
 
 - Muallif: Ahn Sangsun (M-Robo kompaniyasi rahbari)
 - Litsenziya: CC BY-NC 4.0 (notijorat foydalanish, manbani koʻrsatish majburiy) — [LICENSE.md](LICENSE.md)
-- Boshlash: [uz/index.html](uz/index.html)
+- Boshlash: [site/uz/index.html](site/uz/index.html)
+
+## Toʻplam tarkibi
+
+Tayyor sayt, qoʻllanmalar, qayta hosil qilish kodi hamda saytni noldan qayta qurish uchun barcha manbalar va vositalar.
+
+| Papka · fayl | Tarkibi |
+|---|---|
+| `site/` | Eʼlon qilish uchun tayyor sayt — 6 til × 17 sahifa (102 ta HTML), sayt uchun README · LICENSE, .nojekyll. Shu papka ichidagilarni GitHub Pages omborining ildiziga yuklang |
+| `docs/제작_재현_매뉴얼.md` | Ishlab chiqarish qoʻllanmasi: yakuniy nashrni aynan shunday qayta qurish bosqichlari va nazorat roʻyxatlari (koreyscha) |
+| `docs/모델채용위원회_컨셉_설정.md` | Loyiha asosi: konsepsiya, qahramonlar, nutq uslubi, boblar tuzilishi, sahnalashtirish, maʼlumotlar, koʻp tillilik (koreyscha) |
+| `docs/작업지시_*.md` | Boblarni boʻlib ishlashda ishlatilgan 3 ta ish topshirigʻi (koreyscha) |
+| `local/` | Toʻliq lokal kod — barcha modellarning qaror sonlarini bir marta ishga tushirishda qayta hosil qiladi (taxminan 1 daqiqa) + beton maʼlumotlari nusxasi |
+| `build.py · src/ · ep/ · assets/ · data/` | Sayt manbalari va quruvchi (har bir bobning Colab kodini haqiqatan ishga tushirib, natijani joylaydi) |
+| `i18n/` | Tarjima mexanizmi, 6 til uchun tarjima kataloglari, lugʻatlar, tillar boʻyicha qoidalar |
+| `qa/ · tools/ · test/` | Tekshiruv vositalari (sahifalar · sonlar · tarjimalar), maʼlumotlarni qayta yaratish, brauzer ML dvigatelini solishtirish testlari |
+
+## Qanday foydalaniladi
+
+**Saytni koʻrish · eʼlon qilish** — site/index.html faylini brauzerda oching. Eʼlon qilish uchun site/ ichidagilarni (.nojekyll bilan) omboringiz ildiziga yuklang.
+
+```
+cd site && python3 -m http.server 8000    # http://localhost:8000 — tilni avtomatik almashtirishni ham tekshiradi
+```
+
+**Sonlarni qayta hosil qilish** — Sahifalarsiz 15 ta suhbatning qaror sonlarini oling. Oxirida yakuniy jadval chiqadi (12 ta ishga olindi · 3 ta kutishda).
+
+```
+pip install numpy pandas scikit-learn umap-learn
+python3 local/model_hiring_committee_full.py
+```
+
+**Noldan qayta qurish** — docs/제작_재현_매뉴얼.md dagi bosqichlarga amal qiling. Asosiy buyruqlar:
+
+```
+python3 build.py              # out/ da 6 tildagi sahifalar
+python3 qa/check_numbers.py   # tayanch sonlarni tekshirish
+python3 qa/check_pages.py     # sahifalarni tekshirish (pip install playwright)
+python3 make_site.py          # site/ ni qayta yaratish
+```
 
 ## Boblar
 
@@ -217,22 +412,22 @@ Avval 5-0 vakansiya eʼlonida umumiy xaritani koʻring; har bir bob oxirida yana
 
 | Bob | Fayl | Sarlavha | Jamoa | Qaror |
 |---|---|---|---|---|
-| 5-0 | [uz/5-0_job_posting.html](uz/5-0_job_posting.html) | Vakansiya eʼloni — qarorlar maʼlumotlardan | Vakansiya eʼloni | Kutishda |
-| 5-1 | [uz/5-1_knn.html](uz/5-1_knn.html) | KNN | Boshlangʻich jamoa | Ishga olindi |
-| 5-2 | [uz/5-2_linear_regression.html](uz/5-2_linear_regression.html) | Chiziqli regressiya | Regressiya jamoasi | Kutishda |
-| 5-3 | [uz/5-3_polynomial_regularization.html](uz/5-3_polynomial_regularization.html) | Polinomial regressiya va regulyarizatsiya | Regressiya jamoasi | Ishga olindi |
-| 5-4 | [uz/5-4_logistic_regression.html](uz/5-4_logistic_regression.html) | Logistik regressiya | Klassifikatsiya jamoasi | Ishga olindi |
-| 5-5 | [uz/5-5_naive_bayes.html](uz/5-5_naive_bayes.html) | Naiv Bayes | Klassifikatsiya jamoasi | Kutishda |
-| 5-6 | [uz/5-6_decision_tree.html](uz/5-6_decision_tree.html) | Qaror daraxti | Ikki vazifali jamoa | Ishga olindi |
-| 5-7 | [uz/5-7_random_forest.html](uz/5-7_random_forest.html) | Tasodifiy oʻrmon | Ikki vazifali jamoa | Ishga olindi |
-| 5-8 | [uz/5-8_svm.html](uz/5-8_svm.html) | SVM | Ikki vazifali jamoa | Ishga olindi |
-| 5-9 | [uz/5-9_gbm.html](uz/5-9_gbm.html) | GBM | Ikki vazifali jamoa | Ishga olindi |
-| 5-10 | [uz/5-10_kmeans.html](uz/5-10_kmeans.html) | K-Means | Klasterlash jamoasi | Ishga olindi |
-| 5-11 | [uz/5-11_hierarchical.html](uz/5-11_hierarchical.html) | Ierarxik klasterlash | Klasterlash jamoasi | Ishga olindi |
-| 5-12 | [uz/5-12_dbscan.html](uz/5-12_dbscan.html) | DBSCAN | Klasterlash jamoasi | Kutishda |
-| 5-13 | [uz/5-13_gmm.html](uz/5-13_gmm.html) | GMM | Klasterlash jamoasi | Ishga olindi |
-| 5-14 | [uz/5-14_pca.html](uz/5-14_pca.html) | PCA | Oʻlchamni kamaytirish jamoasi | Ishga olindi |
-| 5-15 | [uz/5-15_tsne_umap.html](uz/5-15_tsne_umap.html) | T-SNE · UMAP | Oʻlchamni kamaytirish jamoasi | Ishga olindi |
+| 5-0 | [site/uz/5-0_job_posting.html](site/uz/5-0_job_posting.html) | Vakansiya eʼloni — qarorlar maʼlumotlardan | Vakansiya eʼloni | Kutishda |
+| 5-1 | [site/uz/5-1_knn.html](site/uz/5-1_knn.html) | KNN | Boshlangʻich jamoa | Ishga olindi |
+| 5-2 | [site/uz/5-2_linear_regression.html](site/uz/5-2_linear_regression.html) | Chiziqli regressiya | Regressiya jamoasi | Kutishda |
+| 5-3 | [site/uz/5-3_polynomial_regularization.html](site/uz/5-3_polynomial_regularization.html) | Polinomial regressiya va regulyarizatsiya | Regressiya jamoasi | Ishga olindi |
+| 5-4 | [site/uz/5-4_logistic_regression.html](site/uz/5-4_logistic_regression.html) | Logistik regressiya | Klassifikatsiya jamoasi | Ishga olindi |
+| 5-5 | [site/uz/5-5_naive_bayes.html](site/uz/5-5_naive_bayes.html) | Naiv Bayes | Klassifikatsiya jamoasi | Kutishda |
+| 5-6 | [site/uz/5-6_decision_tree.html](site/uz/5-6_decision_tree.html) | Qaror daraxti | Ikki vazifali jamoa | Ishga olindi |
+| 5-7 | [site/uz/5-7_random_forest.html](site/uz/5-7_random_forest.html) | Tasodifiy oʻrmon | Ikki vazifali jamoa | Ishga olindi |
+| 5-8 | [site/uz/5-8_svm.html](site/uz/5-8_svm.html) | SVM | Ikki vazifali jamoa | Ishga olindi |
+| 5-9 | [site/uz/5-9_gbm.html](site/uz/5-9_gbm.html) | GBM | Ikki vazifali jamoa | Ishga olindi |
+| 5-10 | [site/uz/5-10_kmeans.html](site/uz/5-10_kmeans.html) | K-Means | Klasterlash jamoasi | Ishga olindi |
+| 5-11 | [site/uz/5-11_hierarchical.html](site/uz/5-11_hierarchical.html) | Ierarxik klasterlash | Klasterlash jamoasi | Ishga olindi |
+| 5-12 | [site/uz/5-12_dbscan.html](site/uz/5-12_dbscan.html) | DBSCAN | Klasterlash jamoasi | Kutishda |
+| 5-13 | [site/uz/5-13_gmm.html](site/uz/5-13_gmm.html) | GMM | Klasterlash jamoasi | Ishga olindi |
+| 5-14 | [site/uz/5-14_pca.html](site/uz/5-14_pca.html) | PCA | Oʻlchamni kamaytirish jamoasi | Ishga olindi |
+| 5-15 | [site/uz/5-15_tsne_umap.html](site/uz/5-15_tsne_umap.html) | T-SNE · UMAP | Oʻlchamni kamaytirish jamoasi | Ishga olindi |
 
 ## Har bir bobda
 
@@ -257,7 +452,46 @@ Har bir HTML fayl rasmlar, maʼlumotlar va skriptlarni oʻz ichida saqlaydi — 
 
 - Автор: Ан Сансон (генеральный директор M-Robo Co., Ltd.)
 - Лицензия: CC BY-NC 4.0 (некоммерческое использование, обязательное указание авторства) — [LICENSE.md](LICENSE.md)
-- Начать: [ru/index.html](ru/index.html)
+- Начать: [site/ru/index.html](site/ru/index.html)
+
+## Что в этом пакете
+
+Готовый сайт, документация, код для воспроизведения и все исходные файлы и инструменты, нужные, чтобы собрать всё заново.
+
+| Папка · файл | Содержимое |
+|---|---|
+| `site/` | Готовый сайт для публикации — 6 языков × 17 страниц (102 HTML-файла), README · LICENSE сайта, .nojekyll. Загрузите содержимое этой папки в корень репозитория GitHub Pages |
+| `docs/제작_재현_매뉴얼.md` | Руководство по производству: пошаговая процедура и чек-листы, чтобы собрать финальную версию с тем же результатом (на корейском) |
+| `docs/모델채용위원회_컨셉_설정.md` | Исходник замысла: концепция, персонажи, манера речи, структура глав, постановка, данные, многоязычность (на корейском) |
+| `docs/작업지시_*.md` | Три рабочих задания, по которым главы делались параллельно (на корейском) |
+| `local/` | Полный локальный код — за один запуск воспроизводит все числа решений (около минуты) + копия данных о бетоне |
+| `build.py · src/ · ep/ · assets/ · data/` | Исходники сайта и сборщик (он действительно запускает код Colab каждой главы и встраивает результат) |
+| `i18n/` | Механизм перевода, каталоги переводов для 6 языков, глоссарии, правила для каждого языка |
+| `qa/ · tools/ · test/` | Проверки (страницы · числа · переводы), пересоздание данных, сверка браузерного ML-движка |
+
+## Как пользоваться
+
+**Посмотреть или опубликовать сайт** — Откройте site/index.html в браузере. Для публикации загрузите содержимое site/ (вместе с .nojekyll) в корень репозитория.
+
+```
+cd site && python3 -m http.server 8000    # http://localhost:8000 — заодно проверяется автоматический выбор языка
+```
+
+**Воспроизвести числа** — Получите числа решений всех 15 собеседований без страниц. В конце печатается итоговая таблица (принято 12 · отложено 3).
+
+```
+pip install numpy pandas scikit-learn umap-learn
+python3 local/model_hiring_committee_full.py
+```
+
+**Собрать заново с нуля** — Следуйте шагам docs/제작_재현_매뉴얼.md. Основные команды:
+
+```
+python3 build.py              # страницы на 6 языках в out/
+python3 qa/check_numbers.py   # проверка эталонных чисел
+python3 qa/check_pages.py     # проверка страниц (pip install playwright)
+python3 make_site.py          # пересобрать site/
+```
 
 ## Главы
 
@@ -265,22 +499,22 @@ Har bir HTML fayl rasmlar, maʼlumotlar va skriptlarni oʻz ichida saqlaydi — 
 
 | Глава | Файл | Название | Группа | Решение |
 |---|---|---|---|---|
-| 5-0 | [ru/5-0_job_posting.html](ru/5-0_job_posting.html) | Вакансия — решения на основе данных | Вакансия | Отложено |
-| 5-1 | [ru/5-1_knn.html](ru/5-1_knn.html) | KNN | Вводная группа | Принят |
-| 5-2 | [ru/5-2_linear_regression.html](ru/5-2_linear_regression.html) | Линейная регрессия | Группа регрессии | Отложено |
-| 5-3 | [ru/5-3_polynomial_regularization.html](ru/5-3_polynomial_regularization.html) | Полиномиальная регрессия и регуляризация | Группа регрессии | Принят |
-| 5-4 | [ru/5-4_logistic_regression.html](ru/5-4_logistic_regression.html) | Логистическая регрессия | Группа классификации | Принят |
-| 5-5 | [ru/5-5_naive_bayes.html](ru/5-5_naive_bayes.html) | Наивный Байес | Группа классификации | Отложено |
-| 5-6 | [ru/5-6_decision_tree.html](ru/5-6_decision_tree.html) | Дерево решений | Универсальная группа | Принят |
-| 5-7 | [ru/5-7_random_forest.html](ru/5-7_random_forest.html) | Случайный лес | Универсальная группа | Принят |
-| 5-8 | [ru/5-8_svm.html](ru/5-8_svm.html) | SVM | Универсальная группа | Принят |
-| 5-9 | [ru/5-9_gbm.html](ru/5-9_gbm.html) | GBM | Универсальная группа | Принят |
-| 5-10 | [ru/5-10_kmeans.html](ru/5-10_kmeans.html) | K-Means | Группа кластеризации | Принят |
-| 5-11 | [ru/5-11_hierarchical.html](ru/5-11_hierarchical.html) | Иерархическая кластеризация | Группа кластеризации | Принят |
-| 5-12 | [ru/5-12_dbscan.html](ru/5-12_dbscan.html) | DBSCAN | Группа кластеризации | Отложено |
-| 5-13 | [ru/5-13_gmm.html](ru/5-13_gmm.html) | GMM | Группа кластеризации | Принят |
-| 5-14 | [ru/5-14_pca.html](ru/5-14_pca.html) | PCA | Группа снижения размерности | Принят |
-| 5-15 | [ru/5-15_tsne_umap.html](ru/5-15_tsne_umap.html) | T-SNE · UMAP | Группа снижения размерности | Принят |
+| 5-0 | [site/ru/5-0_job_posting.html](site/ru/5-0_job_posting.html) | Вакансия — решения на основе данных | Вакансия | Отложено |
+| 5-1 | [site/ru/5-1_knn.html](site/ru/5-1_knn.html) | KNN | Вводная группа | Принят |
+| 5-2 | [site/ru/5-2_linear_regression.html](site/ru/5-2_linear_regression.html) | Линейная регрессия | Группа регрессии | Отложено |
+| 5-3 | [site/ru/5-3_polynomial_regularization.html](site/ru/5-3_polynomial_regularization.html) | Полиномиальная регрессия и регуляризация | Группа регрессии | Принят |
+| 5-4 | [site/ru/5-4_logistic_regression.html](site/ru/5-4_logistic_regression.html) | Логистическая регрессия | Группа классификации | Принят |
+| 5-5 | [site/ru/5-5_naive_bayes.html](site/ru/5-5_naive_bayes.html) | Наивный Байес | Группа классификации | Отложено |
+| 5-6 | [site/ru/5-6_decision_tree.html](site/ru/5-6_decision_tree.html) | Дерево решений | Универсальная группа | Принят |
+| 5-7 | [site/ru/5-7_random_forest.html](site/ru/5-7_random_forest.html) | Случайный лес | Универсальная группа | Принят |
+| 5-8 | [site/ru/5-8_svm.html](site/ru/5-8_svm.html) | SVM | Универсальная группа | Принят |
+| 5-9 | [site/ru/5-9_gbm.html](site/ru/5-9_gbm.html) | GBM | Универсальная группа | Принят |
+| 5-10 | [site/ru/5-10_kmeans.html](site/ru/5-10_kmeans.html) | K-Means | Группа кластеризации | Принят |
+| 5-11 | [site/ru/5-11_hierarchical.html](site/ru/5-11_hierarchical.html) | Иерархическая кластеризация | Группа кластеризации | Принят |
+| 5-12 | [site/ru/5-12_dbscan.html](site/ru/5-12_dbscan.html) | DBSCAN | Группа кластеризации | Отложено |
+| 5-13 | [site/ru/5-13_gmm.html](site/ru/5-13_gmm.html) | GMM | Группа кластеризации | Принят |
+| 5-14 | [site/ru/5-14_pca.html](site/ru/5-14_pca.html) | PCA | Группа снижения размерности | Принят |
+| 5-15 | [site/ru/5-15_tsne_umap.html](site/ru/5-15_tsne_umap.html) | T-SNE · UMAP | Группа снижения размерности | Принят |
 
 ## В каждой главе
 

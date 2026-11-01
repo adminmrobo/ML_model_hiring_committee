@@ -1,0 +1,25 @@
+# Oʻzbekcha (lotin) conventions (translate from Korean `ko`; the reviewed English in i18n/en/<same file>.json, same key, is a reference for meaning and fragment structure)
+
+- Script: Latin, modern orthography. Use ʻ (U+02BB) in oʻ, gʻ and ʼ (U+02BC) for tutuq belgisi (sunʼiy, maʼlumot). Never ASCII ' for these.
+- Series: Modellarni ishga olish qoʻmitasi. Hiring verdicts (verdict keys, English Hired/Rejected): **Ishga olindi / Kutishda / Rad etildi**.
+- Concrete test (35 MPa or more?), untagged 합격/불합격 (English Pass/Fail): **Oʻtdi / Oʻtmadi** (labels); in prose "talabga javob beradi / bermaydi". Chart '35MPa 합격선' = "35 MPa chegarasi".
+- 합격선 (hiring bar) = **ishga olish chegarasi**. 시험지 = **imtihon varaqasi** (held-out test set). 훈련 = oʻqitish. 채점 봉투 = **muhrlangan javoblar konverti**. 업무 점수 = **ish balli**.
+- Speaker labels inside `<span class="who">…</span>`:
+  - 위원장 박사 → Rais (Doktor) · 위원장 · 박사 → Rais · Doktor
+  - 인사 담당 조수 → Kadrlar yordamchisi · 인사 담당 · 조수 → Kadrlar · Yordamchi
+  - 실무 면접관 초파리 → Meva pashshasi (texnik suhbatdosh) · 실무 면접관 · 초파리 연구원 → Texnik suhbatdosh · Meva pashshasi
+  - 예산 담당 Money-Robo → Money-Robo (byudjet masʼuli) · 예산 담당 · Money-Robo → Byudjet · Money-Robo
+  - 기존 직원 · 매뉴얼 씨 → Amaldagi xodim · Manual janob · 지원자 · X → Nomzod · X
+  - Short comic names: 박사 → Doktor, 조수 → Yordamchi, 초파리 → Pashsha.
+- Teams: Boshlangʻich jamoa · Regressiya jamoasi · Klassifikatsiya jamoasi · Ikki vazifali jamoa · Klasterlash jamoasi · Oʻlchamni kamaytirish jamoasi. Nazoratli boʻlim / Nazoratsiz boʻlim.
+- Section refs: "03장" → "03-boʻlim", "B장" → "B-boʻlim". 00장 = Ariza, 1-sahifa.
+- Money: 0원 → 0 soʻm (metaphor for compute cost; keep the joke).
+- Mr. Manual = Manual janob, speaks like a regulation: "1-modda. … 2-modda. …".
+- Author: "Ahn Sangsun (M-Robo kompaniyasi rahbari)".
+- Style: plain, short textbook sentences (siz-form avoided in explanations; dialogue: Doktor polite "siz", Yordamchi brisk polite, Pashsha blunt "sen", Money-Robo casual, money-minded).
+- Uzbek is agglutinative: suffixes attach to numbers with a hyphen (28-kun, 5-boʻlim, 3-daraja). When a fragment follows a number, start it with the right suffix/word (e.g. " ta", "-kun", " marta"). Read ctx carefully; reshape neighbouring fragments if word order requires.
+- Counters: 장 → " ta rasm", 개 → " ta" (or ∅), 건 → " ta" (mixes: " ta aralashma"), 번 → " marta", 묶음 → " ta klaster", 일 → " kun".
+- Particle-only fragments: ∅ (single character ∅ = intentionally empty).
+- Technical terms: prefer glossary; widely used borrowings (regressiya, klasterlash, model, gradient) are fine.
+- AI prompts ("한국어 주석"): "oʻzbekcha izohlar".
+- Model names: KNN, chiziqli regressiya, polinomial regressiya, logistik regressiya, naiv Bayes, qaror daraxti, tasodifiy oʻrmon, SVM, GBM, K-Means, ierarxik klasterlash, DBSCAN, GMM, PCA, t-SNE · UMAP.

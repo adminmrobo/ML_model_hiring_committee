@@ -1,0 +1,24 @@
+{
+ "n": "5-13",
+ "file": "5-13_gmm.html",
+ "title": "GMM",
+ "data": "digits",
+ "desc": "겹친 종 모양으로 나눠 갖는다. 손글씨 숫자 1,797장을 정답 없이 정규분포 열 개의 섞임으로 묶는 지원자 GMM(가우시안 혼합 모델)의 면접. 지원서 1장(9칸 개요), 자기소개(하나의 종과 여러 종, 2축 EM 재생과 소속 확률), 정답 없는 실기 과제지와 64칸 → PCA 30축, AI 비서에게 코드 받기와 검증 체크리스트, 수습 기간(30축 EM 재생, 시작점 운, 공분산 모양과 BIC), 성과 평가(채점 봉투 ARI·NMI, 실루엣, 확률의 과신, 대표 한 장 업무 점수), 인사 카드(근무 조건, 새 글씨 그리기). 모델 채용 위원회 5-13.",
+ "toc": [
+  ["top", "면접실"],
+  ["overview", "00 지원서"],
+  ["m1", "01 자기소개"],
+  ["m2", "02 과제지"],
+  ["m3", "03 AI 비서"],
+  ["m4", "04 수습 기간"],
+  ["m5", "05 성과 평가"],
+  ["m6", "06 인사 카드"],
+  ["map", "배치도"],
+  ["code", "코드"],
+  ["prompt", "프롬프트"],
+  ["glossary-sec", "용어"],
+  ["teach", "교육자 TIP"]
+ ],
+ "sprites": ["doc_magic", "doc_scale", "doc_judge", "asst_ledger", "asst_spark", "asst_sigh", "fly_point", "fly_type", "fly_arms", "fly_coffee", "robo_calc", "robo_count", "robo_wow", "robo_happy", "robo_cry"],
+ "foot": "실기 과제지는 scikit-learn load_digits의 손글씨 숫자 1,797장(UCI Optical Recognition of Handwritten Digits의 테스트 세트, CC BY 4.0)이다. 정답(0~9)은 학습에 쓰지 않고 05장 채점과 면접 결과에서만 연다. 정답을 쓰지 않으므로 시험지를 떼지 않고 1,797장 전체로 학습한다. 군집팀 합격선은 매뉴얼 씨의 세 규칙(가운데 4칸 합 < 12, 잉크 합 > 300, 위쪽 절반 비율 > 0.5)으로 만든 8묶음의 ARI(0.108)다. 01·02·04·05·06장과 면접 결과의 PCA·EM·BIC·ARI·NMI·실루엣·업무 점수·새 글씨는 이 페이지가 브라우저에서 직접 계산한다(scikit-learn GaussianMixture와 같은 규칙: K-Means 묶음에서 시작, reg_covar 1e-6, tol 1e-3). 본 모델과 공분산 모양 비교, k = 8, 64칸 그대로의 시작 묶음은 scikit-learn이 GaussianMixture(random_state=0) 안에서 쓰는 K-Means(n_init=1) 결과를 Python으로 미리 계산해 넣었고, 브라우저는 그 시작점에서 EM을 돌려 scikit-learn과 같은 묶음·BIC(300,818)·반복 수(16)를 낸다. 04장 ②의 시작점 B~E, 01장 2축 그림, 05장 2축 확률 분포는 이 브라우저의 k-means++ 시작이라 scikit-learn의 다른 random_state와는 숫자가 다르다. 미리 계산한 값은 위 시작 묶음, 04장 ③의 BIC 곡선(공분산 4가지 × k = 2~20, random_state=0), 05장 군집팀 비교의 5-10 K-Means(0.666)·5-11 ward(0.794)뿐이며 모두 Python(scikit-learn 1.9.1)으로 계산해 A장 7·11번 칸이 같은 값을 낸다. 05장 '애매한 글씨', '가능도가 낮은 글씨'와 대표 이름은 채점 봉투를 연 뒤의 분석이다. 03장의 'AI가 낸 코드'는 흔한 실수를 모아 일부러 만든 예시이며 특정 AI 서비스의 실제 답이 아니다."
+}

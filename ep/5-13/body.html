@@ -1,0 +1,543 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-13 면접<span class="dept">비지도 본부 › 군집팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-13 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 N 기호가 그려진 지원자 GMM의 사원증이 떠 있고, 그 옆에서 색이 다른 종 모양 곡선 세 개가 겹쳐 출렁이고 점선으로 그 합이 그려진다. 박사가 저울을 들고 '종이 몇 개일까요?'라고 묻고, 조수가 장부를 들고 '확률로 나눠 적어요'라고 말한다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>GMM — 겹친 종 모양으로 나눠 갖는다</h1>
+        <p class="lede" style="margin-top:14px">공장 일지의 손글씨 숫자 1,797장에 이름표가 없다. 오늘의 지원자는 글씨들이 <b>종 모양 열 개가 섞인 데서</b> 나왔다고 본다. 종마다 자리(평균)와 모양(공분산), 몫(비중)이 다르다. 글씨 한 장은 어느 한 종에 딱 넣지 않고 <b>"종 3일 확률 0.7, 종 8일 확률 0.3"</b>처럼 확률로 나눠 갖는다.</p>
+        <p class="lede">GMM(Gaussian Mixture Model, 가우시안 혼합 모델)은 5-10 K-Means의 <b>확률 버전</b>이다. 중심만 있는 K-Means와 달리 종의 <b>기울기와 퍼짐</b>까지 배우고, 그 종 모양에서 <b>새 글씨를 그릴</b> 수도 있다. 대신 외울 숫자가 많아서 64칸을 먼저 30축으로 줄인 뒤에 일한다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#emCard">01 EM 재생</a><span class="arr">→</span><a href="#covCard">04 공분산과 BIC</a><span class="arr">→</span><a href="#iv13">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>종 10개</b><span>섞을 정규분포 수 (묶음 수 k)</span></div>
+            <div><b>30축</b><span>PCA로 64칸을 줄인 공간 (분산 95.9%)</span></div>
+            <div><b>full</b><span>공분산 모양. 종마다 마음대로 기운 타원</span></div>
+            <div><b>ARI 0.108</b><span>넘어야 할 합격선 (매뉴얼 씨 8묶음)</span></div>
+          </div>
+          <p class="foot">실기 과제는 손글씨 숫자 1,797장(8×8 픽셀)을 정답 없이 묶기다. 정답(0~9)은 채점 봉투에 넣어 05장에서만 연다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="scale" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>군집팀 네 번째 지원자예요. 오늘은 저울이 바빠요. 종을 몇 개 둘지, 종 모양을 얼마나 자유롭게 둘지를 "잘 맞나"와 "얼마나 복잡한가"로 저울질해야 하거든요. 합격선은 매뉴얼 씨의 ARI 0.108입니다.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="ledger" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>이번 지원자는 글씨마다 "어느 묶음일 확률"을 열 칸씩 적어 낸대요. 장부가 1,797줄 × 10칸이에요. 합이 늘 1인지부터 확인하겠습니다.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="point" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>확률로 나눠 갖는다고? 1인지 7인지 애매한 글씨에 "반반"이라고 하면 그게 판단이야, 회피야? 그리고 그 확률, 정말 믿어도 되는지 볼 거야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="calc" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>K-Means는 중심 열 개만 외우면 됐잖아. 이 친구는 종마다 타원 모양까지 외운다며? 64칸이면 공분산 숫자만 2천 개가 넘어. 장부 두께부터 재 보자.</div></div>
+      <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>저는 세 가지만 봅니다. 가운데가 비었나, 잉크가 많나, 위가 무거운가. 그래서 여덟 묶음이 나옵니다. 애매한 글씨도 조항대로 한 묶음에 넣습니다. 반반은 규정에 없습니다.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">N</span><div class="bub"><span class="who">지원자 · GMM</span>안녕하십니까. 가우시안 혼합 모델입니다. 글씨 1,797장을 종 모양 열 개의 섞임으로 설명하겠습니다. 애매한 글씨는 애매하다고 적고, 어느 종에도 잘 맞지 않는 글씨는 따로 알려 드리겠습니다.</div></div>
+    </div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-10_kmeans.html">5-10 K-Means</a> — 가까운 중심에 배정 → 평균으로 이동. 오늘은 이것의 확률 버전이다 · <a href="5-5_naive_bayes.html">5-5 나이브 베이즈</a> — 종 모양(정규분포)과 "특징끼리 독립". 오늘의 diag 공분산과 같다</span>
+      <span>뒤에 이어지는 편: <a href="5-14_pca.html">5-14 PCA</a> — 오늘 지원자가 먼저 쓰는 "30축으로 줄이기"를 맡는다</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-8_unsupervised_nine.html" target="_blank" rel="noopener">패밀리 조직도 4-8 비지도 아홉</a> · <a href="https://adminmrobo.github.io/AI_image_classification/4-2_cat_human.html" target="_blank" rel="noopener">이미지 분류 4-2 고양이 vs 사람</a>(사진은 숫자 행렬)</span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — GMM을 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="GMM 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-13 · 지원서<br>지원자 번호 APP-13<br>지원 부서 비지도 본부 › 군집팀</div>
+      <div class="sh-title">Gaussian Mixture Model<small>GMM · 가우시안 혼합 모델 · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">N</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m1">
+        <h3>1. 종 모양 하나 <small>Gaussian</small></h3>
+        <p class="d">평균에서 가장 높고 멀어질수록 낮아진다. 2차원이면 타원 언덕이다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="왼쪽: 종 모양 곡선 하나. 가운데에 평균 μ 세로선, 양옆에 퍼짐 σ 화살표. 오른쪽: 같은 종을 위에서 본 기운 타원 세 겹(등고선)과 가운데 점 μ">
+          <defs><marker id="n1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="n1b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <path d="M12,118 L150,118" stroke="#111" stroke-width="2" marker-end="url(#n1a)"/>
+          <path d="M16,116 C40,116 50,112 60,96 C70,74 74,30 82,30 C90,30 94,74 104,96 C114,112 124,116 146,116" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.6"/>
+          <path d="M82,30 L82,118" stroke="#1f6fe5" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <path d="M82,84 L64,84" stroke="#1f6fe5" stroke-width="2" marker-end="url(#n1b)"/><path d="M82,84 L100,84" stroke="#1f6fe5" stroke-width="2" marker-end="url(#n1b)"/>
+          <text x="82" y="138" text-anchor="middle" font-size="15" font-style="italic" font-family="serif">μ</text><text x="110" y="80" font-size="14" font-style="italic" font-family="serif" fill="#1f6fe5">σ</text>
+          <g transform="translate(228,72) rotate(-30)"><ellipse rx="58" ry="26" fill="none" stroke="#1f6fe5" stroke-width="1.6"/><ellipse rx="38" ry="17" fill="none" stroke="#1f6fe5" stroke-width="2"/><ellipse rx="18" ry="8" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.4"/></g>
+          <circle cx="228" cy="72" r="3.5" fill="#111"/><text x="228" y="138" text-anchor="middle" font-size="12">위에서 본 모양</text>
+        </svg>
+        <div class="fbox"><span class="mth">N(x | μ, Σ)</span><br><span style="font-size:13px">μ 평균(자리) · Σ 공분산(퍼짐과 기울기)</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>2. 여러 종 섞기 <small>Mixture</small></h3>
+        <p class="d">종 k개를 비중 π만큼 섞는다. 봉우리가 여럿인 데이터도 덮는다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="검은 막대그래프(데이터)의 봉우리가 셋이다. 그 위에 크기가 다른 파란 종 모양 셋이 겹쳐 있고, 굵은 검은 점선이 세 종을 더한 합이 되어 막대그래프의 윤곽을 따라간다. 각 종 아래 π1, π2, π3이 적혀 있다">
+          <path d="M12,118 L292,118" stroke="#111" stroke-width="2" marker-end="url(#n1a)"/>
+          <g fill="#c9ccd3"><rect x="30" y="100" width="12" height="18"/><rect x="44" y="76" width="12" height="42"/><rect x="58" y="62" width="12" height="56"/><rect x="72" y="80" width="12" height="38"/><rect x="86" y="104" width="12" height="14"/><rect x="114" y="98" width="12" height="20"/><rect x="128" y="56" width="12" height="62"/><rect x="142" y="36" width="12" height="82"/><rect x="156" y="52" width="12" height="66"/><rect x="170" y="94" width="12" height="24"/><rect x="198" y="96" width="12" height="22"/><rect x="212" y="78" width="12" height="40"/><rect x="226" y="72" width="12" height="46"/><rect x="240" y="90" width="12" height="28"/><rect x="254" y="108" width="12" height="10"/></g>
+          <path d="M22,118 C40,116 50,64 64,62 C78,64 88,116 108,118" fill="none" stroke="#1f6fe5" stroke-width="2.2"/>
+          <path d="M104,118 C126,116 136,36 148,34 C160,36 170,116 192,118" fill="none" stroke="#1f6fe5" stroke-width="2.2"/>
+          <path d="M190,118 C210,116 220,74 232,72 C244,74 254,116 274,118" fill="none" stroke="#1f6fe5" stroke-width="2.2"/>
+          <path d="M22,118 C40,116 50,64 64,62 C78,64 90,110 106,112 C126,110 136,36 148,34 C160,36 172,108 190,110 C210,108 220,74 232,72 C244,74 254,116 274,118" fill="none" stroke="#111" stroke-width="2.6" stroke-dasharray="5 3"/>
+          <g font-size="13" font-style="italic" font-family="serif" text-anchor="middle" fill="#1f6fe5"><text x="64" y="138">π₁</text><text x="148" y="138">π₂</text><text x="232" y="138">π₃</text></g>
+        </svg>
+        <div class="fbox"><span class="mth">p(x) = Σ<sub>k</sub> π<sub>k</sub> N(x | μ<sub>k</sub>, Σ<sub>k</sub>)</span><br><span style="font-size:13px">비중 π를 다 더하면 1</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>3. 소속 확률 <small>Responsibility</small></h3>
+        <p class="d">글씨 하나가 각 종에서 나왔을 확률. 겹치는 곳에서는 나눠 갖는다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="두 종 모양 곡선이 가운데서 겹친다. 겹친 곳의 점 x 하나에서 위로 선을 올려, 왼쪽 종 높이와 오른쪽 종 높이를 잰다. 오른쪽에 막대 두 개: 종 1 0.6, 종 2 0.4">
+          <path d="M12,112 L196,112" stroke="#111" stroke-width="2" marker-end="url(#n1a)"/>
+          <path d="M14,110 C40,110 50,30 70,30 C90,30 100,110 130,110" fill="#e6f0fe" fill-opacity=".7" stroke="#1f6fe5" stroke-width="2.4"/>
+          <path d="M60,110 C90,110 104,48 124,48 C144,48 156,110 186,110" fill="none" stroke="#1f6fe5" stroke-width="2.4" stroke-dasharray="6 3"/>
+          <path d="M98,112 L98,60" stroke="#c0392b" stroke-width="2"/><circle cx="98" cy="112" r="5" fill="#111"/><text x="98" y="132" text-anchor="middle" font-size="13" font-style="italic" font-family="serif">x</text>
+          <circle cx="98" cy="72" r="3.5" fill="#1f6fe5"/><circle cx="98" cy="84" r="3.5" fill="#fff" stroke="#1f6fe5" stroke-width="2"/>
+          <g font-size="12"><text x="212" y="44">종 1</text><rect x="244" y="34" width="44" height="14" fill="#1f6fe5"/><text x="212" y="72">종 2</text><rect x="244" y="62" width="24" height="14" fill="#fff" stroke="#1f6fe5" stroke-width="2"/></g>
+          <g font-size="12" font-family="IBM Plex Mono, monospace"><text x="285" y="45" text-anchor="end" fill="#fff">.6</text><text x="276" y="73" fill="#1f6fe5">.4</text></g>
+          <text x="246" y="102" text-anchor="middle" font-size="12">합 = 1</text>
+        </svg>
+        <div class="fbox"><span class="mth">γ<sub>ik</sub> = π<sub>k</sub>N(x<sub>i</sub>|k) ÷ Σ<sub>j</sub> π<sub>j</sub>N(x<sub>i</sub>|j)</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#emCard">
+        <h3>4. E 단계 <small>Expectation</small></h3>
+        <p class="d">지금의 종 모양으로 글씨마다 소속 확률을 다시 나눈다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="타원 두 개(종 1, 종 2)가 고정되어 있고, 그 사이의 점들이 반은 파란색, 반은 흰색으로 칠해진다. 화살표가 '타원은 그대로, 점의 색(확률)을 다시 칠한다'를 가리킨다">
+          <ellipse cx="90" cy="70" rx="62" ry="34" fill="none" stroke="#1f6fe5" stroke-width="2.4" transform="rotate(-18 90 70)"/>
+          <ellipse cx="210" cy="70" rx="56" ry="30" fill="none" stroke="#1f6fe5" stroke-width="2.4" stroke-dasharray="6 3" transform="rotate(20 210 70)"/>
+          <g stroke="#111" stroke-width="1.4"><circle cx="64" cy="72" r="5" fill="#1f6fe5"/><circle cx="90" cy="60" r="5" fill="#1f6fe5"/><circle cx="110" cy="82" r="5" fill="#1f6fe5"/><circle cx="148" cy="70" r="6" fill="#8fb4f2"/><circle cx="160" cy="58" r="6" fill="#c9daf8"/><circle cx="196" cy="74" r="5" fill="#fff"/><circle cx="226" cy="64" r="5" fill="#fff"/><circle cx="240" cy="86" r="5" fill="#fff"/></g>
+          <text x="150" y="128" text-anchor="middle" font-size="12.5">타원은 그대로 · 점의 몫(색)을 다시 나눈다</text>
+          <text x="154" y="18" text-anchor="middle" font-size="11.5" fill="#c0392b">겹친 곳 = 반반</text>
+        </svg>
+        <span class="go">→ 01 EM 재생</span>
+      </a>
+      <a class="pn" href="#emCard">
+        <h3>5. M 단계 <small>Maximization</small></h3>
+        <p class="d">나눠 가진 몫으로 가중해 비중·평균·공분산을 다시 잰다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="점선 타원(이전)에서 실선 타원(새것)으로 화살표가 옮겨 간다. 아래에 '점은 그대로, 타원을 옮긴다'. E와 M이 원형 화살표로 번갈아 돈다">
+          <ellipse cx="110" cy="62" rx="54" ry="28" fill="none" stroke="#8b93a3" stroke-width="2" stroke-dasharray="5 4" transform="rotate(-10 110 62)"/>
+          <ellipse cx="150" cy="58" rx="60" ry="26" fill="#e6f0fe" fill-opacity=".6" stroke="#1f6fe5" stroke-width="2.6" transform="rotate(-25 150 58)"/>
+          <path d="M110,62 L144,59" stroke="#1f6fe5" stroke-width="2.4" marker-end="url(#n1b)"/>
+          <g fill="#111"><circle cx="120" cy="70" r="3.5"/><circle cx="150" cy="54" r="3.5"/><circle cx="176" cy="44" r="3.5"/><circle cx="134" cy="66" r="3.5"/><circle cx="196" cy="38" r="3.5"/></g>
+          <g transform="translate(252,62)"><path d="M-18,-6 A20,20 0 0 1 18,-6" fill="none" stroke="#111" stroke-width="2" marker-end="url(#n1a)"/><path d="M18,8 A20,20 0 0 1 -18,8" fill="none" stroke="#111" stroke-width="2" marker-end="url(#n1a)"/><text x="0" y="-16" text-anchor="middle" font-size="12" font-weight="700">E</text><text x="0" y="30" text-anchor="middle" font-size="12" font-weight="700">M</text></g>
+          <text x="140" y="128" text-anchor="middle" font-size="12.5">점은 그대로 · 타원을 옮긴다 → 가능도가 오른다</text>
+        </svg>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#covCard">
+        <h3>6. 공분산 모양 <small>full · tied · diag · spherical</small></h3>
+        <p class="d">종을 얼마나 자유롭게 그릴까. 자유로울수록 외울 숫자가 는다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="작은 칸 네 개. full: 서로 다르게 기운 타원 둘. tied: 똑같이 기운 타원 둘. diag: 가로세로 축에 나란한 타원 둘. spherical: 동그라미 둘">
+          <g fill="#fff" stroke="#111" stroke-width="1.2"><rect x="6" y="10" width="66" height="84"/><rect x="80" y="10" width="66" height="84"/><rect x="154" y="10" width="66" height="84"/><rect x="228" y="10" width="66" height="84"/></g>
+          <g fill="none" stroke="#1f6fe5" stroke-width="2.2">
+            <ellipse cx="26" cy="38" rx="16" ry="7" transform="rotate(-40 26 38)"/><ellipse cx="52" cy="68" rx="15" ry="8" transform="rotate(30 52 68)"/>
+            <ellipse cx="100" cy="38" rx="16" ry="7" transform="rotate(-35 100 38)"/><ellipse cx="126" cy="68" rx="16" ry="7" transform="rotate(-35 126 68)"/>
+            <ellipse cx="174" cy="38" rx="16" ry="7"/><ellipse cx="200" cy="68" rx="7" ry="15"/>
+            <circle cx="250" cy="38" r="11"/><circle cx="274" cy="68" r="9"/></g>
+          <g font-size="11.5" text-anchor="middle"><text x="39" y="110">full</text><text x="113" y="110">tied</text><text x="187" y="110">diag</text><text x="261" y="110">spherical</text>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#1f6fe5"><text x="39" y="128">4,959</text><text x="113" y="128">774</text><text x="187" y="128">609</text><text x="261" y="128">319</text></g></g>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">파란 숫자 = 30축 · 종 10개일 때 외울 숫자(모수)<br>diag = 5-5 나이브 베이즈의 "특징끼리 독립"</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#covCard">
+        <h3>7. BIC로 고르기 <small>Bayesian Information Criterion</small></h3>
+        <p class="d">잘 맞을수록 작아지고, 복잡할수록 벌점을 받는다. 가장 작은 것을 고른다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="가로축 종의 수 k, 세로축 BIC. 회색 점선(맞춤 정도, −2×로그 가능도)은 k가 늘수록 계속 내려가고, 회색 실선(벌점)은 계속 오른다. 둘을 더한 파란 U자 곡선의 바닥에 빨간 원이 있다">
+          <path d="M30,128 L30,10" stroke="#111" stroke-width="2" marker-end="url(#n1a)"/><path d="M30,128 L292,128" stroke="#111" stroke-width="2" marker-end="url(#n1a)"/>
+          <path d="M36,22 C80,80 140,104 286,112" fill="none" stroke="#8b93a3" stroke-width="2" stroke-dasharray="5 4"/>
+          <path d="M36,120 C120,112 200,92 286,56" fill="none" stroke="#8b93a3" stroke-width="2"/>
+          <path d="M36,34 C80,82 120,96 150,96 C190,96 240,80 286,46" fill="none" stroke="#1f6fe5" stroke-width="3"/>
+          <circle cx="150" cy="96" r="7" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+          <g font-size="11.5"><text x="62" y="24" fill="#6b7280">−2 × 로그 가능도 ↘</text><text x="44" y="110" fill="#6b7280">벌점 ↗</text><text x="96" y="56" fill="#1f6fe5">BIC = 합</text></g>
+          <text x="160" y="144" text-anchor="middle" font-size="12">종의 수 k →</text>
+        </svg>
+        <div class="fbox"><span class="mth">BIC = −2 ln L + p · ln n</span><br><span style="font-size:13px">p 모수 개수 · n 글씨 수(1,797)</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>8. K-Means와의 관계 <small>Hard vs Soft</small></h3>
+        <p class="d">K-Means는 딱 잘라 넣고, GMM은 확률로 나눠 갖는다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽 K-Means: 직선 경계로 갈린 두 영역, 점은 파랑 아니면 흰색. 오른쪽 GMM: 기운 타원 둘이 겹치고, 겹친 곳의 점은 반쯤 칠해진 색이다">
+          <rect x="8" y="10" width="132" height="96" fill="#fff" stroke="#111" stroke-width="1.2"/><rect x="160" y="10" width="132" height="96" fill="#fff" stroke="#111" stroke-width="1.2"/>
+          <path d="M74,10 L74,106" stroke="#111" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <g stroke="#111" stroke-width="1.2"><circle cx="34" cy="40" r="5" fill="#1f6fe5"/><circle cx="50" cy="70" r="5" fill="#1f6fe5"/><circle cx="66" cy="54" r="5" fill="#1f6fe5"/><circle cx="82" cy="60" r="5" fill="#fff"/><circle cx="100" cy="40" r="5" fill="#fff"/><circle cx="116" cy="78" r="5" fill="#fff"/></g>
+          <ellipse cx="204" cy="58" rx="40" ry="20" fill="none" stroke="#1f6fe5" stroke-width="2" transform="rotate(-30 204 58)"/><ellipse cx="248" cy="58" rx="38" ry="18" fill="none" stroke="#1f6fe5" stroke-width="2" stroke-dasharray="5 3" transform="rotate(25 248 58)"/>
+          <g stroke="#111" stroke-width="1.2"><circle cx="186" cy="70" r="5" fill="#1f6fe5"/><circle cx="204" cy="56" r="5" fill="#1f6fe5"/><circle cx="226" cy="50" r="6" fill="#8fb4f2"/><circle cx="226" cy="68" r="6" fill="#c9daf8"/><circle cx="262" cy="70" r="5" fill="#fff"/><circle cx="270" cy="48" r="5" fill="#fff"/></g>
+          <g font-size="12.5" text-anchor="middle"><text x="74" y="124">K-Means: 0 아니면 1</text><text x="226" y="124">GMM: 0.7 / 0.3</text></g>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">spherical 공분산 + 퍼짐 → 0 이면 K-Means와 같아진다<br>이 면접: K-Means 0.666 → GMM 0.836 (ARI)</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m6">
+        <h3>9. 줄이고, 다시 그린다 <small>PCA first · Generative</small></h3>
+        <p class="d">64칸을 30축으로 줄여 일하고, 종에서 점을 뽑아 새 글씨를 그린다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="왼쪽: 8×8 격자 글씨(64칸)에서 화살표 'PCA'가 짧은 막대 30개로 간다. 오른쪽: 타원 하나에서 점 하나를 뽑아 화살표 '거꾸로'가 새 8×8 글씨로 간다">
+          <g fill="#fff" stroke="#111" stroke-width="1"><rect x="8" y="20" width="56" height="56"/></g>
+          <g fill="#111"><rect x="22" y="27" width="21" height="7"/><rect x="43" y="34" width="7" height="14"/><rect x="29" y="48" width="14" height="7"/><rect x="43" y="55" width="7" height="14"/><rect x="22" y="69" width="21" height="7" opacity=".6"/><rect x="15" y="34" width="7" height="7" opacity=".4"/></g>
+          <path d="M68,48 L94,48" stroke="#111" stroke-width="2" marker-end="url(#n1a)"/><text x="80" y="40" text-anchor="middle" font-size="11">PCA</text>
+          <g fill="#1f6fe5"><rect x="98" y="24" width="4" height="48"/><rect x="104" y="30" width="4" height="42"/><rect x="110" y="38" width="4" height="34"/><rect x="116" y="44" width="4" height="28"/><rect x="122" y="50" width="4" height="22"/><rect x="128" y="56" width="4" height="16"/><rect x="134" y="60" width="4" height="12"/><rect x="140" y="64" width="4" height="8"/></g>
+          <text x="120" y="90" text-anchor="middle" font-size="11.5">30축</text>
+          <ellipse cx="190" cy="48" rx="26" ry="14" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.2" transform="rotate(-25 190 48)"/><circle cx="198" cy="44" r="4" fill="#c0392b"/>
+          <path d="M218,48 L238,48" stroke="#1f6fe5" stroke-width="2" marker-end="url(#n1b)"/><text x="196" y="90" text-anchor="middle" font-size="11" fill="#1f6fe5">뽑아서 거꾸로</text>
+          <g fill="#fff" stroke="#1f6fe5" stroke-width="1.4"><rect x="240" y="20" width="56" height="56"/></g>
+          <g fill="#1f6fe5"><rect x="254" y="27" width="21" height="7"/><rect x="275" y="34" width="7" height="14" opacity=".8"/><rect x="261" y="48" width="14" height="7"/><rect x="275" y="55" width="7" height="14" opacity=".7"/><rect x="254" y="69" width="21" height="7" opacity=".5"/></g>
+          <text x="150" y="122" text-anchor="middle" font-size="12.5">외울 숫자 21,449 → 4,959 · 새 글씨를 뽑을 수 있다</text>
+        </svg>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1~3번 칸이 "무엇으로 설명하나"(종 하나, 섞기, 소속 확률), 4·5번이 "어떻게 맞추나"(EM), 6·7번이 "얼마나 복잡하게 둘까"(공분산 모양과 BIC), 8번이 "K-Means와 무엇이 다른가", 9번이 "줄이기와 새 글씨"다. 이 면접은 01장(1~5번) → 02장(9번의 줄이기) → 04장(5·6·7번) → 05장(8번) → 06장(9번의 그리기)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 확률로 나눠 갖는 직원</h2>
+    <p class="lin">하나의 종 → 여러 종 섞기 → 확률로 나눠 갖기 → E·M 되풀이</p>
+  </div>
+  <div id="comicIntro"></div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 ① · 하나의 종 vs 여러 종 — 1,797장을 한 축(PC1)에 늘어놓고 종 모양으로 덮기 (브라우저 계산)</span>
+    <div class="cwrap"><canvas class="fig" id="oneCv" aria-label="회색 막대그래프는 1,797장의 첫째 축 값 분포로 봉우리가 여럿이다. 고른 종의 개수만큼 색 곡선이 그려지고, 검은 선이 그 합이다. 빨간 세로선 자리의 글씨 몇 장이 아래에 작은 그림으로 놓인다"></canvas></div>
+    <div class="ctrls">
+      <div class="choice" role="group" aria-label="종의 개수" id="oneK"><button data-v="1" aria-pressed="true">종 1개</button><button data-v="2" aria-pressed="false">종 2개</button><button data-v="3" aria-pressed="false">종 3개</button><button data-v="4" aria-pressed="false">종 4개</button></div>
+      <label>빨간 선 위치 <input type="range" id="onePos" min="0" max="100" step="1" value="50"></label>
+    </div>
+    <div class="caption" id="oneInfo" aria-live="polite">이 장에 가까워지면 계산한다.</div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">N</span><div class="bub"><span class="who">지원자 · GMM</span>아래 그림이 제 일하는 방식입니다. 처음에는 K-Means로 대충 나눈 데서 출발합니다. "E·M 한 번"을 누를 때마다 글씨의 몫(색)을 다시 나누고, 그 몫으로 타원을 옮깁니다. 점을 누르시면 그 글씨의 확률 장부를 보여 드립니다.</div></div>
+  </div>
+  <div class="card" id="emCard">
+    <span class="tag">직접 만져 보기 ② · EM 재생 — 1,797장을 두 축(PC1·PC2)에 펼치고 종 모양 맞추기 (브라우저 계산)</span>
+    <div>
+      <div class="cwrap"><canvas class="fig" id="emCv" style="cursor:crosshair" aria-label="1,797장을 두 축에 찍은 산점도. 점의 색은 소속 확률대로 종의 색을 섞어 칠했다. 종마다 평균 ± 2 표준편차 타원과 비중만큼 큰 동그라미가 있다. 누른 글씨는 검은 고리로 표시된다"></canvas></div>
+      <div id="emPick" aria-live="polite" style="margin-top:10px;max-width:520px"><p class="muted" style="margin:0">그림의 점을 눌러 그 글씨의 소속 확률을 보세요.</p></div>
+    </div>
+    <div class="ctrls">
+      <button class="btn blue" id="emStep">E·M 한 번</button>
+      <button class="btn" id="emPlay">▶ 끝까지</button>
+      <button class="btn" id="emReset">새 시작점</button>
+      <div class="choice" role="group" aria-label="종의 개수" id="emK"><button data-v="3" aria-pressed="false">종 3개</button><button data-v="5" aria-pressed="false">종 5개</button><button data-v="10" aria-pressed="true">종 10개</button></div>
+    </div>
+    <div class="caption" id="emInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>K-Means의 확률 버전</h4>
+      <p>5-10 K-Means는 두 걸음을 되풀이했다. 가장 가까운 중심에 <b>딱 잘라</b> 넣고, 묶음의 평균으로 중심을 옮긴다. GMM도 두 걸음이다. <b>E 단계</b>는 지금의 종 모양으로 글씨마다 "종 1일 확률, 종 2일 확률, …"을 나눈다. <b>M 단계</b>는 그 확률을 몫으로 삼아 종마다 비중·평균·공분산을 다시 잰다. 한 바퀴 돌 때마다 "이 종 모양들이 이 글씨들을 낼 그럴듯함"(가능도)이 오르고, 내려가지는 않는다. 이 방법을 <b>EM 알고리즘</b>이라 한다.</p>
+      <div class="eq">E: γ<sub>ik</sub> ∝ π<sub>k</sub>·N(x<sub>i</sub> | μ<sub>k</sub>, Σ<sub>k</sub>) → M: π<sub>k</sub> = Σ<sub>i</sub>γ<sub>ik</sub>/n, μ<sub>k</sub> = 가중 평균, Σ<sub>k</sub> = 가중 공분산</div>
+    </div>
+    <div class="explain">
+      <h4>종 모양 = 평균 + 공분산 + 비중</h4>
+      <p>K-Means의 묶음은 중심 하나와 "가까운 쪽"이라는 규칙뿐이라 늘 둥글고 크기가 같다고 보는 셈이다. GMM의 종은 <b>타원</b>이다. 공분산이 타원의 크기와 기울기를 정하므로, 길쭉하게 기운 묶음(획이 기운 7)과 작고 둥근 묶음(동그란 0)을 같이 다룬다. 비중은 그 종이 전체에서 차지하는 몫이다. 그래서 겹치는 곳에서는 몫이 큰 종이 조금 더 가져간다.</p>
+      <div class="eq">GMM에서 공분산을 동그라미로 묶고 퍼짐을 0으로 줄이면 → K-Means</div>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 정답 없는 1,797장</h2>
+    <p class="lin">한 장이 글씨 하나(샘플), 8×8 = 64칸의 밝기가 특징(X). 정답(0~9)은 채점 봉투에 봉인한다</p>
+  </div>
+  <div class="card">
+    <span class="tag">과제지 · 공장 일지의 손글씨 숫자 (scikit-learn load_digits, 1,797장 · 8×8 · 밝기 0~16)</span>
+    <div class="cwrap"><canvas class="fig" id="gridCv" style="cursor:pointer" aria-label="손글씨 숫자 그림이 격자로 늘어서 있다. 이름표는 없다. 누른 글씨에는 빨간 테두리가 생긴다"></canvas></div>
+    <div class="ctrls"><button class="btn" id="gridMore">다음 장들 보기</button><span class="pill no">채점 봉투 · 정답 1,797개 봉인 (05장에서 개봉)</span></div>
+    <div class="caption" id="gridInfo" aria-live="polite"></div>
+    <div class="tw" id="pxTbl" style="margin-top:10px"></div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 · 군집 (정답 없이 묶기)</span>
+      <h3>비슷한 글씨끼리 묶기</h3>
+      <p style="margin:6px 0 0;font-size:15px">이름표를 하나하나 붙일 사람이 없다. 지원자는 정답 없이 1,797장을 묶고, 사람은 묶음마다 대표 몇 장에만 이름을 붙인다. 점수는 채점 봉투를 열어 <b>ARI</b>(숨긴 정답과 얼마나 겹치나, 무작위 ≈ 0, 완벽 1)로 잰다. 정답을 학습에 쓰지 않으므로 시험지를 따로 떼지 않고 1,797장 전체로 배운다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">합격선 · 매뉴얼 씨의 정리 규칙</span>
+      <h3>세 가지 질문 → 8묶음 → ARI <span id="lineAri">0.108</span></h3>
+      <p style="margin:6px 0 0;font-size:15px">가운데 4칸이 비었나(0·6처럼) · 잉크 합이 300보다 많나 · 위쪽 절반이 더 무거운가. 세 질문의 예/아니요로 2×2×2 = 8묶음을 만든다. 정답 없이 사람이 정한 규칙이다.</p>
+      <p class="foot" id="manSizes"></p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>제 규칙은 세 숫자만 봅니다. 오늘 지원자는 64칸을 다 본다지요. 다만 64칸을 다 보려면 칸끼리 얽힌 관계까지 외워야 한다던데, 그 장부가 감당이 되는지 궁금합니다.</div></div>
+  </div>
+  <div class="card" id="pcaCard">
+    <span class="tag">GMM의 과제지 읽는 법 · 64칸을 먼저 30축으로 줄인다 (PCA, 브라우저 계산)</span>
+    <div class="two" style="gap:12px">
+      <div>
+        <div class="cwrap"><canvas class="fig" id="pcaCv" aria-label="막대 30개는 PCA 축 하나하나가 담은 분산의 몫이고, 빨간 선은 그 누적이다. 30번째 축에서 누적이 약 96%에 닿는다"></canvas></div>
+        <div class="caption" id="pcaInfo" aria-live="polite" style="margin-top:6px"></div>
+      </div>
+      <div>
+        <div class="stat" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div><b>21,449</b><span>64칸 그대로 · 종 10개 full GMM의 외울 숫자</span></div><div class="a"><b>4,959</b><span>30축으로 줄인 뒤의 외울 숫자</span></div><div class="m"><b>1,797</b><span>글씨 수</span></div><div><b>3칸</b><span>1,797장 모두 0인 칸 (퍼짐 0)</span></div></div>
+        <p style="font-size:15px;margin:10px 0 0">종 하나의 공분산은 64 × 65 ÷ 2 = <b>2,080개</b>의 숫자다. 종 열 개면 평균까지 2만이 넘는데 글씨는 1,797장뿐이다. 게다가 늘 0인 가장자리 칸은 퍼짐이 0이라 공분산을 거꾸로 풀 수 없다(아주 작은 값을 더해 억지로 푼다). 그래서 PCA로 "가장 많이 퍼진 방향" 30개만 남겨 일한다. 30축의 공분산은 465개다. 이 줄이기는 다음 지원자 5-14 PCA의 전문 분야다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>GMM이 잘 읽는 것, 못 읽는 것</h4>
+      <p>종 모양은 <b>연속된 숫자</b>가 타원처럼 퍼진 데이터에 잘 맞는다. 손글씨의 밝기는 0~16의 숫자이고, 같은 숫자의 글씨들은 평균 글씨 둘레에 퍼져 있어 잘 맞는 편이다. 못 읽는 것은 바나나처럼 휜 묶음(타원 여러 개로 나눠 덮는다), 차원이 데이터에 비해 너무 많은 경우(위 장부 문제), 모든 칸이 같은 단위가 아닌 표(이때는 표준화 뒤에 쓴다)다. 손글씨처럼 모든 칸이 같은 단위이면 <b>표준화하지 않는다</b>. 거의 늘 0인 가장자리 칸이 부풀어 오히려 해롭다(03장).</p>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>한 줄에 샘플 하나(사진, 센서 기록, 로트), 열이 숫자 특징이면 된다. Colab 코드(A장) 1번 칸의 <code>X</code>만 바꾼다. 정답이 없어도 된다. 있으면 채점에만 쓴다.</li>
+        <li>사진은 픽셀을 한 줄로 펴면 숫자 행렬이 된다(이미지 분류 4-2 편). 크기를 맞추고, 픽셀이 많으면 PCA로 먼저 줄인다.</li>
+        <li>단위가 다른 특징(온도·압력·시간)이 섞여 있으면 표준화한 뒤 PCA로 줄인다.</li>
+        <li>묶음 수를 모르면 BIC로 후보를 고르고(04장), 묶음마다 대표 몇 장을 사람이 보고 합치거나 나눈다.</li>
+        <li>글자로 된 특징이나 빈칸이 있으면 GMM에 바로 넣을 수 없다. 숫자로 바꾸고 채운다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 버전 메모</p>
+  </div>
+  <p>비지도 학습 코드는 <b>오류 없이 조용히 틀리는</b> 일이 많다. 정답을 fit에 넣어도, 묶음 번호를 정답처럼 비교해도, BIC를 거꾸로 골라도 빨간 글씨 하나 없이 돌아간다. 위원회 규정은 같다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, scikit-learn만, 버전 출력) ② 데이터(이름, 크기, 정답은 채점 봉투) ③ 규정(정답은 학습에 안 씀, 먼저 줄이기, BIC는 작은 쪽, 시작점 고정) ④ 출력(BIC 표, 애매한 글씨 수, ARI·NMI, 업무 점수) ⑤ 금지(accuracy_score로 묶음 채점 금지, 다른 패키지 설치 금지)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"손글씨 숫자 GMM으로 분류해 줘." — "분류"라는 말에 AI가 정답을 fit에 넣거나, 묶음 번호로 정확도를 재거나, 64칸 그대로 full 공분산을 맞출 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 이 코드는 오류 없이 끝까지 돈다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — GMM은 이름이 바뀐 적이 있다</h4>
+    <p>scikit-learn의 옛 <code>sklearn.mixture.GMM</code> 클래스는 0.18에서 <code>GaussianMixture</code>로 바뀌었고 0.20에서 지워졌다. 디리클레 과정 버전 <code>DPGMM</code>, <code>VBGMM</code>도 <code>BayesianGaussianMixture</code> 하나로 합쳐졌다. 옛 블로그 코드를 배운 AI가 <code>from sklearn.mixture import GMM</code>을 내면 지금은 <code>ImportError</code>가 난다. 인자 이름도 바뀌었다(<code>n_iter</code> → <code>max_iter</code>, <code>covariance_type</code>의 값은 그대로).</p>
+    <p style="margin:0">지금도 바뀔 수 있는 것은 기본값이다. <code>init_params</code>의 기본값은 <code>"kmeans"</code>이고, <code>"k-means++"</code>와 <code>"random_from_data"</code>도 고를 수 있다(1.1부터). 시작점이 바뀌면 결과가 바뀌므로(04장), AI가 낸 인자는 <b>내가 설치한 버전의 공식 문서</b>로 확인하고, 결과를 적을 때 버전과 random_state를 함께 적는다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · EM, start points, covariance and BIC</div>
+    <h2>수습 기간 — 정답 없이 저울질하기</h2>
+    <p class="lin">30축에서 EM 재생 → 시작점 운 → 공분산 모양과 종의 수를 BIC로. 채점 봉투는 그대로 봉인</p>
+  </div>
+  <p>GMM의 수습은 세 가지를 정하는 일이다. <b>어디서 출발할지(시작점)</b>, <b>종을 얼마나 자유롭게 그릴지(공분산 모양)</b>, <b>종을 몇 개 둘지(k)</b>. 셋 다 정답 없이 정한다. 쓰는 저울은 가능도(얼마나 잘 맞나)와 BIC(잘 맞음 − 복잡함 벌점)다.</p>
+  <div class="card">
+    <span class="tag">움직이는 그림 ① · EM 재생 — 30축, 종 10개, full 공분산 (브라우저 계산, scikit-learn random_state=0과 같은 시작점)</span>
+    <div class="cwrap"><canvas class="fig" id="rpCv" aria-label="종 열 개의 평균을 64칸으로 되돌린 '평균 글씨' 열 장이 한 줄로 놓여 있고, 아래에 종마다 비중 막대와 백분율이 있다. EM이 반복될수록 평균 글씨가 또렷해진다"></canvas></div>
+    <div class="cwrap" style="margin-top:6px"><canvas class="fig" id="llCv" aria-label="가로축 EM 반복 횟수, 세로축 평균 로그 가능도. 처음 몇 번에 가파르게 오르고 곧 평평해진다. 지금 반복 위치에 빨간 점이 있다"></canvas></div>
+    <div class="ctrls">
+      <button class="btn blue" id="rpPlay">▶ EM 재생</button>
+      <label>반복 <input type="range" id="rpN" min="0" max="16" step="1" value="0"><output id="rpNO">0</output></label>
+    </div>
+    <div class="caption" id="rpInfo" aria-live="polite">이 장에 가까워지면 30축에서 EM을 돌린다(이 브라우저에서 1~2초).</div>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 ② · 시작점 운 — 같은 데이터, 같은 종 10개, 시작점만 바꾸기 (정답 없이 가능도·BIC만 본다)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <button class="btn" data-seed="A">시작점 A</button><button class="btn" data-seed="B">B</button><button class="btn" data-seed="C">C</button><button class="btn" data-seed="D">D</button><button class="btn" data-seed="E">E</button>
+      <button class="btn blue" id="seedAll">다섯 개 모두</button>
+    </div>
+    <div id="seedTbl"><p class="muted">시작점 A는 scikit-learn <code>GaussianMixture(random_state=0)</code>이 쓰는 K-Means 묶음, B~E는 이 브라우저의 k-means++ 시작(씨앗 1~4)이다.</p></div>
+    <div class="caption" id="seedInfo" aria-live="polite"></div>
+  </div>
+  <div class="card" id="covCard">
+    <span class="tag">움직이는 그림 ③ · 공분산 모양과 종의 수 — BIC는 작을수록 좋다</span>
+    <div class="choice" role="group" aria-label="공분산 모양" id="covChoice"><button data-v="full" aria-pressed="true">full</button><button data-v="tied" aria-pressed="false">tied</button><button data-v="diag" aria-pressed="false">diag</button><button data-v="spherical" aria-pressed="false">spherical</button></div>
+    <div class="cwrap" style="margin-top:10px"><canvas class="fig" id="bicCv" aria-label="가로축 종의 수 k(2~20), 세로축 BIC. 공분산 모양 네 가지의 BIC 곡선이 있다. full 곡선이 모든 k에서 가장 낮고, k = 8 근처가 바닥이다. k = 10에 빨간 점선과, 이 브라우저가 계산한 점이 있다"></canvas></div>
+    <div id="covInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>BIC가 고른 것과 위원회가 정한 것</h4>
+      <p>BIC는 <b>full 공분산</b>을 골랐다. 어느 k에서나 full이 가장 작다. 종의 수는 <b>k = 8</b>(299,782)이 가장 작고 9(300,814)와 10(300,818)이 바로 뒤다. "숫자는 열 종류"는 채점 봉투 속 정보라 정답 없이는 모른다. 하지만 이 업무의 담당자는 숫자가 0~9라는 것을 안다. 위원회는 이 <b>업무 지식</b>으로 k = 10을 근무 조건으로 정했다. BIC가 고른 k = 8로 했다면 어땠는지는 면접 결과의 "조건 바꿔 다시 보기"에서 확인한다.</p>
+    </div>
+    <div class="explain">
+      <h4>가능도는 늘 오른다, 그래서 벌점이 필요하다</h4>
+      <p>종을 늘리거나 공분산을 자유롭게 할수록 가능도는 오르기만 한다. 극단적으로 글씨마다 종 하나를 두면 완벽히 맞는다. 하지만 그건 외운 것이다. BIC는 외울 숫자(모수) 하나마다 ln(1,797) ≈ 7.5만큼 벌점을 매긴다. 그래서 곡선이 U자가 된다. AIC는 벌점이 2로 더 가볍다. BIC도 AIC도 <b>정답 없이</b> 잰다. 같은 데이터, 같은 차원끼리만 비교할 수 있다(30축의 BIC와 64칸의 BIC는 비교하지 않는다).</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>장부 정리했어. 30축 full 종 하나에 평균 30 + 공분산 465 = 495개, 열 개에 비중 9개 더해서 <b>4,959개</b>. 64칸 그대로였으면 21,449개였어. 4분의 1로 줄인 거지. K-Means는 중심 640개면 됐으니 여전히 비싼 직원이긴 해. 대신 "얼마나 그럴듯한가"까지 알려 주니 값은 하네.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Open the envelope</div>
+    <h2>성과 평가 — 채점 봉투를 연다</h2>
+    <p class="lin">숨긴 정답과 비교(ARI·NMI) · 정답 없이 재는 점수(가능도·BIC·실루엣) · 업무 점수(대표 한 장으로 이름 붙이기)</p>
+  </div>
+  <div class="card">
+    <span class="tag">채점 봉투 열기 · 1,797장 (PCA 30축, 종 10개, full, 브라우저 계산)</span>
+    <div id="evalStat"><p class="muted">계산 중…</p></div>
+    <div class="tw" style="margin-top:12px"><div id="ctTbl"></div></div>
+    <div class="caption" id="ctInfo"></div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">정답 없이 재는 점수</span>
+      <div id="noLabel"><p class="muted">계산 중…</p></div>
+    </div>
+    <div class="card">
+      <span class="tag">군집팀 비교 · 같은 1,797장의 ARI</span>
+      <div class="bars" id="teamBars"></div>
+      <p class="foot">* 표시는 각 편의 기준 모델을 Python(scikit-learn 1.9, random_state=0)으로 계산한 값이다(A장 11번 칸이 같은 값을 낸다). 나머지는 이 브라우저 계산. 5-12 DBSCAN은 그 편에서 정한 기준을 본다.</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">소속 확률은 믿을 만한가 · 2축 GMM과 30축 GMM의 "가장 큰 소속 확률" 분포</span>
+    <div class="cwrap"><canvas class="fig" id="confCv" aria-label="막대그래프 두 개. 왼쪽(2축 GMM)은 가장 큰 소속 확률이 0.3~1.0에 넓게 퍼져 있다. 오른쪽(30축 GMM)은 거의 모든 글씨가 0.9~1.0 칸에 몰려 있다"></canvas></div>
+    <div class="caption" id="confInfo"></div>
+  </div>
+  <div class="card" id="workCard">
+    <span class="tag">업무 점수 · 묶음마다 대표 한 장에만 이름을 붙이면</span>
+    <div class="cwrap"><canvas class="fig" id="repCv" aria-label="묶음마다 가장 전형적인 글씨 한 장씩 열 장. 각 글씨 아래에 사람이 붙인 이름(0~9)과 묶음 크기가 적혀 있다"></canvas></div>
+    <div class="ctrls"><label>가능도가 낮은 글씨를 사람이 다시 보기 <input type="range" id="rvN" min="0" max="30" step="5" value="10"><output id="rvNO">10%</output></label></div>
+    <div id="workStat"></div>
+    <p class="foot" style="margin:10px 0 4px">어느 종에도 잘 맞지 않는 글씨 (가능도가 가장 낮은 순)</p>
+    <div class="cwrap"><canvas class="fig" id="oddCv" aria-label="가능도가 가장 낮은 글씨들이 두 줄로 놓여 있다. 굵거나 기울었거나 잘린 글씨가 많다"></canvas></div>
+    <div class="caption" id="workInfo"></div>
+  </div>
+  <div class="card">
+    <span class="tag">시작점 운, 채점 봉투로 확인 · 04장 ②의 다섯 시작점</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="seedGrade">다섯 시작점 채점하기</button></div>
+    <div id="seedGradeTbl"></div>
+    <div class="caption" id="seedGradeInfo" aria-live="polite">04장에서 정답 없이 고른 것(BIC가 가장 작은 시작점)이 정답과도 잘 맞았는지 본다.</div>
+  </div>
+
+  <div class="interview" id="iv13"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 근무 조건(하이퍼파라미터), 새 글씨 그리기, 다음 지원자</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym" style="font-size:24px">N</span><span class="no">APP-13 → EMP-0013</span><span class="nm">GMM (가우시안 혼합 모델)</span><span class="rl">비지도 본부 › 군집팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">애매함을 숫자로 적는 직원.</b> 기운 타원 묶음을 다루고, 글씨마다 "얼마나 그럴듯한가"를 알려 주며, 새 글씨도 그린다. 대신 장부가 두껍고, 시작점을 타며, 고차원에서는 확률을 지나치게 확신한다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>군집팀 최고 ARI.</b> 이 면접의 <span class="gmAri">0.836</span>은 K-Means 0.666, 계층적 ward 0.794보다 높다(05장).</li>
+          <li><b>기운 타원 묶음.</b> 묶음마다 크기·기울기·몫이 달라도 된다. 둥근 묶음만 아는 K-Means의 약점을 메운다.</li>
+          <li><b>밀도를 준다.</b> 글씨마다 가능도가 나와 "어느 묶음에도 안 맞는 글씨"(이상치)를 찾는다. 이것만 다시 보면 업무 정답률이 빠르게 오른다.</li>
+          <li><b>생성 모델.</b> 배운 종 모양에서 새 글씨를 뽑을 수 있다(아래).</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>장부가 두껍다.</b> full 공분산은 차원의 제곱으로 는다. 64칸 그대로는 모수 2만이 넘어 ARI 0.611로 떨어진다. 먼저 줄여야 한다.</li>
+          <li><b>시작점을 탄다.</b> random_state에 따라 ARI 0.630~0.836. n_init으로 여러 번 시작해야 한다.</li>
+          <li><b>확률을 과신한다.</b> 30축에서는 거의 모든 글씨가 0.99 이상이지만 8%쯤 틀린다. 확률을 정답률로 읽지 않는다.</li>
+          <li><b>묶음 수를 정해야 한다.</b> BIC는 8을 골랐다. 업무 지식이 없으면 사람이 묶음을 살펴야 한다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn GaussianMixture)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>n_components</code></td><td>1</td><td>섞을 종의 수 k. 이 면접은 10(업무 지식). 모르면 BIC로 후보를 고른다(04장, BIC는 8을 골랐다).</td></tr>
+        <tr><td><code>covariance_type</code></td><td>"full"</td><td>종 모양의 자유도. full(기운 타원) · tied(모두 같은 타원) · diag(축에 나란한 타원) · spherical(동그라미). 이 데이터는 full이 BIC로도 채점으로도 가장 좋았다.</td></tr>
+        <tr><td><code>n_init</code></td><td>1</td><td>시작점을 바꿔 돌리는 횟수. 가능도가 가장 높은 결과를 남긴다. 이 데이터는 시작점을 많이 타니 5~10을 권한다(n_init=10이면 ARI 0.840).</td></tr>
+        <tr><td><code>init_params</code></td><td>"kmeans"</td><td>시작 묶음을 만드는 법. "k-means++", "random", "random_from_data"도 있다.</td></tr>
+        <tr><td><code>random_state</code></td><td>None</td><td>시작점의 난수. 고정해야 같은 결과가 나온다. 이 면접은 0.</td></tr>
+        <tr><td><code>reg_covar</code></td><td>1e-6</td><td>공분산 대각선에 더하는 작은 값. 늘 같은 값인 특징 때문에 계산이 깨지는 것을 막는다. 64칸 그대로 쓸 때 이 값이 결과를 크게 좌우한다.</td></tr>
+        <tr><td><code>max_iter</code>, <code>tol</code></td><td>100, 1e-3</td><td>EM 반복 상한과 멈춤 기준(평균 로그 가능도 변화). 이 면접은 16번 만에 멈췄다. <code>converged_</code>로 확인한다.</td></tr>
+      </tbody>
+    </table>
+    <p class="foot">덧붙임: <code>BayesianGaussianMixture</code>는 종의 수를 넉넉히 주면 필요 없는 종의 비중을 0 근처로 줄여 스스로 묶음 수를 정하는 변형이다(디리클레 과정 사전 분포). 묶음 수를 모르는 업무에서 BIC와 함께 써 볼 만하다.</p>
+  </div>
+  <div class="card">
+    <span class="tag">GMM이 그린 새 글씨 · 종마다 두 장씩 뽑아 PCA를 거꾸로 돌리기 (브라우저 계산)</span>
+    <div class="cwrap"><canvas class="fig" id="genCv" aria-label="열 개의 종에서 두 장씩 뽑은 새 글씨 스무 장이 두 줄로 놓여 있다. 종마다 색 띠가 아래에 있다. 0부터 9까지의 숫자 모양이 흐릿하게 보인다"></canvas></div>
+    <div class="ctrls"><button class="btn blue" id="genBtn">새로 뽑기</button></div>
+    <p class="foot">종(묶음)마다 평균과 공분산에서 30축 점을 하나 뽑고(촐레스키 분해로 기운 타원을 따라), 30축을 64칸으로 되돌려 0~16으로 자른 것이다. 1,797장 어디에도 없는 글씨다. 조금 흐리고 얼룩진 것은 버린 34축과 종 모양의 한계 때문이다. 이렇게 데이터의 분포를 배워 새 표본을 낼 수 있는 모델을 <b>생성 모델</b>이라 한다.</p>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="wow" data-move="jump" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>대표 열 장에 이름 붙이고, 가능도 낮은 180장만 다시 보면 96%라고? 1,797장 다 붙이는 것보다 일이 열 배 가까이 줄었어. 장부는 두꺼워도 사람 손이 덜 가면 남는 장사야!</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">맞는 일 · 안 맞는 일</span>
+    <table class="tb" style="font-size:14px"><tbody>
+      <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>묶음의 크기·모양이 서로 다른 연속형 데이터의 군집(줄여 놓은 이미지 특징, 센서 신호), 애매한 샘플을 확률로 표시해야 하는 업무, 밀도로 "평소와 다른 것"을 찾는 이상치 검출, 데이터 분포를 흉내 내야 하는 일(합성 표본, 음성 처리의 고전 모델)</td></tr>
+      <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>차원이 데이터에 비해 아주 큰 원자료(먼저 줄여야 한다), 바나나·고리처럼 휜 묶음(5-12 DBSCAN, 5-11 계층적 single이 낫다), 글자로 된 특징이 많은 표, 확률을 그대로 정답률로 보고해야 하는 일(고차원에서 과신한다)</td></tr>
+      <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td>GMM은 혼자보다 <b>줄이기와 함께</b> 일할 때 빛났다. 다음 지원자 5-14 PCA는 오늘 쓴 30축을 어떻게 만드는지, 2축만 남기면 무엇을 잃는지 보여 준다.</td></tr>
+    </tbody></table>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

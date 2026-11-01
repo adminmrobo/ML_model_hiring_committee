@@ -1,0 +1,532 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-7 면접<span class="dept">지도 본부 › 겸용팀</span><span class="dept" style="color:var(--stamp);border-color:var(--stamp)">앙상블</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-7 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 RF 기호가 그려진 지원자 랜덤 포레스트의 사원증이 떠 있고, 그 옆에 작은 나무 다섯 그루가 저마다 합격·불합격 표를 들고 흔들린다. Money-Robo가 동전 더미를 들고 '나무 100그루 값이면?' 하고 묻자 초파리가 팔짱을 낀다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>랜덤 포레스트 — 나무 백 그루의 투표</h1>
+        <p class="lede" style="margin-top:14px">5-6의 결정 트리는 스무고개로 배합을 가른다. 끝까지 키우면 훈련 배합을 거의 다 외우지만, 훈련 데이터가 조금만 달라져도 질문 순서가 통째로 바뀌는 <b>흔들리는 직원</b>이다. 오늘의 지원자는 혼자 오지 않았다. <b>"저는 나무 백 그루입니다. 각자 다르게 배우고, 마지막에 투표합니다."</b></p>
+        <p class="lede">랜덤 포레스트는 훈련 배합을 <b>무작위로 다시 뽑아</b>(부트스트랩) 나무마다 다른 과제지를 주고, 가지를 나눌 때마다 <b>특징도 몇 개만 무작위로</b> 보게 한다. 그렇게 서로 다르게 틀리는 나무들의 답을 모아 분류는 <b>다수결</b>, 회귀는 <b>평균</b>으로 낸다. 한 그루의 실수는 다른 나무들이 덮어 준다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m1">01 한 그루 vs 숲</a><span class="arr">→</span><a href="#m5">05 다시 뽑기</a><span class="arr">→</span><a href="#iv7">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>100</b><span>나무 수 (n_estimators 기본값)</span></div>
+            <div><b>√8 ≈ 2</b><span>가지를 나눌 때 후보로 보는 특징 수 (분류)</span></div>
+            <div><b>63%</b><span>나무 한 그루가 보는 서로 다른 배합 (부트스트랩)</span></div>
+            <div><b id="heroLine">R² 0.735 · 76.7%</b><span>넘어야 할 두 합격선 (회귀 · 분류)</span></div>
+          </div>
+          <p class="foot">겸용팀 지원자라 두 과제를 모두 본다. 강도(MPa) 회귀와 35MPa 합격 분류. 시험지 258건은 05장까지 봉인한다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="front" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>겸용팀 두 번째 지원자예요. 분류는 매뉴얼 씨의 76.7%, 회귀는 경험식의 R² 0.735를 둘 다 넘어야 합격입니다. 판정은 숫자가 해요.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="board" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>지원자가 백 명분이라 서류도 두꺼워요. 그래도 지원서는 한 장으로 줄였습니다.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="clip" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>틀리는 나무를 백 그루 모으면 백 번 틀리는 거 아냐? 왜 모으면 나아지는지부터 보여 줘.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="stack" alt="" aria-hidden="true" data-move="pop"><div class="bub"><span class="who">예산 담당 Money-Robo</span>나무 한 그루 월급에 곱하기 백이야. 외울 마디가 몇 개인지, 예측 한 번에 몇 그루를 거치는지 다 셀 거야.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">RF</span><div class="bub"><span class="who">지원자 · 랜덤 포레스트</span>안녕하십니까. 나무 백 그루로 이루어진 랜덤 포레스트입니다. 강도도 맞히고 합격도 가립니다. 동생 Extra Trees도 함께 왔습니다.</div></div>
+    </div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-6_decision_tree.html">5-6 결정 트리</a> — 스무고개로 가르는 나무 한 그루. 지니 불순도, 끝까지 키우면 생기는 과대적합. 오늘의 지원자는 이 나무를 백 그루 모은다</span>
+      <span><a href="5-0_job_posting.html">5-0 채용 공고</a> — 두 합격선(76.7%, R² 0.735)이 나온 곳 · <a href="5-1_knn.html">5-1 KNN</a> — 같은 과제지의 겸용(분류 + 회귀) 선배</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-10_ensemble_lineage.html" target="_blank" rel="noopener">패밀리 조직도 4-10 앙상블 계보</a> — 배깅 · 랜덤 포레스트 · 부스팅의 족보</span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — 랜덤 포레스트를 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="랜덤 포레스트 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-7 · 지원서<br>지원자 번호 APP-07<br>지원 부서 지도 본부 › 겸용팀 (앙상블)</div>
+      <div class="sh-title">Random Forest<small>랜덤 포레스트 · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">RF</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m1">
+        <h3>1. 결정 트리 한 그루 <small>Decision Tree</small></h3>
+        <p class="d">"예/아니오" 질문을 이어 배합을 가른다. 끝까지 키우면 훈련 데이터를 외운다.</p>
+        <svg viewBox="0 0 300 186" role="img" aria-label="뿌리 질문 '재령 14일 이하?'에서 두 갈래로 나뉘고, 왼쪽은 '물-결합재비 0.4 이하?', 오른쪽은 '시멘트 300 이하?'로 다시 나뉜 뒤 네 개의 잎에서 합격(파랑) 또는 불합격(검정)으로 답하는 나무 그림">
+          <defs><marker id="ah7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="ahb7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <g stroke="#1f6fe5" stroke-width="2" fill="none"><path d="M150,40 L75,76"/><path d="M150,40 L225,76"/><path d="M75,106 L40,140"/><path d="M75,106 L110,140"/><path d="M225,106 L190,140"/><path d="M225,106 L260,140"/></g>
+          <rect x="88" y="10" width="124" height="30" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="150" y="30" text-anchor="middle" font-size="13">재령 ≤ 14일?</text>
+          <rect x="8" y="76" width="134" height="30" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="75" y="96" text-anchor="middle" font-size="12">물-결합재비 ≤ 0.4?</text>
+          <rect x="164" y="76" width="122" height="30" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="225" y="96" text-anchor="middle" font-size="12">시멘트 ≤ 300?</text>
+          <g font-size="10.5" fill="#1f6fe5"><text x="98" y="56">예</text><text x="190" y="56">아니오</text></g>
+          <circle cx="40" cy="152" r="12" fill="#1f6fe5"/><circle cx="110" cy="152" r="12" fill="#111"/><circle cx="190" cy="152" r="12" fill="#111"/><circle cx="260" cy="152" r="12" fill="#1f6fe5"/>
+          <g font-size="11.5" text-anchor="middle"><text x="40" y="180">합격</text><text x="110" y="180">불합격</text><text x="190" y="180">불합격</text><text x="260" y="180">합격</text></g>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>2. 부트스트랩 <small>Bootstrap Sample</small></h3>
+        <p class="d">훈련 데이터에서 같은 수만큼 "복원 추출"해 나무마다 다른 과제지를 만든다.</p>
+        <svg viewBox="0 0 300 176" role="img" aria-label="위쪽에 1부터 8까지 번호가 붙은 검은 네모 여덟 개가 있고, 아래 세 개의 파란 가방에 그 번호들이 겹치거나 빠진 채로 여덟 개씩 담겨 있다">
+          <g font-size="12" text-anchor="middle"><g fill="#fff" stroke="#111" stroke-width="1.6"><rect x="32" y="6" width="26" height="22" rx="3"/><rect x="62" y="6" width="26" height="22" rx="3"/><rect x="92" y="6" width="26" height="22" rx="3"/><rect x="122" y="6" width="26" height="22" rx="3"/><rect x="152" y="6" width="26" height="22" rx="3"/><rect x="182" y="6" width="26" height="22" rx="3"/><rect x="212" y="6" width="26" height="22" rx="3"/><rect x="242" y="6" width="26" height="22" rx="3"/></g>
+          <text x="45" y="22">1</text><text x="75" y="22">2</text><text x="105" y="22">3</text><text x="135" y="22">4</text><text x="165" y="22">5</text><text x="195" y="22">6</text><text x="225" y="22">7</text><text x="255" y="22">8</text></g>
+          <g stroke="#1f6fe5" stroke-width="2" fill="none"><path d="M150,32 L54,58" marker-end="url(#ahb7)"/><path d="M150,32 L150,58" marker-end="url(#ahb7)"/><path d="M150,32 L246,58" marker-end="url(#ahb7)"/></g>
+          <g fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"><rect x="6" y="62" width="88" height="62" rx="10"/><rect x="106" y="62" width="88" height="62" rx="10"/><rect x="206" y="62" width="88" height="62" rx="10"/></g>
+          <g font-size="12" text-anchor="middle" font-family="IBM Plex Mono, monospace"><text x="50" y="86">1 1 3 4</text><text x="50" y="108">4 6 7 8</text><text x="150" y="86">2 2 2 3</text><text x="150" y="108">5 6 8 8</text><text x="250" y="86">1 3 3 5</text><text x="250" y="108">5 6 7 7</text></g>
+          <g font-size="11" text-anchor="middle" fill="#1f6fe5"><text x="50" y="142">나무 1</text><text x="150" y="142">나무 2</text><text x="250" y="142">나무 3</text></g>
+          <g font-size="10.5" text-anchor="middle"><text x="50" y="160">빠짐: 2, 5</text><text x="150" y="160">빠짐: 1, 4, 7</text><text x="250" y="160">빠짐: 2, 4, 8</text></g>
+        </svg>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>3. 특징 무작위 <small>Random Feature Subset</small></h3>
+        <p class="d">가지를 나눌 때마다 특징 몇 개만 후보로 준다. 나무끼리 덜 닮게 만든다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="특징 여덟 개(시멘트, 슬래그, 애시, 물, 감수제, 자갈, 모래, 재령)가 네모 칩으로 두 번 그려져 있다. 첫 번째 갈림에서는 물과 재령만, 두 번째 갈림에서는 시멘트와 모래만 파랗게 칠해져 후보가 된다">
+          <g font-size="9.5" text-anchor="middle">
+          <text x="72" y="14" font-weight="700" fill="#1f6fe5" font-size="12">갈림 ①</text><text x="226" y="14" font-weight="700" fill="#1f6fe5" font-size="12">갈림 ②</text>
+          <g fill="#fff" stroke="#9aa3b5" stroke-width="1.4"><rect x="4" y="24" width="32" height="24" rx="4"/><rect x="38" y="24" width="32" height="24" rx="4"/><rect x="72" y="24" width="32" height="24" rx="4"/><rect x="4" y="52" width="32" height="24" rx="4"/><rect x="38" y="52" width="32" height="24" rx="4"/><rect x="72" y="52" width="32" height="24" rx="4"/>
+          <rect x="158" y="24" width="32" height="24" rx="4"/><rect x="192" y="24" width="32" height="24" rx="4"/><rect x="226" y="24" width="32" height="24" rx="4"/><rect x="260" y="24" width="32" height="24" rx="4"/><rect x="158" y="52" width="32" height="24" rx="4"/><rect x="192" y="52" width="32" height="24" rx="4"/></g>
+          <g fill="#1f6fe5" stroke="#1f6fe5" stroke-width="1.4"><rect x="106" y="24" width="32" height="24" rx="4"/><rect x="106" y="52" width="32" height="24" rx="4"/><rect x="158" y="24" width="32" height="24" rx="4" fill="#1f6fe5"/><rect x="226" y="52" width="32" height="24" rx="4"/></g>
+          <rect x="260" y="52" width="32" height="24" rx="4" fill="#fff" stroke="#9aa3b5" stroke-width="1.4"/>
+          <text x="20" y="40">시멘트</text><text x="54" y="40">슬래그</text><text x="88" y="40">애시</text><text x="122" y="40" fill="#fff" font-weight="700">물</text>
+          <text x="20" y="68">감수제</text><text x="54" y="68">자갈</text><text x="88" y="68">모래</text><text x="122" y="68" fill="#fff" font-weight="700">재령</text>
+          <text x="174" y="40" fill="#fff" font-weight="700">시멘트</text><text x="208" y="40">슬래그</text><text x="242" y="40">애시</text><text x="276" y="40">물</text>
+          <text x="174" y="68">감수제</text><text x="208" y="68">자갈</text><text x="242" y="68" fill="#fff" font-weight="700">모래</text><text x="276" y="68">재령</text></g>
+          <path d="M150,24 L150,76" stroke="#c7cfdd" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="150" y="100" text-anchor="middle" font-size="12.5">갈림마다 여덟 개 중 두 개만 후보</text>
+          <text x="150" y="122" text-anchor="middle" font-size="11.5" fill="#555">가장 센 특징만 늘 뿌리에 오는 것을 막는다</text>
+        </svg>
+        <div class="fbox"><span class="mth">max_features = √p</span> (분류 기본값)<br><span style="font-size:13px">회귀 기본값은 1.0 = 특징 모두</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>4. 숲 <small>Forest of Trees</small></h3>
+        <p class="d">서로 다른 과제지와 질문으로 자란 나무 B그루. 모양이 저마다 다르다.</p>
+        <svg viewBox="0 0 300 120" role="img" aria-label="모양이 서로 다른 작은 나무 다섯 그루가 나란히 서 있고 오른쪽 끝에 '… 100그루'라고 적혀 있다. 잎은 파랑 또는 검정이다">
+          <g stroke="#1f6fe5" stroke-width="2" fill="none">
+          <path d="M28,14 L14,44 M28,14 L42,44 M14,44 L6,74 M14,44 L22,74 M42,44 L50,74"/>
+          <path d="M80,14 L68,44 M80,14 L92,44 M92,44 L84,74 M92,44 L100,74 M100,74 L94,98 M100,74 L106,98"/>
+          <path d="M132,14 L120,44 M132,14 L144,44 M120,44 L112,74 M120,44 L128,74 M144,44 L138,74 M144,44 L152,74"/>
+          <path d="M184,14 L172,44 M184,14 L196,44 M172,44 L166,74 M172,44 L180,74 M166,74 L160,98 M166,74 L172,98"/>
+          <path d="M236,14 L224,44 M236,14 L248,44 M248,44 L242,74 M248,44 L256,74"/></g>
+          <g fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"><circle cx="28" cy="14" r="6"/><circle cx="80" cy="14" r="6"/><circle cx="132" cy="14" r="6"/><circle cx="184" cy="14" r="6"/><circle cx="236" cy="14" r="6"/>
+          <circle cx="14" cy="44" r="5"/><circle cx="92" cy="44" r="5"/><circle cx="120" cy="44" r="5"/><circle cx="144" cy="44" r="5"/><circle cx="172" cy="44" r="5"/><circle cx="248" cy="44" r="5"/><circle cx="100" cy="74" r="5"/><circle cx="166" cy="74" r="5"/></g>
+          <g><circle cx="6" cy="74" r="5" fill="#1f6fe5"/><circle cx="22" cy="74" r="5" fill="#111"/><circle cx="42" cy="44" r="5" fill="#111"/><circle cx="50" cy="74" r="5" fill="#1f6fe5"/><circle cx="68" cy="44" r="5" fill="#111"/><circle cx="84" cy="74" r="5" fill="#1f6fe5"/><circle cx="94" cy="98" r="5" fill="#111"/><circle cx="106" cy="98" r="5" fill="#1f6fe5"/>
+          <circle cx="112" cy="74" r="5" fill="#111"/><circle cx="128" cy="74" r="5" fill="#1f6fe5"/><circle cx="138" cy="74" r="5" fill="#111"/><circle cx="152" cy="74" r="5" fill="#1f6fe5"/><circle cx="160" cy="98" r="5" fill="#1f6fe5"/><circle cx="172" cy="98" r="5" fill="#111"/><circle cx="180" cy="74" r="5" fill="#111"/><circle cx="196" cy="44" r="5" fill="#1f6fe5"/><circle cx="224" cy="44" r="5" fill="#111"/><circle cx="242" cy="74" r="5" fill="#1f6fe5"/><circle cx="256" cy="74" r="5" fill="#111"/></g>
+          <text x="276" y="52" font-size="14" text-anchor="middle">…</text><text x="280" y="72" font-size="11" text-anchor="middle">100</text><text x="280" y="86" font-size="11" text-anchor="middle">그루</text>
+          <g font-size="10" text-anchor="middle" fill="#1f6fe5"><text x="28" y="116">①</text><text x="80" y="116">②</text><text x="132" y="116">③</text><text x="184" y="116">④</text><text x="236" y="116">⑤</text></g>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>5. 다수결 · 평균 <small>Voting / Averaging</small></h3>
+        <p class="d">분류는 나무들의 표(확률)를 모으고, 회귀는 나무들의 답을 평균 낸다.</p>
+        <svg viewBox="0 0 300 120" role="img" aria-label="위 줄: 나무 네 그루가 합격, 합격, 불합격, 합격이라고 답하고 화살표 끝에 '합격 (3:1)'. 아래 줄: 나무 네 그루가 38, 41, 36, 40MPa라고 답하고 화살표 끝에 '평균 38.8MPa'">
+          <g font-size="11.5" text-anchor="middle">
+          <g fill="#1f6fe5"><path d="M22,8 l-10,18 h20z"/><path d="M62,8 l-10,18 h20z"/><path d="M102,8 l-10,18 h20z"/><path d="M142,8 l-10,18 h20z"/><path d="M22,66 l-10,18 h20z"/><path d="M62,66 l-10,18 h20z"/><path d="M102,66 l-10,18 h20z"/><path d="M142,66 l-10,18 h20z"/></g>
+          <text x="22" y="42" fill="#1f6fe5">합격</text><text x="62" y="42" fill="#1f6fe5">합격</text><text x="102" y="42">불합격</text><text x="142" y="42" fill="#1f6fe5">합격</text>
+          <text x="22" y="100">38</text><text x="62" y="100">41</text><text x="102" y="100">36</text><text x="142" y="100">40</text></g>
+          <path d="M166,26 L196,26 M166,84 L196,84" stroke="#1f6fe5" stroke-width="2.5" marker-end="url(#ahb7)"/>
+          <rect x="202" y="10" width="94" height="34" rx="8" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="249" y="32" text-anchor="middle" font-size="13" font-weight="700">합격 (3 : 1)</text>
+          <rect x="202" y="68" width="94" height="34" rx="8" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="249" y="90" text-anchor="middle" font-size="12.5" font-weight="700">평균 38.8MPa</text>
+          <text x="84" y="60" text-anchor="middle" font-size="10.5" fill="#555">분류 ↑ · 회귀 ↓</text>
+        </svg>
+        <div class="fbox"><span class="mth">ŷ(x) = <span class="frac"><span class="r">1</span><span>B</span></span> Σ<sub>b</sub> f<sub>b</sub>(x)</span></div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>6. 흔들림 줄이기 <small>Variance Reduction</small></h3>
+        <p class="d">나무를 늘릴수록 예측의 흔들림(분산)이 준다. 바닥은 나무끼리 닮은 정도 ρ가 정한다.</p>
+        <div class="fbox"><span class="mth">Var = ρσ² + <span class="frac"><span class="r">(1 − ρ)σ²</span><span>B</span></span></span></div>
+        <svg viewBox="0 0 300 150" role="img" aria-label="가로축은 나무 수 B, 세로축은 흔들림(분산). 곡선이 B가 커질수록 빠르게 내려가다가 점선으로 그린 바닥 ρσ²에 다가간다">
+          <path d="M40,136 L40,10" stroke="#111" stroke-width="1.8" marker-end="url(#ah7)"/><path d="M34,130 L292,130" stroke="#111" stroke-width="1.8" marker-end="url(#ah7)"/>
+          <path d="M40,90 L285,90" stroke="#111" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <path d="M44,20 C60,62 80,78 110,84 C150,88 200,89 285,89.5" fill="none" stroke="#1f6fe5" stroke-width="3.5"/>
+          <text x="250" y="84" font-size="13" font-style="italic" font-family="serif">ρσ²</text><text x="286" y="106" font-size="11" text-anchor="end">나무끼리 닮은 몫</text>
+          <text x="276" y="146" font-size="13" font-style="italic" font-family="serif">B</text><text x="34" y="70" font-size="11.5" text-anchor="end">분산</text>
+          <text x="56" y="38" font-size="11" fill="#1f6fe5">나무 1그루</text>
+        </svg>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>7. OOB 점수 <small>Out-of-Bag Score</small></h3>
+        <p class="d">나무마다 뽑히지 않은 37%의 배합으로 채점한다. 시험지를 열지 않고 실력을 가늠한다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="파란 가방 안에 뽑힌 배합(파란 점)이 약 63% 들어 있고, 가방 밖에 뽑히지 않은 배합(속이 빈 검은 점)이 약 37% 있다. 가방 밖 점들에서 '이 나무의 연습 시험지'라는 화살표가 나온다">
+          <rect x="10" y="20" width="160" height="110" rx="22" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.5"/>
+          <path d="M60,20 Q90,2 120,20" fill="none" stroke="#1f6fe5" stroke-width="2.5"/>
+          <g fill="#1f6fe5"><circle cx="34" cy="44" r="5"/><circle cx="54" cy="40" r="5"/><circle cx="74" cy="46" r="5"/><circle cx="96" cy="40" r="5"/><circle cx="118" cy="46" r="5"/><circle cx="142" cy="42" r="5"/><circle cx="30" cy="66" r="5"/><circle cx="52" cy="70" r="5"/><circle cx="76" cy="64" r="5"/><circle cx="100" cy="70" r="5"/><circle cx="124" cy="66" r="5"/><circle cx="148" cy="70" r="5"/><circle cx="36" cy="94" r="5"/><circle cx="60" cy="96" r="5"/><circle cx="84" cy="92" r="5"/><circle cx="108" cy="98" r="5"/><circle cx="132" cy="92" r="5"/><circle cx="150" cy="104" r="5"/><circle cx="46" cy="116" r="5"/><circle cx="94" cy="118" r="5"/></g>
+          <g fill="#fff" stroke="#111" stroke-width="1.8"><circle cx="196" cy="34" r="5"/><circle cx="218" cy="48" r="5"/><circle cx="200" cy="62" r="5"/><circle cx="226" cy="74" r="5"/><circle cx="204" cy="90" r="5"/><circle cx="230" cy="104" r="5"/><circle cx="208" cy="118" r="5"/><circle cx="240" cy="38" r="5"/><circle cx="246" cy="60" r="5"/><circle cx="252" cy="88" r="5"/><circle cx="258" cy="114" r="5"/></g>
+          <text x="90" y="146" text-anchor="middle" font-size="12" fill="#1f6fe5">뽑힘 63.2%</text><text x="228" y="146" text-anchor="middle" font-size="12">가방 밖 36.8%</text>
+          <text x="270" y="16" font-size="11" text-anchor="end">연습 시험지 →</text>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">한 배합이 뽑히지 않을 확률 = (1 − 1/n)<sup>n</sup> ≈ 1/e ≈ 0.368</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m6">
+        <h3>8. 특징 중요도 <small>Feature Importance</small></h3>
+        <p class="d">어느 특징으로 자를 때 불순도가 많이 줄었나를 모든 나무에서 더한다(합 1).</p>
+        <svg viewBox="0 0 300 172" role="img" aria-label="가로 막대그래프. 시멘트 0.34와 재령 0.33이 가장 길고, 물 0.10, 슬래그 0.08, 감수제 0.06, 모래 0.04, 자갈 0.03, 애시 0.02 순으로 짧아진다">
+          <g font-size="12" text-anchor="end"><text x="58" y="18">시멘트</text><text x="58" y="38">재령</text><text x="58" y="58">물</text><text x="58" y="78">슬래그</text><text x="58" y="98">감수제</text><text x="58" y="118">모래</text><text x="58" y="138">자갈</text><text x="58" y="158">애시</text></g>
+          <g fill="#1f6fe5"><rect x="64" y="8" width="185" height="13" rx="2"/><rect x="64" y="28" width="178" height="13" rx="2"/></g>
+          <g fill="#7fb0f5"><rect x="64" y="48" width="56" height="13" rx="2"/><rect x="64" y="68" width="44" height="13" rx="2"/><rect x="64" y="88" width="34" height="13" rx="2"/><rect x="64" y="108" width="19" height="13" rx="2"/><rect x="64" y="128" width="15" height="13" rx="2"/><rect x="64" y="148" width="9" height="13" rx="2"/></g>
+          <g font-size="11" font-family="IBM Plex Mono, monospace"><text x="254" y="19">.34</text><text x="247" y="39">.33</text><text x="125" y="59">.10</text><text x="113" y="79">.08</text><text x="103" y="99">.06</text><text x="88" y="119">.04</text><text x="84" y="139">.03</text><text x="78" y="159">.02</text></g>
+        </svg>
+        <div class="note">많이 물어본 특징 ≠ 원인. 값이 많은 연속 특징이 부풀려지기도 한다.</div>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+      <a class="pn" href="#m6">
+        <h3>9. Extra Trees <small>Extremely Randomized Trees</small></h3>
+        <p class="d">문턱까지 무작위로 뽑고, 부트스트랩 없이 전체 데이터로 키운 더 무작위한 숲.</p>
+        <svg viewBox="0 0 300 130" role="img" aria-label="두 개의 수직선 그림. 왼쪽 랜덤 포레스트는 점들 사이를 모두 재 보고 가장 좋은 곳에 실선 문턱을 긋는다. 오른쪽 Extra Trees는 주사위를 던져 아무 데나 점선 문턱을 긋는다">
+          <text x="72" y="14" text-anchor="middle" font-size="12" font-weight="700">랜덤 포레스트</text><text x="226" y="14" text-anchor="middle" font-size="12" font-weight="700">Extra Trees</text>
+          <path d="M10,70 L140,70 M160,70 L290,70" stroke="#111" stroke-width="1.6"/>
+          <g fill="#111"><circle cx="20" cy="70" r="5"/><circle cx="36" cy="70" r="5"/><circle cx="52" cy="70" r="5"/><circle cx="170" cy="70" r="5"/><circle cx="186" cy="70" r="5"/><circle cx="202" cy="70" r="5"/></g>
+          <g fill="#1f6fe5"><circle cx="92" cy="70" r="5"/><circle cx="108" cy="70" r="5"/><circle cx="124" cy="70" r="5"/><circle cx="242" cy="70" r="5"/><circle cx="258" cy="70" r="5"/><circle cx="274" cy="70" r="5"/></g>
+          <g stroke="#1f6fe5" stroke-width="1" opacity=".45"><path d="M28,50 L28,90 M44,50 L44,90 M100,50 L100,90 M116,50 L116,90"/></g>
+          <path d="M72,40 L72,100" stroke="#1f6fe5" stroke-width="3.5"/><text x="72" y="116" text-anchor="middle" font-size="11">가장 좋은 문턱</text>
+          <path d="M228,40 L228,100" stroke="#1f6fe5" stroke-width="3" stroke-dasharray="6 4"/><text x="228" y="116" text-anchor="middle" font-size="11">무작위 문턱</text>
+          <rect x="262" y="24" width="22" height="22" rx="4" fill="#fff" stroke="#111" stroke-width="1.6"/><circle cx="268" cy="30" r="2" fill="#111"/><circle cx="278" cy="40" r="2" fill="#111"/><circle cx="273" cy="35" r="2" fill="#111"/>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">문턱 = 그 마디의 최솟값~최댓값에서 균등 무작위<br>특징 후보 중 가장 좋은 무작위 문턱을 고른다</div>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "재료(나무 한 그루)", 2~3번이 "나무를 서로 다르게 만드는 두 가지 무작위", 4~5번이 "숲으로 모아 답하는 법", 6~7번이 "왜 나아지는지와 시험지 없이 재는 법", 8~9번이 "숲이 남기는 설명과 더 무작위한 동생"이다. 면접은 01장(1·4번) → 04장(2·3·7번) → 05장(5·6번) → 06장(8·9번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 한 그루는 흔들리고, 숲은 버틴다</h2>
+    <p class="lin">서로 다르게 틀리는 나무들을 모으면 실수가 서로 지워진다</p>
+  </div>
+  <div id="comicIntro"></div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">RF</span><div class="bub"><span class="who">지원자 · 랜덤 포레스트</span>저희 나무들은 각자 무작위로 다시 뽑은 과제지로 배우고, 가지마다 무작위로 받은 특징 몇 개만 봅니다. 그래서 서로 다른 곳에서 틀립니다. 마지막에 표를 모으면 한 그루의 실수는 소수 의견이 됩니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 특징 2개(물-결합재비 · 재령)로 35MPa 합격을 가르는 숲 (훈련 배합 772건)</span>
+    <div class="cwrap"><canvas class="fig" id="forestCv" aria-label="가로축 물-결합재비, 세로축 재령(로그 눈금)의 판정 지도. 파란 쪽이 합격, 회색 쪽이 불합격으로 판정되는 영역이고 색이 진할수록 나무들의 의견이 한쪽으로 모인 곳이다. 훈련 배합이 점으로 찍혀 있다. 나무 수 슬라이더를 올리면 계단 모양의 경계가 부드러워진다"></canvas></div>
+    <div class="ctrls">
+      <label>나무 수 <input type="range" id="fN" min="1" max="100" step="1" value="1"><output id="fNO">1</output></label>
+      <button class="btn blue" id="fRedraw">🎲 다시 뽑기</button>
+      <button class="btn" id="fPts" aria-pressed="true">배합 점 보이기</button>
+    </div>
+    <div class="mini3" id="miniTrees" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px"></div>
+    <div class="caption" id="forestInfo" aria-live="polite">숲을 심는 중…</div>
+    <p class="foot">아래 작은 그림 셋은 이 숲의 나무 ①②③이 혼자 그린 판정 지도다. "다시 뽑기"는 부트스트랩과 특징 고르기의 난수만 바꿔 숲을 새로 심는다. 나무 한 그루의 지도는 크게 바뀌지만 100그루 숲의 지도는 거의 그대로다. 이 그림은 특징 2개라 갈림마다 후보 특징 1개(√2 ≈ 1)를 무작위로 준다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>왜 모으면 나아지나</h4>
+      <p>정답이 "합격"인 배합에 나무 하나가 맞힐 확률이 70%라고 하자. 나무들이 <b>서로 독립적으로</b> 틀린다면, 101그루 중 과반이 맞힐 확률은 99.99%를 넘는다(콩도르세의 배심원 정리). 실제 나무들은 같은 데이터를 보고 자라서 서로 닮았기 때문에 이만큼은 아니다. 그래서 랜덤 포레스트는 나무끼리 덜 닮게 만드는 데 공을 들인다. 그 두 장치가 <b>부트스트랩</b>과 <b>특징 무작위</b>다.</p>
+    </div>
+    <div class="explain">
+      <h4>평균의 힘과 한계</h4>
+      <p>흔들림(분산)이 σ²인 예측 B개를 평균 내면, 서로 닮은 정도(상관) ρ에 따라 분산이 ρσ² + (1 − ρ)σ²/B가 된다. B를 늘리면 둘째 항은 0으로 가지만 첫째 항 ρσ²은 남는다. <b>나무를 더 심는 것보다 나무끼리 덜 닮게 하는 것</b>이 바닥을 낮춘다. 대신 무작위를 너무 세게 걸면 나무 하나하나가 약해진다. 둘 사이의 줄다리기가 근무 조건 <code>max_features</code>다.</p>
+      <div class="eq">ŷ<sub>숲</sub>(x) = (1/B) · [ f<sub>1</sub>(x) + f<sub>2</sub>(x) + … + f<sub>B</sub>(x) ]</div>
+    </div>
+  </div>
+  <div class="explain">
+    <h4>한 그루 = 5-6의 결정 트리</h4>
+    <p style="margin:0">숲의 나무 하나는 5-6에서 본 결정 트리와 같다. 분류 나무는 지니 불순도, 회귀 나무는 제곱 오차를 가장 많이 줄이는 질문("재령 ≤ 21일?")을 고르고, 잎이 순수해질 때까지 <b>가지치기 없이 끝까지</b> 키운다. 한 그루만 보면 과대적합된 나무다. 숲은 과대적합을 막는 대신, 과대적합된 나무 여럿의 서로 다른 실수를 평균으로 지운다. 나무 하나는 편향이 작고 분산이 큰 직원이고, 숲은 그 분산을 줄이는 조직이다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 같은 배합표, 두 가지 질문</h2>
+    <p class="lin">한 줄이 배합 하나(샘플), 배합량과 재령이 특징(X), 강도와 그 이름표가 타겟(y)이다</p>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 A · 이진 분류</span>
+      <h3>35MPa 합격 여부</h3>
+      <p style="margin:6px 0 0;font-size:15px">압축 강도가 35MPa 이상이면 합격(1), 아니면 불합격(0). 훈련 772건 중 48.8%가 합격이다. 분류 합격선은 매뉴얼 씨의 작업 표준서 한 줄이 시험지에서 낸 <b>76.7%</b>, 기준선(늘 "불합격")은 49.6%다. 3등급(저·보통·고강도) 분류는 추가 과제로 본다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">과제 B · 회귀</span>
+      <h3>압축 강도(MPa) 그 자체</h3>
+      <p style="margin:6px 0 0;font-size:15px">강도를 숫자로 맞힌다. 회귀 합격선은 매뉴얼 씨의 현장 경험식(에이브럼스 식 × 재령 보정, 학습 없음)이 시험지에서 낸 <b id="lineR2">R² 0.735</b>(MAE <span id="lineMAE">6.72</span>MPa)다. 늘 훈련 평균을 답하는 기준선은 R² 0, MAE <span id="baseMAE">13.52</span>MPa다.</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 축을 골라 보기 (색 = 강도 등급, 속이 빈 점 = 봉인된 시험지)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <label>가로축 <select id="dxSel" class="btn"></select></label>
+      <label>세로축 <select id="dySel" class="btn"></select></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="dataCv" aria-label="콘크리트 배합 1,030건의 산점도. 고른 두 특징을 가로·세로축으로 하고, 강도 등급마다 색이 다르다. 시험지 258건은 속이 빈 점으로 표시된다"></canvas></div>
+    <div class="legend" id="dataLeg"></div>
+  </div>
+  <div class="card">
+    <span class="tag">표 · 실기 과제지 전체 (1,030줄)</span>
+    <div class="datatb" id="concTbl" tabindex="0" aria-label="콘크리트 데이터 표"></div>
+    <p class="foot">파란 머리글이 특징(X), 빨간 열이 타겟(y)이다. 과제 A는 강도를 35MPa 문턱에 대어 만든 이름표를, 과제 B는 강도 숫자를 그대로 쓴다. "봉인" 표시가 붙은 258줄은 05장에서 한 번만 연다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>나무는 표준화가 필요 없다</h4>
+      <p>나무의 질문은 늘 "이 특징이 문턱보다 작은가"다. 재령을 일 대신 주로 재든, 시멘트를 kg 대신 표준화 점수로 바꾸든 배합의 <b>순서</b>가 그대로이니 같은 곳에서 갈린다. 5-1 KNN과 5-4 로지스틱 회귀에서는 거의 필수였던 표준화를 이 면접에서는 하지 않는다. 아래 표가 그 증거다. 같은 특징으로 원래 단위와 표준화 단위에서 뿌리 질문을 찾으면 문턱의 숫자만 바뀌고 갈리는 배합은 같다.</p>
+      <div class="tw"><table class="tb" id="rootTbl" style="font-size:13.5px"></table></div>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>표 형식(CSV 등)으로, 한 줄에 배합(또는 로트) 하나, 품질 결과 열 하나가 있으면 된다.</li>
+        <li>Colab 코드(A장) 1번 칸의 데이터 읽기, <code>FEATURES</code>, <code>PASS_MPA</code> 세 곳만 바꾼다. 강도 숫자가 있으면 회귀, 합격·불합격만 있으면 분류 칸만 돌린다.</li>
+        <li>글자로 된 특징(공장, 원자재 등급)은 숫자로 바꿔야 한다. 나무는 원-핫 인코딩 대신 순서 번호(OrdinalEncoder)로도 잘 돈다.</li>
+        <li>빈칸: scikit-learn 1.4부터 랜덤 포레스트가 빈칸(NaN)을 직접 받을 수 있지만, 버전과 설정을 먼저 확인한다. 모르겠으면 채우고 시작한다.</li>
+        <li>배합이 수만 건이면 <code>n_jobs=-1</code>(CPU 여러 개)과 <code>max_samples</code>(나무마다 뽑을 수)로 시간을 줄인다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 실행 결과로 확인</p>
+  </div>
+  <p>랜덤 포레스트 코드는 짧다. <code>RandomForestClassifier().fit(X, y)</code> 한 줄이면 돈다. 그래서 더 위험하다. 짧은 코드 안에 회귀·분류를 바꿔 쓴 실수, 없어진 인자, 훈련 데이터로 채점한 99.9%가 숨어도 눈에 잘 띄지 않는다. 위원회 규정은 그대로다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다. 분류만 필요하면 회귀 줄을 지운다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, 기본 라이브러리, 버전 출력) ② 데이터(주소, 열 이름, 회귀 타겟과 분류 타겟) ③ 규정(나누기·난수, 표준화 안 함) ④ 출력(시험 점수, OOB, 특징 중요도) ⑤ 금지(시험 데이터로 학습·채점 금지, 데이터 지어내기 금지)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"랜덤 포레스트로 콘크리트 강도 예측해 줘." — AI가 분류기와 회귀기를 섞어 쓰거나, 옛 버전의 인자(<code>max_features="auto"</code>)를 쓰거나, 훈련 점수 99.9%를 성과처럼 보고할 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 코드도 버전에 따라 다르게 돈다</h4>
+    <p><code>max_features="auto"</code>는 scikit-learn 1.1에서 예고된 뒤 1.3에서 없어졌다. 지금 쓰면 오류가 난다. 분류는 <code>"sqrt"</code>(기본값), 회귀는 <code>1.0</code>(기본값, 특징 모두)으로 쓴다. 특히 <b>RandomForestRegressor의 기본값은 특징을 모두 본다</b>는 점을 기억한다. 회귀 숲은 기본 설정 그대로면 "특징 무작위" 없이 부트스트랩만 하는 배깅이다. <code>n_estimators</code>의 기본값은 0.22에서 10에서 100으로 바뀌었다. 옛 블로그 코드를 그대로 받은 AI가 "나무 10그루"로 학습하는 일이 있다.</p>
+    <p style="margin:0">XGBoost·LightGBM 같은 다른 라이브러리의 나무 앙상블은 5-9 GBM 면접에서 다룬다. 이 면접의 Colab 코드(A장)는 scikit-learn만 쓰고, 실행 결과도 함께 실었다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Training</div>
+    <h2>수습 기간 — 한 그루씩 심고, 가방 밖 배합으로 채점한다</h2>
+    <p class="lin">부트스트랩으로 과제지 뽑기 → 갈림마다 특징 무작위 → 끝까지 키우기 → OOB 채점, 나무 수만큼 반복</p>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 · 특징 8개로 숲 키우기 (훈련 배합 772건, 시험지는 아직 봉인)</span>
+    <div class="ctrls" style="margin:0 0 10px">
+      <div class="choice" role="group" aria-label="과제 고르기" id="growChoice"><button data-v="cls" aria-pressed="true">과제 A · 35MPa 분류 (특징 √8 ≈ 2개)</button><button data-v="reg" aria-pressed="false">과제 B · 강도 회귀 (특징 8개 모두)</button></div>
+    </div>
+    <div class="two" style="gap:12px">
+      <div><div class="cwrap"><canvas class="fig" id="treeCv" aria-label="지금 심은 나무의 위쪽 세 층. 뿌리 질문과 그 아래 질문들이 상자로 그려지고, 각 상자에 특징 이름과 문턱이 적혀 있다"></canvas></div>
+        <div class="cwrap" style="margin-top:8px"><canvas class="fig" id="bootCv" aria-label="훈련 배합 772건을 작은 칸으로 늘어놓은 띠. 지금 나무의 부트스트랩에서 한 번 뽑힌 배합은 연한 파랑, 두 번은 파랑, 세 번 이상은 진한 남색, 한 번도 뽑히지 않은 배합(가방 밖)은 속이 빈 빨간 테두리다"></canvas></div></div>
+      <div><div class="cwrap"><canvas class="fig" id="oobCv" aria-label="가로축 나무 수, 세로축 OOB 점수의 선 그래프. 나무가 늘수록 점수가 오르다가 평평해진다"></canvas></div>
+        <div class="bars" id="rootBars" style="margin-top:10px"></div></div>
+    </div>
+    <div class="ctrls">
+      <button class="btn blue" id="gPlay">▶ 재생</button><button class="btn" id="gStep">한 그루 더</button><button class="btn" id="gReset">처음으로</button>
+      <span class="pill" id="gCount">0그루</span>
+    </div>
+    <div class="caption" id="growInfo" aria-live="polite"></div>
+    <p class="foot">OOB(가방 밖) 점수는 배합마다 "그 배합을 뽑지 않은 나무들"에게만 물어 낸 점수다. 시험지를 쓰지 않으니 수습 기간에 봐도 반칙이 아니다. 오른쪽 아래 막대는 지금까지 심은 나무들의 뿌리 질문이 어느 특징이었는지 센 것이다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>나무 한 그루를 심는 순서</h4>
+      <p>① 훈련 772건에서 772번 복원 추출한다(같은 배합이 여러 번 뽑히고, 약 37%는 한 번도 안 뽑힌다). ② 뿌리 마디에서 특징 몇 개를 무작위로 받고, 그 특징들의 모든 문턱을 재서 불순도를 가장 많이 줄이는 질문을 고른다. ③ 두 갈래로 나눈 뒤 각 갈래에서 ②를 되풀이한다. ④ 잎이 순수하거나(분류) 배합이 하나 남을 때까지 키운다. 가지치기는 하지 않는다.</p>
+      <div class="eq">지니 = 1 − Σ<sub>k</sub> p<sub>k</sub>² (분류)　·　MSE = 평균[(y − ȳ)²] (회귀)</div>
+    </div>
+    <div class="explain">
+      <h4>경사 하강이 없는 수습</h4>
+      <p>5-4 로지스틱 회귀는 같은 가중치를 수천 번 고쳐 가며 배웠다. 나무는 고치지 않는다. 질문을 한 번 고르면 끝이다(욕심쟁이 탐색). 숲의 수습은 "나무를 하나 더 심는 것"의 반복이고, 나무끼리는 서로를 보지 않아 <b>동시에 심을 수 있다</b>(<code>n_jobs=-1</code>). 나무를 더 심어도 과대적합이 늘지는 않는다. OOB 곡선이 평평해지면 그만 심어도 된다는 신호이고, 더 심으면 돈(시간·메모리)만 든다.</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>한 그루에 마디가 이백 개 남짓이니 백 그루면 이만 개야. 로지스틱 회귀는 숫자 아홉 개였는데. 그래도 나무끼리 안 싸우니 일꾼(CPU)을 여럿 쓰면 수습 기간은 줄일 수 있지.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Evaluation</div>
+    <h2>성과 평가 — 봉인된 시험지를 연다</h2>
+    <p class="lin">분류는 정확도와 혼동행렬, 회귀는 R²와 MAE. 그리고 "다시 뽑으면 얼마나 흔들리나"</p>
+  </div>
+  <div class="card">
+    <span class="tag">과제 A · 35MPa 합격 여부, 시험지 258건 (숲 100그루, 특징 √8 ≈ 2개, 브라우저 계산)</span>
+    <div id="evalCls"><p class="muted">숲을 심는 중…</p></div>
+  </div>
+  <div class="card">
+    <span class="tag">과제 B · 강도(MPa) 회귀, 시험지 258건 (숲 100그루, 특징 8개 모두, 브라우저 계산)</span>
+    <div id="evalReg"><p class="muted">숲을 심는 중…</p></div>
+  </div>
+  <div class="card">
+    <span class="tag">흔들림 · 다시 뽑기 — 난수만 바꿔 숲을 새로 심고, 앞쪽 나무 1 · 10 · 100그루의 시험 정확도를 찍는다 (과제 A)</span>
+    <div class="cwrap"><canvas class="fig" id="spreadCv" aria-label="세 개의 세로 줄에 점이 찍히는 그림. 왼쪽 줄은 나무 1그루, 가운데는 10그루, 오른쪽은 100그루의 시험 정확도다. 다시 뽑을 때마다 점이 하나씩 늘고, 나무 1그루 줄의 점들은 넓게 퍼지고 100그루 줄의 점들은 좁게 모인다. 매뉴얼 씨의 합격선이 가로 점선으로 그려져 있다"></canvas></div>
+    <div class="ctrls"><button class="btn blue" id="spOne">🎲 다시 뽑기</button><button class="btn" id="spFive">5번 더</button><span class="muted" style="font-size:13.5px" id="spStat"></span></div>
+    <div class="caption" id="spInfo" aria-live="polite">처음 점은 위의 숲(05장 과제 A)에서 나왔다. "다시 뽑기"를 눌러 점을 늘려 보자.</div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 A 혼동행렬 · 행 = 정답, 열 = 예측</span>
+      <div class="tw"><div id="cmA"></div></div>
+      <p class="foot" id="cmAInfo">계산 중…</p>
+    </div>
+    <div class="card">
+      <span class="tag">예측 강도 vs 실제 강도 · 과제 B, 모델을 바꿔 보기</span>
+      <div class="choice" role="group" aria-label="모델 고르기" id="pvChoice"></div>
+      <div class="cwrap" style="margin-top:8px"><canvas class="fig" id="pvCv" aria-label="가로축 실제 강도, 세로축 예측 강도의 산점도. 대각선에 가까울수록 정확하다. 35MPa 선이 점선으로 그려져 있다"></canvas></div>
+      <p class="foot" id="pvInfo"></p>
+    </div>
+  </div>
+  <div class="card tw">
+    <span class="tag">지금까지의 지원자와 비교 · 같은 시험지 258건</span>
+    <table class="tb" id="cmpTbl" style="font-size:14px"></table>
+    <p class="foot">5-1 ~ 5-4는 각 편의 Colab 결과다. 랜덤 포레스트 줄만 이 페이지가 브라우저에서 계산한 값이고, 괄호 안은 A장 Colab 값이다. 결정 트리 한 그루(끝까지 키움)도 A장 4번·8번 칸에서 같은 시험지로 다시 쟀다.</p>
+  </div>
+
+  <div class="interview" id="iv7"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 숲이 많이 물어본 특징, 예산, 근무 조건(하이퍼파라미터), 동생 Extra Trees</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym" style="font-size:20px">RF</span><span class="no">APP-07 → EMP-0007</span><span class="nm">랜덤 포레스트</span><span class="rl">지도 본부 › 겸용팀 · 앙상블</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">흔들리는 나무 백 그루로 버티는 숲.</b> 표 데이터에서 손이 가장 덜 가는 강한 기본값이다. 대신 몸집이 크고, 한 그루처럼 순서도로 설명하기는 어렵다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>기본값으로도 강하다.</b> 근무 조건을 거의 안 만져도 분류·회귀 모두 상위권이다(05장).</li>
+          <li><b>표준화·특징 가공이 거의 필요 없다.</b> 단위가 제각각인 배합표를 그대로 넣었다.</li>
+          <li><b>시험지 없이 실력을 가늠한다.</b> OOB 점수가 공짜 검증이다(04장).</li>
+          <li><b>특징끼리의 상호작용을 스스로 찾는다.</b> "재령이 짧으면 물-결합재비를, 길면 시멘트를 본다" 같은 갈래를 나무가 만든다.</li>
+          <li><b>나무를 동시에 심을 수 있다.</b> CPU가 많으면 빨라진다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>몸집이 크다.</b> 외울 마디가 수만 개, 예측도 나무 수만큼 길을 따라간다(아래 예산).</li>
+          <li><b>훈련 범위 밖을 못 맞힌다.</b> 잎의 평균으로 답하므로 훈련 데이터의 최고 강도를 넘는 예측을 낼 수 없다(05장 그림 오른쪽 위).</li>
+          <li><b>설명이 한 장에 안 들어간다.</b> 나무 백 그루의 순서도를 다 읽을 수는 없다. 특징 중요도로 "많이 물어본 것"만 요약한다.</li>
+          <li><b>중요도가 치우칠 수 있다.</b> 값이 많은 연속 특징, 서로 얽힌 특징에서 불순도 기반 중요도는 왜곡된다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">숲이 많이 물어본 특징 · 특징 중요도 (불순도 감소, 합 1, 브라우저의 숲 100그루)</span>
+    <div class="choice" role="group" aria-label="숲 고르기" id="impChoice"><button data-v="reg" aria-pressed="true">과제 B · 회귀 숲</button><button data-v="cls" aria-pressed="false">과제 A · 분류 숲</button></div>
+    <div class="bars" id="impBars" style="margin-top:12px"><p class="muted">숲을 심는 중…</p></div>
+    <div class="caption" id="impInfo" aria-live="polite"></div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say fly"><img data-who="fly" data-mood="type" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>매뉴얼 씨는 물-결합재비와 재령 두 숫자를 봤고, 숲도 재령과 시멘트·물을 가장 많이 물었어. 데이터가 현장 지식을 다시 찾아낸 거지. 그래도 "많이 물었다"를 "원인"이라고 적지는 않을게.</div></div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">예산 · 나무 100그루의 몸값 (이 브라우저에서 잰 값)</span>
+      <div id="costStat"><p class="muted">숲을 심는 중…</p></div>
+      <p class="foot" id="costInfo"></p>
+    </div>
+    <div class="card">
+      <span class="tag">동생 Extra Trees · 문턱까지 무작위 (브라우저 100그루)</span>
+      <div id="etStat"><button class="btn blue" id="etRun">Extra Trees 심어 보기 ▶</button></div>
+      <p class="foot" id="etInfo">랜덤 포레스트는 후보 특징마다 모든 문턱을 재 보고 가장 좋은 곳을 고른다. Extra Trees는 특징마다 문턱을 하나만 무작위로 뽑아 그중 나은 것을 고르고, 부트스트랩도 하지 않는다. 나무가 더 제각각이 되어 분산이 더 줄고, 문턱을 재는 계산이 없어 빠르다.</p>
+    </div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn RandomForestClassifier / RandomForestRegressor)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>n_estimators</code></td><td>100</td><td>나무 수. 늘려도 과대적합은 늘지 않고 점수가 평평해질 뿐이다. OOB 곡선이 평평해지는 곳까지(04장). 늘리면 시간과 메모리가 그만큼 든다.</td></tr>
+        <tr><td><code>max_features</code></td><td>분류 "sqrt"<br>회귀 1.0</td><td>갈림마다 후보로 보는 특징 수. 작을수록 나무끼리 덜 닮지만 하나하나는 약해진다. 회귀 기본값 1.0은 특징 모두 = 배깅이다. 회귀에서 0.3~0.5로 낮추면 나아지는 데이터도 있다(교차 검증으로 고른다).</td></tr>
+        <tr><td><code>max_depth</code> · <code>min_samples_leaf</code></td><td>None · 1</td><td>나무를 끝까지 키울지. 기본은 끝까지(잎 하나에 배합 하나까지). 데이터에 잡음이 많거나 모델 크기를 줄여야 하면 <code>min_samples_leaf</code>를 3~10으로 올린다.</td></tr>
+        <tr><td><code>bootstrap</code> · <code>max_samples</code></td><td>True · None</td><td>나무마다 복원 추출할지, 몇 건을 뽑을지. 데이터가 크면 <code>max_samples=0.3</code>처럼 줄여 빠르게 심는다. <code>bootstrap=False</code>이면 OOB 점수를 쓸 수 없다.</td></tr>
+        <tr><td><code>oob_score</code></td><td>False</td><td>True로 두면 학습 뒤 <code>oob_score_</code>에 가방 밖 점수(분류 정확도, 회귀 R²)가 담긴다.</td></tr>
+        <tr><td><code>n_jobs</code> · <code>random_state</code></td><td>None · None</td><td><code>n_jobs=-1</code>이면 CPU를 모두 쓴다. 이 데이터처럼 작으면 오히려 느릴 수 있다(A장 12번 칸). <code>random_state</code>를 고정해야 점수가 매번 같다.</td></tr>
+        <tr><td><code>class_weight</code></td><td>None</td><td>"balanced" 또는 "balanced_subsample"로 수가 적은 클래스(불량)에 무게를 준다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <span class="tag">맞는 일 · 안 맞는 일</span>
+    <table class="tb" style="font-size:14px"><tbody>
+      <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>단위가 제각각인 공정·품질 표 데이터의 분류와 회귀, 특징끼리 얽힌 관계(배합처럼), 빠르게 강한 첫 모델이 필요할 때, 시험지가 넉넉하지 않아 OOB로 검증하고 싶을 때, 어떤 특징을 먼저 볼지 대략 순위가 필요할 때</td></tr>
+      <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>훈련 범위 밖을 내다봐야 하는 예측(더 센 신배합, 미래 추세), 판정 근거를 한 장의 규칙으로 보여 줘야 하는 업무(→ 5-6 결정 트리 한 그루나 5-4 로지스틱 회귀), 메모리·응답 시간이 빠듯한 작은 장비, 픽셀·문장 같은 비정형 데이터(→ 딥러닝 시리즈)</td></tr>
+      <tr><td style="font-weight:700;white-space:nowrap">다음 지원자</td><td>숲은 나무를 <b>나란히</b> 심고 평균을 낸다(배깅). 5-9 GBM은 얕은 나무를 <b>차례로</b> 심어 앞 나무가 틀린 만큼을 다음 나무가 고친다(부스팅). 족보는 <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-10_ensemble_lineage.html" target="_blank" rel="noopener">패밀리 4-10 앙상블 계보</a>에 있다.</td></tr>
+    </tbody></table>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

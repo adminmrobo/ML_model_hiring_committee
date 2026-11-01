@@ -1,0 +1,1182 @@
+{
+ "재령": {
+  "t": "age (curing age)",
+  "n": "days from casting to testing; 'age' in the UCI dataset"
+ },
+ "28일 강도": {
+  "t": "28-day strength",
+  "n": ""
+ },
+ "압축 강도": {
+  "t": "compressive strength",
+  "n": ""
+ },
+ "MPa": {
+  "t": "MPa",
+  "n": "megapascal"
+ },
+ "결합재": {
+  "t": "binder",
+  "n": "cement + slag + fly ash; cementitious material"
+ },
+ "물-결합재비": {
+  "t": "water–binder ratio",
+  "n": "w/b"
+ },
+ "물-시멘트비": {
+  "t": "water–cement ratio",
+  "n": "w/c"
+ },
+ "시멘트": {
+  "t": "cement",
+  "n": ""
+ },
+ "고로 슬래그": {
+  "t": "ground granulated blast-furnace slag (GGBFS)",
+  "n": "short: blast-furnace slag; 'slag' in labels"
+ },
+ "플라이 애시": {
+  "t": "fly ash",
+  "n": ""
+ },
+ "혼화재": {
+  "t": "supplementary cementitious material (SCM)",
+  "n": "mineral admixture"
+ },
+ "고성능 감수제": {
+  "t": "superplasticizer",
+  "n": "high-range water reducer (HRWR)"
+ },
+ "굵은 골재": {
+  "t": "coarse aggregate",
+  "n": "gravel"
+ },
+ "잔골재": {
+  "t": "fine aggregate",
+  "n": "sand"
+ },
+ "배합": {
+  "t": "mix (mix proportion)",
+  "n": "mix design; one dataset row"
+ },
+ "시편": {
+  "t": "specimen",
+  "n": "test cylinder"
+ },
+ "양생": {
+  "t": "curing",
+  "n": ""
+ },
+ "수화": {
+  "t": "hydration",
+  "n": ""
+ },
+ "레미콘": {
+  "t": "ready-mixed concrete",
+  "n": "ready-mix"
+ },
+ "에이브럼스 식": {
+  "t": "Abrams' law",
+  "n": "Abrams' formula"
+ },
+ "인공지능": {
+  "t": "artificial intelligence (AI)",
+  "n": ""
+ },
+ "룰 베이스": {
+  "t": "rule-based",
+  "n": "rule-based system"
+ },
+ "전문가 시스템": {
+  "t": "expert system",
+  "n": ""
+ },
+ "머신러닝": {
+  "t": "machine learning",
+  "n": ""
+ },
+ "딥러닝": {
+  "t": "deep learning",
+  "n": ""
+ },
+ "IF 함수": {
+  "t": "IF function",
+  "n": "Excel"
+ },
+ "순서도": {
+  "t": "flowchart",
+  "n": ""
+ },
+ "NOR": {
+  "t": "NOR",
+  "n": "logic gate"
+ },
+ "샘플": {
+  "t": "sample",
+  "n": "one row; here one mix"
+ },
+ "특징": {
+  "t": "feature",
+  "n": "input column"
+ },
+ "타겟": {
+  "t": "target",
+  "n": ""
+ },
+ "시험지": {
+  "t": "exam paper",
+  "n": "series metaphor = held-out test set"
+ },
+ "회귀": {
+  "t": "regression",
+  "n": ""
+ },
+ "분류": {
+  "t": "classification",
+  "n": ""
+ },
+ "지도 학습": {
+  "t": "supervised learning",
+  "n": ""
+ },
+ "비지도 학습": {
+  "t": "unsupervised learning",
+  "n": ""
+ },
+ "정확도": {
+  "t": "accuracy",
+  "n": ""
+ },
+ "기준선": {
+  "t": "baseline",
+  "n": ""
+ },
+ "합격선": {
+  "t": "the hiring bar",
+  "n": "series-fixed; = Mr. Manual's exam-paper score"
+ },
+ "KNN": {
+  "t": "KNN",
+  "n": "k-nearest neighbors"
+ },
+ "유클리드 거리": {
+  "t": "Euclidean distance",
+  "n": ""
+ },
+ "맨해튼 거리": {
+  "t": "Manhattan distance",
+  "n": ""
+ },
+ "다수결": {
+  "t": "majority vote",
+  "n": ""
+ },
+ "거리 가중": {
+  "t": "distance weighting",
+  "n": "weights='distance'"
+ },
+ "게으른 학습": {
+  "t": "lazy learning",
+  "n": "instance-based learning"
+ },
+ "차원의 저주": {
+  "t": "curse of dimensionality",
+  "n": ""
+ },
+ "근사 이웃 검색": {
+  "t": "approximate nearest neighbor search (ANN)",
+  "n": ""
+ },
+ "표준화": {
+  "t": "standardization",
+  "n": "StandardScaler"
+ },
+ "데이터 누수": {
+  "t": "data leakage",
+  "n": ""
+ },
+ "교차 검증": {
+  "t": "cross-validation",
+  "n": ""
+ },
+ "LOO": {
+  "t": "LOO",
+  "n": "leave-one-out"
+ },
+ "과대적합": {
+  "t": "overfitting",
+  "n": ""
+ },
+ "과소적합": {
+  "t": "underfitting",
+  "n": ""
+ },
+ "R²": {
+  "t": "R²",
+  "n": "coefficient of determination"
+ },
+ "MAE": {
+  "t": "MAE",
+  "n": "mean absolute error"
+ },
+ "선형 회귀": {
+  "t": "linear regression",
+  "n": ""
+ },
+ "가중치": {
+  "t": "weight",
+  "n": "coefficient"
+ },
+ "절편": {
+  "t": "intercept",
+  "n": "bias term b"
+ },
+ "잔차": {
+  "t": "residual",
+  "n": ""
+ },
+ "최소제곱": {
+  "t": "least squares",
+  "n": "ordinary least squares (OLS)"
+ },
+ "정규방정식": {
+  "t": "normal equation",
+  "n": ""
+ },
+ "파생 특징": {
+  "t": "derived feature",
+  "n": ""
+ },
+ "정답 누설": {
+  "t": "target leakage",
+  "n": ""
+ },
+ "경사 하강": {
+  "t": "gradient descent",
+  "n": ""
+ },
+ "학습률": {
+  "t": "learning rate",
+  "n": ""
+ },
+ "발산": {
+  "t": "divergence",
+  "n": "training diverges"
+ },
+ "MSE": {
+  "t": "MSE",
+  "n": "mean squared error"
+ },
+ "RMSE": {
+  "t": "RMSE",
+  "n": "root mean squared error"
+ },
+ "다항 회귀": {
+  "t": "polynomial regression",
+  "n": ""
+ },
+ "다항 특징": {
+  "t": "polynomial features",
+  "n": "PolynomialFeatures"
+ },
+ "상호작용 항": {
+  "t": "interaction term",
+  "n": ""
+ },
+ "차수": {
+  "t": "degree",
+  "n": "polynomial degree"
+ },
+ "릿지": {
+  "t": "Ridge",
+  "n": "ridge regression (L2)"
+ },
+ "라쏘": {
+  "t": "Lasso",
+  "n": "lasso regression (L1)"
+ },
+ "엘라스틱넷": {
+  "t": "Elastic Net",
+  "n": "ElasticNet"
+ },
+ "규제": {
+  "t": "regularization",
+  "n": ""
+ },
+ "닫힌 해": {
+  "t": "closed-form solution",
+  "n": ""
+ },
+ "좌표 하강": {
+  "t": "coordinate descent",
+  "n": ""
+ },
+ "소프트 임계값": {
+  "t": "soft thresholding",
+  "n": ""
+ },
+ "조건수": {
+  "t": "condition number",
+  "n": ""
+ },
+ "특징 선택": {
+  "t": "feature selection",
+  "n": ""
+ },
+ "특징공학": {
+  "t": "feature engineering",
+  "n": ""
+ },
+ "결정 계수": {
+  "t": "coefficient of determination",
+  "n": "R²"
+ },
+ "평균 절대 오차": {
+  "t": "mean absolute error",
+  "n": "MAE"
+ },
+ "로지스틱 회귀": {
+  "t": "logistic regression",
+  "n": ""
+ },
+ "선형 점수": {
+  "t": "linear score",
+  "n": "z = w·x + b; also 'decision function'"
+ },
+ "시그모이드": {
+  "t": "sigmoid",
+  "n": "logistic function"
+ },
+ "로짓": {
+  "t": "logit",
+  "n": ""
+ },
+ "오즈": {
+  "t": "odds",
+  "n": ""
+ },
+ "소프트맥스": {
+  "t": "softmax",
+  "n": ""
+ },
+ "결정 경계": {
+  "t": "decision boundary",
+  "n": ""
+ },
+ "임계값": {
+  "t": "threshold",
+  "n": "decision threshold"
+ },
+ "교차 엔트로피": {
+  "t": "cross-entropy",
+  "n": ""
+ },
+ "혼동행렬": {
+  "t": "confusion matrix",
+  "n": ""
+ },
+ "정밀도": {
+  "t": "precision",
+  "n": ""
+ },
+ "재현율": {
+  "t": "recall",
+  "n": "sensitivity"
+ },
+ "ROC 곡선": {
+  "t": "ROC curve",
+  "n": ""
+ },
+ "나이브 베이즈": {
+  "t": "naive Bayes",
+  "n": ""
+ },
+ "베이즈 정리": {
+  "t": "Bayes' theorem",
+  "n": ""
+ },
+ "사전 확률": {
+  "t": "prior probability",
+  "n": "prior"
+ },
+ "가능도": {
+  "t": "likelihood",
+  "n": ""
+ },
+ "사후 확률": {
+  "t": "posterior probability",
+  "n": "posterior"
+ },
+ "조건부 독립": {
+  "t": "conditional independence",
+  "n": ""
+ },
+ "가우시안 분포": {
+  "t": "Gaussian distribution",
+  "n": "normal distribution"
+ },
+ "가능도 비": {
+  "t": "likelihood ratio",
+  "n": ""
+ },
+ "생성 모델": {
+  "t": "generative model",
+  "n": "vs. discriminative model"
+ },
+ "var_smoothing": {
+  "t": "var_smoothing",
+  "n": "GaussianNB parameter"
+ },
+ "라플라스 평활": {
+  "t": "Laplace smoothing",
+  "n": "additive smoothing"
+ },
+ "상관계수": {
+  "t": "correlation coefficient",
+  "n": ""
+ },
+ "왜도": {
+  "t": "skewness",
+  "n": ""
+ },
+ "로그 변환": {
+  "t": "log transform",
+  "n": ""
+ },
+ "웰퍼드 방법": {
+  "t": "Welford's method",
+  "n": "Welford's online algorithm"
+ },
+ "partial_fit": {
+  "t": "partial_fit",
+  "n": "incremental learning"
+ },
+ "로그 손실": {
+  "t": "log loss",
+  "n": ""
+ },
+ "확률 보정": {
+  "t": "probability calibration",
+  "n": ""
+ },
+ "결정 트리": {
+  "t": "decision tree",
+  "n": ""
+ },
+ "회귀 트리": {
+  "t": "regression tree",
+  "n": ""
+ },
+ "마디": {
+  "t": "node",
+  "n": "internal node / leaf / root"
+ },
+ "문턱": {
+  "t": "split threshold",
+  "n": "threshold value in a split"
+ },
+ "탐욕 알고리즘": {
+  "t": "greedy algorithm",
+  "n": ""
+ },
+ "앙상블": {
+  "t": "ensemble",
+  "n": ""
+ },
+ "불순도": {
+  "t": "impurity",
+  "n": ""
+ },
+ "지니 불순도": {
+  "t": "Gini impurity",
+  "n": ""
+ },
+ "엔트로피": {
+  "t": "entropy",
+  "n": ""
+ },
+ "정보 이득": {
+  "t": "information gain",
+  "n": ""
+ },
+ "평균 제곱 오차": {
+  "t": "mean squared error",
+  "n": "MSE"
+ },
+ "가지치기": {
+  "t": "pruning",
+  "n": "pre-pruning / post-pruning"
+ },
+ "비용 복잡도 가지치기": {
+  "t": "cost-complexity pruning",
+  "n": "ccp_alpha"
+ },
+ "특징 중요도": {
+  "t": "feature importance",
+  "n": "impurity-based (MDI)"
+ },
+ "랜덤 포레스트": {
+  "t": "random forest",
+  "n": ""
+ },
+ "배깅": {
+  "t": "bagging",
+  "n": "bootstrap aggregating"
+ },
+ "부트스트랩": {
+  "t": "bootstrap",
+  "n": ""
+ },
+ "복원 추출": {
+  "t": "sampling with replacement",
+  "n": ""
+ },
+ "OOB": {
+  "t": "OOB",
+  "n": "out-of-bag"
+ },
+ "특징 무작위": {
+  "t": "random feature selection",
+  "n": "feature subsampling; max_features"
+ },
+ "Extra Trees": {
+  "t": "Extra Trees",
+  "n": "extremely randomized trees"
+ },
+ "순열 중요도": {
+  "t": "permutation importance",
+  "n": ""
+ },
+ "분산": {
+  "t": "variance",
+  "n": "bias–variance trade-off sense"
+ },
+ "편향": {
+  "t": "bias",
+  "n": ""
+ },
+ "하이퍼파라미터": {
+  "t": "hyperparameter",
+  "n": ""
+ },
+ "서포트 벡터 머신": {
+  "t": "support vector machine (SVM)",
+  "n": ""
+ },
+ "마진": {
+  "t": "margin",
+  "n": ""
+ },
+ "서포트 벡터": {
+  "t": "support vector",
+  "n": ""
+ },
+ "초평면": {
+  "t": "hyperplane",
+  "n": ""
+ },
+ "소프트 마진": {
+  "t": "soft margin",
+  "n": ""
+ },
+ "힌지 손실": {
+  "t": "hinge loss",
+  "n": ""
+ },
+ "커널 트릭": {
+  "t": "kernel trick",
+  "n": ""
+ },
+ "RBF 커널": {
+  "t": "RBF kernel",
+  "n": "radial basis function"
+ },
+ "SVR": {
+  "t": "SVR",
+  "n": "support vector regression"
+ },
+ "ε 띠": {
+  "t": "ε-tube",
+  "n": "epsilon-insensitive band"
+ },
+ "일대일": {
+  "t": "one-vs-one (OvO)",
+  "n": ""
+ },
+ "쌍대 문제": {
+  "t": "dual problem",
+  "n": ""
+ },
+ "SMO": {
+  "t": "SMO",
+  "n": "sequential minimal optimization"
+ },
+ "커널 근사": {
+  "t": "kernel approximation",
+  "n": "Nystroem, RBFSampler"
+ },
+ "GBM": {
+  "t": "GBM",
+  "n": "gradient boosting machine"
+ },
+ "부스팅": {
+  "t": "boosting",
+  "n": ""
+ },
+ "약한 학습기": {
+  "t": "weak learner",
+  "n": ""
+ },
+ "잎": {
+  "t": "leaf",
+  "n": ""
+ },
+ "HistGradientBoosting": {
+  "t": "HistGradientBoosting",
+  "n": ""
+ },
+ "XGBoost": {
+  "t": "XGBoost",
+  "n": ""
+ },
+ "LightGBM": {
+  "t": "LightGBM",
+  "n": ""
+ },
+ "CatBoost": {
+  "t": "CatBoost",
+  "n": ""
+ },
+ "덧대기": {
+  "t": "additive update",
+  "n": "F ← F + η·h; additive model"
+ },
+ "손실 함수": {
+  "t": "loss function",
+  "n": ""
+ },
+ "기울기": {
+  "t": "gradient",
+  "n": ""
+ },
+ "로그 오즈": {
+  "t": "log-odds",
+  "n": ""
+ },
+ "조기 종료": {
+  "t": "early stopping",
+  "n": ""
+ },
+ "검증 몫": {
+  "t": "validation fraction",
+  "n": "validation_fraction; held-out validation split"
+ },
+ "서브샘플": {
+  "t": "subsample",
+  "n": "subsampling"
+ },
+ "K-Means": {
+  "t": "K-Means",
+  "n": ""
+ },
+ "K-Medoids": {
+  "t": "K-Medoids",
+  "n": ""
+ },
+ "메도이드": {
+  "t": "medoid",
+  "n": ""
+ },
+ "군집": {
+  "t": "clustering",
+  "n": "also 'cluster' (noun) by context"
+ },
+ "비지도학습": {
+  "t": "unsupervised learning",
+  "n": ""
+ },
+ "MiniBatchKMeans": {
+  "t": "MiniBatchKMeans",
+  "n": ""
+ },
+ "중심": {
+  "t": "centroid",
+  "n": ""
+ },
+ "관성": {
+  "t": "inertia",
+  "n": "within-cluster sum of squares"
+ },
+ "k-means++": {
+  "t": "k-means++",
+  "n": ""
+ },
+ "n_init": {
+  "t": "n_init",
+  "n": ""
+ },
+ "지역 최솟값": {
+  "t": "local minimum",
+  "n": ""
+ },
+ "PCA": {
+  "t": "PCA",
+  "n": "principal component analysis"
+ },
+ "엘보 방법": {
+  "t": "elbow method",
+  "n": ""
+ },
+ "실루엣 점수": {
+  "t": "silhouette score",
+  "n": ""
+ },
+ "ARI": {
+  "t": "ARI",
+  "n": "adjusted Rand index"
+ },
+ "NMI": {
+  "t": "NMI",
+  "n": "normalized mutual information"
+ },
+ "채점 봉투": {
+  "t": "sealed answer envelope",
+  "n": "series metaphor = hidden ground-truth labels, opened only for scoring"
+ },
+ "업무 점수": {
+  "t": "task score",
+  "n": "series metric: label one representative per cluster and propagate"
+ },
+ "계층적 군집": {
+  "t": "hierarchical clustering",
+  "n": ""
+ },
+ "병합 군집": {
+  "t": "agglomerative clustering",
+  "n": ""
+ },
+ "분할 군집": {
+  "t": "divisive clustering",
+  "n": ""
+ },
+ "덴드로그램": {
+  "t": "dendrogram",
+  "n": ""
+ },
+ "연결 방식": {
+  "t": "linkage",
+  "n": "linkage criterion"
+ },
+ "와드 연결": {
+  "t": "Ward linkage",
+  "n": ""
+ },
+ "사슬 효과": {
+  "t": "chaining effect",
+  "n": ""
+ },
+ "거리표": {
+  "t": "distance matrix",
+  "n": ""
+ },
+ "Lance-Williams 식": {
+  "t": "Lance–Williams formula",
+  "n": ""
+ },
+ "NN-chain": {
+  "t": "NN-chain",
+  "n": "nearest-neighbor chain algorithm"
+ },
+ "자르는 높이": {
+  "t": "cut height",
+  "n": "distance_threshold"
+ },
+ "순도": {
+  "t": "purity",
+  "n": ""
+ },
+ "코페네틱 상관": {
+  "t": "cophenetic correlation",
+  "n": ""
+ },
+ "DBSCAN": {
+  "t": "DBSCAN",
+  "n": ""
+ },
+ "HDBSCAN": {
+  "t": "HDBSCAN",
+  "n": ""
+ },
+ "OPTICS": {
+  "t": "OPTICS",
+  "n": ""
+ },
+ "eps": {
+  "t": "eps",
+  "n": ""
+ },
+ "min_samples": {
+  "t": "min_samples",
+  "n": ""
+ },
+ "핵심점": {
+  "t": "core point",
+  "n": ""
+ },
+ "가장자리 점": {
+  "t": "border point",
+  "n": ""
+ },
+ "잡음": {
+  "t": "noise",
+  "n": "noise point, label −1"
+ },
+ "밀도 도달": {
+  "t": "density-reachability",
+  "n": "density-reachable"
+ },
+ "k-거리 그래프": {
+  "t": "k-distance graph",
+  "n": ""
+ },
+ "무릎": {
+  "t": "knee",
+  "n": "knee point (Kneedle)"
+ },
+ "무작위 기준선": {
+  "t": "random baseline",
+  "n": ""
+ },
+ "픽셀": {
+  "t": "pixel",
+  "n": ""
+ },
+ "t-SNE": {
+  "t": "t-SNE",
+  "n": ""
+ },
+ "GMM": {
+  "t": "GMM",
+  "n": "Gaussian mixture model"
+ },
+ "가우시안": {
+  "t": "Gaussian",
+  "n": ""
+ },
+ "정규분포": {
+  "t": "normal distribution",
+  "n": ""
+ },
+ "혼합 모델": {
+  "t": "mixture model",
+  "n": ""
+ },
+ "공분산": {
+  "t": "covariance",
+  "n": ""
+ },
+ "비중": {
+  "t": "mixture weight",
+  "n": "weights_"
+ },
+ "EM": {
+  "t": "EM",
+  "n": "expectation–maximization"
+ },
+ "소속 확률": {
+  "t": "responsibility",
+  "n": "membership probability"
+ },
+ "국소 최적": {
+  "t": "local optimum",
+  "n": ""
+ },
+ "reg_covar": {
+  "t": "reg_covar",
+  "n": ""
+ },
+ "공분산 모양": {
+  "t": "covariance type",
+  "n": "covariance_type: full / tied / diag / spherical"
+ },
+ "모수": {
+  "t": "parameter",
+  "n": "model parameter (learned)"
+ },
+ "BIC": {
+  "t": "BIC",
+  "n": "Bayesian information criterion"
+ },
+ "AIC": {
+  "t": "AIC",
+  "n": "Akaike information criterion"
+ },
+ "과신": {
+  "t": "overconfidence",
+  "n": ""
+ },
+ "주성분": {
+  "t": "principal component",
+  "n": "components_"
+ },
+ "차원 축소": {
+  "t": "dimensionality reduction",
+  "n": ""
+ },
+ "UMAP": {
+  "t": "UMAP",
+  "n": ""
+ },
+ "KernelPCA": {
+  "t": "KernelPCA",
+  "n": "kernel PCA"
+ },
+ "차원": {
+  "t": "dimension",
+  "n": ""
+ },
+ "투영": {
+  "t": "projection",
+  "n": ""
+ },
+ "공분산 행렬": {
+  "t": "covariance matrix",
+  "n": ""
+ },
+ "고유벡터": {
+  "t": "eigenvector",
+  "n": ""
+ },
+ "고유값": {
+  "t": "eigenvalue",
+  "n": ""
+ },
+ "직교": {
+  "t": "orthogonal",
+  "n": ""
+ },
+ "평균 중심화": {
+  "t": "mean centering",
+  "n": ""
+ },
+ "거듭제곱법": {
+  "t": "power iteration",
+  "n": "power method"
+ },
+ "특이값 분해": {
+  "t": "singular value decomposition (SVD)",
+  "n": ""
+ },
+ "화이트닝": {
+  "t": "whitening",
+  "n": "whiten=True"
+ },
+ "설명된 분산 비율": {
+  "t": "explained variance ratio",
+  "n": "explained_variance_ratio_"
+ },
+ "누적 설명된 분산": {
+  "t": "cumulative explained variance",
+  "n": ""
+ },
+ "엘보": {
+  "t": "elbow",
+  "n": ""
+ },
+ "주성분 점수": {
+  "t": "principal component scores",
+  "n": "PC scores"
+ },
+ "복원": {
+  "t": "reconstruction",
+  "n": "inverse_transform"
+ },
+ "복원 오차": {
+  "t": "reconstruction error",
+  "n": ""
+ },
+ "5-NN 정확도": {
+  "t": "5-NN accuracy",
+  "n": ""
+ },
+ "비선형 차원 축소": {
+  "t": "nonlinear dimensionality reduction",
+  "n": ""
+ },
+ "매니폴드 학습": {
+  "t": "manifold learning",
+  "n": ""
+ },
+ "임베딩": {
+  "t": "embedding",
+  "n": ""
+ },
+ "perplexity": {
+  "t": "perplexity",
+  "n": ""
+ },
+ "n_neighbors": {
+  "t": "n_neighbors",
+  "n": ""
+ },
+ "min_dist": {
+  "t": "min_dist",
+  "n": ""
+ },
+ "이웃 확률": {
+  "t": "neighbor probability",
+  "n": "affinities (p_ij)"
+ },
+ "t-분포": {
+  "t": "t-distribution",
+  "n": "Student's t-distribution"
+ },
+ "KL 발산": {
+  "t": "KL divergence",
+  "n": "Kullback–Leibler divergence"
+ },
+ "조기 과장": {
+  "t": "early exaggeration",
+  "n": ""
+ },
+ "반스-헛 근사": {
+  "t": "Barnes–Hut approximation",
+  "n": ""
+ },
+ "이웃 그래프": {
+  "t": "neighbor graph",
+  "n": "k-NN graph"
+ },
+ "음의 표본": {
+  "t": "negative sampling",
+  "n": ""
+ },
+ "transform": {
+  "t": "transform",
+  "n": ""
+ },
+ "trustworthiness": {
+  "t": "trustworthiness",
+  "n": ""
+ },
+ "이웃 보존율": {
+  "t": "neighbor preservation rate",
+  "n": ""
+ },
+ "순위 상관": {
+  "t": "rank correlation",
+  "n": "Spearman"
+ },
+ "모델 채용 위원회": {
+  "t": "The Model Hiring Committee",
+  "n": "series-fixed"
+ },
+ "위원장 박사": {
+  "t": "the Chair (Doctor)",
+  "n": "series-fixed"
+ },
+ "인사 담당 조수": {
+  "t": "the HR Assistant",
+  "n": "series-fixed"
+ },
+ "실무 면접관 초파리": {
+  "t": "the Fruit Fly (technical interviewer)",
+  "n": "series-fixed"
+ },
+ "예산 담당 Money-Robo": {
+  "t": "Money-Robo (budget officer)",
+  "n": "series-fixed; keep Money-Robo"
+ },
+ "매뉴얼 씨": {
+  "t": "Mr. Manual",
+  "n": "series-fixed; personified rule-based system"
+ },
+ "지원자": {
+  "t": "candidate",
+  "n": ""
+ },
+ "합격": {
+  "t": "Hired",
+  "n": "series-fixed; 'pass' in adjective/verb contexts"
+ },
+ "보류": {
+  "t": "On hold",
+  "n": "series-fixed"
+ },
+ "채용 현황": {
+  "t": "Hiring board",
+  "n": ""
+ },
+ "지원서 1장": {
+  "t": "Application, page 1",
+  "n": ""
+ },
+ "실기 과제지": {
+  "t": "practical exam",
+  "n": ""
+ },
+ "지도 본부": {
+  "t": "Supervised Division",
+  "n": ""
+ },
+ "비지도 본부": {
+  "t": "Unsupervised Division",
+  "n": ""
+ },
+ "입문팀": {
+  "t": "Starter Team",
+  "n": ""
+ },
+ "회귀팀": {
+  "t": "Regression Team",
+  "n": ""
+ },
+ "분류팀": {
+  "t": "Classification Team",
+  "n": ""
+ },
+ "겸용팀": {
+  "t": "Dual-role Team",
+  "n": ""
+ },
+ "군집팀": {
+  "t": "Clustering Team",
+  "n": ""
+ },
+ "차원축소팀": {
+  "t": "Dimensionality Reduction Team",
+  "n": ""
+ },
+ "면접": {
+  "t": "interview",
+  "n": ""
+ },
+ "채용 공고": {
+  "t": "Job Posting",
+  "n": ""
+ },
+ "수습 기간": {
+  "t": "probation",
+  "n": "metaphor for training"
+ },
+ "성과 평가": {
+  "t": "performance review",
+  "n": "metaphor for evaluation"
+ },
+ "배치 조건": {
+  "t": "deployment conditions",
+  "n": ""
+ },
+ "수습비": {
+  "t": "training cost",
+  "n": "metaphor"
+ },
+ "연봉": {
+  "t": "salary",
+  "n": "metaphor for running (inference) cost"
+ },
+ "강도 3등급": {
+  "t": "three strength grades (low / normal / high)",
+  "n": "<25, 25–45, ≥45 MPa"
+ }
+}

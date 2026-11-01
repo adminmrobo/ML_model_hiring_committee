@@ -1,0 +1,16 @@
+# Brief for a shared-fragment review agent (language LANG, half HALF)
+
+Context: an educational ML HTML series ("The Model Hiring Committee": ML models interview for jobs at a concrete factory) is translated from Korean. Korean JS string fragments are concatenated with numbers and other fragments at runtime. A fragment used in several episodes has ONE key in /home/claude/series5/i18n/LANG/common.json, while its neighbours live in episode files /home/claude/series5/i18n/LANG/5-N.json, translated by different people — so some assembled sentences are wrong (e.g. a "falls short of the hiring bar" fragment reused in an episode whose model passes; a "votes of N trees" fragment reused for GBM 5-9 where trees don't vote; a counter word that fits one episode but not another; a concrete Pass label reused where the text means the hiring verdict).
+
+Tools (run from /home/claude/series5; first `python3 qa/shared_review.py collect LANG` once):
+- `python3 qa/shared_review.py render LANG <proposal.json|-> <key> [<key>...]` — for each episode prints the Korean snippet (fragment in ⟦ ⟧) and the current assembled LANG output (labelled with the language code), using all current LANG translations, existing /home/claude/series5/i18n/LANG/_overrides.json, plus your proposal. Snippets are cut at ±90 chars, so far text may remain Korean or fail to parse; when that happens, read /home/claude/series5/ep/<ep>/ep.js around the fragment and the neighbouring keys in the LANG episode file.
+- Your keys: qa/review/LANG_keys_HALF.json (~187 keys). Another agent handles the other half.
+- Hints: English and Chinese already went through this pass. /home/claude/series5/i18n/en/_overrides.json and /home/claude/series5/i18n/zh/_overrides.json show which episodes needed per-episode handling for which common keys. Known recurring traps: '</b>, 합격선 ' and '</b>로 합격선 ' / ')로 합격선 ' (must be neutral or per-episode: 5-5 and 5-12 fail, others pass); '보다 ' (comparison direction differs by episode, esp. 5-10); '<b>합격</b>' (concrete Pass in 5-4; hiring verdict in 5-5 and 5-15); '합격' untagged (concrete Pass, but verdict pill in 5-11); '개', '건', '번', '일', '장' counters; '나무 <b>' / '나무 ' (votes — wrong for GBM 5-9); bracket pairs where one half sits in an untranslatable ASCII fragment (keep the pair matching).
+
+Task: render each of your keys; where any episode reads wrong or awkward, fix it, in order of preference:
+1. a better neutral common translation that works in every episode ("common");
+2. otherwise an episode-only override of the common key ("overrides": {ep: {key: tr}});
+3. and/or adjust the neighbouring episode fragment ("ep": {ep: {key: tr}}) — only keys that exist in /home/claude/series5/i18n/LANG/<ep>.json.
+"∅" = intentionally empty (an empty string means 'untranslated'). Keep HTML tags identical to the Korean fragment. Follow /home/claude/series5/i18n/LANG/_conventions.md.
+
+Do NOT edit i18n/, ep/ or src/. Write ONLY your proposal to /home/claude/series5/qa/review/prop_LANG_HALF.json as {"common": {...}, "overrides": {...}, "ep": {...}}, and re-render with it to verify. Prioritise keys glued to numbers/other fragments (render all of those); complete standalone sentences only need a quick look. Report back: counts per section and ≤5 notable fixes.

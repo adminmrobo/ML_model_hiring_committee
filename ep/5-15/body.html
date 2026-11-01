@@ -1,0 +1,546 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-15 면접<span class="dept">비지도 본부 › 차원축소팀</span><span class="dept" style="color:var(--stamp);border-color:var(--stamp)">마지막 면접</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실이 축하 파티처럼 꾸며져 있다. 벽에 '모델 채용 위원회 · 5-15 마지막 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 tS 기호가 그려진 공동 지원자 t-SNE · UMAP의 사원증이 떠 있고, 그 옆에서 흩어져 있던 작은 손글씨 숫자들이 비슷한 글씨끼리 모여 무리를 이룬다. Money-Robo가 그래프를 흔들며 지도 값을 묻고, 마지막에는 위원 네 명이 모두 뛰어오른다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>t-SNE · UMAP — 이웃을 지키며 지도를 펼친다</h1>
+        <p class="lede" style="margin-top:14px">마지막 지원자는 둘이 함께 왔다. 하는 일이 같기 때문이다. 손글씨 숫자 한 장은 8×8 = <b>64칸</b>의 밝기다. 64칸짜리 공간은 눈으로 볼 수 없다. 두 지원자는 1,797장을 종이 한 장, <b>2차원 지도</b>에 옮겨 그린다. 원칙은 하나다. <b>64칸에서 가까운 이웃이던 글씨는 지도에서도 이웃으로 둔다.</b> 먼 글씨끼리의 거리는 크게 신경 쓰지 않는다.</p>
+        <p class="lede">앞 지원자 5-14 PCA는 64칸 공간에 빛을 비춰 가장 넓게 퍼진 두 방향으로 그림자를 떴다. 곧은 그림자라 무리끼리 겹쳤다. <b>t-SNE</b>(t-분포 확률적 이웃 임베딩)는 "누가 누구의 이웃일 확률"을 맞추고, <b>UMAP</b>은 이웃끼리 줄을 이은 그물을 2차원에서 다시 편다. 둘 다 숫자의 정답을 한 번도 보지 않는다. 정답은 05장 "채점 봉투"에서만 연다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m1">01 이웃 지키기</a><span class="arr">→</span><a href="#envelope">05 채점 봉투 열기</a><span class="arr">→</span><a href="#iv15">면접 결과</a><span class="arr">→</span><a href="#final">15명 결산</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>64칸 → 2칸</b><span>글씨 1,797장을 2차원 지도로</span></div>
+            <div><b>perplexity 30</b><span>t-SNE가 챙기는 이웃 수(어림)</span></div>
+            <div><b>n_neighbors 15</b><span>UMAP이 줄로 잇는 이웃 수</span></div>
+            <div><b id="heroLine">5-NN 18.1%</b><span>넘어야 할 합격선 (매뉴얼 씨의 지도)</span></div>
+          </div>
+          <p class="foot">실기 과제는 scikit-learn 손글씨 숫자 1,797장이다. 정답(0~9)은 채점 봉투에 넣어 05장까지 봉인한다. 정답을 학습에 쓰지 않으므로 시험지를 따로 떼지 않는다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="board" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>열다섯 번째, 마지막 면접이에요. 차원축소팀은 "지도를 얼마나 읽을 만하게 그리나"를 봅니다. 잣대는 지도 위에서 가까운 다섯 장의 이름으로 한 장을 맞히는 5-NN 정확도. 매뉴얼 씨의 지도가 18.1%였어요.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="ledger" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>오늘은 지원자가 둘이라 장부도 두 줄이에요. 그리고 면접이 끝나면 열다섯 명 전체 결산표를 정리해야 합니다. 마지막 장부예요.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="point" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>지도 위에서 3과 8이 가깝게 그려지면, 진짜로 비슷하다는 거야? 무리가 크게 그려지면 글씨가 들쭉날쭉하다는 거고? 그걸 믿어도 되는지부터 물을 거야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="chart" data-move="sway" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>지도 한 장 그리는 데 몇 초야? 새 글씨가 매일 들어오는데, 들어올 때마다 지도를 처음부터 다시 그리면 그게 다 인건비라고.</div></div>
+      <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>저도 지도를 그렸습니다. 가로는 잉크 양, 세로는 위쪽 절반의 잉크 비율. 사람이 고른 두 숫자입니다. 같은 숫자끼리 잘 모이지 않더군요.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">tS</span><div class="bub"><span class="who">공동 지원자 · t-SNE · UMAP</span>안녕하십니까. t-SNE와 UMAP입니다. 저희는 두 숫자를 미리 고르지 않습니다. 64칸 전체를 보고 "가까운 이웃"을 먼저 적은 뒤, 그 이웃 관계가 깨지지 않도록 점을 하나하나 옮겨 지도를 펼칩니다.</div></div>
+    </div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-14_pca.html">5-14 PCA</a> — 곧은 그림자로 64칸을 2칸으로. 오늘의 비교 상대다 · <a href="5-1_knn.html">5-1 KNN</a> — 가까운 이웃 k개로 맞히기. 오늘의 잣대(5-NN)다</span>
+      <span><a href="5-10_kmeans.html">5-10 K-Means</a> — 묶음마다 대표 한 장에 이름 붙이기(업무 점수). 05장에서 지도 위에 다시 쓴다</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-8_unsupervised_nine.html" target="_blank" rel="noopener">패밀리 조직도 4-8 비지도 아홉</a> · <a href="https://adminmrobo.github.io/AI_image_classification/4-2_cat_human.html" target="_blank" rel="noopener">이미지 분류 4-2 고양이 vs 사람</a> — 사진도 결국 숫자 행렬이다</span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — t-SNE · UMAP을 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="t-SNE · UMAP 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-15 · 지원서<br>지원자 번호 APP-15<br>지원 부서 비지도 본부 › 차원축소팀</div>
+      <div class="sh-title">t-SNE · UMAP<small>이웃을 지키는 비선형 차원 축소 · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">tS</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m1">
+        <h3>1. 64칸을 2칸으로 <small>Dimensionality Reduction</small></h3>
+        <p class="d">글씨 한 장 = 64개의 밝기. 이것을 지도 위 점 하나(x, y)로 옮긴다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="왼쪽에 8×8 칸으로 그린 손글씨 숫자 하나가 있고, 오른쪽 화살표 끝에 점들이 세 무리로 모인 2차원 지도가 있다. 무리 하나에 테두리가 쳐져 있다">
+          <defs><marker id="t1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="t1b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <g fill="#111"><rect x="30" y="24" width="10" height="10" opacity=".25"/><rect x="40" y="24" width="10" height="10"/><rect x="50" y="24" width="10" height="10"/><rect x="60" y="24" width="10" height="10" opacity=".6"/>
+          <rect x="20" y="34" width="10" height="10" opacity=".5"/><rect x="70" y="34" width="10" height="10"/><rect x="20" y="44" width="10" height="10"/><rect x="70" y="44" width="10" height="10"/>
+          <rect x="20" y="54" width="10" height="10"/><rect x="70" y="54" width="10" height="10"/><rect x="20" y="64" width="10" height="10"/><rect x="70" y="64" width="10" height="10" opacity=".7"/>
+          <rect x="20" y="74" width="10" height="10" opacity=".6"/><rect x="60" y="74" width="10" height="10"/><rect x="30" y="84" width="10" height="10"/><rect x="40" y="84" width="10" height="10"/><rect x="50" y="84" width="10" height="10" opacity=".8"/></g>
+          <rect x="16" y="20" width="84" height="80" fill="none" stroke="#111" stroke-width="1.5"/>
+          <text x="58" y="118" text-anchor="middle" font-size="12">밝기 64개</text>
+          <path d="M112,60 L160,60" stroke="#1f6fe5" stroke-width="3" marker-end="url(#t1b)"/>
+          <rect x="172" y="12" width="120" height="100" fill="#fff" stroke="#111" stroke-width="1.5"/>
+          <g fill="#1f6fe5"><circle cx="196" cy="34" r="4"/><circle cx="204" cy="30" r="4"/><circle cx="200" cy="42" r="4"/><circle cx="210" cy="38" r="4"/>
+          <circle cx="262" cy="46" r="4"/><circle cx="270" cy="40" r="4"/><circle cx="268" cy="54" r="4"/><circle cx="276" cy="50" r="4"/>
+          <circle cx="222" cy="88" r="4"/><circle cx="230" cy="94" r="4"/><circle cx="216" cy="96" r="4"/><circle cx="232" cy="84" r="4"/></g>
+          <circle cx="203" cy="36" r="15" fill="none" stroke="#111" stroke-width="1.4" stroke-dasharray="3 3"/>
+          <text x="232" y="128" text-anchor="middle" font-size="12">지도 위 점 하나 = 글씨 한 장</text>
+          <text x="232" y="144" text-anchor="middle" font-size="11.5" fill="#1f6fe5">(x, y) 두 숫자</text>
+        </svg>
+        <div class="fbox"><span class="mth">1,797 × 64 → 1,797 × 2</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>2. 64칸의 이웃 확률 P <small>Neighbors in 64-D</small></h3>
+        <p class="d">한 장을 가운데 두고, 가까운 글씨일수록 "이웃일 확률"을 크게 준다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="가운데 검은 점 하나를 동심원 세 개가 둘러싼다. 안쪽 원 안의 점 세 개는 굵은 파란 선으로, 바깥 점들은 가는 점선으로 가운데와 이어져 있다. 오른쪽에 종 모양 곡선이 있다">
+          <circle cx="90" cy="72" r="22" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.5"/><circle cx="90" cy="72" r="44" fill="none" stroke="#1f6fe5" stroke-width="1.2" stroke-dasharray="4 3"/><circle cx="90" cy="72" r="64" fill="none" stroke="#8b93a3" stroke-width="1" stroke-dasharray="2 4"/>
+          <g stroke="#1f6fe5" stroke-width="3.2"><path d="M90,72 L104,62"/><path d="M90,72 L78,86"/><path d="M90,72 L74,64"/></g>
+          <g stroke="#8b93a3" stroke-width="1" stroke-dasharray="3 3"><path d="M90,72 L126,98"/><path d="M90,72 L138,52"/><path d="M90,72 L44,30"/></g>
+          <g fill="#111"><circle cx="104" cy="62" r="4"/><circle cx="78" cy="86" r="4"/><circle cx="74" cy="64" r="4"/><circle cx="126" cy="98" r="4"/><circle cx="138" cy="52" r="4"/><circle cx="44" cy="30" r="4"/></g>
+          <circle cx="90" cy="72" r="6" fill="#111"/><text x="90" y="148" text-anchor="middle" font-size="11.5">σᵢ: 동네 반지름 (장마다 다르다)</text>
+          <path d="M180,120 L292,120" stroke="#111" stroke-width="1.5" marker-end="url(#t1a)"/>
+          <path d="M184,118 C200,118 210,110 220,80 C228,50 232,36 236,36 C240,36 244,50 252,80 C262,110 272,118 288,118" fill="none" stroke="#1f6fe5" stroke-width="2.6"/>
+          <text x="236" y="136" text-anchor="middle" font-size="11.5">거리 →</text><text x="250" y="30" font-size="12" fill="#1f6fe5">p</text>
+        </svg>
+        <div class="fbox"><span class="mth">p<sub>j|i</sub> ∝ exp(−‖x<sub>i</sub> − x<sub>j</sub>‖² / 2σ<sub>i</sub>²)</span><br><span style="font-size:13px">σᵢ는 perplexity(이웃 수 어림)에 맞춰 장마다 정한다</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>3. 지도 위 이웃 Q <small>Heavy-tailed Student-t</small></h3>
+        <p class="d">지도에서는 꼬리가 두꺼운 t-분포로 이웃 확률을 잰다. 먼 무리를 더 멀리 밀어 둔다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="두 곡선을 겹쳐 그렸다. 회색 점선은 가운데가 뾰족하고 꼬리가 빨리 0이 되는 가우시안, 파란 실선은 가운데가 낮고 꼬리가 길게 남는 t-분포다. 꼬리 부분에 '두꺼운 꼬리'라고 적혀 있다">
+          <path d="M20,124 L292,124" stroke="#111" stroke-width="1.5" marker-end="url(#t1a)"/>
+          <path d="M22,122 C80,122 110,118 128,80 C140,52 146,22 152,22 C158,22 164,52 176,80 C194,118 224,122 282,122" fill="none" stroke="#8b93a3" stroke-width="2.2" stroke-dasharray="5 4"/>
+          <path d="M22,112 C70,108 104,96 126,74 C140,58 146,46 152,46 C158,46 164,58 178,74 C200,96 234,108 282,112" fill="none" stroke="#1f6fe5" stroke-width="3"/>
+          <text x="196" y="30" font-size="12" fill="#6b7280">64칸: 가우시안</text><text x="196" y="48" font-size="12" fill="#1f6fe5">지도: t-분포</text>
+          <path d="M248,100 L262,110" stroke="#1f6fe5" stroke-width="1.5"/><text x="214" y="96" font-size="11.5" fill="#1f6fe5">두꺼운 꼬리</text>
+          <text x="152" y="142" text-anchor="middle" font-size="11.5">지도 위 거리 →</text>
+        </svg>
+        <div class="fbox"><span class="mth">q<sub>ij</sub> ∝ (1 + ‖y<sub>i</sub> − y<sub>j</sub>‖²)<sup>−1</sup></span><br><span style="font-size:13px">"t"-SNE의 t. 무리가 서로 뭉개지지 않는다</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>4. P와 Q 맞추기 <small>KL Divergence · Attract &amp; Repel</small></h3>
+        <p class="d">P와 Q가 다르면 점을 옮긴다. 이웃은 끌어당기고, 나머지는 밀어낸다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="가운데 점 하나로 이웃 세 점이 파란 화살표로 끌려오고, 멀리 있는 회색 점 세 개는 바깥쪽 화살표로 밀려난다">
+          <circle cx="150" cy="74" r="7" fill="#111"/>
+          <g fill="#111"><circle cx="112" cy="54" r="5"/><circle cx="182" cy="50" r="5"/><circle cx="168" cy="108" r="5"/></g>
+          <g stroke="#1f6fe5" stroke-width="2.6" marker-end="url(#t1b)"><path d="M116,57 L136,68"/><path d="M178,53 L162,64"/><path d="M166,104 L158,88"/></g>
+          <g fill="#8b93a3"><circle cx="52" cy="110" r="5"/><circle cx="252" cy="28" r="5"/><circle cx="262" cy="118" r="5"/></g>
+          <g stroke="#8b93a3" stroke-width="2" marker-end="url(#t1a)"><path d="M58,106 L34,122"/><path d="M246,32 L270,18"/><path d="M256,114 L280,128"/></g>
+          <text x="96" y="30" font-size="12" fill="#1f6fe5">이웃: 당긴다</text><text x="40" y="142" font-size="12" fill="#6b7280">남: 민다</text>
+        </svg>
+        <div class="fbox"><span class="mth">KL(P‖Q) = Σ p<sub>ij</sub> log (p<sub>ij</sub> / q<sub>ij</sub>)</span><br><span style="font-size:13px">이 값을 경사 하강으로 줄인다</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>5. 수습: 과장 → 정리 <small>Early Exaggeration</small></h3>
+        <p class="d">처음 250번은 끌림을 12배로 키워 무리를 먼저 잡고, 나머지 750번은 다듬는다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="가로 시간 띠가 0, 250, 1000에서 나뉜다. 앞 칸 위에 '끌림 ×12', 뒤 칸 위에 '다듬기'라고 적혀 있다. 아래 작은 상자 세 개에 점들이 흩어진 모습, 덩어리진 모습, 무리가 또렷이 갈라진 모습이 차례로 그려져 있다">
+          <rect x="20" y="16" width="70" height="16" fill="#1f6fe5"/><rect x="90" y="16" width="190" height="16" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.2"/>
+          <g font-size="11" text-anchor="middle"><text x="55" y="12">끌림 ×12</text><text x="185" y="12">다듬기 (×1)</text><text x="20" y="46">0</text><text x="90" y="46">250</text><text x="280" y="46">1000</text></g>
+          <g fill="none" stroke="#111" stroke-width="1.2"><rect x="20" y="56" width="74" height="70"/><rect x="113" y="56" width="74" height="70"/><rect x="206" y="56" width="74" height="70"/></g>
+          <g fill="#111"><circle cx="40" cy="80" r="2.6"/><circle cx="66" cy="70" r="2.6"/><circle cx="52" cy="104" r="2.6"/><circle cx="80" cy="96" r="2.6"/><circle cx="34" cy="112" r="2.6"/><circle cx="72" cy="114" r="2.6"/><circle cx="58" cy="66" r="2.6"/><circle cx="46" cy="90" r="2.6"/></g>
+          <g fill="#111"><circle cx="134" cy="80" r="2.6"/><circle cx="138" cy="76" r="2.6"/><circle cx="140" cy="84" r="2.6"/><circle cx="166" cy="98" r="2.6"/><circle cx="170" cy="104" r="2.6"/><circle cx="162" cy="104" r="2.6"/><circle cx="150" cy="70" r="2.6"/><circle cx="146" cy="90" r="2.6"/></g>
+          <g fill="#1f6fe5"><circle cx="222" cy="72" r="2.6"/><circle cx="228" cy="70" r="2.6"/><circle cx="224" cy="78" r="2.6"/><circle cx="262" cy="108" r="2.6"/><circle cx="268" cy="112" r="2.6"/><circle cx="260" cy="116" r="2.6"/><circle cx="266" cy="70" r="2.6"/><circle cx="262" cy="76" r="2.6"/></g>
+          <g font-size="11" text-anchor="middle"><text x="57" y="142">처음 (PCA 자리)</text><text x="150" y="142">덩어리</text><text x="243" y="142">완성</text></g>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">시작 자리는 PCA(기본값). 그래서 같은 설정이면 늘 같은 지도가 나온다<br>04장에서 500장으로 직접 재생한다</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>6. UMAP: 이웃 그물 <small>k-NN Graph</small></h3>
+        <p class="d">한 장마다 가장 가까운 n_neighbors장과 줄로 잇는다. 가까울수록 굵은 줄.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="점 열두 개가 두 무리로 있고, 같은 무리 안의 점들이 파란 선으로 서로 이어져 그물을 이룬다. 두 무리 사이에는 가는 선 하나만 있다">
+          <g stroke="#1f6fe5" stroke-width="2.6"><path d="M50,50 L78,40 L96,64 L70,82 L50,50 M78,40 L70,82 M96,64 L60,104 L70,82"/></g>
+          <g stroke="#1f6fe5" stroke-width="2.6"><path d="M200,40 L232,52 L250,82 L216,96 L196,72 L200,40 M232,52 L216,96 M196,72 L232,52 M250,82 L264,110"/></g>
+          <path d="M96,64 L196,72" stroke="#1f6fe5" stroke-width="1" stroke-dasharray="3 3"/>
+          <g fill="#111"><circle cx="50" cy="50" r="5"/><circle cx="78" cy="40" r="5"/><circle cx="96" cy="64" r="5"/><circle cx="70" cy="82" r="5"/><circle cx="60" cy="104" r="5"/>
+          <circle cx="200" cy="40" r="5"/><circle cx="232" cy="52" r="5"/><circle cx="250" cy="82" r="5"/><circle cx="216" cy="96" r="5"/><circle cx="196" cy="72" r="5"/><circle cx="264" cy="110" r="5"/></g>
+          <text x="150" y="140" text-anchor="middle" font-size="12">정답 없이, 가까움만으로 이은 그물</text>
+        </svg>
+        <div class="fbox"><span class="mth">n_neighbors = 15</span><br><span style="font-size:13px">작으면 동네만, 크면 도시 전체를 본다</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>7. UMAP: 줄 당기기 <small>Layout · min_dist</small></h3>
+        <p class="d">그물의 줄은 당기고, 아무 점이나 몇 개 골라 밀어낸다. 점끼리 최소 간격은 min_dist.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="두 점이 용수철 모양 줄로 이어져 서로 당긴다. 옆의 점 하나는 무작위로 뽑혀 바깥쪽으로 밀린다. 오른쪽에 점 둘 사이에 'min_dist'라고 적힌 작은 간격 표시가 있다">
+          <circle cx="40" cy="70" r="7" fill="#111"/><circle cx="150" cy="70" r="7" fill="#111"/>
+          <path d="M48,70 l8,-10 l8,20 l8,-20 l8,20 l8,-20 l8,20 l8,-20 l8,20 l8,-20 l8,10" fill="none" stroke="#1f6fe5" stroke-width="2.4"/>
+          <text x="95" y="48" text-anchor="middle" font-size="12" fill="#1f6fe5">이웃 줄: 당김</text>
+          <circle cx="100" cy="124" r="6" fill="#8b93a3"/><path d="M100,116 L100,98" stroke="#8b93a3" stroke-width="2" marker-end="url(#t1a)" transform="rotate(180 100 107)"/>
+          <text x="112" y="140" font-size="11.5" fill="#6b7280">무작위로 뽑은 점: 밀어냄</text>
+          <circle cx="216" cy="70" r="7" fill="#1f6fe5"/><circle cx="256" cy="70" r="7" fill="#1f6fe5"/>
+          <path d="M223,90 L249,90" stroke="#111" stroke-width="1.5" marker-start="url(#t1a)" marker-end="url(#t1a)"/><text x="236" y="108" text-anchor="middle" font-size="12">min_dist</text>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">min_dist 작게: 촘촘한 무리 · 크게: 고르게 퍼진 무리<br>t-SNE보다 빠르고, 새 글씨를 놓을 수 있다(9번 칸)</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>8. 믿어도 되는 것, 안 되는 것 <small>Distance &amp; Size</small></h3>
+        <p class="d">무리가 있다는 것은 믿는다. 무리 사이 거리와 무리 크기는 믿지 않는다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="큰 원 무리와 작은 원 무리가 있고, 둘 사이에 자가 놓여 있는데 빨간 X로 지워져 있다. 아래에 '무리 ✓', '거리 ✗', '크기 ✗'라고 적혀 있다">
+          <circle cx="70" cy="62" r="40" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><circle cx="234" cy="62" r="16" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <g fill="#1f6fe5"><circle cx="60" cy="52" r="3"/><circle cx="82" cy="70" r="3"/><circle cx="66" cy="80" r="3"/><circle cx="88" cy="48" r="3"/><circle cx="50" cy="70" r="3"/><circle cx="230" cy="58" r="3"/><circle cx="238" cy="66" r="3"/><circle cx="240" cy="56" r="3"/></g>
+          <rect x="116" y="56" width="98" height="14" fill="#fff" stroke="#111" stroke-width="1.4"/><g stroke="#111" stroke-width="1"><path d="M126,56 v6 M136,56 v4 M146,56 v6 M156,56 v4 M166,56 v6 M176,56 v4 M186,56 v6 M196,56 v4 M206,56 v6"/></g>
+          <path d="M150,44 L180,82 M180,44 L150,82" stroke="#c0392b" stroke-width="3.2"/>
+          <g font-size="13" text-anchor="middle"><text x="60" y="130">무리 ✓</text><text x="150" y="130" fill="#c0392b">거리 ✗</text><text x="240" y="130" fill="#c0392b">크기 ✗</text></g>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">이 면접의 UMAP: 가장 큰 무리 ÷ 가장 작은 무리 = 9.2배<br>64칸에서는 1.5배. 지도가 크기를 부풀렸다</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m6">
+        <h3>9. 새 글씨와 시간 <small>transform · Cost</small></h3>
+        <p class="d">UMAP은 그려 둔 지도에 새 글씨를 놓을 수 있다. t-SNE는 처음부터 다시 그린다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="두 상자. 왼쪽 t-SNE 상자에는 새 글씨 하나가 지도로 들어가려다 막히고 '처음부터 다시'라고 적혀 있다. 오른쪽 UMAP 상자에는 새 글씨가 파란 화살표로 무리 안에 쏙 놓인다">
+          <rect x="10" y="20" width="132" height="96" rx="8" fill="#fff" stroke="#111" stroke-width="1.5"/><rect x="158" y="20" width="132" height="96" rx="8" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.8"/>
+          <g font-size="12.5" text-anchor="middle" font-weight="700"><text x="76" y="14">t-SNE</text><text x="224" y="14" fill="#1f6fe5">UMAP</text></g>
+          <g fill="#111"><circle cx="90" cy="60" r="3"/><circle cx="98" cy="66" r="3"/><circle cx="104" cy="56" r="3"/><circle cx="110" cy="90" r="3"/><circle cx="118" cy="96" r="3"/></g>
+          <rect x="24" y="52" width="22" height="22" fill="#fff" stroke="#111" stroke-width="1.4"/><text x="35" y="68" text-anchor="middle" font-size="13">7</text>
+          <path d="M50,63 L74,63" stroke="#c0392b" stroke-width="2.4"/><path d="M70,55 L78,71 M78,55 L70,71" stroke="#c0392b" stroke-width="2.4"/>
+          <text x="76" y="108" text-anchor="middle" font-size="11.5" fill="#c0392b">처음부터 다시</text>
+          <g fill="#1f6fe5"><circle cx="238" cy="60" r="3"/><circle cx="246" cy="66" r="3"/><circle cx="252" cy="56" r="3"/><circle cx="258" cy="92" r="3"/><circle cx="266" cy="98" r="3"/></g>
+          <rect x="170" y="52" width="22" height="22" fill="#fff" stroke="#111" stroke-width="1.4"/><text x="181" y="68" text-anchor="middle" font-size="13">7</text>
+          <path d="M196,63 L232,62" stroke="#1f6fe5" stroke-width="2.4" marker-end="url(#t1b)"/><circle cx="244" cy="61" r="4" fill="#fff" stroke="#1f6fe5" stroke-width="2"/>
+          <text x="224" y="108" text-anchor="middle" font-size="11.5" fill="#1f6fe5">transform으로 놓기</text>
+          <text x="150" y="140" text-anchor="middle" font-size="12">1,797장: t-SNE 약 5초 · UMAP 약 5~15초 (CPU)</text>
+        </svg>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "무슨 일을 하나", 2~4번이 t-SNE의 속(64칸의 이웃 확률, 지도 위 이웃 확률, 둘을 맞추기), 5번이 수습 과정, 6·7번이 UMAP의 속(이웃 그물, 줄 당기기), 8번이 "지도를 읽는 법", 9번이 "일터에서의 비용"이다. 이 면접은 01장(1~3번) → 04장(4~7번) → 05장(8번) → 06장(9번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 이웃을 지키는 지도 제작자</h2>
+    <p class="lin">64칸에서 가까운 이웃을 적는다 → 지도 위에서도 이웃이 되도록 점을 옮긴다 → 먼 글씨끼리의 거리는 덜 챙긴다</p>
+  </div>
+  <div id="comicIntro"></div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">tS</span><div class="bub"><span class="who">공동 지원자 · t-SNE · UMAP</span>아래 지도에서 아무 점이나 눌러 보십시오. 그 글씨가 64칸 공간에서 가장 가까웠던 다섯 장을 찾아, 지도 위 어디에 놓였는지 보여 드립니다. 저희 지도와 PCA 지도, 매뉴얼 씨 지도를 바꿔 가며 비교해 보십시오.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 1,797장의 지도 위에서 한 장의 64칸 이웃 다섯 장 찾기 (색은 아직 없다. 정답은 봉인 중)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="지도 고르기" id="nbMap"><button data-v="ts30" aria-pressed="true">t-SNE</button><button data-v="um15" aria-pressed="false">UMAP</button><button data-v="pca" aria-pressed="false">PCA (5-14)</button><button data-v="man" aria-pressed="false">매뉴얼 씨</button></div>
+      <div class="choice" role="group" aria-label="그리는 방법" id="nbDraw"><button data-v="glyph" aria-pressed="true">글씨로</button><button data-v="dot" aria-pressed="false">점으로</button></div>
+      <button class="btn" id="nbRand">무작위 한 장</button>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="nbCv" aria-label="1,797장의 손글씨 숫자를 고른 지도 방법으로 2차원에 놓은 그림. 글씨마다 작은 8×8 그림으로 그려져 있다. 고른 한 장은 빨간 테두리, 그 글씨의 64칸 이웃 다섯 장은 파란 원으로 표시되고, 고른 점에서 이웃까지 선이 그어진다"></canvas></div>
+    <div class="nbstrip" id="nbStrip" aria-live="polite"></div>
+    <div class="caption" id="nbInfo" aria-live="polite">지도를 그리는 중…</div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>가까운 이웃만 챙긴다</h4>
+      <p>64칸 공간에서 글씨 두 장의 거리는 64개 밝기 차이로 잰다. 같은 숫자의 글씨끼리는 대개 가깝다. 하지만 "4는 9와 얼마나 먼가" 같은 먼 거리는 64칸에서도 그리 믿을 만한 정보가 아니고, 2칸에 다 담을 수도 없다. 그래서 두 지원자는 <b>가까운 이웃 관계만</b> 지키고 먼 거리는 포기한다. 이웃을 지키는 대가로 지도는 휘고, 늘어나고, 접힌다. 이런 방법을 <b>비선형 차원 축소</b>, 또는 <b>매니폴드 학습</b>이라 한다.</p>
+      <div class="eq">지킨다: 이웃 관계 &nbsp;·&nbsp; 포기한다: 먼 거리, 무리 크기</div>
+    </div>
+    <div class="explain">
+      <h4>5-14 PCA와 무엇이 다른가</h4>
+      <p>PCA는 64칸 공간을 통째로 돌려 가장 퍼진 두 방향을 고르는 <b>직선 투영</b>이다. 그림자처럼 정직해서 먼 거리도 대체로 지키지만, 두 방향에 다 담기지 않는 차이는 그대로 겹친다. 위 지도에서 PCA를 골라 보면 이웃 다섯 장이 지도 위 여기저기로 흩어지는 일이 잦다. t-SNE와 UMAP은 직선을 버리고 점마다 따로 움직여, 이웃 다섯 장 대부분을 지도 위에서도 곁에 둔다.</p>
+      <div class="eq">PCA: 64칸 → (곧은 축 2개) &nbsp;·&nbsp; t-SNE·UMAP: 점 1,797개를 하나씩 옮긴다</div>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 정답 없는 1,797장</h2>
+    <p class="lin">한 장이 샘플, 64칸의 밝기(0~16)가 특징(X)이다. 타겟(y)은 없다. 정답 0~9는 채점 봉투에 봉인되어 05장에서만 연다</p>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 · 차원축소팀</span>
+      <h3>64칸 글씨를 2차원 지도로 펼치기</h3>
+      <p style="margin:6px 0 0;font-size:15px">현장 일지와 시험 성적서에 쌓인 손글씨 숫자 수천 장. 이름표를 하나하나 붙일 사람이 없다. 지도를 잘 그리면 사람은 무리마다 몇 장만 보고 이름을 붙이면 된다(05장 업무 점수).</p>
+    </div>
+    <div class="card">
+      <span class="tag">잣대 · 합격선</span>
+      <h3>지도 위 5-NN 정확도 &gt; <span id="lineDr">18.1%</span></h3>
+      <p style="margin:6px 0 0;font-size:15px">지도 좌표 두 개만 보고 가장 가까운 다섯 장의 정답으로 맞히기(5겹 교차 검증). 같은 숫자끼리 지도 위에서 모여 있을수록 높다. 기준선은 늘 가장 흔한 숫자만 답하기 <b id="baseDr">10.1%</b>, 합격선은 매뉴얼 씨 지도의 <b>18.1%</b>다.</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 과제지 1,797장 중 앞의 160장 (한 장을 누르면 64칸의 숫자를 본다)</span>
+    <div class="two" style="gap:14px;align-items:start">
+      <div class="cwrap"><canvas class="fig" id="gridCv" aria-label="손글씨 숫자 160장을 20열 8행 격자로 늘어놓은 그림. 정답 이름표는 없다. 고른 한 장에 빨간 테두리가 있다"></canvas></div>
+      <div>
+        <div class="tw"><table class="pix" id="pixTbl" aria-label="고른 글씨의 8×8 밝기 표"></table></div>
+        <p class="foot" id="pixInfo">글씨를 하나 누르면 그 글씨의 64칸 밝기가 표로 나온다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>제 지도는 아래와 같습니다. 잉크를 많이 쓴 글씨는 오른쪽, 위가 무거운 글씨는 위쪽. 0과 8은 잉크가 많고 1과 7은 적다는 것까지는 압니다. 그런데 잉크 양이 같은 3과 5와 9는 한곳에 겹쳐 버립니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">합격선의 지도 · 매뉴얼 씨: 가로 = 잉크 양(64칸 밝기 합), 세로 = 위쪽 절반의 잉크 비율 (정답 색 없음)</span>
+    <div class="cwrap"><canvas class="fig" id="manCv" aria-label="1,797장을 가로축 잉크 양, 세로축 위쪽 잉크 비율로 놓은 산점도. 점들이 하나의 큰 구름으로 퍼져 있고 뚜렷한 무리가 보이지 않는다"></canvas></div>
+    <p class="foot">5-NN은 두 축을 같은 눈금으로 재므로 잉크 양(수백 단위)이 거의 모든 것을 정한다. 위쪽 비율(0~1)은 거리에 거의 보태지 못한다. 두 축을 표준화하면 27.0%로 오르지만, 합격선은 매뉴얼 씨가 실제로 쓴 그대로의 18.1%다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>정답 없이 학습한다는 것</h4>
+      <p>지도학습(5-1 ~ 5-9)은 시험지를 떼어 두고 훈련 데이터의 정답으로 배웠다. 비지도 본부는 정답을 아예 쓰지 않는다. 그래서 1,797장 전체로 지도를 그린다. 정답은 <b>채점 봉투</b>에만 들어 있다. 봉투는 지도를 다 그린 뒤 "같은 숫자끼리 모였나"를 채점할 때 한 번 연다. 지도를 그리는 동안 봉투를 열면 그것은 비지도 학습이 아니다(03장 틀린 곳 찾기 ③).</p>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 데이터로 지도를 그리려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>한 줄에 한 건, 열은 모두 숫자인 표면 된다. Colab 코드(A장) 1번 칸의 <code>X</code>만 바꾼다. 정답 열이 있으면 채점 칸에서만 쓴다.</li>
+        <li>열마다 단위가 다르면(온도·압력·농도) 먼저 표준화한다. 거리로 이웃을 찾기 때문이다. 손글씨처럼 모든 칸의 단위가 같으면 그대로 둔다.</li>
+        <li>열이 수백 개를 넘으면 PCA로 50개쯤으로 줄인 뒤 t-SNE·UMAP에 넣는 것이 흔하다(빨라지고 잡음이 준다).</li>
+        <li>행이 수만 건을 넘으면 UMAP이 대개 빠르다. t-SNE는 <code>method="barnes_hut"</code>(기본)를 유지한다.</li>
+        <li>사진도 숫자 행렬이다. 고양이 사진 64×64 흑백이면 한 장이 4,096칸이다(<a href="https://adminmrobo.github.io/AI_image_classification/4-2_cat_human.html" target="_blank" rel="noopener">이미지 분류 4-2</a>).</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 버전 메모</p>
+  </div>
+  <p>t-SNE와 UMAP은 인자 이름이 버전마다 바뀌었고, 패키지 이름이 헷갈리며, 지도를 "읽는" 단계에서 실수가 많다. 위원회 규정은 같다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, scikit-learn과 umap-learn, 버전 출력) ② 데이터(어디서 읽나, 정답 열이 있다면 채점에만) ③ 규정(random_state, 같은 잣대로 여러 지도 비교) ④ 출력(지도 그림, 5-NN 점수, 걸린 시간) ⑤ 금지(정답을 지도에 넣기, 지도 위 거리로 결론 내기)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"t-SNE로 손글씨 시각화해 줘." — AI가 옛 인자 이름을 쓰거나, 정답 색칠 그림 하나만 주고 "잘 나뉜다"고 끝내거나, 지도 위 거리를 해석해 줄 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 t-SNE도 기본값과 이름이 바뀌어 왔다</h4>
+    <p>scikit-learn 1.2부터 <code>TSNE</code>의 기본값이 바뀌었다. 시작 자리 <code>init</code>은 <code>"random"</code>에서 <code>"pca"</code>로, <code>learning_rate</code>는 200에서 <code>"auto"</code>(표본 수에 맞춰 정함)로. 그래서 옛 글의 그림과 지금 그림이 다를 수 있다. 반복 횟수 인자 <code>n_iter</code>는 1.5에서 <code>max_iter</code>로 이름이 바뀌었고 1.7에서 옛 이름이 지워져, 지금 <code>n_iter=</code>를 쓰면 <code>TypeError</code>가 난다.</p>
+    <p style="margin:0">UMAP은 scikit-learn에 없다. 설치 이름은 <code>umap-learn</code>, 불러오는 이름은 <code>umap</code>이다. PyPI의 <code>umap</code>은 전혀 다른 패키지라 <code>umap.UMAP</code>이 없다는 오류가 난다. <code>random_state</code>를 주면 같은 지도가 나오는 대신 병렬 처리가 꺼져 느려진다는 안내가 뜬다. 처음 실행에는 numba 컴파일 시간이 섞여 더 오래 걸린다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Watching the map unfold</div>
+    <h2>수습 기간 — 지도가 펼쳐지는 1,000걸음</h2>
+    <p class="lin">t-SNE를 이 브라우저에서 직접 돌려 본다(500장) → perplexity를 바꿔 본다 → UMAP의 n_neighbors·min_dist를 바꾼 지도를 본다</p>
+  </div>
+  <p>두 지원자의 수습은 점을 조금씩 옮기는 과정 그 자체다. 정답은 여전히 봉인 중이라, 지도 위의 글씨를 <b>그림 그대로</b> 보며 같은 모양끼리 모이는지 눈으로 확인한다. 근무 조건은 둘이다. t-SNE는 <b>perplexity</b>(한 장이 챙기는 이웃 수의 어림), UMAP은 <b>n_neighbors</b>(줄로 잇는 이웃 수)와 <b>min_dist</b>(점끼리 붙을 수 있는 정도).</p>
+  <div class="card">
+    <span class="tag">움직이는 그림 ① · t-SNE 1,000걸음 재생 — 과제지 앞 500장, 이 브라우저가 직접 계산 (정확한 t-SNE)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <button class="btn blue" id="tsPlay">▶ 처음부터 펼치기</button>
+      <div class="choice" role="group" aria-label="perplexity" id="tsPerp"><button data-v="5" aria-pressed="false">perplexity 5</button><button data-v="30" aria-pressed="true">30</button><button data-v="100" aria-pressed="false">100</button></div>
+      <div class="choice" role="group" aria-label="그리는 방법" id="tsDraw"><button data-v="glyph" aria-pressed="true">글씨로</button><button data-v="dot" aria-pressed="false">점으로</button></div>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="tsCv" aria-label="t-SNE가 점을 옮기는 과정. 처음에는 손글씨 500장이 PCA 자리에 겹쳐 있다가, 걸음이 늘수록 같은 모양의 글씨끼리 무리를 지어 갈라진다. 오른쪽 위에 걸음 수와 KL 발산이 적혀 있고, 아래 작은 그래프에 KL 발산이 걸음마다 줄어드는 선이 그려진다"></canvas></div>
+    <div class="ctrls"><label>걸음 <input type="range" id="tsStep" min="0" max="1000" step="10" value="0" disabled><output id="tsStepO">0</output></label></div>
+    <div class="caption" id="tsInfo" aria-live="polite">▶를 누르면 500장의 64칸 이웃 확률(P)을 계산하고 1,000걸음을 재생한다(이 브라우저에서 몇 초).</div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>perplexity — 한 장이 챙기는 이웃 수</h4>
+      <p>perplexity 30은 "가까운 이웃 30장쯤을 챙긴다"는 어림이다. 장마다 동네 반지름 σ를 따로 정해, 글씨가 빽빽한 곳에서는 좁게, 듬성한 곳에서는 넓게 본다. 작게(5) 하면 아주 가까운 몇 장만 보고 작은 섬을 많이 만든다. 크게(100) 하면 넓게 보느라 무리가 둥글게 뭉치고 서로 가까워진다. 표본 수보다 작아야 한다(500장에 perplexity 500은 안 된다).</p>
+    </div>
+    <div class="explain">
+      <h4>처음 250걸음은 과장한다</h4>
+      <p>처음에는 모든 점이 PCA 자리에 아주 작게 겹쳐 있다. 이때 이웃끼리 끌림(P)을 12배로 부풀리면 같은 무리가 먼저 뭉친다(조기 과장, early exaggeration). 250걸음 뒤 과장을 풀면 무리 사이가 벌어지며 지도가 정리된다. 위 그래프에서 250걸음 즈음 KL 발산이 한 번 크게 바뀌는 까닭이다. 걸음을 늘려도 지도는 정답을 모른다. 같은 모양끼리 모일 뿐이다.</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 ② · UMAP 근무 조건 바꿔 보기 — 1,797장 전체 (Python으로 미리 계산한 지도, 이웃 보존율은 이 브라우저가 계산)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="n_neighbors" id="umNn"><button data-v="um5" aria-pressed="false">n_neighbors 5</button><button data-v="um15" aria-pressed="true">15</button><button data-v="um50" aria-pressed="false">50</button><button data-v="um200" aria-pressed="false">200</button></div>
+      <div class="choice" role="group" aria-label="min_dist" id="umMd"><button data-v="umd0" aria-pressed="false">min_dist 0.0</button><button data-v="um15" aria-pressed="true">0.1</button><button data-v="umd99" aria-pressed="false">0.99</button></div>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="umCv" aria-label="UMAP 지도. 손글씨 1,797장이 작은 글씨 그림으로 놓여 있다. n_neighbors가 작을수록 작은 섬이 많고, 클수록 섬들이 서로 가까워진다. min_dist가 크면 무리가 넓게 퍼진다"></canvas></div>
+    <div class="caption" id="umInfo" aria-live="polite"></div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>장부 정리했어. 정확한 t-SNE는 한 걸음마다 모든 쌍(500장이면 12만 쌍)을 세야 해. 1,797장이면 160만 쌍, 1,000걸음이면 16억 번이지. 그래서 scikit-learn은 먼 점들을 덩어리로 묶어 세는 반스-헛 근사로 5초에 끝내. UMAP은 줄 15개씩만 당기니 더 싸고. 외울 숫자는 둘 다 점마다 좌표 두 개, 3,594개야.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Opening the grading envelope</div>
+    <h2>성과 평가 — 채점 봉투를 연다</h2>
+    <p class="lin">숨긴 정답으로 지도 넉 장을 같은 잣대(5-NN)로 채점 → 정답 없이 재는 점수(이웃 보존) → 업무 점수(대표 몇 장으로 이름 붙이기) → 믿지 말아야 할 것 → 새 글씨 놓기</p>
+  </div>
+  <div class="card" id="envelope">
+    <span class="tag">채점 봉투 열기 · 지도 넉 장을 숨긴 정답으로 색칠하고, 지도 위 5-NN 정확도(5겹 교차 검증)를 이 브라우저가 계산</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="envOpen">✉ 채점 봉투 열기</button><span class="muted" style="font-size:13.5px" id="envNote">봉투를 열기 전까지 지도는 회색이다.</span></div>
+    <div class="maps4" id="maps4">
+      <figure><canvas class="fig" id="mpMan" aria-label="매뉴얼 씨 지도. 봉투를 열면 열 가지 색이 한 구름 안에 뒤섞여 있다"></canvas><figcaption>매뉴얼 씨 (잉크·위쪽) <b id="sMan">—</b></figcaption></figure>
+      <figure><canvas class="fig" id="mpPca" aria-label="PCA 지도. 봉투를 열면 0, 6, 4 같은 몇 숫자는 따로 모이지만 3, 5, 8, 9 등은 가운데서 겹친다"></canvas><figcaption>PCA 2D (5-14) <b id="sPca">—</b></figcaption></figure>
+      <figure><canvas class="fig" id="mpTs" aria-label="t-SNE 지도. 봉투를 열면 열 가지 색이 거의 섞이지 않은 열 개의 섬으로 갈라져 있다"></canvas><figcaption>t-SNE (perplexity 30) <b id="sTs">—</b></figcaption></figure>
+      <figure><canvas class="fig" id="mpUm" aria-label="UMAP 지도. 봉투를 열면 열 가지 색이 촘촘한 섬으로 갈라져 있고, 섬 크기가 서로 많이 다르다"></canvas><figcaption>UMAP (n_neighbors 15) <b id="sUm">—</b></figcaption></figure>
+    </div>
+    <div class="legend" id="digLeg"></div>
+    <div id="envStat" style="margin-top:10px"></div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">정답 없이 재는 점수 · trustworthiness (지도 위 이웃 5장이 64칸에서도 이웃이었나, 1이 완벽)</span>
+      <div class="bars" id="trustBars"><p class="muted">계산 중…</p></div>
+      <p class="foot" id="trustFoot"></p>
+    </div>
+    <div class="card">
+      <span class="tag">업무 점수 · 지도 위에서 K-Means로 묶고, 묶음마다 대표 한 장에만 사람이 이름을 붙이면</span>
+      <div class="choice" role="group" aria-label="대표 장수" id="repK"><button data-v="10" aria-pressed="true">대표 10장</button><button data-v="20" aria-pressed="false">20장</button><button data-v="30" aria-pressed="false">30장</button></div>
+      <div class="bars" id="repBars" style="margin-top:10px"><p class="muted">계산 중…</p></div>
+      <p class="foot" id="repFoot"></p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">믿지 말아야 할 것 · 무리 사이 거리와 무리 크기 (숫자별 무리의 중심과 평균 반지름, 64칸 vs 지도)</span>
+    <div class="ctrls" style="margin:0 0 8px"><div class="choice" role="group" aria-label="지도 고르기" id="geoMap"><button data-v="pca" aria-pressed="false">PCA</button><button data-v="ts5" aria-pressed="false">t-SNE p5</button><button data-v="ts30" aria-pressed="true">t-SNE p30</button><button data-v="ts100" aria-pressed="false">t-SNE p100</button><button data-v="um5" aria-pressed="false">UMAP n5</button><button data-v="um15" aria-pressed="false">UMAP n15</button><button data-v="um200" aria-pressed="false">UMAP n200</button></div></div>
+    <div class="two" style="gap:12px">
+      <div class="cwrap"><canvas class="fig" id="geoCv" aria-label="고른 지도에서 숫자마다 무리의 중심을 원으로 그렸다. 원의 크기는 그 무리의 평균 반지름이다. 원 안에 숫자가 적혀 있다"></canvas></div>
+      <div><div class="tw"><table class="tb" id="geoTbl" style="font-size:14px"></table></div><div class="caption" id="geoInfo" aria-live="polite" style="margin-top:8px"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">새 글씨가 들어오면 · UMAP: 1,347장으로 그린 지도에 나중 글씨 450장을 transform으로 놓기 (Python 계산 좌표, 채점은 이 브라우저)</span>
+    <div class="two" style="gap:12px">
+      <div class="cwrap"><canvas class="fig" id="newCv" aria-label="UMAP 지도. 먼저 그린 1,347장은 연한 색 점, 나중에 transform으로 놓은 450장은 테두리가 진한 점이다. 새 점들이 같은 숫자의 무리 안에 들어가 있다"></canvas></div>
+      <div class="caption" id="newInfo" style="margin-top:0">채점 봉투를 열면 계산한다.</div>
+    </div>
+  </div>
+
+  <div class="interview" id="iv15"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 근무 조건(하이퍼파라미터), 두 지원자의 차이, 그리고 차원축소팀 정산</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym" style="font-size:22px">tS</span><span class="no">APP-15 → EMP-0015</span><span class="nm">t-SNE · UMAP</span><span class="rl">비지도 본부 › 차원축소팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">이웃을 지키는 지도 제작자.</b> 높은 차원 데이터를 눈으로 훑는 데는 가장 좋은 도구다. 대신 지도 위 거리와 크기는 지어낸 것이 섞이고, 지도는 "보는 용도"이지 다른 모델의 입력으로 쓰기는 조심스럽다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>같은 것끼리 모이는 지도.</b> 정답을 안 보고도 지도 위 5-NN <span class="tsAcc">97.6%</span>. 원래 64칸(96.3%)과 맞먹는다.</li>
+          <li><b>이웃을 지킨다.</b> 지도 위 이웃 5장이 64칸에서도 이웃이었던 정도(trustworthiness) 0.99 이상.</li>
+          <li><b>라벨링 비용을 줄인다.</b> 지도 위 대표 30장에 이름을 붙이면 1,797장의 96~98%가 맞는다(05장).</li>
+          <li><b>UMAP은 빠르고 새 글씨를 놓는다.</b> transform으로 기존 지도에 450장을 놓아도 96.9%.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>거리와 크기를 믿을 수 없다.</b> UMAP 지도에서 무리 크기 비가 9.2배(64칸은 1.5배). 근무 조건만 바꿔도 무리 사이 배치가 달라진다.</li>
+          <li><b>근무 조건에 민감하다.</b> perplexity, n_neighbors, min_dist에 따라 그림이 바뀐다. 한 장만 보고 결론 내지 않는다.</li>
+          <li><b>t-SNE는 새 글씨를 놓지 못한다.</b> 지도를 다시 그려야 하고, 다시 그리면 배치가 바뀔 수 있다.</li>
+          <li><b>축에 뜻이 없다.</b> PCA의 축은 "가장 퍼진 방향"이지만, 이 지도의 가로·세로는 아무 뜻도 없다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn TSNE / umap-learn UMAP)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>perplexity</code> (t-SNE)</td><td>30</td><td>한 장이 챙기는 이웃 수의 어림. 5~50이 흔하다. 표본 수보다 작아야 한다. 이 면접에서 5 / 30 / 100의 5-NN은 97.6 / 97.6 / 96.4%.</td></tr>
+        <tr><td><code>early_exaggeration</code></td><td>12</td><td>처음 250걸음 동안 끌림을 부풀리는 배수. 무리를 먼저 잡는다. 대개 그대로 둔다.</td></tr>
+        <tr><td><code>learning_rate</code></td><td>"auto"</td><td>걸음 크기. "auto"는 표본 수 ÷ 12 ÷ 4(최소 50). 1.2 전에는 200이었다.</td></tr>
+        <tr><td><code>max_iter</code></td><td>1000</td><td>걸음 수. 예전 이름 <code>n_iter</code>는 지금 오류다. 표본이 많으면 늘린다.</td></tr>
+        <tr><td><code>init</code></td><td>"pca"</td><td>시작 자리. "pca"면 같은 데이터에 늘 같은 지도가 나오고 전체 배치가 조금 더 낫다. "random"이면 random_state마다 배치가 바뀐다.</td></tr>
+        <tr><td><code>n_neighbors</code> (UMAP)</td><td>15</td><td>줄로 잇는 이웃 수. 작으면 동네(작은 섬), 크면 전체 배치. 이 면접에서 5 / 15 / 50 / 200의 5-NN은 98.1 / 97.6 / 97.3 / 96.6%.</td></tr>
+        <tr><td><code>min_dist</code></td><td>0.1</td><td>지도 위에서 점끼리 붙을 수 있는 최소 간격. 작으면 촘촘한 무리(군집에 유리), 크면 고르게 퍼진 그림(보기에 유리).</td></tr>
+        <tr><td><code>metric</code></td><td>"euclidean"</td><td>이웃을 잴 거리. 글자 빈도나 비율 데이터면 "cosine"을 쓰기도 한다.</td></tr>
+        <tr><td><code>random_state</code></td><td>None</td><td>같은 지도를 다시 얻으려면 고정한다. UMAP은 고정하면 한 코어로만 돈다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card tw">
+    <span class="tag">두 지원자의 차이 · 같은 일, 다른 방식</span>
+    <table class="tb" style="font-size:14px">
+      <thead><tr><th></th><th>t-SNE (van der Maaten &amp; Hinton, 2008)</th><th>UMAP (McInnes 등, 2018)</th></tr></thead>
+      <tbody>
+        <tr><td><b>이웃을 적는 법</b></td><td>모든 쌍의 이웃 확률 P (가우시안, perplexity로 폭)</td><td>가까운 n_neighbors장만 잇는 그물 (퍼지 집합)</td></tr>
+        <tr><td><b>지도를 맞추는 법</b></td><td>지도 위 t-분포 Q와 KL 발산을 줄인다</td><td>그물의 줄은 당기고, 무작위로 뽑은 점은 밀어낸다(교차 엔트로피)</td></tr>
+        <tr><td><b>이 면접의 5-NN</b></td><td class="tsAcc">97.6%</td><td class="umAcc">97.6%</td></tr>
+        <tr><td><b>시간 (1,797장, CPU)</b></td><td>약 5초</td><td>약 5초 (첫 실행은 numba 컴파일로 약 15초)</td></tr>
+        <tr><td><b>새 글씨</b></td><td>놓을 수 없다 (transform 없음)</td><td>transform으로 기존 지도에 놓는다</td></tr>
+        <tr><td><b>전체 배치</b></td><td>무리 사이 배치는 약하게만 지킨다</td><td>n_neighbors를 키우면 조금 더 지킨다. 그래도 믿지 않는다</td></tr>
+        <tr><td><b>3차원 이상</b></td><td>보통 2·3차원까지 (barnes_hut는 3 이하)</td><td>10차원 등 더 많은 차원도 된다(군집 전처리)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" id="drLedgerCard">
+    <span class="tag">차원축소팀 정산 · 같은 1,797장, 같은 잣대 (지도 위 5-NN 정확도 · 5겹)</span>
+    <div class="tw"><table class="tb" id="drLedger" style="font-size:14px;min-width:620px"></table></div>
+    <p class="foot" id="drLedgerFoot"></p>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="coin" data-move="pop" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>점수는 둘이 똑같으니 나는 매일 들어오는 새 글씨를 다시 안 그려도 되는 UMAP 쪽에 동전 걸게. t-SNE는 연구실에서 한 번 크게 그려 보는 용도로. 둘 다 한 번 그리면 외울 건 좌표뿐이라 싸다!</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">맞는 일 · 안 맞는 일</span>
+    <table class="tb" style="font-size:14px"><tbody>
+      <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>높은 차원 데이터를 눈으로 훑기(이미지·센서·유전자·문장 임베딩), 이상한 무리나 잘못 붙은 이름표 찾기, 라벨링 전에 데이터가 몇 무리인지 보기, 대표 몇 장만 보고 이름 붙이기, UMAP은 군집 전 차원 줄이기(10차원 등)</td></tr>
+      <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>지도 위 거리·면적으로 "얼마나 다른가"를 수치로 결론 내기, 축의 뜻을 설명해야 하는 보고(PCA가 낫다), 새 데이터가 매일 들어오는 일에 t-SNE 쓰기, 지도 좌표만으로 예측 모델 만들기(원래 특징을 쓰는 지도학습이 낫다)</td></tr>
+      <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td>지도는 근무 조건을 두세 가지로 바꿔 함께 본다. 모든 그림에 공통인 무리만 믿는다. 지도에서 찾은 무리는 원래 64칸으로 돌아가 다시 확인한다(05장 업무 점수의 주의).</td></tr>
+    </tbody></table>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

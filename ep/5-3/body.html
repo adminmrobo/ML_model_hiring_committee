@@ -1,0 +1,523 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-3 면접<span class="dept">지도 본부 › 회귀팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>다항 회귀와 규제 — 곡선을 긋고, 고삐를 맨다</h1>
+        <p class="lede" style="margin-top:14px">콘크리트 강도는 재령에 따라 처음엔 빨리, 나중엔 천천히 오른다. 직선 하나로는 이 휘어짐을 못 따라간다. 오늘의 지원자는 특징을 <b>거듭제곱하고 서로 곱해</b> 늘린 다음, 그 위에 선형 회귀를 한다. 특징은 늘었지만 모델은 여전히 "가중치를 곱해 더하기"다. 그래서 이름이 <b>다항 회귀</b>다.</p>
+        <p class="lede">특징이 8개에서 164개로 불어나면 훈련 배합을 외우기 쉬워진다. 그래서 지원자는 <b>규제</b>라는 고삐를 함께 찬다. 가중치가 커질수록 벌점을 주어 곡선이 제멋대로 휘지 못하게 한다. 벌점을 주는 방식에 따라 세 형제가 있다. 고루 줄이는 <b>릿지</b>, 0으로 지우는 <b>라쏘</b>, 둘을 섞는 <b>엘라스틱넷</b>이다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m1">01 곡선 만지기</a><span class="arr">→</span><a href="#m4">04 수습 기간</a><span class="arr">→</span><a href="#iv3">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>x² · x³</b><span>특징을 거듭제곱하고 서로 곱해 늘린다</span></div>
+            <div><b>164</b><span>3차 다항 특징 수 (원래 8개)</span></div>
+            <div><b>α</b><span>규제 세기. 클수록 가중치를 세게 누른다</span></div>
+            <div><b id="heroLine">0.735</b><span>넘어야 할 합격선 R² (매뉴얼 씨의 경험식)</span></div>
+          </div>
+          <p class="foot">실기 과제는 콘크리트 배합 1,030건의 압축 강도(MPa)를 맞히는 회귀다. 시험지 258건은 05장까지 봉인한다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="front" data-move="pop" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>오늘은 회귀팀 지원자예요. 매뉴얼 씨의 경험식이 시험지에서 낸 R² 0.735가 합격선입니다. 판정은 숫자가 하고, 저는 읽기만 해요.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="board" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>회귀팀 성적표는 두 줄이에요. R²는 1에 가까울수록, MAE(평균 절대 오차)는 0에 가까울수록 좋습니다. 지원서 1장부터 넘겨 드릴게요.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="point" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>특징을 백예순 개로 불린다고? 훈련 배합을 외운 건지, 처음 보는 배합에서도 맞히는 건지 그것부터 볼 거야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="wow" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">λ</span><div class="bub"><span class="who">지원자 · 다항 회귀와 규제</span>안녕하십니까. 직선으로 안 되는 곳에 곡선을 긋는 다항 회귀입니다. 너무 구불구불해지지 않도록 규제라는 고삐를 함께 차고 왔습니다. 교과서에서는 고삐의 세기를 λ, scikit-learn에서는 alpha(α)라고 부릅니다.</div></div>
+    </div>
+    <div id="comicIntro" aria-label="장면: 특징 늘리기, 과대적합, 규제"></div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-0_job_posting.html">5-0 채용 공고</a> — 규칙으로 하던 판단을 데이터로 만드는 까닭, 시험지 봉인 규정</span>
+      <span><a data-ep="5-2" href="5-2_linear_regression.html">5-2 선형 회귀</a> — 최소제곱, R²·MAE, 특징 8개 그대로면 왜 곡선을 못 따라가나. 이 면접은 그 다음 이야기다</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-6_regression_seven.html" target="_blank" rel="noopener">패밀리 조직도 4-6 회귀파 일곱</a> · 규제 C의 반대편: <a data-ep="5-4" href="5-4_logistic_regression.html">5-4 로지스틱 회귀</a></span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — 다항 회귀와 규제를 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="다항 회귀와 규제 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-3 · 지원서<br>지원자 번호 APP-03<br>지원 부서 지도 본부 › 회귀팀</div>
+      <div class="sh-title">Polynomial Regression &amp; Regularization<small>다항 회귀와 규제 · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">λ</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m2">
+        <h3>1. 곡선 관계 <small>Non-linear Relationship</small></h3>
+        <p class="d">강도는 재령에 따라 처음엔 빨리, 나중엔 천천히 오른다. 직선은 이 휘어짐을 못 따라간다.</p>
+        <svg viewBox="0 0 300 190" role="img" aria-label="가로축 재령, 세로축 강도. 검은 점들이 처음엔 가파르게, 나중엔 완만하게 오르는 곡선 모양으로 놓여 있다. 파란 점선 직선은 점들을 비껴가고, 파란 실선 곡선은 점들을 따라간다">
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="ahb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <path d="M30,172 L30,12" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><path d="M30,172 L292,172" stroke="#111" stroke-width="2" marker-end="url(#ah)"/>
+          <text x="36" y="14" font-size="13">강도</text><text x="236" y="188" font-size="14">재령(일)</text>
+          <g fill="#111"><circle cx="44" cy="150" r="5"/><circle cx="52" cy="128" r="5"/><circle cx="62" cy="112" r="5"/><circle cx="70" cy="96" r="5"/><circle cx="84" cy="84" r="5"/><circle cx="98" cy="70" r="5"/><circle cx="116" cy="64" r="5"/><circle cx="136" cy="54" r="5"/><circle cx="160" cy="50" r="5"/><circle cx="188" cy="44" r="5"/><circle cx="216" cy="42" r="5"/><circle cx="246" cy="38" r="5"/><circle cx="270" cy="40" r="5"/><circle cx="58" cy="134" r="5"/><circle cx="108" cy="76" r="5"/></g>
+          <path d="M40,128 L282,30" stroke="#1f6fe5" stroke-width="2.5" stroke-dasharray="7 5"/>
+          <path d="M40,156 C60,110 80,82 110,68 S200,44 282,36" fill="none" stroke="#1f6fe5" stroke-width="3.5"/>
+          <rect x="176" y="112" width="114" height="46" rx="5" fill="#fff" stroke="#c7cfdd"/><path d="M184,126 L204,126" stroke="#1f6fe5" stroke-width="2.5" stroke-dasharray="6 4"/><text x="210" y="131" font-size="12.5">직선 (1차)</text><path d="M184,146 L204,146" stroke="#1f6fe5" stroke-width="3.5"/><text x="210" y="151" font-size="12.5">곡선 (다항)</text>
+        </svg>
+        <span class="go">→ 02 실기 과제지</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>2. 다항 특징 <small>Polynomial Features</small></h3>
+        <p class="d">특징 x를 x², x³으로 늘린다. 모델은 여전히 가중치를 곱해 더하는 선형 회귀다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="입력 x 하나가 세 갈래로 나뉘어 x, x 제곱, x 세제곱이 되고, 각각 가중치 w1, w2, w3을 달고 합 기호로 모여 예측값 y hat이 된다">
+          <circle cx="30" cy="75" r="20" fill="#fff" stroke="#111" stroke-width="2"/><text x="30" y="81" text-anchor="middle" font-size="18" font-style="italic" font-family="serif">x</text>
+          <path d="M50,68 L92,30 M50,75 L92,75 M50,82 L92,120" stroke="#111" stroke-width="1.8"/>
+          <g font-size="16" font-style="italic" font-family="serif" text-anchor="middle">
+          <rect x="94" y="14" width="50" height="32" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="119" y="36">x</text>
+          <rect x="94" y="59" width="50" height="32" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="119" y="81">x²</text>
+          <rect x="94" y="104" width="50" height="32" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="119" y="126">x³</text></g>
+          <path d="M144,30 L208,66 M144,75 L206,75 M144,120 L208,84" stroke="#1f6fe5" stroke-width="2"/>
+          <g font-size="13" font-style="italic" font-family="serif"><text x="166" y="40">w₁</text><text x="168" y="70">w₂</text><text x="166" y="118">w₃</text></g>
+          <circle cx="230" cy="75" r="24" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.5"/><text x="230" y="85" text-anchor="middle" font-size="26" font-family="serif">Σ</text>
+          <path d="M254,75 L282,75" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/><text x="288" y="81" font-size="16" font-style="italic" font-family="serif" text-anchor="middle">ŷ</text>
+        </svg>
+        <div class="fbox"><span class="mth">ŷ = w<sub>1</sub>x + w<sub>2</sub>x<sup>2</sup> + w<sub>3</sub>x<sup>3</sup> + b</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m2">
+        <h3>3. 특징 폭발 <small>Feature Explosion</small></h3>
+        <p class="d">특징이 여럿이면 거듭제곱에 서로 곱한 항(x₁x₂)까지 붙는다. 차수를 올리면 빠르게 불어난다.</p>
+        <svg viewBox="0 0 300 132" role="img" aria-label="차수별 특징 수 막대: 1차 8개, 2차 44개, 3차 164개, 4차 494개. 막대가 차수마다 크게 길어진다">
+          <g font-size="13"><text x="4" y="24">1차</text><text x="4" y="54">2차</text><text x="4" y="84">3차</text><text x="4" y="114">4차</text></g>
+          <rect x="36" y="12" width="5" height="18" rx="2" fill="#111"/><rect x="36" y="42" width="21" height="18" rx="2" fill="#1f6fe5"/><rect x="36" y="72" width="78" height="18" rx="2" fill="#1f6fe5"/><rect x="36" y="102" width="234" height="18" rx="2" fill="#1f6fe5"/>
+          <g font-size="13" font-weight="700" font-family="monospace"><text x="48" y="26">8</text><text x="64" y="56">44</text><text x="122" y="86">164</text><text x="236" y="116" fill="#fff">494</text></g>
+        </svg>
+        <div class="fbox"><span class="mth">특징 수 = C(8 + d, d) − 1</span><br><span style="font-size:13px">d = 차수, 8 = 원래 특징 수, −1 = 상수 열</span></div>
+        <span class="go">→ 02 실기 과제지</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>4. 최소제곱 <small>Least Squares</small></h3>
+        <p class="d">잔차(정답 − 예측)의 제곱합을 가장 작게 하는 가중치를 찾는다. 5-2 선형 회귀와 같은 방법이다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="점들과 그 사이를 지나는 파란 곡선. 점마다 곡선까지 내려오는 짧은 빨간 세로선이 잔차다">
+          <path d="M24,140 L24,10" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/><path d="M24,140 L292,140" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/>
+          <path d="M30,124 C80,60 120,40 170,44 S250,60 286,30" fill="none" stroke="#1f6fe5" stroke-width="3"/>
+          <g stroke="#c0392b" stroke-width="2"><path d="M50,92 L50,98"/><path d="M78,60 L78,74"/><path d="M106,70 L106,55"/><path d="M140,30 L140,45"/><path d="M176,58 L176,45"/><path d="M212,38 L212,49"/><path d="M246,64 L246,47"/><path d="M272,28 L272,37"/></g>
+          <g fill="#111"><circle cx="50" cy="92" r="4.5"/><circle cx="78" cy="60" r="4.5"/><circle cx="106" cy="70" r="4.5"/><circle cx="140" cy="30" r="4.5"/><circle cx="176" cy="58" r="4.5"/><circle cx="212" cy="38" r="4.5"/><circle cx="246" cy="64" r="4.5"/><circle cx="272" cy="28" r="4.5"/></g>
+          <text x="150" y="110" font-size="12.5" fill="#c0392b">빨간 선 = 잔차 (y − ŷ)</text>
+        </svg>
+        <div class="fbox"><span class="mth">최소화 &nbsp;Σ (y<sub>i</sub> − ŷ<sub>i</sub>)<sup>2</sup></span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>5. 과대적합 <small>Overfitting</small></h3>
+        <p class="d">차수를 올리면 훈련 점수는 계속 오르지만, 처음 보는 데이터의 점수는 어느 순간 무너진다.</p>
+        <svg viewBox="0 0 300 160" role="img" aria-label="가로축 차수 1부터 4, 세로축 R 제곱. 회색 훈련 선은 꾸준히 올라 1에 가까워지고, 파란 시험 선은 3차까지 오르다 4차에서 아래로 곤두박질친다">
+          <path d="M34,140 L34,10" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/><path d="M34,140 L292,140" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/>
+          <g font-size="12.5" text-anchor="middle"><text x="70" y="155">1</text><text x="130" y="155">2</text><text x="190" y="155">3</text><text x="250" y="155">4</text></g><text x="6" y="16" font-size="12.5" font-style="italic" font-family="serif">R²</text>
+          <path d="M34,30 L290,30" stroke="#111" stroke-dasharray="4 4"/><text x="38" y="26" font-size="11">1</text>
+          <path d="M70,72 L130,50 L190,37 L250,32" fill="none" stroke="#8a93a6" stroke-width="3"/><g fill="#8a93a6"><circle cx="70" cy="72" r="4.5"/><circle cx="130" cy="50" r="4.5"/><circle cx="190" cy="37" r="4.5"/><circle cx="250" cy="32" r="4.5"/></g>
+          <path d="M70,84 L130,51 L190,45 L250,136" fill="none" stroke="#1f6fe5" stroke-width="3.5"/><g fill="#1f6fe5"><circle cx="70" cy="84" r="5"/><circle cx="130" cy="51" r="5"/><circle cx="190" cy="45" r="5"/><circle cx="250" cy="136" r="5"/></g>
+          <text x="196" y="104" font-size="12.5" fill="#c0392b" font-weight="700">폭주!</text><text x="236" y="58" font-size="12" fill="#8a93a6">훈련</text><text x="142" y="76" font-size="12" fill="#1f6fe5">시험</text>
+        </svg>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>6. 릿지 (L2) <small>Ridge Regression</small></h3>
+        <p class="d">가중치 제곱합에 벌점을 준다. 모든 가중치를 0 쪽으로 고루 줄인다(0이 되지는 않는다).</p>
+        <svg viewBox="0 0 300 166" role="img" aria-label="가중치 w1, w2 평면. 오차가 같은 곳을 이은 타원들이 오른쪽 위에 있고, 원점 둘레의 파란 원(벌점 경계)과 타원이 만나는 점이 릿지의 답이다. 두 가중치 모두 0이 아니다">
+          <path d="M150,145 L150,8" stroke="#111" stroke-width="1.5" marker-end="url(#ah)"/><path d="M60,92 L290,92" stroke="#111" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="156" y="16" font-size="13" font-style="italic" font-family="serif">w₂</text><text x="276" y="108" font-size="13" font-style="italic" font-family="serif">w₁</text>
+          <g fill="none" stroke="#111" stroke-width="1.3"><ellipse cx="236" cy="38" rx="22" ry="12" transform="rotate(-30 236 38)"/><ellipse cx="236" cy="38" rx="44" ry="25" transform="rotate(-30 236 38)"/><ellipse cx="236" cy="38" rx="68" ry="38" transform="rotate(-30 236 38)"/></g>
+          <circle cx="236" cy="38" r="3.5" fill="#111"/>
+          <circle cx="150" cy="92" r="40" fill="#e6f0fe" fill-opacity=".7" stroke="#1f6fe5" stroke-width="2.5"/>
+          <circle cx="183" cy="69" r="6" fill="#1f6fe5"/><text x="4" y="160" font-size="12"><tspan fill="#111">● 최소제곱 답</tspan><tspan fill="#1f6fe5"> · 원(Σw² ≤ 한도)과 만난 곳 = 릿지 답 ●</tspan></text>
+        </svg>
+        <div class="fbox"><span class="mth">Σ(y − ŷ)<sup>2</sup> + α Σ w<sub>j</sub><sup>2</sup></span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>7. 라쏘 (L1) <small>Lasso Regression</small></h3>
+        <p class="d">가중치 절댓값 합에 벌점을 준다. 쓸모가 적은 가중치를 아예 0으로 지운다(특징 선택 효과).</p>
+        <svg viewBox="0 0 300 166" role="img" aria-label="같은 평면에서 벌점 경계가 마름모다. 타원이 마름모의 꼭짓점(세로축 위)에서 만나서 w1이 정확히 0이 된다">
+          <path d="M150,145 L150,8" stroke="#111" stroke-width="1.5" marker-end="url(#ah)"/><path d="M60,92 L290,92" stroke="#111" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="132" y="16" font-size="13" font-style="italic" font-family="serif">w₂</text><text x="276" y="108" font-size="13" font-style="italic" font-family="serif">w₁</text>
+          <g fill="none" stroke="#111" stroke-width="1.3"><ellipse cx="200" cy="26" rx="22" ry="12" transform="rotate(-20 200 26)"/><ellipse cx="200" cy="26" rx="46" ry="24" transform="rotate(-20 200 26)"/><ellipse cx="200" cy="26" rx="70" ry="38" transform="rotate(-20 200 26)"/></g>
+          <circle cx="200" cy="26" r="3.5" fill="#111"/>
+          <path d="M150,48 L194,92 L150,136 L106,92 Z" fill="#e6f0fe" fill-opacity=".7" stroke="#1f6fe5" stroke-width="2.5"/>
+          <circle cx="150" cy="48" r="6" fill="#1f6fe5"/><text x="96" y="44" font-size="12.5" fill="#c0392b" font-weight="700" text-anchor="end">w₁ = 0 ●</text><text x="4" y="160" font-size="12" fill="#1f6fe5">마름모(Σ|w| ≤ 한도)의 꼭짓점에서 만나 한 축이 0</text>
+        </svg>
+        <div class="fbox"><span class="mth"><span class="frac"><span class="r">1</span><span class="r">2n</span></span>Σ(y − ŷ)<sup>2</sup> + α Σ |w<sub>j</sub>|</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>8. 엘라스틱넷 <small>Elastic Net</small></h3>
+        <p class="d">L1과 L2를 비율 ρ(l1_ratio)로 섞는다. 지우기도 하고, 서로 닮은 특징을 함께 남기기도 한다.</p>
+        <svg viewBox="0 0 300 110" role="img" aria-label="세 도형이 나란히 있다. 왼쪽 원은 릿지, 오른쪽 마름모는 라쏘, 가운데 모서리가 둥근 마름모는 둘을 섞은 엘라스틱넷이다">
+          <circle cx="50" cy="50" r="32" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.2"/>
+          <path d="M150,18 C156,30 170,44 182,50 C170,56 156,70 150,82 C144,70 130,56 118,50 C130,44 144,30 150,18 Z" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.6"/>
+          <path d="M250,18 L282,50 L250,82 L218,50 Z" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.2"/>
+          <g font-size="12.5" text-anchor="middle"><text x="50" y="102">릿지 ρ=0</text><text x="150" y="102" font-weight="700">엘라스틱넷</text><text x="250" y="102">라쏘 ρ=1</text></g>
+        </svg>
+        <div class="fbox" style="font-size:14px"><span class="mth">… + α [ ρ Σ|w| + <span class="frac"><span class="r">1 − ρ</span><span class="r">2</span></span> Σw<sup>2</sup> ]</span></div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>9. α 고르기 <small>Choosing α (Cross-Validation)</small></h3>
+        <p class="d">α가 작으면 과대적합, 크면 과소적합. 시험지가 아니라 훈련 데이터 안의 교차 검증으로 고른다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="가로축 알파(로그 눈금), 세로축 검증 점수. 점수는 알파가 아주 작을 때와 아주 클 때 낮고, 가운데에서 가장 높은 산 모양이다. 꼭대기에 고른 알파 표시가 있다">
+          <path d="M30,120 L30,10" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/><path d="M30,120 L292,120" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/>
+          <path d="M40,100 C80,46 120,30 160,30 S240,60 284,108" fill="none" stroke="#1f6fe5" stroke-width="3.2"/>
+          <path d="M156,30 L156,120" stroke="#1f6fe5" stroke-dasharray="4 4"/><circle cx="156" cy="30" r="6" fill="#1f6fe5"/><text x="164" y="24" font-size="12.5" font-weight="700" fill="#1f6fe5">고른 α</text>
+          <g font-size="11.5"><text x="36" y="134">작게: 외운다</text><text x="208" y="134">크게: 못 배운다</text></g><text x="4" y="18" font-size="11">검증</text>
+        </svg>
+        <div class="note">α가 클수록 규제가 세다. 로지스틱 회귀·SVM의 C는 반대 방향이다(C ≈ 1/α).</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "왜 곡선이 필요한가", 2~4번이 "곡선을 어떻게 긋나", 5번이 "곡선을 너무 구불구불하게 그으면", 6~8번이 "고삐를 매는 세 가지 방법", 9번이 "고삐의 세기를 정하는 법"이다. 이 면접은 01장(2번) → 02장(1·3번) → 04장(4·6·7번) → 05장(5·8·9번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 특징을 늘려 곡선을 긋고, 고삐로 잡는다</h2>
+    <p class="lin">특징 x → x, x², x³, … → 선형 회귀 → 규제 α로 가중치를 누른다</p>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">λ</span><div class="bub"><span class="who">지원자 · 다항 회귀와 규제</span>저는 직선만 긋는 선형 회귀에게 재료를 더 줍니다. x 옆에 x²와 x³을 붙여 주면 똑같이 "곱해서 더하기"만 해도 곡선이 됩니다. 다만 재료가 너무 많으면 점 하나하나를 따라가느라 몸을 비틉니다. 그때 α가 고삐를 당깁니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 물-결합재비 하나로 28일 강도를 (훈련 배합 12건으로 일부러 줄인 장난감 문제)</span>
+    <div class="cwrap"><canvas class="fig" id="toyCv" aria-label="가로축 물-결합재비, 세로축 28일 압축 강도. 검은 점 12개가 훈련 배합, 속이 빈 회색 점이 같은 28일 시험 배합이다. 파란 곡선이 고른 차수와 알파로 맞춘 다항 회귀다. 차수를 올리고 알파를 0으로 두면 곡선이 검은 점 사이에서 크게 출렁인다"></canvas></div>
+    <div class="ctrls">
+      <label>차수 d <input type="range" id="tyDeg" min="1" max="10" step="1" value="2"><output id="tyDegO">2</output></label>
+      <label>규제 α <input type="range" id="tyA" min="-4" max="2" step="0.25" value="-4"><output id="tyAO">0</output></label>
+    </div>
+    <div class="ctrls">
+      <button class="btn" id="tyMan" aria-pressed="false">매뉴얼 씨의 경험식 곡선 겹치기</button>
+      <button class="btn" id="tyWild">차수 10 · α = 0 으로</button>
+      <button class="btn" id="tyReset">처음으로</button>
+    </div>
+    <div class="caption" id="toyInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>다항 회귀도 "선형" 회귀다</h4>
+      <p>곡선을 그리는데 왜 선형일까? 모델이 하는 일은 여전히 특징마다 가중치를 곱해 더하는 것뿐이다. 바뀐 것은 특징 쪽이다. x 대신 [x, x², x³]을 넣었을 뿐이다. 가중치에 대해 선형이라서 5-2 선형 회귀의 최소제곱 방법을 그대로 쓴다. 특징이 여럿이면 x₁·x₂처럼 서로 곱한 <b>상호작용 항</b>도 붙는다. "시멘트가 많을 때 재령의 효과가 더 크다" 같은 관계를 이 항이 맡는다.</p>
+      <div class="eq">ŷ = <b>w₁</b>x + <b>w₂</b>x² + <b>w₃</b>x³ + b &nbsp;← w에 대해 선형</div>
+    </div>
+    <div class="explain">
+      <h4>규제는 벌점이다</h4>
+      <p>최소제곱은 훈련 오차만 본다. 특징이 많으면 아주 큰 가중치들이 서로 상쇄하며 점 하나하나를 지나가는 곡선을 만든다. 규제는 손실에 "가중치가 크면 벌점"을 더한다. α가 그 벌점의 세기다. α = 0이면 규제가 없고, α가 크면 가중치가 0 쪽으로 눌려 곡선이 펴진다. 너무 크면 직선보다도 못한 평평한 선이 된다(과소적합).</p>
+      <div class="eq">손실 = 오차² 합 + <i>α</i> × (가중치 크기)</div>
+    </div>
+  </div>
+  <div class="explain">
+    <h4>위 그림에서 볼 것</h4>
+    <p style="margin:0">차수를 1 → 3으로 올리면 곡선이 점들의 휘어짐을 따라간다. 10까지 올리고 α를 0으로 두면 곡선이 검은 점(훈련) 사이에서 위아래로 출렁이고, 회색 점(시험)에서 크게 빗나간다. 훈련 R²는 오르는데 시험 R²는 음수로 떨어진다. 이것이 <b>과대적합</b>이다. 이제 차수는 10에 둔 채 α만 올려 보자. 곡선이 차분해지고 시험 R²가 돌아온다. 이 면접 전체가 이 그림 하나를 콘크리트 데이터 전체(특징 8개, 164개)로 키운 것이다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 콘크리트 배합 1,030건, 강도를 숫자로 맞힌다</h2>
+    <p class="lin">한 줄이 배합 하나(샘플), 배합량과 재령이 특징(X), 압축 강도(MPa)가 타겟(y)이다</p>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">본시험 · 회귀</span>
+      <h3>압축 강도(MPa)를 맞힌다</h3>
+      <p style="margin:6px 0 0;font-size:15px">합격/불합격 이름표가 아니라 강도 숫자 그 자체를 맞힌다. 성적은 <b>R²</b>(1이면 완벽, 0이면 "늘 평균"과 같음, 음수면 그보다 못함)와 <b>MAE</b>(평균 몇 MPa 틀리나)로 잰다. 늘 훈련 평균을 답하는 기준선은 시험 MAE <b>13.52MPa</b>, R² 0이다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">합격선 · 매뉴얼 씨의 현장 경험식</span>
+      <h3>R² 0.735 · MAE 6.72MPa</h3>
+      <p style="margin:6px 0 0;font-size:15px">매뉴얼 씨는 학습하지 않는다. 교과서의 에이브럼스 식으로 28일 강도를 내고, 재령 보정식으로 날짜를 맞춘다. 사람의 지식만으로 이만큼 맞힌다. 물-결합재비 대신 물-시멘트비를 넣으면 R²가 0.058로 무너진다. 슬래그·플라이 애시도 굳는다는 <b>지식</b>이 들어가야 식이 맞는다.</p>
+      <div class="eq" style="font-size:14px">f₂₈ = 96.5 / 7<sup>(물-결합재비)</sup> MPa &nbsp;·&nbsp; f(t) = f₂₈ · t / (4 + 0.85t)</div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 축을 골라 보기 (색 = 강도 등급, 속이 빈 점 = 봉인된 시험지)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <label>가로축 <select id="dxSel" class="btn"></select></label>
+      <label>세로축 <select id="dySel" class="btn"></select></label>
+      <button class="btn" id="dxMan" aria-pressed="false">매뉴얼 씨의 예측과 비교</button>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="dataCv" aria-label="콘크리트 배합 1,030건의 산점도. 고른 두 특징을 가로·세로축으로 하고, 강도 등급마다 색이 다르다. 시험지 258건은 속이 빈 점으로 표시된다"></canvas></div>
+    <div class="legend" id="dataLeg"></div>
+    <div class="caption" id="dataInfo" aria-live="polite">기본 그림은 재령(가로, 로그 눈금 아님)과 강도(세로)다. 처음 28일까지 가파르게 오르고 그 뒤로 완만해지는 휘어짐이 보인다. 직선 하나로는 이 모양을 못 따라간다(지원서 1번 칸).</div>
+  </div>
+  <div class="card">
+    <span class="tag">특징이 몇 개로 불어나나 · 차수를 골라 보기 (지원서 3번 칸)</span>
+    <div class="choice" role="group" aria-label="차수 고르기" id="pfChoice"><button data-v="1" aria-pressed="false">1차</button><button data-v="2" aria-pressed="false">2차</button><button data-v="3" aria-pressed="true">3차</button><button data-v="4" aria-pressed="false">4차</button></div>
+    <div id="pfInfo" style="margin-top:10px"></div>
+  </div>
+  <div class="card">
+    <span class="tag">표 · 실기 과제지 전체 (1,030줄)</span>
+    <div class="datatb" id="concTbl" tabindex="0" aria-label="콘크리트 데이터 표"></div>
+    <p class="foot">파란 머리글이 특징(X), 빨간 열이 타겟(y)이다. 5-4 분류팀은 같은 강도를 35MPa 문턱에 대어 이름표로 바꿔 썼다. 같은 데이터, 다른 질문이다. "봉인" 표시가 붙은 258줄은 05장에서 한 번만 연다. 맨 오른쪽 열은 매뉴얼 씨의 경험식이 낸 예측이다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>왜 두 번 표준화하나</h4>
+      <p>먼저 원래 특징 8개를 표준화한다(평균 0, 표준편차 1). 그대로 거듭제곱하면 굵은 골재 1,000kg의 세제곱은 10억이 되고 고성능 감수제는 몇십이 되어, 숫자 크기 차이가 걷잡을 수 없다. 다항 특징을 만든 뒤 한 번 더 표준화한다. 규제는 "가중치 크기"에 벌점을 주므로, 열마다 단위가 다르면 벌점이 불공평해진다. 두 번 모두 평균과 표준편차는 <b>훈련 데이터로만</b> 구한다.</p>
+      <div class="eq">원 특징 → 표준화 → 다항 특징 (164개) → 표준화 → 릿지 · 라쏘 · 엘라스틱넷</div>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>표 형식(CSV 등)으로, 한 줄에 배합(또는 로트) 하나, 맞히려는 숫자 열 하나가 있으면 된다.</li>
+        <li>Colab 코드(A장) 1번 칸의 데이터 읽기와 <code>FEATURES</code> 두 곳만 바꾼다. 매뉴얼 씨의 경험식(3번 칸)은 내 업무의 경험식이나 기존 계산표로 바꾼다.</li>
+        <li>특징이 20개만 넘어도 3차 다항 특징은 1,770개다. 배합 수보다 특징이 많아지면 규제 없이는 풀리지 않는다. 2차부터 시작한다.</li>
+        <li>글자로 된 특징(공장, 원자재 등급)은 원-핫 인코딩으로 숫자 열로 바꾼다. 원-핫 열을 거듭제곱해도 같은 값이라 상호작용 항만 뜻이 있다(<code>interaction_only</code>).</li>
+        <li>강도 범위 밖의 배합(아주 낮은 물-결합재비 등)은 다항 곡선이 크게 빗나가기 쉽다. 데이터 범위를 기록해 두고 그 밖에서는 쓰지 않는다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 실행 결과로 확인</p>
+  </div>
+  <p>코드를 처음부터 외워 쓸 필요는 없다. 생성형 AI에게 상황을 정확히 알려 주면 Colab에서 바로 돌아가는 코드를 받을 수 있다. 다만 AI는 그럴듯하지만 틀린 코드를 자신 있게 내놓기도 한다. 다항 회귀는 특히 "돌아는 가는데 엉뚱한" 코드가 많다. 위원회 규정은 하나다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다. 데이터를 받으면 열 이름만 고치면 된다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, 기본 라이브러리) ② 데이터(주소, 열 이름, 타겟) ③ 규정(나누기·표준화 순서·차수·α 고르는 법) ④ 출력(차수별 훈련·시험 R²와 MAE, 0이 된 가중치 수) ⑤ 금지(시험 데이터로 α 고르기 금지, 없어진 인자 금지, 주석은 한국어)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"다항 회귀랑 라쏘 코드 짜 줘." — AI가 차수를 마음대로 크게 잡거나(특징 수만 개), 나누기 전에 표준화하거나, 시험 점수로 α를 고르거나, 없어진 <code>normalize</code> 인자를 쓸 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 코드도 버전에 따라 다르게 돈다</h4>
+    <p><code>Ridge</code>·<code>Lasso</code>·<code>ElasticNet</code>·<code>LinearRegression</code>의 <code>normalize</code> 인자는 scikit-learn 1.0에서 예고된 뒤 1.2에서 없어졌다. 지금은 파이프라인에 <code>StandardScaler</code>를 넣는다. <code>PolynomialFeatures.get_feature_names()</code>도 1.2에서 없어지고 <code>get_feature_names_out()</code>이 남았다. AI는 예전 버전의 코드를 많이 보고 배웠기 때문에 옛 인자를 쓰는 일이 잦다. 첫 줄에서 <code>print(sklearn.__version__)</code>로 버전을 찍는다.</p>
+    <p style="margin:0">라쏘와 엘라스틱넷은 좌표 하강으로 푼다. α가 아주 작으면 "수렴하지 않았다(<code>ConvergenceWarning</code>)"가 뜬다. 무시하지 말고 <code>max_iter</code>를 늘리거나 α를 키운다. 엘라스틱넷의 <code>l1_ratio</code>는 1이 라쏘, 0이 릿지 쪽이다. 로지스틱 회귀(5-4)의 <code>l1_ratio</code>와 뜻은 같지만 세기를 정하는 손잡이(α와 C)는 방향이 반대다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Training</div>
+    <h2>수습 기간 — 고삐를 풀어 가며 가중치가 자라는 모습</h2>
+    <p class="lin">3차 다항 특징 164개 · α를 크게 → 작게 재생 · 라쏘는 좌표 하강으로 한 바퀴씩</p>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 · 3차 다항 회귀의 가중치 164개 (훈련 배합 772건, 브라우저에서 계산)</span>
+    <div class="ctrls" style="margin:0 0 10px">
+      <div class="choice" role="group" aria-label="규제 고르기" id="regChoice"><button data-v="ridge" aria-pressed="true">릿지 (L2)</button><button data-v="lasso" aria-pressed="false">라쏘 (L1)</button><button data-v="enet" aria-pressed="false">엘라스틱넷 (ρ = 0.5)</button></div>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="coefCv" aria-label="가중치 164개의 막대 그림. 왼쪽부터 1차 항 8개, 2차 항 36개, 3차 항 120개 순서다. 파란 막대는 양수, 빨간 막대는 음수, 0이 된 가중치는 회색 점이다. 알파가 클수록 막대가 짧아진다"></canvas></div>
+    <div class="cwrap" style="margin-top:8px"><canvas class="fig" id="pathCv" aria-label="가로축 알파(로그 눈금, 오른쪽이 규제 셈), 세로축 R 제곱. 회색 훈련 선과 파란 시험 선, 점선 합격선 0.735. 지금 알파 위치에 세로선이 있다"></canvas></div>
+    <div class="ctrls">
+      <button class="btn blue" id="rgPlay">▶ α 경로 재생 (세게 → 약하게)</button>
+      <button class="btn" id="rgStep">좌표 하강 한 바퀴</button>
+      <button class="btn" id="rgReset">처음으로</button>
+      <label>규제 α <input type="range" id="rgA" min="-3" max="2" step="0.1" value="0"><output id="rgAO">1.00</output></label>
+    </div>
+    <div class="caption" id="regInfo" aria-live="polite">계산 준비 중…</div>
+    <p class="foot">재생은 α = 100에서 시작해 0.001까지 내려간다. 각 α에서 앞 α의 답을 출발점으로 다시 푼다(웜 스타트). "좌표 하강 한 바퀴"는 라쏘·엘라스틱넷에서 가중치를 모두 0에 두고 지금 α로 한 바퀴(164개를 하나씩)씩 고친다. 릿지는 한 번에 풀리므로 한 바퀴가 곧 끝이다. 아래 선 그림의 시험 R²는 설명용으로 보여 줄 뿐, α를 고르는 데 쓰면 반칙이다(05장 교차 검증).</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>릿지는 한 번에 푼다 — 닫힌 해</h4>
+      <p>오차 제곱합에 α·Σw²를 더한 손실은 매끈한 그릇 모양이라, 바닥을 식 하나로 바로 구한다. 5-2 선형 회귀의 정규방정식에 대각선으로 α를 더한 것이다. 이 α 덕분에 특징끼리 거의 같은 정보를 담아(조건수가 커서) 풀이가 흔들릴 때도 답이 안정된다. 이것이 1970년에 릿지가 처음 나온 까닭이다.</p>
+      <div class="eq">w = (XᵀX + <i>α</i>I)⁻¹ Xᵀy</div>
+    </div>
+    <div class="explain">
+      <h4>라쏘는 하나씩 고친다 — 좌표 하강</h4>
+      <p>절댓값 |w|는 0에서 뾰족해 식 하나로 못 푼다. 그래서 가중치를 하나씩 돌아가며 고친다. j번째 가중치만 움직인다고 보면 답은 "다른 가중치로 설명하고 남은 몫(ρⱼ)"을 α만큼 깎은 값이다. 남은 몫이 α보다 작으면 <b>정확히 0</b>이 된다. 이 깎기를 소프트 임계값이라 부른다. 164개를 한 바퀴 돌고, 더 바뀌지 않을 때까지 반복한다.</p>
+      <div class="eq">wⱼ ← S(ρⱼ, <i>α</i>) = sign(ρⱼ) · max(|ρⱼ| − <i>α</i>, 0)</div>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="stack" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Evaluation</div>
+    <h2>성과 평가 — 봉인된 시험지를 연다</h2>
+    <p class="lin">차수별 성적, 4차의 폭주, 릿지로 잡기, α를 고르는 법, 규제 3형제 비교</p>
+  </div>
+  <div class="card">
+    <span class="tag">본시험 · 3차 다항 회귀(규제 없음), 시험지 258건 (브라우저에서 계산)</span>
+    <div id="evalStat"><p class="muted">계산 중…</p></div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">차수를 올리면 · 훈련 R² 와 시험 R²</span>
+      <div class="cwrap"><canvas class="fig" id="degCv" aria-label="차수 1부터 4까지의 막대 그림. 차수마다 훈련 R 제곱(회색)과 시험 R 제곱(파랑) 막대가 있다. 4차의 시험 막대는 아래로 크게 뚫고 내려간다. 점선은 합격선 0.735다"></canvas></div>
+      <div class="caption" id="degInfo">계산 중…</div>
+    </div>
+    <div class="card">
+      <span class="tag">예측 대 정답 · 시험 배합 258건 (대각선에 가까울수록 좋다)</span>
+      <div class="choice" role="group" aria-label="모델 고르기" id="pvChoice"><button data-v="man" aria-pressed="false">매뉴얼 씨</button><button data-v="1" aria-pressed="false">1차</button><button data-v="3" aria-pressed="true">3차</button><button data-v="4" aria-pressed="false">4차</button><button data-v="4r" aria-pressed="false">4차 + 릿지</button></div>
+      <div class="cwrap" style="margin-top:8px"><canvas class="fig" id="pvCv" aria-label="가로축 실제 강도, 세로축 예측 강도의 산점도. 대각선이 완벽한 예측이다. 그림 밖으로 튄 예측은 테두리에 빨간 세모로 표시된다"></canvas></div>
+      <div class="caption" id="pvInfo"></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">4차의 폭주를 릿지로 잡기 · 특징 494개, α를 골라 다시 학습</span>
+    <div class="choice" role="group" aria-label="4차 릿지 알파 고르기" id="d4Choice"><button data-v="0" aria-pressed="true">α = 0 (규제 없음)</button><button data-v="0.1" aria-pressed="false">0.1</button><button data-v="1" aria-pressed="false">1</button><button data-v="10" aria-pressed="false">10</button><button data-v="100" aria-pressed="false">100</button><button data-v="1000" aria-pressed="false">1000</button></div>
+    <div id="d4Stat" style="margin-top:10px"></div>
+    <div class="caption" id="d4Info" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <span class="tag">α는 어떻게 고르나 · 훈련 데이터 안에서 5겹 교차 검증 (시험지는 보지 않는다)</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="cv3">3차 릿지 교차 검증</button><button class="btn" id="cv4">4차 릿지 교차 검증 (몇 초 걸림)</button><div class="prog" id="cvProg" hidden><i></i></div></div>
+    <div class="cwrap"><canvas class="fig" id="cvCv" aria-label="가로축 알파(로그 눈금), 세로축 R 제곱. 교차 검증 평균 점수 선과, 고른 알파에서 연 시험 점수 점"></canvas></div>
+    <div class="caption" id="cvInfo" aria-live="polite">버튼을 눌러 보자. 훈련 배합 772건을 번갈아 다섯 칸으로 나눠, 한 칸씩 돌아가며 "모의 시험지"로 쓴다.</div>
+  </div>
+  <div class="card tw">
+    <span class="tag">규제 3형제 비교 · 3차 다항 특징 164개, 시험지 258건</span>
+    <table class="tb" id="cmpTbl" style="font-size:14px"><tbody><tr><td class="muted">계산 중…</td></tr></tbody></table>
+    <p class="foot">릿지 α = 1은 위 교차 검증이 고른 값이다. 라쏘·엘라스틱넷의 α = 0.1은 설명을 위해 고른 값이다(실무에서는 <code>LassoCV</code>·<code>ElasticNetCV</code>로 고른다). 라쏘와 엘라스틱넷은 손실을 2n으로 나눠 쓰므로(지원서 7번 칸) 같은 α라도 릿지와 세기를 바로 비교할 수 없다.</p>
+  </div>
+
+  <div class="interview" id="iv3"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 맞는 일과 안 맞는 일, 근무 조건(하이퍼파라미터)</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym">λ</span><span class="no">APP-03 → EMP-0003</span><span class="nm">다항 회귀와 규제</span><span class="rl">지도 본부 › 회귀팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">재료를 늘려 곡선을 긋고, 고삐로 다스리는 선형 회귀.</b> 차수와 α 두 손잡이만 잘 잡으면 경험식을 넘는다. 손잡이를 놓으면 폭주한다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>곡선과 상호작용을 잡는다.</b> 사람이 log(재령)이나 물-결합재비를 만들어 주지 않아도 3차 항들이 휘어짐을 흉내 낸다(R² 0.567 → 0.849).</li>
+          <li><b>여전히 선형 회귀다.</b> 학습이 빠르고(릿지는 식 하나), 같은 입력이면 늘 같은 답이다.</li>
+          <li><b>규제로 안전장치를 단다.</b> 릿지는 불안정한 풀이를 안정시키고, 라쏘는 쓸모가 적은 항을 지워 모델을 가볍게 한다.</li>
+          <li><b>다른 지원자의 재료가 된다.</b> 다항 특징 + 로지스틱 회귀, 다항 커널 SVM(5-8)이 같은 생각을 쓴다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>특징이 폭발한다.</b> 특징 8개 4차면 494개, 20개 3차면 1,770개다. 배합 수보다 많아지면 규제 없이는 못 푼다.</li>
+          <li><b>데이터 범위 밖에서 날뛴다.</b> 거듭제곱은 범위를 조금만 벗어나도 값이 크게 뛴다. 4차의 폭주가 바로 이것이다.</li>
+          <li><b>설명이 어려워진다.</b> "재령²·시멘트" 같은 항의 가중치는 사람이 읽기 어렵다. 라쏘가 지워도 남은 항이 원인이라는 뜻은 아니다.</li>
+          <li><b>손잡이가 둘이다.</b> 차수와 α를 함께 골라야 하고, 둘 다 교차 검증이 필요하다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">라쏘가 남긴 항 · 3차 다항 특징 164개 중 0이 아닌 가중치 (표준화한 특징 기준, 큰 순서로 12개)</span>
+    <div class="choice" role="group" aria-label="라쏘 알파 고르기" id="wChoice"><button data-v="0.01" aria-pressed="false">α = 0.01</button><button data-v="0.1" aria-pressed="true">α = 0.1</button><button data-v="1" aria-pressed="false">α = 1</button></div>
+    <div class="bars" id="wBars" style="margin-top:12px"></div>
+    <div class="caption" id="wInfo" aria-live="polite"></div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>PolynomialFeatures(degree)</code></td><td>2</td><td>차수. 2부터 시작해 교차 검증으로 올린다. 이 데이터에서는 3차가 가장 좋았고, 4차는 규제 없이는 폭주했다(05장).</td></tr>
+        <tr><td><code>include_bias</code></td><td>True</td><td>상수 열(1)을 만들지 여부. 뒤에 오는 회귀 모델이 절편을 따로 두므로 <code>False</code>로 둔다. True면 3차 특징이 165개로 세어진다.</td></tr>
+        <tr><td><code>interaction_only</code></td><td>False</td><td>True면 x²·x³ 없이 서로 곱한 항(x₁x₂)만 만든다. 원-핫 특징처럼 제곱해도 같은 열에 쓴다.</td></tr>
+        <tr><td><code>alpha</code> (Ridge·Lasso·ElasticNet)</td><td>1.0</td><td>규제 세기. <b>클수록 세다.</b> 로지스틱 회귀·SVM의 <code>C</code>와 방향이 반대다(C ≈ 1/α). <code>RidgeCV</code>·<code>LassoCV</code>·<code>ElasticNetCV</code>가 교차 검증으로 고른다.</td></tr>
+        <tr><td><code>l1_ratio</code> (ElasticNet)</td><td>0.5</td><td>L1의 비율 ρ. 1이면 라쏘, 0에 가까우면 릿지. 서로 닮은 특징이 많으면 0.5 근처가 둘을 함께 남긴다.</td></tr>
+        <tr><td><code>max_iter</code>, <code>tol</code> (Lasso·ElasticNet)</td><td>1000, 1e-4</td><td>좌표 하강의 반복 상한과 멈춤 기준. 작은 α에서 <code>ConvergenceWarning</code>이 뜨면 <code>max_iter</code>를 늘린다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">α와 C — 같은 손잡이, 반대 눈금</span>
+      <svg viewBox="0 0 420 150" style="width:100%;height:auto" role="img" aria-label="두 개의 띠. 위 띠는 릿지·라쏘의 알파로 오른쪽으로 갈수록 규제가 세다(빨강). 아래 띠는 로지스틱 회귀·SVM의 C로 왼쪽으로 갈수록 규제가 세다(빨강)">
+        <defs><linearGradient id="gA3" x1="0" x2="1"><stop offset="0" stop-color="#9cc0f7"/><stop offset="1" stop-color="#c0392b"/></linearGradient><linearGradient id="gC3" x1="0" x2="1"><stop offset="0" stop-color="#c0392b"/><stop offset="1" stop-color="#9cc0f7"/></linearGradient></defs>
+        <g font-family="IBM Plex Sans KR, sans-serif" font-size="14" fill="currentColor">
+        <text x="10" y="24" font-weight="700">릿지 · 라쏘 · 엘라스틱넷 · α (이 편)</text>
+        <rect x="10" y="34" width="400" height="14" rx="7" fill="url(#gA3)"/>
+        <text x="10" y="66" font-size="12.5">0.001 = 거의 규제 없음</text><text x="410" y="66" font-size="12.5" text-anchor="end">1000 = 규제 셈</text>
+        <text x="10" y="96" font-weight="700">로지스틱 회귀 · SVM · C (5-4, 5-8)</text>
+        <rect x="10" y="106" width="400" height="14" rx="7" fill="url(#gC3)"/>
+        <text x="10" y="138" font-size="12.5">0.001 = 규제 셈</text><text x="410" y="138" font-size="12.5" text-anchor="end">1000 = 거의 규제 없음</text></g>
+      </svg>
+      <p class="foot">C ≈ 1/α로 기억한다. 빨간 쪽이 "가중치를 세게 누른다"다. 5-4 로지스틱 회귀의 03장 틀린 곳 찾기에 이 방향 실수가 나온다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">맞는 일 · 안 맞는 일</span>
+      <table class="tb" style="font-size:14px"><tbody>
+        <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>특징이 몇 개~몇십 개인 표 데이터에서 휘어진 관계와 상호작용을 잡을 때(배합 → 강도, 온도·압력 → 수율), 경험식을 데이터로 다듬을 때, 빠르고 늘 같은 답이 필요한 예측</td></tr>
+        <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>특징이 수백 개 이상인 데이터(다항 특징이 폭발한다), 학습 범위 밖을 예측해야 하는 일(외삽), 계단처럼 꺾이는 관계(→ 결정 트리 5-6), 이미지·소리 같은 날것 데이터</td></tr>
+        <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td>라쏘는 "규제"다. 쓸모가 적은 항을 지우는 결과로 특징을 고르지만, 물-결합재비처럼 뜻 있는 새 특징을 만들어 주지는 않는다(특징공학은 사람의 몫). 5-2에서 특징 8개에 사람이 만든 특징 두 개(물-결합재비, log 재령)를 더해 낸 R² 0.842(외울 숫자 11개)와 3차 164개로 낸 0.849가 거의 같다.</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

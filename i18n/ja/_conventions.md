@@ -1,0 +1,23 @@
+# 日本語 conventions (translate from Korean `ko`; the reviewed English in i18n/en/<same file>.json, same key, is a reference for meaning and fragment structure)
+
+- Series: モデル採用委員会. Hiring verdicts (source-tagged verdict keys, whose English is Hired/Rejected): **採用 / 保留 / 不採用**.
+- Concrete test result (35 MPa or more?), untagged 합격/불합격 (English Pass/Fail): **合格 / 不合格**. 합격 배합 = 合格の配合, 강도 미달 = 強度不足. Chart '35MPa 합격선' = "35 MPa 合格ライン".
+- 합격선 (hiring bar) = **採用ライン**. 시험지 = **試験用紙** (held-out test set). 훈련 = 訓練 (学習 where natural). 채점 봉투 = **採点用封筒**. 업무 점수 = **業務スコア**.
+- Speaker labels inside `<span class="who">…</span>`:
+  - 위원장 박사 → 委員長の博士 · 위원장 · 박사 → 委員長・博士
+  - 인사 담당 조수 → 人事担当の助手 · 인사 담당 · 조수 → 人事担当・助手
+  - 실무 면접관 초파리 → 実務面接官のショウジョウバエ · 실무 면접관 · 초파리 연구원 → 実務面接官・ショウジョウバエ研究員
+  - 예산 담당 Money-Robo → 予算担当 Money-Robo · 예산 담당 · Money-Robo → 予算担当・Money-Robo
+  - 기존 직원 · 매뉴얼 씨 → 既存社員・マニュアルさん · 지원자 · X → 応募者・X
+  - Short comic names: 박사 → 博士, 조수 → 助手, 초파리 → ハエ.
+- Teams: 入門チーム · 回帰チーム · 分類チーム · 兼用チーム · クラスタリングチーム · 次元削減チーム. 教師あり本部 / 教師なし本部.
+- Section refs: "03장" → "03章", "B장" → "B章". 00장 = 応募書類・1枚目.
+- Money: 0원 → 0円 (metaphor for compute cost; keep the joke).
+- Mr. Manual = マニュアルさん, speaks like a regulation: "第1条 …… 第2条 ……".
+- Author: "アン・サンソン（M-Robo 代表）".
+- Style: explanations in である調 (plain textbook style). Dialogue: 博士 polite です・ます, 助手 brisk です・ます, ハエ blunt casual (だ/だろ), Money-Robo casual and money-minded.
+- Punctuation: 、。「」（）full-width in Japanese sentences; half-width around numbers/code/math. No spaces between Japanese words; keep a space only where it separates numbers/Latin words.
+- Counters after numbers: 장 → 枚, 개 → 個 (or ∅), 건 → 件 (mixes: 件 or 配合), 번 → 回, 묶음 → クラスタ (or 個), 일 → 日.
+- Particle-only fragments ('는','은','이라고','라고'…): ∅ (the single character ∅ = intentionally empty; empty tr = untranslated). Japanese word order often needs the verb at the end — reshape neighbouring fragments with ctx.
+- AI prompts ("한국어 주석"): "日本語のコメント".
+- Model names: KNN, 線形回帰, 多項式回帰, ロジスティック回帰, ナイーブベイズ, 決定木, ランダムフォレスト, SVM, GBM, K-Means, 階層的クラスタリング, DBSCAN, GMM, PCA, t-SNE・UMAP.

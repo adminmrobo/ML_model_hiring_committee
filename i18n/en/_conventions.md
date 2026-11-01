@@ -1,0 +1,22 @@
+# English conventions already used (common.json + 5-0.json are done — match them)
+
+- Series: The Model Hiring Committee. Verdicts: **Hired** / **On hold**; 불합격 = Rejected (hiring sense).
+- Concrete test result (35 MPa or more?): **Pass / Fail** (not Hired). 합격 배합 = passing mix, 강도 미달 = below strength.
+- 합격선 = the hiring bar. 시험지 = the exam paper (held-out test set, 258 mixes). 훈련 = training. 채점 봉투 = the sealed answer envelope. 업무 점수 = task score.
+- Speaker labels inside `<span class="who">…</span>`:
+  - 위원장 박사 → The Chair (Doctor) · 위원장 · 박사 → The Chair · Doctor
+  - 인사 담당 조수 → The HR Assistant · 인사 담당 · 조수 → HR · the Assistant
+  - 실무 면접관 초파리 → The Fruit Fly (technical interviewer) · 실무 면접관 · 초파리 연구원 → Technical interviewer · the Fruit Fly
+  - 예산 담당 Money-Robo → Money-Robo (budget officer) · 예산 담당 · Money-Robo → Budget officer · Money-Robo
+  - 기존 직원 · 매뉴얼 씨 → Current employee · Mr. Manual
+  - 지원자 · X → Candidate · X (model name as in glossary)
+- Section references: "03장" → "Section 03", "B장" → "Section B". 00장 = Section 00 (the one-page application sheet).
+- Money: 0원 → $0; Money-Robo's costs are metaphors for compute (keep the joke).
+- Mr. Manual speaks like a regulation: "Article 1. …".
+- Author: Ahn Sangsun (CEO, M-Robo Co., Ltd.).
+- Shared fragments already fixed in common.json: '개' → " ", '건' → " more", '번' → " steps", '장' → " images". Do not re-translate common keys (they are not in your episode file).
+- Canvas/SVG labels (`ctx.fillText(...)`, `<text …>`): keep them as short as the Korean (abbreviate if needed: "d" for days, "MPa", "acc."), or they overflow drawings.
+- Model names: KNN, linear regression, polynomial regression, logistic regression, naive Bayes, decision tree, random forest, SVM, GBM, K-Means, hierarchical clustering, DBSCAN, GMM, PCA, t-SNE · UMAP.
+- Teams: Starter Team, Regression Team, Classification Team, Dual-role Team, Clustering Team, Dimensionality Reduction Team. Supervised Division / Unsupervised Division.
+- Verdict vs concrete: the source tags verdict strings `/*i18n:verdict*/'합격'` → **Hired**, `/*i18n:verdict*/'불합격'` → **Rejected**; untagged '합격' / '불합격' → **Pass / Fail** (concrete). '35MPa 합격선' on charts = "35 MPa pass line" (not the hiring bar).
+- Episode-only fixes for shared fragments live in `_overrides.json`. `∅` = intentionally empty.

@@ -1,0 +1,25 @@
+{
+ "n": "5-15",
+ "file": "5-15_tsne_umap.html",
+ "title": "t-SNE · UMAP",
+ "data": "digits",
+ "desc": "64칸짜리 손글씨 숫자 1,797장을 정답 없이 2차원 지도로 펼친다. 가까운 이웃 관계만 지키며 점을 옮기는 공동 지원자 t-SNE와 UMAP의 면접이자 모델 채용 위원회의 마지막 면접. 지원서 1장(9칸 개요), 자기소개(지도 위에서 64칸 이웃 찾기), 정답 없는 실기 과제지와 매뉴얼 씨의 지도, AI 비서에게 코드 받기와 검증 체크리스트, 수습 기간(브라우저에서 t-SNE 1,000걸음 재생, perplexity·n_neighbors·min_dist), 성과 평가(채점 봉투 열기, 지도 위 5-NN, trustworthiness, 대표 몇 장으로 이름 붙이기, 믿지 말아야 할 거리와 크기, UMAP transform), 인사 카드, 그리고 지원자 열다섯 명의 채용 결산. 모델 채용 위원회 5-15.",
+ "toc": [
+  ["top", "면접실"],
+  ["overview", "00 지원서"],
+  ["m1", "01 자기소개"],
+  ["m2", "02 과제지"],
+  ["m3", "03 AI 비서"],
+  ["m4", "04 수습 기간"],
+  ["m5", "05 성과 평가"],
+  ["m6", "06 인사 카드"],
+  ["final", "15명 결산"],
+  ["map", "배치도"],
+  ["code", "코드"],
+  ["prompt", "프롬프트"],
+  ["glossary-sec", "용어"],
+  ["teach", "교육자 TIP"]
+ ],
+ "sprites": ["doc_board", "doc_magic", "doc_scale", "doc_verdict", "asst_ledger", "asst_spark", "asst_shock", "asst_firm", "asst_sigh", "fly_point", "fly_arms", "fly_type", "fly_coffee", "robo_chart", "robo_count", "robo_coin", "robo_wow", "robo_happy", "robo_cry", "sc_party"],
+ "foot": "실기 과제지는 scikit-learn load_digits의 손글씨 숫자 1,797장(8×8 픽셀, 밝기 0~16, UCI Optical Recognition of Handwritten Digits, CC BY 4.0)이다. 정답(0~9)은 지도를 그리는 데 쓰지 않고 채점에만 쓴다(채점 봉투). 정답을 쓰지 않으므로 시험지를 떼지 않고 1,797장 전체로 지도를 그린다. 잣대는 2D 지도 좌표 위에서의 5-NN 정확도(StratifiedKFold 5겹, 섞지 않음)이고, 합격선은 매뉴얼 씨의 지도(가로 잉크 양, 세로 위쪽 절반의 잉크 비율, 표준화하지 않음)의 18.1%, 기준선은 늘 가장 흔한 숫자를 답하는 10.1%다. 이 페이지가 브라우저에서 직접 계산하는 것: 매뉴얼 씨 지도와 PCA 2D 지도(공분산 행렬의 거듭제곱법), 모든 지도의 5-NN 정확도·이웃 보존율·trustworthiness·K-Means(k-means++ 초기화 10번, 대표 한 장 이름 퍼뜨리기·ARI)·숫자별 무리의 중심 거리와 크기, UMAP transform 결과의 채점, 04장의 t-SNE 재생(과제지 앞 500장, 정확한 t-SNE: perplexity로 맞춘 이웃 확률, 조기 과장 12배 250걸음, 모멘텀 0.5→0.8, 학습률 auto, PCA 시작, scikit-learn과 같은 규칙). 미리 계산한 것: 1,797장 전체의 t-SNE 지도(perplexity 5·30·50·100)와 UMAP 지도(n_neighbors 5·15·50·200, min_dist 0.0·0.1·0.99), UMAP transform 좌표(1,347장으로 그린 지도에 450장을 놓은 자리)이며 모두 Python(scikit-learn 1.9.1 TSNE, umap-learn 0.5.12, random_state=0)으로 계산해 좌표만 실었다(소수 둘째 자리로 줄임. 줄인 좌표로도 5-NN 정확도는 Python과 같다). A장 코드가 같은 설정으로 같은 지도를 다시 만든다. 매뉴얼 씨 지도의 5-NN은 같은 거리의 이웃이 많아(잉크 양이 정수) 다섯째 이웃을 고르는 순서가 scikit-learn과 달라 브라우저에서 18.4%로 나오므로, 합격선은 Python 값 18.1%를 쓴다. 브라우저의 K-Means는 초기값 뽑기가 scikit-learn과 달라 업무 점수가 A장과 조금 다를 수 있고, 64칸 거리에 같은 값이 많아 trustworthiness도 셋째 자리에서 다를 수 있다. 시간(초)은 이 빌드 컴퓨터(CPU 2코어)에서 잰 값이며 컴퓨터마다 다르다. 06장 차원축소팀 정산의 PCA 판정과 마무리의 15명 결산에서 5-10~5-14 줄은 그 편들의 면접 결과가 확정되기 전에 작업 지시서의 숫자로 적은 예상값이며 '예상'으로 표시했다. 03장의 'AI가 낸 코드'는 흔한 실수를 모아 일부러 만든 예시이며 특정 AI 서비스의 실제 답이 아니다."
+}

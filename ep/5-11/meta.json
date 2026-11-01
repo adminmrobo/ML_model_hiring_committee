@@ -1,0 +1,24 @@
+{
+ "n": "5-11",
+ "file": "5-11_hierarchical.html",
+ "title": "계층적 군집",
+ "data": "digits",
+ "desc": "가장 닮은 둘부터 합쳐 가계도를 그린다. 손글씨 숫자 1,797장을 정답 없이 묶는 지원자 계층적 군집(병합 군집)의 면접. 지원서 1장(9칸 개요), 자기소개(스무 장 합치기), 정답 없는 실기 과제지와 매뉴얼 씨의 8묶음 합격선, AI 비서에게 코드 받기와 검증 체크리스트, 수습 기간(연결 방식 네 가지, 사슬 효과, 덴드로그램 자르기), 성과 평가(채점 봉투 열기 ARI·NMI, 실루엣, 대표 한 장에만 이름 붙이는 업무 점수), 인사 카드(새 글씨 배정, 군집팀 중간 비교). 모델 채용 위원회 5-11.",
+ "toc": [
+  ["top", "면접실"],
+  ["overview", "00 지원서"],
+  ["m1", "01 자기소개"],
+  ["m2", "02 과제지"],
+  ["m3", "03 AI 비서"],
+  ["m4", "04 수습 기간"],
+  ["m5", "05 성과 평가"],
+  ["m6", "06 인사 카드"],
+  ["map", "배치도"],
+  ["code", "코드"],
+  ["prompt", "프롬프트"],
+  ["glossary-sec", "용어"],
+  ["teach", "교육자 TIP"]
+ ],
+ "sprites": ["doc_board", "doc_magic", "doc_scale", "doc_verdict", "asst_firm", "asst_shock", "asst_spark", "asst_ledger", "asst_sigh", "fly_type", "fly_point", "fly_arms", "fly_coffee", "robo_count", "robo_calc", "robo_dq", "robo_wow", "robo_meh", "robo_happy"],
+ "foot": "실기 과제지는 scikit-learn에 들어 있는 손글씨 숫자 load_digits 1,797장(UCI Optical Recognition of Handwritten Digits의 일부, 8×8 픽셀, 밝기 0~16, CC BY 4.0)이다. 정답(0~9)은 합치기에 쓰지 않고 채점(ARI·NMI·업무 점수)에만 쓰며, 정답을 쓰지 않으므로 시험지를 따로 떼지 않고 1,797장 전체로 묶는다. 군집팀 합격선 ARI 0.108은 매뉴얼 씨의 정리 규칙(가운데 네 칸 잉크 12 미만 · 잉크 합 300 초과 · 위쪽 절반 잉크 비율 0.5 초과 → 8묶음)이 낸 값이다. 01·02·04·05장, 면접 결과, 06장의 그림판과 중간 비교의 계층적 군집 줄은 이 페이지가 브라우저에서 직접 계산한다: 1,797장 사이 유클리드 거리 1,613,706쌍을 재고, NN-chain 순서로 합치며 Lance-Williams 식으로 거리를 고쳐 쓴다(ward·average·complete·single). 합친 기록을 높이 순으로 세워 자르는 방식이 scipy linkage·scikit-learn AgglomerativeClustering과 같아, 네 연결 방식의 10묶음 ARI·NMI·실루엣·묶음 크기가 A장(scikit-learn 1.9.1)과 소수 셋째 자리까지 같다. 업무 점수의 대표는 묶음 평균에 가장 가까운 글씨 한 장이다. 무작위 기준선은 무작위 10묶음 20번의 ARI 평균이다. 미리 계산한 값은 06장 중간 비교와 05장 업무 점수 그림의 K-Means(k=10, n_init=10, random_state=0) 숫자, 06장의 표준화 ward와 '앞 1,500장으로 묶고 뒤 297장 배정' 숫자뿐이며 Python(scikit-learn 1.9.1)으로 계산해 A장 10·11번 칸이 같은 값을 낸다. 06장 그림판의 배정은 계층적 군집의 기능이 아니라 '가장 가까운 묶음 평균'이라는 덧붙인 규칙이다. 03장의 'AI가 낸 코드'는 흔한 실수를 모아 일부러 만든 예시이며 특정 AI 서비스의 실제 답이 아니다."
+}

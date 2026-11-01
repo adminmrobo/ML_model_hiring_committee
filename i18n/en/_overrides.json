@@ -1,0 +1,58 @@
+{
+ "5-0": {
+  "06cf3e90de6e": " d"
+ },
+ "5-1": {
+  "06cf3e90de6e": " d",
+  "d202b4d78c60": " more"
+ },
+ "5-3": {
+  "d202b4d78c60": "∅",
+  "11600c9ada77": " weights"
+ },
+ "5-4": {
+  "d202b4d78c60": "∅",
+  "eccc63c976e5": "Accuracy",
+  "f575e3615736": "<b>Pass</b>",
+  "5aec6c666c85": "Age (days)"
+ },
+ "5-5": {
+  "d202b4d78c60": " mixes",
+  "12fb19678f2e": " total; ",
+  "a0fd7fe25e68": ")",
+  "0a65e7b2741d": "×"
+ },
+ "5-6": {
+  "776525c904e8": "regression",
+  "8b1d74f0c2a7": "classification"
+ },
+ "5-7": {
+  "06cf3e90de6e": " d",
+  "a0fd7fe25e68": ")"
+ },
+ "5-10": {
+  "0a65e7b2741d": " iter.",
+  "a03b1b063875": ", ",
+  "bd520550adf1": "</b>, compared with the hiring bar of "
+ },
+ "5-14": {
+  "0a65e7b2741d": "∅"
+ },
+ "5-15": {
+  "cccf447b7f26": "Rejected",
+  "bffa2713e63e": " · Hired "
+ },
+ "5-12": {
+  "48ded2c39fae": "</b>, far below the hiring bar of "
+ },
+ "5-13": {
+  "a3b43ba6cadb": " iterations · "
+ },
+ "5-8": {
+  "f0322e2d23de": " · training "
+ },
+ "5-9": {
+  "dcca74a41d96": "<b>",
+  "b7d90310478c": "∅"
+ }
+}

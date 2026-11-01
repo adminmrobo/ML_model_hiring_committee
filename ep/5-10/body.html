@@ -1,0 +1,514 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-10 면접<span class="dept">비지도 본부 › 군집팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-10 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 μ 기호가 그려진 지원자 K-Means의 사원증이 떠 있고, 그 옆에서 손글씨 숫자 카드들이 흩어져 있다가 파랑·빨강·초록 중심 표시 세 개 쪽으로 모이고, 중심이 카드 무리의 한가운데로 옮겨 간다. 조수가 서류 더미를 보고 놀라고, 박사가 '중심 10개를 찍어요'라고 말한다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>K-Means — 중심 k개를 찍고, 가까운 쪽으로 모으고, 평균으로 옮긴다</h1>
+        <p class="lede" style="margin-top:14px">지도 본부 면접은 끝났다. 오늘부터는 <b>비지도 본부</b>다. 공장의 현장 일지와 시험 성적서에는 손으로 쓴 숫자가 수천 장 쌓여 있다. 그런데 "이 글씨는 7"이라고 <b>정답 이름표를 붙일 사람이 없다</b>. 정답이 없으니 지금까지처럼 "맞혔나"로 가르칠 수도 없다.</p>
+        <p class="lede">오늘의 지원자 K-Means는 정답 없이 <b>비슷한 글씨끼리 k묶음</b>으로 나눈다. 방법은 세 줄이다. 중심 k개를 찍는다 → 글씨마다 가장 가까운 중심에 붙인다 → 중심을 자기 묶음의 <b>평균</b> 자리로 옮긴다. 이것을 더 바뀌지 않을 때까지 되풀이한다. 묶음이 생기면 사람은 묶음마다 <b>대표 한 장</b>에만 이름을 붙이면 된다. 덧붙여 대표가 실제 글씨 한 장인 사촌 <b>K-Medoids</b>도 함께 본다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m1">01 중심 찍고 옮기기</a><span class="arr">→</span><a href="#replay">04 평균 글씨가 생긴다</a><span class="arr">→</span><a href="#iv10">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>k = 10</b><span>나눌 묶음 수. 사람이 정한다 (04장)</span></div>
+            <div><b>64칸</b><span>글씨 한 장 = 8×8 픽셀 밝기 64개</span></div>
+            <div><b>시작 10번</b><span>시작점을 바꿔 10번 하고 가장 좋은 것을 남긴다</span></div>
+            <div><b id="heroLine">ARI 0.108</b><span>넘어야 할 합격선 (매뉴얼 씨의 규칙 묶기)</span></div>
+          </div>
+          <p class="foot">실기 과제는 손글씨 숫자 1,797장이다. 정답(0~9)은 채점 봉투에 봉인해 05장에서만 연다. 학습에는 정답을 쓰지 않으므로 시험지를 따로 떼지 않고 1,797장 전체로 묶는다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="board" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>비지도 본부 첫 면접이에요. 정답이 없으니 채점 방식도 바뀝니다. 묶음을 다 만든 뒤에야 봉인해 둔 정답 봉투를 열어, 묶음이 정답과 얼마나 겹치는지(ARI) 봅니다. 합격선은 매뉴얼 씨의 0.108이에요.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="shock" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>서류 더미가 1,797장이에요! 한 장씩 보고 이름표를 붙이면 며칠이 걸려요. 비슷한 것끼리만 묶어 줘도 저는 묶음마다 한 장씩만 보면 되는데요.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="point" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>정답도 없이 묶는다고? 그럼 "잘 묶었다"는 건 누가 정해? 그리고 묶음 수 10은 숫자가 열 개라는 걸 알아서 고른 거잖아.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="coin" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>이름표 붙이는 인건비가 장당 동전 하나라고 쳐 봐. 1,797개 낼 걸 10개만 내면 된다고? 그 말이 진짜인지 05장에서 셀게.</div></div>
+      <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>저는 세 가지만 봅니다. 가운데가 비었나, 잉크가 많나, 위가 무거운가. 그래서 여덟 더미로 나눕니다. 0은 가운데가 비었고 1은 잉크가 적지요. 나머지는 섞입니다만.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">μ</span><div class="bub"><span class="who">지원자 · K-Means</span>안녕하십니까. K-Means입니다. 저는 규칙을 미리 정하지 않습니다. 묶음마다 "평균 글씨"를 하나씩 들고, 글씨를 가장 닮은 평균 쪽으로 보냅니다. 평균은 모인 글씨를 보고 다시 고칩니다.</div></div>
+    </div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-1_knn.html">5-1 KNN</a> — 거리로 가까운 것을 찾는다. 오늘도 거리를 쓴다. 다만 KNN은 이웃의 정답을 빌렸고, 오늘은 정답이 없다 · <a href="5-0_job_posting.html">5-0 채용 공고</a> — 매뉴얼 씨(규칙)가 합격선이 되는 방식</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-8_unsupervised_nine.html" target="_blank" rel="noopener">패밀리 조직도 4-8 비지도 아홉</a> · <a href="https://adminmrobo.github.io/AI_image_classification/4-2_cat_human.html" target="_blank" rel="noopener">이미지 분류 4-2 고양이 vs 사람</a> (사진은 숫자 행렬이다)</span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — K-Means를 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="K-Means 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-10 · 지원서<br>지원자 번호 APP-10<br>지원 부서 비지도 본부 › 군집팀</div>
+      <div class="sh-title">K-Means Clustering<small>K-Means · 중심 k개로 묶기 (+ K-Medoids) · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">μ</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m1">
+        <h3>1. 정답 없이 묶기 <small>Clustering · Unsupervised</small></h3>
+        <p class="d">이름표가 없는 데이터를 비슷한 것끼리 k묶음으로 나눈다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="왼쪽에는 검은 점 열두 개가 흩어져 있고, 화살표 오른쪽에는 같은 점들이 세 무리로 나뉘어 파란 점선 원 세 개에 둘러싸여 있다">
+          <defs><marker id="k1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="k1b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <g fill="#111"><circle cx="22" cy="30" r="4"/><circle cx="36" cy="22" r="4"/><circle cx="30" cy="44" r="4"/><circle cx="44" cy="36" r="4"/><circle cx="96" cy="34" r="4"/><circle cx="108" cy="48" r="4"/><circle cx="92" cy="54" r="4"/><circle cx="110" cy="28" r="4"/><circle cx="54" cy="104" r="4"/><circle cx="68" cy="112" r="4"/><circle cx="48" cy="120" r="4"/><circle cx="66" cy="96" r="4"/></g>
+          <path d="M128,80 L162,80" stroke="#111" stroke-width="2" marker-end="url(#k1a)"/>
+          <g fill="#111"><circle cx="192" cy="30" r="4"/><circle cx="206" cy="22" r="4"/><circle cx="200" cy="44" r="4"/><circle cx="214" cy="36" r="4"/><circle cx="266" cy="34" r="4"/><circle cx="278" cy="48" r="4"/><circle cx="262" cy="54" r="4"/><circle cx="280" cy="28" r="4"/><circle cx="224" cy="104" r="4"/><circle cx="238" cy="112" r="4"/><circle cx="218" cy="120" r="4"/><circle cx="236" cy="96" r="4"/></g>
+          <g fill="none" stroke="#1f6fe5" stroke-width="2.2" stroke-dasharray="5 4"><circle cx="203" cy="33" r="22"/><circle cx="271" cy="41" r="22"/><circle cx="229" cy="108" r="22"/></g>
+          <text x="70" y="146" text-anchor="middle" font-size="12">이름표 없음</text><text x="236" y="146" text-anchor="middle" font-size="12" fill="#1f6fe5">비슷한 것끼리 3묶음</text>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>2. 중심 = 평균 <small>Centroid μ</small></h3>
+        <p class="d">묶음마다 중심 하나. 중심은 그 묶음에 든 데이터의 평균 자리다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="검은 점 여섯 개가 모여 있고, 한가운데에 파란 십자(μ)가 있다. 점마다 십자까지 가는 가는 파란 선이 그려져 있다. 옆에 작은 8×8 칸 세 개를 겹쳐 평균 내면 흐릿한 글씨 하나가 된다는 그림이 있다">
+          <g stroke="#1f6fe5" stroke-width="1.2" opacity=".7"><path d="M84,70 L46,42 M84,70 L58,100 M84,70 L110,40 M84,70 L124,82 M84,70 L70,30 M84,70 L104,108"/></g>
+          <g fill="#111"><circle cx="46" cy="42" r="5"/><circle cx="58" cy="100" r="5"/><circle cx="110" cy="40" r="5"/><circle cx="124" cy="82" r="5"/><circle cx="70" cy="30" r="5"/><circle cx="104" cy="108" r="5"/></g>
+          <path d="M76,70 L92,70 M84,62 L84,78" stroke="#1f6fe5" stroke-width="4"/><text x="96" y="66" font-size="15" font-style="italic" font-family="serif" fill="#1f6fe5">μ</text>
+          <g stroke="#111" stroke-width="1"><rect x="168" y="22" width="32" height="32" fill="#fff"/><rect x="176" y="30" width="16" height="4" fill="#111"/><rect x="186" y="34" width="4" height="16" fill="#111"/>
+          <rect x="172" y="60" width="32" height="32" fill="#fff"/><rect x="178" y="66" width="18" height="4" fill="#111"/><rect x="190" y="70" width="4" height="18" fill="#111"/></g>
+          <text x="214" y="64" font-size="16">→</text>
+          <rect x="236" y="38" width="44" height="44" fill="#fff" stroke="#1f6fe5" stroke-width="1.6"/><rect x="244" y="46" width="24" height="6" fill="#1f6fe5" opacity=".75"/><rect x="258" y="52" width="6" height="22" fill="#1f6fe5" opacity=".6"/><rect x="262" y="52" width="4" height="22" fill="#1f6fe5" opacity=".3"/>
+          <text x="258" y="100" text-anchor="middle" font-size="11.5" fill="#1f6fe5">평균 글씨</text>
+          <text x="186" y="112" text-anchor="middle" font-size="11.5">7 두 장</text>
+        </svg>
+        <div class="fbox"><span class="mth">μ<sub>c</sub> = (1 / |S<sub>c</sub>|) Σ<sub>x∈S<sub>c</sub></sub> x</span><br><span style="font-size:13px">64칸 글씨의 평균도 64칸 = 흐릿한 글씨 한 장</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>3. 가까운 쪽으로 <small>Assignment Step</small></h3>
+        <p class="d">데이터마다 가장 가까운 중심의 묶음에 들어간다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="파란 십자 μ1과 빨간 십자 μ2가 있고, 가운데에 둘을 가르는 점선 경계가 있다. 검은 점 x에서 μ1까지 짧은 실선(d1), μ2까지 긴 점선(d2)이 그려져 있어 x는 μ1의 묶음에 들어간다">
+          <path d="M150,8 L150,132" stroke="#8b93a3" stroke-width="1.6" stroke-dasharray="5 4"/>
+          <path d="M62,70 L78,70 M70,62 L70,78" stroke="#1f6fe5" stroke-width="4"/><text x="58" y="56" font-size="14" font-style="italic" font-family="serif" fill="#1f6fe5">μ₁</text>
+          <path d="M222,70 L238,70 M230,62 L230,78" stroke="#c0392b" stroke-width="4"/><text x="236" y="56" font-size="14" font-style="italic" font-family="serif" fill="#c0392b">μ₂</text>
+          <circle cx="118" cy="104" r="6" fill="#111"/><text x="112" y="126" font-size="13" font-style="italic" font-family="serif">x</text>
+          <path d="M114,100 L74,74" stroke="#1f6fe5" stroke-width="2.4"/><path d="M124,100 L226,74" stroke="#c0392b" stroke-width="1.6" stroke-dasharray="4 4"/>
+          <text x="80" y="98" font-size="12" fill="#1f6fe5">d₁</text><text x="180" y="100" font-size="12" fill="#c0392b">d₂</text>
+          <text x="156" y="22" font-size="11.5" fill="#6b7280">경계 (같은 거리)</text>
+        </svg>
+        <div class="fbox"><span class="mth">c(x) = argmin<sub>c</sub> ‖x − μ<sub>c</sub>‖²</span><br><span style="font-size:13px">d₁ &lt; d₂ 이니 x는 1번 묶음</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>4. 평균으로 옮기기 <small>Update Step</small></h3>
+        <p class="d">묶음이 정해지면 중심을 그 묶음의 평균 자리로 옮긴다. 3 ↔ 4를 되풀이한다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="속이 빈 회색 십자(옛 중심)에서 파란 화살표가 점 다섯 개의 한가운데에 있는 파란 십자(새 중심)로 뻗어 있다. 아래에 '배정 → 이동 → 배정 → …' 고리 화살표가 있다">
+          <path d="M44,40 L60,40 M52,32 L52,48" stroke="#8b93a3" stroke-width="3"/><text x="30" y="24" font-size="11.5" fill="#6b7280">옛 중심</text>
+          <g fill="#111"><circle cx="150" cy="54" r="5"/><circle cx="176" cy="40" r="5"/><circle cx="190" cy="70" r="5"/><circle cx="160" cy="86" r="5"/><circle cx="196" cy="48" r="5"/></g>
+          <path d="M60,46 L160,60" stroke="#1f6fe5" stroke-width="2.4" marker-end="url(#k1b)"/>
+          <path d="M166,60 L182,60 M174,52 L174,68" stroke="#1f6fe5" stroke-width="4"/><text x="206" y="94" font-size="11.5" fill="#1f6fe5">새 중심 = 평균</text>
+          <path d="M70,118 C110,104 190,104 230,118" fill="none" stroke="#111" stroke-width="1.6" marker-end="url(#k1a)"/><path d="M230,128 C190,140 110,140 70,128" fill="none" stroke="#111" stroke-width="1.6" marker-end="url(#k1a)"/>
+          <text x="40" y="126" font-size="11.5">배정</text><text x="236" y="126" font-size="11.5">이동</text>
+        </svg>
+        <div class="fbox"><span class="mth">μ<sub>c</sub> ← 평균(S<sub>c</sub>)</span><br><span style="font-size:13px">더 바뀌는 글씨가 없으면 멈춘다</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>5. 관성 <small>Inertia · Within-cluster SS</small></h3>
+        <p class="d">데이터와 자기 중심 사이 거리 제곱의 합. 배정도 이동도 이 값을 늘리지 않는다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽: 파란 십자 중심에서 점 네 개까지 선이 있고 선마다 작은 정사각형(거리 제곱)이 붙어 있다. 오른쪽: 반복 횟수에 따라 관성이 계단처럼 내려가다 평평해지는 그래프">
+          <path d="M60,70 L76,70 M68,62 L68,78" stroke="#1f6fe5" stroke-width="4"/>
+          <g stroke="#111" stroke-width="1.4"><path d="M68,70 L30,40"/><path d="M68,70 L110,48"/><path d="M68,70 L36,110"/><path d="M68,70 L104,104"/></g>
+          <g fill="#111"><circle cx="30" cy="40" r="4"/><circle cx="110" cy="48" r="4"/><circle cx="36" cy="110" r="4"/><circle cx="104" cy="104" r="4"/></g>
+          <g fill="#1f6fe5" opacity=".22"><rect x="18" y="22" width="18" height="18"/><rect x="110" y="30" width="18" height="18"/><rect x="18" y="112" width="18" height="18"/><rect x="104" y="104" width="18" height="18"/></g>
+          <path d="M158,124 L158,14" stroke="#111" stroke-width="1.6" marker-end="url(#k1a)"/><path d="M158,124 L292,124" stroke="#111" stroke-width="1.6" marker-end="url(#k1a)"/>
+          <path d="M164,24 L178,24 L178,72 L194,72 L194,90 L210,90 L210,98 L226,98 L226,102 L284,102" fill="none" stroke="#1f6fe5" stroke-width="2.6"/>
+          <text x="226" y="138" font-size="11.5" text-anchor="middle">반복 →</text><text x="166" y="14" font-size="11.5">관성 J</text>
+        </svg>
+        <div class="fbox"><span class="mth">J = Σ<sub>i</sub> ‖x<sub>i</sub> − μ<sub>c(i)</sub>‖²</span><br><span style="font-size:13px">K-Means = J를 줄이는 방법. 0까지는 못 간다</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>6. 시작 운 <small>k-means++ · n_init</small></h3>
+        <p class="d">어디서 시작하느냐에 따라 끝이 다르다. 여러 번 시작해 관성이 가장 작은 것을 남긴다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽 상자: 세 무리에 중심이 하나씩 잘 자리 잡았다(관성 작음). 오른쪽 상자: 중심 두 개가 한 무리에 몰리고, 두 무리를 중심 하나가 맡았다(관성 큼, 빨간 표시)">
+          <rect x="6" y="10" width="138" height="104" rx="8" fill="#fff" stroke="#111" stroke-width="1.2"/><rect x="156" y="10" width="138" height="104" rx="8" fill="#fff" stroke="#c0392b" stroke-width="1.6"/>
+          <g fill="#111"><circle cx="30" cy="34" r="3.5"/><circle cx="40" cy="28" r="3.5"/><circle cx="36" cy="44" r="3.5"/><circle cx="110" cy="34" r="3.5"/><circle cx="120" cy="42" r="3.5"/><circle cx="114" cy="26" r="3.5"/><circle cx="66" cy="88" r="3.5"/><circle cx="78" cy="96" r="3.5"/><circle cx="72" cy="80" r="3.5"/>
+          <circle cx="180" cy="34" r="3.5"/><circle cx="190" cy="28" r="3.5"/><circle cx="186" cy="44" r="3.5"/><circle cx="260" cy="34" r="3.5"/><circle cx="270" cy="42" r="3.5"/><circle cx="264" cy="26" r="3.5"/><circle cx="216" cy="88" r="3.5"/><circle cx="228" cy="96" r="3.5"/><circle cx="222" cy="80" r="3.5"/></g>
+          <g stroke="#1f6fe5" stroke-width="3"><path d="M30,36 L44,36 M37,29 L37,43"/><path d="M109,34 L123,34 M116,27 L116,41"/><path d="M65,88 L79,88 M72,81 L72,95"/>
+          <path d="M177,30 L189,30 M183,24 L183,36"/><path d="M186,42 L198,42 M192,36 L192,48"/><path d="M234,62 L248,62 M241,55 L241,69"/></g>
+          <text x="75" y="132" text-anchor="middle" font-size="12">시작 A · 관성 작음</text><text x="225" y="132" text-anchor="middle" font-size="12" fill="#c0392b">시작 B · 관성 큼</text>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">k-means++: 서로 먼 글씨를 골라 시작한다<br>n_init=10: 10번 시작해 관성이 가장 작은 것 (정답 없이 고른다)</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>7. k 고르기 <small>Elbow · Silhouette</small></h3>
+        <p class="d">k는 사람이 정한다. 관성의 꺾이는 곳(엘보)과 실루엣 점수가 실마리다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽: k가 커질수록 관성이 내려가며 팔꿈치처럼 꺾이는 곡선, 꺾이는 곳에 빨간 원. 오른쪽: 점 하나에서 자기 묶음까지의 평균 거리 a(짧은 파란 선)와 가장 가까운 다른 묶음까지의 평균 거리 b(긴 회색 점선)">
+          <path d="M20,118 L20,12" stroke="#111" stroke-width="1.6" marker-end="url(#k1a)"/><path d="M20,118 L150,118" stroke="#111" stroke-width="1.6" marker-end="url(#k1a)"/>
+          <path d="M26,18 C40,64 54,84 68,90 C90,98 120,102 144,104" fill="none" stroke="#1f6fe5" stroke-width="2.6"/>
+          <circle cx="66" cy="89" r="7" fill="none" stroke="#c0392b" stroke-width="2.2"/><text x="84" y="132" font-size="11.5" text-anchor="middle">k →</text><text x="26" y="12" font-size="11.5">관성</text>
+          <g fill="#111"><circle cx="186" cy="50" r="3.5"/><circle cx="196" cy="62" r="3.5"/><circle cx="178" cy="66" r="3.5"/></g><g fill="#8b93a3"><circle cx="262" cy="48" r="3.5"/><circle cx="276" cy="60" r="3.5"/><circle cx="266" cy="70" r="3.5"/></g>
+          <circle cx="200" cy="44" r="5" fill="#1f6fe5"/><path d="M200,44 L186,58" stroke="#1f6fe5" stroke-width="2.4"/><path d="M200,44 L266,58" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <text x="180" y="40" font-size="12" font-style="italic" font-family="serif" fill="#1f6fe5">a</text><text x="236" y="44" font-size="12" font-style="italic" font-family="serif" fill="#6b7280">b</text>
+        </svg>
+        <div class="fbox"><span class="mth">s = (b − a) / max(a, b)</span><br><span style="font-size:13px">1에 가까울수록 자기 묶음에 잘 붙어 있다</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>8. 채점 봉투 <small>ARI · Hidden Answers</small></h3>
+        <p class="d">학습이 끝난 뒤에야 숨긴 정답을 꺼내, 묶음이 정답과 얼마나 겹치는지 잰다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="빨간 밀랍 도장으로 봉한 봉투에 '정답 1,797'이라고 적혀 있다. 아래에 0에서 1까지의 눈금자가 있고, 0에 '무작위', 0.108에 '매뉴얼 씨(합격선)', 1에 '정답과 같다'가 표시되어 있다">
+          <rect x="70" y="8" width="160" height="72" rx="6" fill="#fff" stroke="#111" stroke-width="1.6"/><path d="M70,10 L150,52 L230,10" fill="none" stroke="#111" stroke-width="1.6"/>
+          <circle cx="150" cy="52" r="12" fill="#c0392b"/><text x="150" y="57" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">봉</text>
+          <text x="150" y="74" text-anchor="middle" font-size="11">정답 1,797</text>
+          <path d="M20,108 L280,108" stroke="#111" stroke-width="2"/><g stroke="#111" stroke-width="1.6"><path d="M20,102 L20,114"/><path d="M48,102 L48,114"/><path d="M280,102 L280,114"/></g>
+          <path d="M20,108 L193,108" stroke="#1f6fe5" stroke-width="5"/><circle cx="193" cy="108" r="5" fill="#1f6fe5"/>
+          <g font-size="11" text-anchor="middle"><text x="20" y="128">0 무작위</text><text x="62" y="98" fill="#7a5a3a">0.108 합격선</text><text x="270" y="128">1 정답과 같다</text><text x="193" y="128" fill="#1f6fe5">K-Means</text></g>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">묶음 번호는 아무 이름이라 정확도로 못 잰다<br>ARI: 같은 묶음에 든 짝이 정답에서도 같은가 (무작위 ≈ 0)</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#medoid">
+        <h3>9. 사촌 K-Medoids <small>Medoid = Real Sample</small></h3>
+        <p class="d">평균 대신 묶음 안의 실제 데이터 한 장을 대표로 삼는다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽: 초승달 모양으로 늘어선 점들의 평균(파란 십자)이 점이 하나도 없는 빈 곳에 놓였다. 오른쪽: 같은 점들 가운데 실제 점 하나가 파란 원으로 둘러싸여 대표(메도이드)가 되었다">
+          <g fill="#111"><circle cx="20" cy="40" r="3.5"/><circle cx="30" cy="62" r="3.5"/><circle cx="44" cy="82" r="3.5"/><circle cx="64" cy="96" r="3.5"/><circle cx="88" cy="102" r="3.5"/><circle cx="112" cy="98" r="3.5"/><circle cx="128" cy="84" r="3.5"/>
+          <circle cx="170" cy="40" r="3.5"/><circle cx="180" cy="62" r="3.5"/><circle cx="194" cy="82" r="3.5"/><circle cx="214" cy="96" r="3.5"/><circle cx="238" cy="102" r="3.5"/><circle cx="262" cy="98" r="3.5"/><circle cx="278" cy="84" r="3.5"/></g>
+          <path d="M62,72 L78,72 M70,64 L70,80" stroke="#1f6fe5" stroke-width="4"/><text x="70" y="128" text-anchor="middle" font-size="12">K-Means: 평균 (빈 곳)</text>
+          <circle cx="214" cy="96" r="10" fill="none" stroke="#1f6fe5" stroke-width="3"/><text x="224" y="128" text-anchor="middle" font-size="12">K-Medoids: 실제 한 장</text>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">어떤 거리든 쓸 수 있고, 튀는 값에 덜 끌려간다<br>대신 거리를 모두 재야 해서 데이터가 크면 비싸다</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "무슨 일을 하나"(정답 없이 묶기), 2~4번이 "어떻게 하나"(중심, 배정, 이동), 5~7번이 "무엇을 줄이고 무엇을 정해야 하나"(관성, 시작 운, k), 8번이 "정답이 없는데 어떻게 채점하나", 9번이 "같은 집안의 다른 방법"이다. 이 면접은 01장(1~3번) → 04장(4~7번) → 05장(8·9번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 중심을 찍고, 모으고, 옮긴다</h2>
+    <p class="lin">중심 k개 찍기 → 가장 가까운 중심에 배정 → 중심을 묶음 평균으로 이동 → 바뀌는 것이 없을 때까지 되풀이</p>
+  </div>
+  <div id="comicIntro"></div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">μ</span><div class="bub"><span class="who">지원자 · K-Means</span>아래 지도에서 ①②③을 차례로 눌러 보십시오. 점 하나가 손글씨 한 장이고, 십자가 제 중심입니다. 지도 아래 줄에는 묶음마다 모인 글씨들의 64칸 평균, 곧 "평균 글씨"가 나옵니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 1,797장을 그림용 2차원 지도에 놓고 K-Means 한 단계씩 (지도 만드는 법은 5-14 PCA에서)</span>
+    <div class="cwrap"><canvas class="fig" id="kmCv" aria-label="손글씨 1,797장이 점으로 찍힌 2차원 지도. 배경은 가장 가까운 중심에 따라 옅은 색 영역으로 나뉘고, 점은 배정된 묶음의 색이다. 십자 표시가 중심이며, 중심을 옮기면 옛 자리에서 새 자리로 화살표가 그려진다. 아래 줄에 묶음마다 평균 글씨(8×8)가 그려진다"></canvas></div>
+    <div class="ctrls">
+      <button class="btn" id="kSeed">① 중심 찍기 (무작위)</button>
+      <button class="btn blue" id="kAssign">② 가까운 쪽으로 배정</button>
+      <button class="btn blue" id="kMove">③ 평균으로 옮기기</button>
+      <button class="btn" id="kAuto">▶ 끝까지</button>
+      <div class="choice" role="group" aria-label="묶음 수 k" id="kChoice"><button data-v="3" aria-pressed="false">k = 3</button><button data-v="5" aria-pressed="true">k = 5</button><button data-v="10" aria-pressed="false">k = 10</button></div>
+    </div>
+    <div class="caption" id="kInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>세 줄짜리 일하는 법</h4>
+      <p>처음 중심은 아무 데나 찍어도 된다(보통 데이터 몇 장을 고른다). 그다음은 두 걸음의 되풀이다. <b>배정</b>: 글씨마다 가장 가까운 중심을 찾아 그 묶음에 넣는다. <b>이동</b>: 묶음마다 든 글씨의 평균을 내어 중심을 그 자리로 옮긴다. 중심이 움직였으니 경계가 바뀌고, 몇몇 글씨는 이웃 묶음으로 넘어간다. 넘어가는 글씨가 하나도 없으면 멈춘다. 두 걸음 모두 "글씨와 자기 중심 사이 거리 제곱의 합"(<b>관성</b>)을 늘리지 않으므로 반드시 언젠가 멈춘다.</p>
+      <div class="eq">찍기 → [배정: 가장 가까운 μ] → [이동: μ ← 평균] → 바뀐 글씨 0장이면 끝</div>
+    </div>
+    <div class="explain">
+      <h4>KNN과 무엇이 다른가</h4>
+      <p>둘 다 거리로 일하고 이름에 K가 들어가지만 하는 일이 다르다. 5-1 <b>KNN</b>은 지도학습이다. 새 데이터와 가까운 이웃 k개의 <b>정답</b>을 빌려 답한다. <b>K-Means</b>는 비지도학습이다. 정답이 없고, k는 이웃 수가 아니라 <b>묶음 수</b>다. 학습이 끝나면 중심 k개만 남고, 새 글씨가 오면 가장 가까운 중심의 묶음 번호를 알려 준다. 그 번호가 "몇"인지는 모른다. 묶음 번호에 뜻을 붙이는 일은 사람의 몫이다(05장 업무 점수).</p>
+      <div class="eq">KNN: k = 이웃 수, 정답을 빌린다 &nbsp;·&nbsp; K-Means: k = 묶음 수, 정답이 없다</div>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 정답 없는 1,797장</h2>
+    <p class="lin">한 장이 샘플 하나, 8×8 픽셀의 밝기 64개가 특징(X)이다. 타겟(y)은 없다. 정답은 채점 봉투에 봉인되어 있다</p>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 실기 과제지 전체 1,797장 (누르면 그 글씨의 숫자 64개를 본다)</span>
+    <div class="two" style="gap:14px;align-items:start">
+      <div class="cwrap"><canvas class="fig" id="wallCv" aria-label="손글씨 숫자 1,797장을 작은 칸에 빽빽하게 늘어놓은 그림. 숫자 이름은 붙어 있지 않다. 고른 글씨는 빨간 테두리로 표시된다"></canvas></div>
+      <div>
+        <div class="cwrap"><canvas class="fig" id="pixCv" aria-label="고른 글씨 한 장을 8×8 칸으로 크게 그리고, 칸마다 밝기 숫자(0~16)를 적었다"></canvas></div>
+        <div class="caption" id="pixInfo" aria-live="polite" style="margin-top:6px"></div>
+      </div>
+    </div>
+  </div>
+  <div class="two">
+    <div class="card" id="envelope">
+      <span class="tag">채점 봉투 · 숨긴 정답 1,797개</span>
+      <div style="display:flex;gap:14px;align-items:center">
+        <svg viewBox="0 0 120 84" width="120" height="84" role="img" aria-label="빨간 도장으로 봉한 흰 봉투"><rect x="4" y="6" width="112" height="72" rx="6" fill="#fffdf8" stroke="#1d2533" stroke-width="2"/><path d="M4,8 L60,46 L116,8" fill="none" stroke="#1d2533" stroke-width="2"/><circle cx="60" cy="46" r="13" fill="#c0392b"/><text x="60" y="51" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">봉인</text></svg>
+        <p style="margin:0;font-size:15px">정답(이 글씨는 0~9 중 무엇인가)은 데이터에 들어 있지만 학습에는 <b>쓰지 않는다</b>. 지원자는 64칸 숫자만 보고 묶는다. k를 고를 때도 쓰지 않는다. 05장에서 묶음이 다 정해진 뒤에 한 번 열어 채점에만 쓴다. 정답을 쓰지 않으므로 지도 본부처럼 시험지를 떼어 둘 까닭이 없어 1,797장 전체로 묶는다.</p>
+      </div>
+    </div>
+    <div class="explain">
+      <h4>64칸짜리 숫자 줄 하나 = 글씨 한 장</h4>
+      <p>컴퓨터에게 사진은 숫자 행렬이다. 이 글씨들은 원래 32×32 흑백 그림을 4×4 칸씩 묶어 잉크 칸 수(0~16)를 센 것이라 8×8 = 64개의 숫자로 남았다. 한 장을 64칸 한 줄로 펴면 64차원 공간의 점 하나가 된다. K-Means는 이 점들 사이의 <b>유클리드 거리</b>로 "닮았다"를 잰다. 두 글씨의 같은 칸끼리 밝기 차이를 제곱해 64칸을 모두 더한 값이다. 칸마다 단위(밝기 0~16)가 같으니 콘크리트 때처럼 kg과 일(日)을 섞는 문제는 없다.</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">매뉴얼 씨의 정리 규칙 · 질문 세 개로 여덟 더미 (정답은 보지 않는다)</span>
+    <p style="font-size:15px;margin:4px 0 10px">① 가운데 네 칸의 밝기 합이 12 미만인가(가운데가 비었나) ② 잉크 합이 300을 넘나 ③ 잉크의 절반 넘게 위쪽 네 줄에 있나. 예/아니요 세 번이면 2 × 2 × 2 = 8더미다. 더미마다 앞쪽 몇 장을 보자.</p>
+    <div class="cwrap"><canvas class="fig" id="manCv" aria-label="매뉴얼 씨의 여덟 더미. 줄마다 더미 이름(가운데 빔·잉크 많음·위가 무거움의 예/아니요)과 장수, 그 더미에 든 글씨 몇 장이 그려져 있다"></canvas></div>
+    <p class="foot">합격선은 이 여덟 더미가 숨긴 정답과 겹치는 정도다. 위원회가 미리 채점해 두었다: <b>ARI 0.108</b>. 무작위로 나누면 0, 정답과 똑같으면 1이다(05장). 가운데가 빈 0과 잉크가 적은 1은 제법 모이지만, 나머지 숫자는 세 질문으로 갈리지 않아 큰 더미에 섞인다.</p>
+  </div>
+  <div class="two">
+    <div class="cast" style="margin:0">
+      <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>규칙이 셋이면 더미가 여덟입니다. 열 가지 숫자를 나누려면 규칙을 더 만들어야 하는데, 3과 8과 9를 가르는 한 줄짜리 조항은 아직 못 찾았습니다.</div></div>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>한 줄에 대상 하나(글씨, 로트, 고객), 열마다 숫자 특징이 있는 표면 된다. A장 1번 칸에서 <code>X</code>만 바꾼다. 정답 열은 없어도 된다(있으면 채점에만 쓴다).</li>
+        <li>특징의 단위가 다르면(kg과 일) 거리가 큰 단위에 끌려가므로 표준화를 검토한다. 단위가 같고 0이 많은 데이터(픽셀, 단어 횟수)는 표준화가 오히려 해로울 수 있으니 둘 다 해 보고 비교한다(05장).</li>
+        <li>글자 특징은 원-핫 인코딩한다. 빈칸은 미리 채운다(K-Means는 빈칸을 받지 않는다).</li>
+        <li>사진은 픽셀을 한 줄로 펴서 넣을 수 있지만 크기가 커지면 거리가 뜻을 잃기 쉽다. 차원을 먼저 줄이는 방법은 5-14 PCA에서 본다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 버전 메모</p>
+  </div>
+  <p>K-Means 코드는 세 줄이면 돈다. 그래서 틀려도 오류가 나지 않는다. 정답이 없는 일이라 "점수가 이상하다"로 알아채기도 어렵다. 위원회 규정은 같다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, scikit-learn만, 버전 출력) ② 데이터(무엇이 X이고, 정답 열이 있다면 어디에만 쓰는지) ③ 규정(n_init·random_state, k는 정답 없이 고르기) ④ 출력(관성·실루엣, 중심 그림, 채점은 ARI) ⑤ 금지(정답으로 k 고르기, 정확도로 채점하기)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"손글씨 숫자 K-Means로 군집화해서 정확도 알려 줘." — AI가 정답으로 k를 고르거나, 묶음 번호와 숫자를 그대로 맞대어 정확도를 내거나, 습관처럼 표준화를 넣을 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 KMeans도 기본값이 바뀌어 왔다</h4>
+    <p><code>n_init</code>의 기본값은 1.4부터 <code>"auto"</code>다. k-means++로 시작하면 <b>한 번만</b> 시작한다는 뜻이다(1.2~1.3은 바뀐다는 경고를 냈고, 그 전에는 10번). 그래서 같은 코드도 버전에 따라 결과가 다르다. 이 면접의 손글씨에서 한 번만 시작하면 ARI 0.615, 10번 시작하면 0.666이다(04장). 버전과 무관하게 같은 결과를 원하면 <code>n_init</code>과 <code>random_state</code>를 직접 적는다.</p>
+    <p style="margin:0"><code>algorithm="full"</code>은 1.1에서 <code>"lloyd"</code>로 이름이 바뀌었고 1.3에서 지워졌다(<code>"auto"</code>도 함께). 지금 쓰면 <code>InvalidParameterError</code>가 난다. 옛 코드의 <code>n_jobs</code>, <code>precompute_distances</code>도 1.0에서 지워졌다. K-Medoids는 scikit-learn 본체에 없다. 별도 패키지 scikit-learn-extra의 <code>KMedoids</code>가 있지만 Colab에 기본으로 깔려 있지 않고, 설치가 numpy·scikit-learn 버전과 맞지 않을 때가 있다. 그래서 A장 10번 칸은 K-Medoids를 직접 짠다. AI가 낸 인자는 <b>내가 설치한 버전의 공식 문서</b>로 확인한다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Iterations, starts and k</div>
+    <h2>수습 기간 — 평균 글씨가 생기기까지</h2>
+    <p class="lin">64칸 그대로 k = 10 반복 재생 → 시작을 바꾸면 끝이 바뀐다 → 정답 없이 k 고르기. 채점 봉투는 아직 봉인</p>
+  </div>
+  <p>이제 그림용 지도가 아니라 <b>64칸 그대로</b> 묶는다. 수습 기간에 정할 것은 셋이다. 몇 번 되풀이하나(바뀌는 글씨가 없을 때까지 — 저절로 정해진다), 어디서 시작하나(여러 번 해 보고 관성이 가장 작은 것), 몇 묶음으로 나누나(k — 사람이 정한다). 셋 다 <b>정답 없이</b> 정한다.</p>
+  <div class="card" id="replay">
+    <span class="tag">움직이는 그림 ① · 중심 10개가 "평균 글씨"가 된다 — 64칸 K-Means, 반복마다 중심을 8×8로 그리기</span>
+    <div class="cwrap"><canvas class="fig" id="cenCv" aria-label="중심 10개를 8×8 그림으로 나란히 그렸다. 반복 0에서는 시작으로 고른 실제 글씨 10장이고, 반복이 늘수록 묶음에 모인 글씨들의 평균이 되어 흐릿한 0, 6, 4, 7, 3, 2, 5 같은 모양으로 바뀐다. 그림마다 그 묶음의 글씨 수가 적혀 있다"></canvas></div>
+    <div class="ctrls">
+      <button class="btn blue" id="cenPlay">▶ 반복 재생</button>
+      <label>반복 <input type="range" id="cenN" min="0" max="17" step="1" value="0"><output id="cenNO">0</output></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="cenCurve" aria-label="가로축 반복 횟수, 세로축은 관성(막대 없이 선)과 묶음이 바뀐 글씨 수(막대). 관성은 처음 몇 번에 크게 줄고 평평해지며, 바뀐 글씨는 1,797장에서 0장으로 줄어든다"></canvas></div>
+    <div class="caption" id="cenInfo" aria-live="polite">이 장에 오면 브라우저가 1,797장 × 64칸으로 K-Means를 직접 돌린다.</div>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 ② · 시작 운 — k-means++ 시작 10번, 관성이 가장 작은 것을 남긴다 (정답은 안 본다)</span>
+    <div class="cwrap"><canvas class="fig" id="startCv" aria-label="시작 1번부터 10번까지, 그리고 이 페이지에서 새로 뽑은 시작들의 최종 관성을 가로 막대로 그렸다. 가장 짧은 막대(시작 5)가 빨간 테두리로 표시되어 있다"></canvas></div>
+    <div class="ctrls"><button class="btn blue" id="startNew">＋ 새 시작 한 번 더 (이 페이지의 난수)</button><span class="muted" style="font-size:13.5px">시작 1~10은 Colab과 같은 시작점(A장 5번 칸), 새 시작은 이 브라우저가 k-means++로 뽑는다.</span></div>
+    <div class="caption" id="startInfo" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 ③ · k 고르기 — k = 2 ~ 15의 관성(엘보)과 실루엣 점수 (정답 없이)</span>
+    <div class="two" style="gap:12px">
+      <div class="cwrap"><canvas class="fig" id="elbowCv" aria-label="가로축 k(2~15), 세로축 관성. k가 커질수록 관성이 줄어드는 곡선이며, 뚜렷하게 꺾이는 곳 없이 완만하게 휜다. 고른 k에 빨간 점이 있다"></canvas></div>
+      <div class="cwrap"><canvas class="fig" id="silCv" aria-label="가로축 k(2~15), 세로축 실루엣 점수 막대. 0.12 근처에서 시작해 k = 9에서 0.189로 가장 높고, 10~14가 0.183~0.188로 비슷하며, 15에서 내려간다"></canvas></div>
+    </div>
+    <div class="ctrls"><label>k <input type="range" id="kPick" min="2" max="15" step="1" value="10"><output id="kPickO">10</output></label></div>
+    <div class="caption" id="elbowInfo" aria-live="polite">k마다 Colab과 같은 시작점에서 K-Means를 돌리고, 1,797 × 1,797 거리로 실루엣을 잰다(이 브라우저에서 몇 초).</div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>왜 시작에 따라 끝이 다른가</h4>
+      <p>K-Means는 언덕을 내려가는 공과 같다. 배정과 이동은 관성을 늘 줄이지만, 주변보다 낮은 첫 골짜기에 닿으면 멈춘다. 그곳이 가장 낮은 골짜기라는 보장은 없다. 시작 중심 두 개가 한 숫자 무리에 몰리면, 그 둘이 무리를 반씩 나누고 다른 두 숫자는 중심 하나를 같이 쓴다. 그래서 <b>k-means++</b>는 이미 고른 중심에서 먼 글씨일수록 잘 뽑히게 시작점을 고르고, <b>n_init</b>번 시작해서 관성이 가장 작은 결과를 남긴다. 고르는 기준이 관성이므로 정답은 필요 없다.</p>
+    </div>
+    <div class="explain">
+      <h4>k는 결국 사람이 정한다</h4>
+      <p>관성은 k를 늘리면 <b>늘</b> 준다. k = 1,797이면 0이다. 그래서 "가장 작은 관성"으로는 k를 못 고른다. 대신 줄어드는 폭이 갑자기 작아지는 곳(<b>엘보</b>)을 찾는데, 이 데이터의 곡선은 완만해서 뚜렷한 팔꿈치가 없다. <b>실루엣 점수</b>는 9(0.189)와 14(0.188)에서 가장 높고 10은 0.183으로 거의 같다. 정답 없이 재는 점수들은 "9~14 어딘가"까지만 말해 준다. 위원회는 업무 지식(숫자는 열 가지)으로 <b>k = 10</b>을 정했다. 초파리의 지적대로 이것은 사람의 지식이다. 이 면접에서는 그 사실을 감추지 않고 적어 둔다.</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="calc" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>장부 정리했어. 외울 숫자는 중심 10개 × 64칸 = <b>640개</b>뿐. KNN처럼 1,797장을 다 들고 다닐 필요가 없어. 새 글씨 한 장은 거리 10번이면 끝. 학습은 반복 <b id="itN">17</b>번 × 거리 17,970번 × 시작 10번이야. 이 정도면 1초 안팎이지.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Opening the answer envelope</div>
+    <h2>성과 평가 — 채점 봉투를 연다</h2>
+    <p class="lin">숨긴 정답과 겹치는 정도(ARI·NMI), 정답 없이 재는 점수(실루엣), 그리고 업무 점수: 대표 한 장에만 이름을 붙이면 몇 %가 맞나</p>
+  </div>
+  <div class="card">
+    <span class="tag">채점 봉투 열기 · K-Means k = 10, 1,797장 (브라우저 계산)</span>
+    <div id="evalStat"><p class="muted">계산 중…</p></div>
+    <div class="bars" id="ariBars" style="margin-top:12px"></div>
+  </div>
+  <div class="card">
+    <span class="tag">묶음 × 정답 표 · 행은 K-Means 묶음(왼쪽에 평균 글씨), 열은 봉투 속 정답 숫자</span>
+    <div class="tw"><div id="xtab"></div></div>
+    <div class="caption" id="xtabInfo" aria-live="polite"></div>
+  </div>
+  <div class="card" id="bizCard">
+    <span class="tag">업무 점수 · 묶음마다 대표 한 장(중심에 가장 가까운 글씨)에만 사람이 이름을 붙이면</span>
+    <div class="choice" role="group" aria-label="묶음 수 = 이름표 장수" id="bizChoice"><button data-v="10" aria-pressed="true">이름표 10장 (k = 10)</button><button data-v="20" aria-pressed="false">20장</button><button data-v="30" aria-pressed="false">30장</button><button data-v="50" aria-pressed="false">50장</button></div>
+    <div class="cwrap" style="margin-top:10px"><canvas class="fig" id="repCv" aria-label="묶음마다 대표로 뽑힌 글씨 한 장과, 사람이 붙인 이름(정답 숫자), 그 이름을 물려받은 묶음의 글씨 수와 그중 맞은 수"></canvas></div>
+    <div class="two" style="gap:12px;margin-top:8px"><div id="bizStat"></div><div class="caption" id="bizInfo" aria-live="polite" style="margin-top:0"></div></div>
+  </div>
+  <div class="card" id="scaleCard">
+    <span class="tag">표준화는 약일까 · 5-1 KNN에서는 약이었다. 여기서는?</span>
+    <div class="two" style="gap:14px">
+      <div>
+        <div class="cwrap"><canvas class="fig" id="sdCv" aria-label="8×8 칸마다 1,797장의 밝기 표준편차를 색 농도로 칠하고 숫자를 적었다. 가운데 칸들은 4~6으로 크고, 가장자리 칸은 0 또는 0.1 이하로 아주 작다"></canvas></div>
+        <div class="ctrls"><button class="btn blue" id="scaleRun">표준화한 64칸으로 K-Means 다시 하기</button></div>
+      </div>
+      <div class="caption" id="scaleInfo" aria-live="polite" style="margin-top:0">그림은 칸마다 밝기가 얼마나 들쭉날쭉한지(표준편차)다. 표준화는 칸마다 이 값으로 나눈다. 버튼을 누르면 표준화한 글씨로 같은 방법(시작 10번, Colab과 같은 시작점)을 되풀이하고 채점한다.</div>
+    </div>
+  </div>
+  <div class="card" id="medoid">
+    <span class="tag">사촌 K-Medoids · 대표가 평균이 아니라 실제 글씨 한 장 (BUILD 시작 + 배정·교체 반복, 브라우저 계산)</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="medRun">K-Medoids k = 10 돌리기</button></div>
+    <div class="cwrap"><canvas class="fig" id="medCv" aria-label="위 줄: K-Means의 중심 10개(흐릿한 평균 글씨). 아래 줄: K-Medoids의 대표 10장(실제 글씨, 선명하다)과 봉투 속 정답"></canvas></div>
+    <div class="caption" id="medInfo" aria-live="polite">버튼을 누르면 1,797장 사이 거리 약 161만 쌍으로 대표 10장을 고른다.</div>
+  </div>
+  <div class="interview" id="iv10"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 근무 조건(하이퍼파라미터), K-Means와 K-Medoids, 그리고 군집팀의 다음 지원자들</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym">μ</span><span class="no">APP-10 → EMP-0010</span><span class="nm">K-Means</span><span class="rl">비지도 본부 › 군집팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">빠르고 단순한 첫 정리 담당.</b> 묶음 수를 알려 주면 비슷한 것끼리 둥글게 묶고, 묶음마다 평균 하나만 기억한다. 대신 묶음 수를 스스로 정하지 못하고, 둥글지 않은 묶음과 튀는 값에 약하며, 시작 운을 탄다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>단순하고 빠르다.</b> 배정과 평균 내기뿐이다. 반복 한 번의 비용이 데이터 수 × k × 특징 수에 비례해 큰 데이터에도 쓴다(MiniBatchKMeans는 더 빠르다).</li>
+          <li><b>결과를 눈으로 본다.</b> 중심이 곧 "평균 글씨"라 묶음마다 무엇이 모였는지 바로 보인다(04장).</li>
+          <li><b>새 데이터를 바로 배정한다.</b> 중심 k개만 있으면 된다(<code>predict</code>). 외울 숫자 640개.</li>
+          <li><b>이름표 비용을 줄인다.</b> 대표 10장에 이름을 붙이면 <span class="bizA">79.2%</span>, 20장이면 <span class="bizB">92.8%</span>가 맞게 이름 붙는다(05장).</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>k를 정해 줘야 한다.</b> 엘보와 실루엣은 실마리일 뿐이다. 이 면접의 k = 10도 업무 지식이다.</li>
+          <li><b>둥근 묶음을 가정한다.</b> 가까운 중심으로 나누면 경계가 직선이라, 길쭉하거나 휘거나 크기가 아주 다른 묶음은 잘라 먹는다. 1과 8이 한 묶음에 섞였다(05장).</li>
+          <li><b>시작 운을 탄다.</b> 시작 한 번이면 0.615, 열 번이면 0.666. 늘 여러 번 시작한다.</li>
+          <li><b>거리와 전처리에 민감하다.</b> 표준화 하나로 0.666 → <span class="stdA">0.468</span>. 튀는 값 하나가 평균을 끌어간다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn KMeans)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>n_clusters</code></td><td>8</td><td>묶음 수 k. 기본값 8은 아무 뜻이 없다. 엘보·실루엣·업무 지식으로 정한다. 이 면접은 10.</td></tr>
+        <tr><td><code>init</code></td><td>"k-means++"</td><td>시작 중심 고르는 법. "random"은 아무 글씨나 k장. 직접 정한 중심 배열을 줄 수도 있다(A장 4번 칸).</td></tr>
+        <tr><td><code>n_init</code></td><td>"auto"</td><td>시작 횟수. "auto"는 k-means++이면 1번, "random"이면 10번. 결과가 흔들리면 10 이상으로 적는다(03장 버전 메모).</td></tr>
+        <tr><td><code>max_iter</code>, <code>tol</code></td><td>300, 1e-4</td><td>한 번의 시작에서 반복 상한과 멈춤 기준(중심 이동량). 이 데이터는 17번 만에 바뀌는 글씨가 0이 된다.</td></tr>
+        <tr><td><code>algorithm</code></td><td>"lloyd"</td><td>이 면접의 방법(배정 ↔ 이동). "elkan"은 삼각 부등식으로 거리 계산을 건너뛰어 묶음이 뚜렷할 때 빠르다. 결과는 같다.</td></tr>
+        <tr><td><code>random_state</code></td><td>None</td><td>시작의 난수. 적지 않으면 돌릴 때마다 결과가 조금씩 다르다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card tw">
+    <span class="tag">K-Means와 K-Medoids · 같은 일, 다른 대표 (이 면접의 숫자)</span>
+    <table class="tb" style="font-size:14px">
+      <thead><tr><th></th><th>K-Means</th><th>K-Medoids</th></tr></thead>
+      <tbody id="kmkm"></tbody>
+    </table>
+    <p class="foot">K-Medoids의 대표 고르기에는 여러 방법이 있다. 이 면접은 BUILD(거리 합이 가장 작은 글씨부터 하나씩 더하기)로 시작해 "배정 → 묶음 안 거리 합이 가장 작은 글씨로 교체"를 되풀이했다(alternate). 모든 교체를 따져 보는 PAM은 더 좋은 답을 찾기도 하지만 더 비싸다. 새로 나온 FasterPAM 같은 방법은 PAM을 훨씬 빠르게 한다.</p>
+  </div>
+  <div class="card">
+    <span class="tag">맞는 일 · 안 맞는 일</span>
+    <table class="tb" style="font-size:14px"><tbody>
+      <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>이름표 붙이기 전 첫 정리(묶음마다 대표만 사람 확인), 고객·제품·로트를 몇 등급으로 나누기, 색 줄이기(이미지의 색 수천 개를 k색으로), 큰 데이터를 대표 k개로 요약하기, 다른 모델 앞의 전처리(묶음 번호를 특징으로)</td></tr>
+      <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>묶음 수를 전혀 모르는 일(5-11 계층적 군집, 5-12 DBSCAN), 길쭉하거나 휜 묶음, 크기·밀도가 아주 다른 묶음, 튀는 값과 잡음이 많은 데이터(5-12 DBSCAN, K-Medoids), "이 글씨가 어느 쪽일 확률"이 필요한 일(5-13 GMM)</td></tr>
+      <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td>묶음 결과는 "정답"이 아니라 "제안"이다. 중심 그림과 묶음 몇 장을 사람이 꼭 확인한다. 이 면접에서도 1과 8이 한 묶음에 섞였다.</td></tr>
+    </tbody></table>
+  </div>
+  <div class="card">
+    <span class="tag">군집팀 대기실 · 오늘 지원자의 약점을 메우겠다는 다음 지원자들</span>
+    <div class="two" style="gap:12px">
+      <div class="explain" style="margin:0"><h4>5-11 계층적 군집 · 5-12 DBSCAN</h4><p>계층적 군집은 가장 가까운 둘부터 합쳐 나무를 만들고 나중에 자를 높이로 묶음 수를 정한다. DBSCAN은 촘촘한 곳을 묶음으로, 외톨이를 잡음으로 둬서 묶음 수를 미리 정하지 않는다.</p></div>
+      <div class="explain" style="margin:0"><h4>5-13 GMM</h4><p>K-Means의 확률 판이다. 둥근 공 대신 기울고 길쭉한 종 모양을 섞고, 애매한 글씨는 "3일 확률 0.6, 8일 확률 0.4"처럼 나눠 갖는다. K-Means는 GMM의 특수한 경우(모든 종이 같은 크기의 둥근 모양)로 볼 수 있다.</p></div>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

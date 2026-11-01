@@ -1,0 +1,25 @@
+# 简体中文 conventions (translate from Korean `ko`; the finished English in i18n/en/<same file>.json, same key, is a reference for meaning and for how fragments were split — do not translate from English blindly)
+
+- Series: 模型招聘委员会. Hiring verdicts (source-tagged `verdict|합격` etc.): **录用** / **待定** / **不录用**. 
+- Concrete test result (35 MPa or more?), untagged 합격 / 불합격: **合格 / 不合格**. 합격 배합 = 合格配合比, 강도 미달 = 强度不足. Chart '35MPa 합격선' = "35 MPa 合格线".
+- 합격선 (the hiring bar) = **录用线**. 시험지 = **试卷** (held-out test set). 훈련 = 训练. 채점 봉투 = **阅卷信封**. 업무 점수 = **业务得分**.
+- Speaker labels inside `<span class="who">…</span>`:
+  - 위원장 박사 → 主席博士 · 위원장 · 박사 → 主席 · 博士
+  - 인사 담당 조수 → 人事助理 · 인사 담당 · 조수 → 人事 · 助理
+  - 실무 면접관 초파리 → 技术面试官果蝇 · 실무 면접관 · 초파리 연구원 → 技术面试官 · 果蝇研究员
+  - 예산 담당 Money-Robo → 预算官 Money-Robo · 예산 담당 · Money-Robo → 预算 · Money-Robo
+  - 기존 직원 · 매뉴얼 씨 → 现任员工 · 手册先生
+  - 지원자 · X → 应聘者 · X
+  - Short comic names: 박사 → 博士, 조수 → 助理, 초파리 → 果蝇.
+- Teams: 入门组 · 回归组 · 分类组 · 两用组 · 聚类组 · 降维组. 监督学习本部 / 无监督学习本部.
+- Section references: "03장" → "第03章", "B장" → "B章". 00장 = the one-page application (申请表·第1页).
+- Money: 0원 → 0元; Money-Robo's costs are metaphors for compute (keep the joke).
+- Mr. Manual = 手册先生, speaks like a regulation: "第一条 …… 第二条 ……".
+- Author: 安相宣 is NOT confirmed — write the author as "Ahn Sangsun（M-Robo 公司代表）".
+- Voice: explanations plain, short, declarative (教材体，不用"您"); dialogue keeps character voice: 博士 calm and polite, 助理 brisk, 果蝇 blunt and casual, Money-Robo casual and money-minded.
+- Punctuation: full-width Chinese punctuation （，。：；“”（））in Chinese sentences; keep half-width around numbers/code/math. No spaces between Chinese characters; one space between Chinese and a number/Latin word is optional — follow the Korean fragment's leading/trailing spaces only where they separate numbers/Latin words.
+- Counters glued after numbers: 장 → 张, 개 → 个 (or ∅ when the noun follows), 건 → 个/条/组 (mixes: 组配合比 → use " 组"), 번 → 次, 묶음 → 簇, 일 → 天 (on canvas: 天 is fine, it's short).
+- Particle-only fragments ('는','은','이라고','라고','이','가'): ∅ (the single character ∅ = intentionally empty; an empty tr means "not translated").
+- Canvas/SVG labels: keep short; Chinese is usually shorter than Korean, so this is rarely a problem.
+- Prompts for AI ("한국어 주석"): use "中文注释".
+- Model names: KNN, 线性回归, 多项式回归, 逻辑回归, 朴素贝叶斯, 决策树, 随机森林, SVM, GBM, K-Means, 层次聚类, DBSCAN, GMM, PCA, t-SNE · UMAP.

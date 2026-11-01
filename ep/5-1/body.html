@@ -1,0 +1,540 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-1 면접<span class="dept">지도 본부 › 입문팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-1 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 k 기호가 그려진 지원자 KNN의 사원증이 떠 있고, 그 옆에서 점 하나가 가장 가까운 점 다섯 개에 선을 잇는다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>KNN — 가까운 배합 k개에게 묻는다</h1>
+        <p class="lede" style="margin-top:14px">0편에서 매뉴얼 씨는 규칙과 경험식으로 답했다. 오늘의 지원자는 규칙도 식도 없다. 대신 이렇게 답한다. <b>"이 배합과 가장 비슷한 배합 다섯 개가 46·46·30·24·41MPa였습니다. 그러니 이 배합은 37.5MPa쯤입니다."</b></p>
+        <p class="lede">KNN(k-최근접 이웃)은 새 배합이 오면 훈련 배합 전부와 <b>거리</b>를 재고, 가장 가까운 <b>k개</b>를 고른다. 그 이웃들의 강도를 <b>평균</b> 내면 회귀, "합격이 몇 표인가"로 <b>다수결</b>을 하면 분류다. 미리 배우는 것은 없다. 훈련 데이터를 통째로 외워 두었다가, 질문이 올 때마다 장부를 넘긴다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#unitTrap">02 표준화 전후의 이웃</a><span class="arr">→</span><a href="#iv1">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>k = 5</b><span>물어볼 이웃 수 (기본값)</span></div>
+            <div><b>0번</b><span>학습할 때 고치는 숫자 (외우기만 한다)</span></div>
+            <div><b>6,176</b><span>외울 숫자 = 훈련 772건 × 특징 8개</span></div>
+            <div><b id="heroLine">R² 0.735</b><span>넘어야 할 회귀 합격선 (매뉴얼 씨 경험식)</span></div>
+          </div>
+          <p class="foot">실기 과제는 콘크리트 배합 1,030건의 압축 강도(MPa)다. 시험지 258건은 05장까지 봉인한다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="front" data-move="pop" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>오늘은 입문팀 지원자예요. 강도를 숫자로 맞히는 회귀와 35MPa 합격을 가르는 분류를 한 사람이 다 한다고 하네요. 회귀는 매뉴얼 씨의 경험식이 세운 합격선을 넘는지 봅니다.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="board" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>회귀 점수는 R²와 MAE로 잽니다. R²는 1이면 완벽, 0이면 "늘 평균만 답하기"와 같아요. MAE는 평균 몇 MPa 틀렸는지예요.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="point" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>비슷한 배합을 찾는다고? "비슷하다"를 누가 정하는데? 굵은 골재 1,000kg이랑 재령 7일을 어떻게 한 줄에 놓고 재는지부터 물어볼 거야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="calc" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>학습 비용 0원이라며? 좋아. 근데 예측할 때마다 772건을 다 뒤진다고? 그건 건당 요금이잖아.</div></div>
+      <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>회귀 업무 조항 제1조. 28일 강도는 96.5 ÷ 7<sup>물-결합재비</sup> MPa로 한다. 제2조. 재령 t일의 강도는 28일 강도 × t ÷ (4 + 0.85t)로 한다. 이 두 조항으로 시험지 R² 0.735를 냈습니다.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">k</span><div class="bub"><span class="who">지원자 · KNN</span>안녕하십니까. 비슷한 배합에게 물어보는 KNN입니다. 저는 식을 만들지 않습니다. 772건의 배합을 모두 기억해 두었다가, 새 배합이 오면 가장 닮은 다섯 건의 답을 모아 드립니다.</div></div>
+    </div>
+    <div id="comicIntro" aria-label="장면: 처음 보는 배합, 이웃에게 묻기, 표준화"></div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-0_job_posting.html">5-0 채용 공고</a> — 규칙으로 하던 판단을 데이터로 만드는 까닭, 분류 합격선 76.7%가 나온 곳</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/AI_image_classification/4-1_bream_smelt.html" target="_blank" rel="noopener">이미지 분류 4-1 도미와 빙어 (k-NN과 표준화)</a> · <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-6_regression_seven.html" target="_blank" rel="noopener">패밀리 조직도 4-6 회귀파 일곱</a> · <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-7_classification_eight.html" target="_blank" rel="noopener">4-7 분류파 여덟</a></span>
+      <span>다음 지원자: <a href="5-2_linear_regression.html">5-2 선형 회귀</a> · <a href="5-3_polynomial_regularization.html">5-3 다항 회귀와 규제</a> — 같은 강도를 식 하나로 맞히는 회귀팀</span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — KNN을 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="KNN 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-1 · 지원서<br>지원자 번호 APP-01<br>지원 부서 지도 본부 › 입문팀</div>
+      <div class="sh-title">K-Nearest Neighbors<small>KNN · k-최근접 이웃 · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">k</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m1">
+        <h3>1. 이웃에게 묻기 <small>Ask the Neighbors</small></h3>
+        <p class="d">새 데이터와 가장 비슷한 훈련 데이터 k개를 찾아 그 답을 빌린다.</p>
+        <svg viewBox="0 0 300 204" role="img" aria-label="검은 점(훈련 데이터) 사이에 물음표가 붙은 파란 고리(새 데이터)가 있고, 파란 점선 원 안의 가장 가까운 점 다섯 개에 파란 선이 이어져 있다">
+          <defs><marker id="k1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="k1b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <path d="M30,186 L30,12" stroke="#111" stroke-width="2" marker-end="url(#k1a)"/><path d="M30,186 L292,186" stroke="#111" stroke-width="2" marker-end="url(#k1a)"/>
+          <text x="10" y="100" font-size="15" font-style="italic" font-family="serif">x₂</text><text x="160" y="202" font-size="15" font-style="italic" font-family="serif">x₁</text>
+          <circle cx="165" cy="98" r="42" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2" stroke-dasharray="6 4"/>
+          <g stroke="#1f6fe5" stroke-width="2"><path d="M165,98 L145,82"/><path d="M165,98 L186,80"/><path d="M165,98 L150,121"/><path d="M165,98 L192,112"/><path d="M165,98 L170,131"/></g>
+          <g fill="#111"><circle cx="145" cy="82" r="5.5"/><circle cx="186" cy="80" r="5.5"/><circle cx="150" cy="121" r="5.5"/><circle cx="192" cy="112" r="5.5"/><circle cx="170" cy="131" r="5.5"/>
+          <circle cx="58" cy="60" r="5.5"/><circle cx="84" cy="146" r="5.5"/><circle cx="100" cy="40" r="5.5"/><circle cx="232" cy="46" r="5.5"/><circle cx="252" cy="150" r="5.5"/><circle cx="222" cy="168" r="5.5"/><circle cx="66" cy="104" r="5.5"/><circle cx="118" cy="162" r="5.5"/><circle cx="262" cy="96" r="5.5"/><circle cx="104" cy="92" r="5.5"/><circle cx="222" cy="100" r="5.5"/><circle cx="130" cy="38" r="5.5"/></g>
+          <circle cx="165" cy="98" r="8" fill="#fff" stroke="#1f6fe5" stroke-width="3"/><text x="165" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#1f6fe5">?</text>
+          <text x="214" y="138" font-size="14" font-style="italic" font-family="serif" fill="#1f6fe5">k = 5</text>
+          <rect x="196" y="4" width="100" height="44" rx="5" fill="#fff" stroke="#c7cfdd"/><circle cx="208" cy="17" r="5" fill="#111"/><text x="218" y="22" font-size="12.5">훈련 데이터</text><circle cx="208" cy="36" r="5" fill="#fff" stroke="#1f6fe5" stroke-width="2.5"/><text x="218" y="41" font-size="12.5">새 데이터</text>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>2. 거리 <small>Euclidean Distance</small></h3>
+        <p class="d">특징마다 차이를 제곱해 더하고 제곱근을 씌운다. 짧을수록 "비슷하다".</p>
+        <svg viewBox="0 0 300 160" role="img" aria-label="검은 점과 파란 점 사이에 직각삼각형이 그려져 있다. 가로 변은 x1의 차이, 세로 변은 x2의 차이, 빗변이 거리 d다">
+          <path d="M30,150 L30,10" stroke="#111" stroke-width="2" marker-end="url(#k1a)"/><path d="M30,150 L292,150" stroke="#111" stroke-width="2" marker-end="url(#k1a)"/>
+          <path d="M70,128 L232,128 L232,30" fill="none" stroke="#111" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <path d="M222,128 L222,118 L232,118" fill="none" stroke="#111" stroke-width="1.2"/>
+          <path d="M70,128 L232,30" stroke="#1f6fe5" stroke-width="3.5"/>
+          <circle cx="70" cy="128" r="7" fill="#111"/><circle cx="232" cy="30" r="7" fill="#fff" stroke="#1f6fe5" stroke-width="3"/>
+          <text x="140" y="146" text-anchor="middle" font-size="14" font-style="italic" font-family="serif">x₁ − x₁′</text>
+          <text x="240" y="84" font-size="14" font-style="italic" font-family="serif">x₂ − x₂′</text>
+          <text x="134" y="68" font-size="20" font-style="italic" font-family="serif" fill="#1f6fe5">d</text>
+        </svg>
+        <div class="fbox"><span class="mth">d = √( (x<sub>1</sub>−x<sub>1</sub>′)² + (x<sub>2</sub>−x<sub>2</sub>′)² + ⋯ )</span><br><span style="font-size:13px">콘크리트는 특징 8개 → 여덟 칸을 더한다</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m2">
+        <h3>3. 표준화 <small>Standardization</small></h3>
+        <p class="d">단위가 큰 특징이 거리를 독차지하지 않게 특징마다 눈금을 맞춘다.</p>
+        <svg viewBox="0 0 300 168" role="img" aria-label="왼쪽 '표준화 전' 상자에서는 점들이 가로로 납작한 띠에 몰려 있어 파란 원이 가로 차이만으로 이웃을 고른다. 오른쪽 '표준화 후' 상자에서는 점들이 고르게 퍼져 원이 정말 가까운 점들을 고른다">
+          <text x="76" y="14" text-anchor="middle" font-size="13" font-weight="700">표준화 전 (kg 그대로)</text><text x="224" y="14" text-anchor="middle" font-size="13" font-weight="700">표준화 후</text>
+          <rect x="10" y="22" width="132" height="118" fill="#fff" stroke="#111" stroke-width="1.5"/><rect x="158" y="22" width="132" height="118" fill="#fff" stroke="#111" stroke-width="1.5"/>
+          <circle cx="76" cy="81" r="22" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2" stroke-dasharray="5 3"/>
+          <g fill="#111"><circle cx="22" cy="78" r="4"/><circle cx="34" cy="84" r="4"/><circle cx="48" cy="79" r="4"/><circle cx="60" cy="83" r="4"/><circle cx="68" cy="78" r="4"/><circle cx="86" cy="84" r="4"/><circle cx="94" cy="78" r="4"/><circle cx="108" cy="82" r="4"/><circle cx="120" cy="79" r="4"/><circle cx="132" cy="84" r="4"/></g>
+          <circle cx="76" cy="81" r="5" fill="#fff" stroke="#1f6fe5" stroke-width="2.5"/>
+          <circle cx="224" cy="81" r="20" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2" stroke-dasharray="5 3"/>
+          <g fill="#111"><circle cx="170" cy="34" r="4"/><circle cx="182" cy="128" r="4"/><circle cx="196" cy="52" r="4"/><circle cx="208" cy="110" r="4"/><circle cx="214" cy="72" r="4"/><circle cx="240" cy="90" r="4"/><circle cx="252" cy="40" r="4"/><circle cx="264" cy="126" r="4"/><circle cx="278" cy="66" r="4"/><circle cx="232" cy="66" r="4"/></g>
+          <circle cx="224" cy="81" r="5" fill="#fff" stroke="#1f6fe5" stroke-width="2.5"/>
+          <text x="76" y="156" text-anchor="middle" font-size="11.5">굵은 골재 → (세로: 감수제)</text><text x="224" y="156" text-anchor="middle" font-size="11.5">두 축 모두 표준편차 단위</text>
+        </svg>
+        <div class="fbox"><span class="mth">z = <span class="frac"><span class="r">x − μ</span><span>σ</span></span></span><br><span style="font-size:13px">μ, σ는 훈련 데이터로만 구한다</span></div>
+        <span class="go">→ 02 실기 과제지</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>4. k개 고르기 <small>Pick the k Nearest</small></h3>
+        <p class="d">모든 훈련 데이터와 거리를 재고, 가까운 순으로 줄 세워 앞에서 k개를 고른다.</p>
+        <svg viewBox="0 0 300 180" role="img" aria-label="거리를 나타내는 막대 일곱 개가 짧은 것부터 줄 서 있다. 앞의 다섯 개는 파랑, 뒤의 두 개는 회색이며, 앞 다섯 개를 묶는 괄호에 k = 5라고 적혀 있다">
+          <g font-size="12" text-anchor="end"><text x="40" y="22">1위</text><text x="40" y="44">2위</text><text x="40" y="66">3위</text><text x="40" y="88">4위</text><text x="40" y="110">5위</text><text x="40" y="132">6위</text><text x="40" y="154">7위</text></g>
+          <g fill="#1f6fe5"><rect x="48" y="12" width="44" height="14" rx="3"/><rect x="48" y="34" width="62" height="14" rx="3"/><rect x="48" y="56" width="80" height="14" rx="3"/><rect x="48" y="78" width="92" height="14" rx="3"/><rect x="48" y="100" width="108" height="14" rx="3"/></g>
+          <g fill="#fff" stroke="#9aa6b8" stroke-width="1.5"><rect x="48" y="122" width="160" height="14" rx="3"/><rect x="48" y="144" width="196" height="14" rx="3"/></g>
+          <path d="M176,12 Q186,12 186,40 L186,58 Q186,63 194,63 Q186,63 186,68 L186,86 Q186,114 176,114" fill="none" stroke="#1f6fe5" stroke-width="2"/>
+          <text x="200" y="68" font-size="16" font-style="italic" font-family="serif" fill="#1f6fe5">k = 5</text>
+          <text x="244" y="176" font-size="11.5" fill="#555" text-anchor="end">거리 →</text>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">질문 1건마다 훈련 데이터 n건과 거리를 잰다<br>k가 작으면 예민하고, 크면 둔하다 (7번 칸)</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>5. 다수결 <small>Majority Vote · Classification</small></h3>
+        <p class="d">분류라면 이웃 k개의 이름표 중 가장 많은 것을 답한다.</p>
+        <svg viewBox="0 0 300 120" role="img" aria-label="새 데이터 둘레에 이웃 다섯 개가 있다. 파란 점(합격) 셋, 검은 점(불합격) 둘. 화살표 끝 상자에 '합격 3 : 2'라고 적혀 있다">
+          <g stroke="#1f6fe5" stroke-width="1.6"><path d="M70,60 L40,30"/><path d="M70,60 L104,28"/><path d="M70,60 L112,78"/><path d="M70,60 L30,86"/><path d="M70,60 L72,104"/></g>
+          <g fill="#1f6fe5"><circle cx="40" cy="30" r="8"/><circle cx="104" cy="28" r="8"/><circle cx="72" cy="104" r="8"/></g>
+          <g fill="#111"><circle cx="112" cy="78" r="8"/><circle cx="30" cy="86" r="8"/></g>
+          <circle cx="70" cy="60" r="7" fill="#fff" stroke="#1f6fe5" stroke-width="3"/>
+          <path d="M136,60 L176,60" stroke="#1f6fe5" stroke-width="2.5" marker-end="url(#k1b)"/>
+          <rect x="182" y="30" width="110" height="60" rx="9" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <text x="237" y="56" text-anchor="middle" font-size="16" font-weight="700" fill="#1f6fe5">합격</text><text x="237" y="78" text-anchor="middle" font-size="13">3 : 2</text>
+        </svg>
+        <div class="fbox"><span class="mth">ŷ = 이웃 k개 이름표의 최빈값</span><br><span style="font-size:13px">두 클래스면 k를 홀수로 두어 동점을 피한다</span></div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>6. 평균 <small>Average · Regression</small></h3>
+        <p class="d">회귀라면 같은 이웃 k개의 값을 평균 낸다. 같은 이웃, 다른 질문이다.</p>
+        <svg viewBox="0 0 300 110" role="img" aria-label="이웃 다섯 개의 강도 46.2, 46.2, 30.4, 23.7, 40.9가 상자에 적혀 있고, 화살표를 지나 평균 37.5MPa가 된다">
+          <g font-size="12.5" text-anchor="middle" font-family="IBM Plex Mono, monospace"><rect x="6" y="8" width="52" height="24" rx="5" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="32" y="25">46.2</text>
+          <rect x="6" y="40" width="52" height="24" rx="5" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="32" y="57">46.2</text>
+          <rect x="6" y="72" width="52" height="24" rx="5" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="32" y="89">30.4</text>
+          <rect x="66" y="22" width="52" height="24" rx="5" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="92" y="39">23.7</text>
+          <rect x="66" y="56" width="52" height="24" rx="5" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="92" y="73">40.9</text></g>
+          <path d="M126,52 L170,52" stroke="#1f6fe5" stroke-width="2.5" marker-end="url(#k1b)"/><text x="148" y="44" text-anchor="middle" font-size="12" fill="#1f6fe5">÷ 5</text>
+          <rect x="176" y="24" width="116" height="56" rx="9" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="234" y="58" text-anchor="middle" font-size="18" font-weight="700" fill="#1f6fe5">37.5 MPa</text>
+        </svg>
+        <div class="fbox"><span class="mth">ŷ = <span class="frac"><span class="r">1</span><span>k</span></span> Σ<sub>i ∈ 이웃</sub> y<sub>i</sub></span></div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>7. k의 영향 <small>Effect of k</small></h3>
+        <p class="d">k가 작으면 점 하나하나를 따라가고(과대적합), 크면 다 뭉갠다(과소적합).</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="같은 점들 위에 세 가지 예측선. k = 1은 점마다 꺾이는 지그재그, k = 5는 부드러운 곡선, k = 50은 거의 수평선이다">
+          <defs><g id="k7p" fill="#111"><circle cx="6" cy="84" r="3.6"/><circle cx="16" cy="64" r="3.6"/><circle cx="26" cy="76" r="3.6"/><circle cx="36" cy="48" r="3.6"/><circle cx="46" cy="58" r="3.6"/><circle cx="56" cy="32" r="3.6"/><circle cx="66" cy="46" r="3.6"/><circle cx="76" cy="22" r="3.6"/><circle cx="86" cy="30" r="3.6"/></g></defs>
+          <g transform="translate(4,8)"><rect x="0" y="10" width="92" height="88" fill="#fff" stroke="#111" stroke-width="1.2"/><use href="#k7p"/><path d="M1,84 L11,84 L11,64 L21,64 L21,76 L31,76 L31,48 L41,48 L41,58 L51,58 L51,32 L61,32 L61,46 L71,46 L71,22 L81,22 L81,30 L91,30" fill="none" stroke="#1f6fe5" stroke-width="2.4"/></g>
+          <g transform="translate(104,8)"><rect x="0" y="10" width="92" height="88" fill="#fff" stroke="#111" stroke-width="1.2"/><use href="#k7p"/><path d="M1,78 C28,68 56,42 91,26" fill="none" stroke="#1f6fe5" stroke-width="2.6"/></g>
+          <g transform="translate(204,8)"><rect x="0" y="10" width="92" height="88" fill="#fff" stroke="#111" stroke-width="1.2"/><use href="#k7p"/><path d="M1,52 L91,50" fill="none" stroke="#1f6fe5" stroke-width="2.6"/></g>
+          <g font-size="12.5" text-anchor="middle"><text x="50" y="122" font-style="italic" font-family="serif">k = 1</text><text x="150" y="122" font-style="italic" font-family="serif">k = 5</text><text x="250" y="122" font-style="italic" font-family="serif">k = 50</text>
+          <text x="50" y="137" font-size="11.5">과대적합</text><text x="150" y="137" font-size="11.5">알맞음</text><text x="250" y="137" font-size="11.5">과소적합</text></g>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">k는 시험지가 아니라 훈련 데이터 안의 교차 검증으로 고른다</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>8. 거리 가중 <small>Distance Weighting</small></h3>
+        <p class="d">가까운 이웃의 말을 더 크게 듣는다. 무게는 거리에 반비례한다.</p>
+        <svg viewBox="0 0 300 130" role="img" aria-label="가운데 새 데이터에서 다섯 이웃까지 선이 이어져 있다. 가까운 이웃일수록 점이 크고 선이 굵다">
+          <g stroke="#1f6fe5"><path d="M150,66 L118,50" stroke-width="5"/><path d="M150,66 L184,80" stroke-width="4"/><path d="M150,66 L96,108" stroke-width="2.2"/><path d="M150,66 L236,30" stroke-width="1.4"/><path d="M150,66 L230,116" stroke-width="1.2"/></g>
+          <g fill="#111"><circle cx="118" cy="50" r="11"/><circle cx="184" cy="80" r="9"/><circle cx="96" cy="108" r="6"/><circle cx="236" cy="30" r="4.5"/><circle cx="230" cy="116" r="4"/></g>
+          <circle cx="150" cy="66" r="7" fill="#fff" stroke="#1f6fe5" stroke-width="3"/>
+          <text x="20" y="24" font-size="12">가까움 = 큰 목소리</text><text x="262" y="80" font-size="12" text-anchor="middle">멀면 작게</text>
+        </svg>
+        <div class="fbox"><span class="mth">w<sub>i</sub> = <span class="frac"><span class="r">1</span><span>d<sub>i</sub></span></span> , &nbsp; ŷ = <span class="frac"><span class="r">Σ w<sub>i</sub> y<sub>i</sub></span><span>Σ w<sub>i</sub></span></span></span></div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m6">
+        <h3>9. 비용과 차원의 저주 <small>Cost · Curse of Dimensionality</small></h3>
+        <p class="d">학습은 공짜, 예측이 비싸다. 특징이 너무 많으면 "가깝다"의 뜻이 흐려진다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="위쪽: 학습은 표를 통째로 외우기, 예측 1건은 거리 n번. 아래쪽: 차원 2에서는 거리 분포가 넓게 퍼지고, 차원 100에서는 좁은 봉우리로 몰린다">
+          <g font-size="12"><rect x="6" y="6" width="134" height="40" rx="7" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="73" y="23" text-anchor="middle">학습(fit) = 외우기</text><text x="73" y="39" text-anchor="middle" font-family="IBM Plex Mono, monospace">n × d 숫자 저장</text>
+          <rect x="160" y="6" width="134" height="40" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="227" y="23" text-anchor="middle">예측 1건</text><text x="227" y="39" text-anchor="middle" font-family="IBM Plex Mono, monospace">거리 n번 계산</text></g>
+          <path d="M14,136 L140,136 M160,136 L292,136" stroke="#111" stroke-width="1.5"/>
+          <path d="M16,135 C30,134 36,92 56,84 C76,76 84,96 100,112 C112,124 124,133 138,135" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <path d="M162,135 C200,135 214,134 222,110 C226,70 232,70 236,110 C242,134 258,135 290,135" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <text x="76" y="68" text-anchor="middle" font-size="12">차원 2</text><text x="229" y="64" text-anchor="middle" font-size="12">차원 100</text>
+          <text x="76" y="149" text-anchor="middle" font-size="11">거리 →</text><text x="229" y="149" text-anchor="middle" font-size="11">거리가 다 비슷해진다</text>
+        </svg>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "무슨 일을 하나", 2~3번이 "가깝다를 어떻게 재나", 4번이 "누구에게 묻나", 5~6번이 "답을 어떻게 모으나"(분류와 회귀), 7~8번이 "고를 근무 조건"(k와 가중), 9번이 "얼마나 드나"다. 이 면접은 01장(1·2번) → 02장(3번) → 04장(4·7번) → 05장(5·6·8번) → 06장(9번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 비슷한 배합에게 묻는 직원</h2>
+    <p class="lin">거리를 잰다 → 가까운 k개를 고른다 → 평균(회귀) 또는 다수결(분류)</p>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">k</span><div class="bub"><span class="who">지원자 · KNN</span>그림 아무 곳이나 눌러 새 배합을 놓아 보십시오. 저는 그 자리에서 가장 가까운 훈련 배합 k개를 찾아, 강도는 평균으로, 합격 여부는 다수결로 답합니다. 같은 이웃에게 두 가지를 묻는 셈입니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 특징 2개(물-결합재비 · 재령)로 이웃 찾기 (훈련 배합 772건)</span>
+    <div class="cwrap"><canvas class="fig" id="knnCv" aria-label="가로축은 물-결합재비, 세로축은 재령(로그 눈금)인 산점도. 파란 점은 35MPa 이상, 검은 점은 35MPa 미만인 훈련 배합이다. 빨간 별(새 배합)에서 가장 가까운 k개의 점까지 선이 이어지고, 이웃을 감싸는 점선 타원이 그려진다. 그림을 누르면 새 배합이 그 자리로 옮겨 간다"></canvas></div>
+    <div class="ctrls">
+      <label>이웃 수 k <input type="range" id="kK" min="1" max="40" step="1" value="5"><output id="kKO">5</output></label>
+      <button class="btn" id="kW" aria-pressed="false">거리 가중 끄기/켜기</button>
+      <button class="btn" id="kRand">시험지에서 배합 하나 꺼내기</button>
+      <button class="btn" id="kReset">처음으로</button>
+    </div>
+    <div class="caption" id="knnInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>"학습"이 없다</h4>
+      <p>5-4 로지스틱 회귀는 훈련 데이터로 가중치 9개를 고친 뒤 데이터를 버려도 됐다. KNN은 반대다. <code>fit()</code>이 하는 일은 훈련 데이터를 그대로 저장하는 것뿐이고, 모든 계산은 질문이 왔을 때 한다. 이런 방식을 <b>게으른 학습</b>(lazy learning) 또는 사례 기반 학습이라 부른다. 미리 식을 만들지 않으니 데이터 모양에 대한 가정도 거의 없다.</p>
+      <div class="eq">fit: 표를 외운다 &nbsp;·&nbsp; predict: 거리 n번 → 정렬 → 앞의 k개 → 평균 또는 다수결</div>
+    </div>
+    <div class="explain">
+      <h4>같은 이웃, 다른 질문</h4>
+      <p>0편에서 "같은 데이터에 다른 질문을 하면 다른 업무가 된다"고 했다. KNN은 그 두 업무를 한 사람이 한다. 이웃을 찾는 과정은 똑같고, 마지막에 이웃의 <b>강도(숫자)를 평균</b>하면 회귀(KNeighborsRegressor), 이웃의 <b>이름표를 세면</b> 분류(KNeighborsClassifier)다. 위 그림의 설명 줄에 두 답이 함께 나온다.</p>
+      <div class="eq">회귀: ŷ = 평균(이웃의 MPa) &nbsp;·&nbsp; 분류: ŷ = 다수(이웃의 합격/불합격)</div>
+    </div>
+  </div>
+  <div class="explain">
+    <h4>그림이 왜 타원인가</h4>
+    <p style="margin:0">이웃은 <b>표준화한 단위</b>(표준편차 몇 개만큼 떨어졌나)로 잰 거리로 고른다. 그런데 그림의 눈금은 물-결합재비와 재령(일)이라는 원래 단위다. 표준화 공간에서의 원이 원래 눈금으로 옮겨지면서 늘어나 타원이 된다. 거리를 어떤 눈금으로 재느냐가 곧 "누구를 이웃으로 보느냐"다. 02장에서 이 문제가 특징 8개에서 얼마나 커지는지 본다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 강도를 숫자로 맞히기</h2>
+    <p class="lin">한 줄이 배합 하나(샘플), 배합량과 재령이 특징(X), 압축 강도(MPa)가 타겟(y)이다</p>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 A · 회귀 (본시험)</span>
+      <h3>압축 강도(MPa) 맞히기</h3>
+      <p style="margin:6px 0 0;font-size:15px">강도는 2.3~82.6MPa 사이의 숫자다. 점수는 R²(1이 완벽, 0은 늘 평균만 답하기)와 MAE(평균 몇 MPa 틀렸나)로 잰다. 합격선은 매뉴얼 씨의 현장 경험식이 시험지에서 낸 <b id="lineR2">R² 0.735</b>다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">과제 B · 이진 분류 (추가 과제)</span>
+      <h3>35MPa 합격 여부</h3>
+      <p style="margin:6px 0 0;font-size:15px">같은 이웃에게 다수결로 묻는다. 0편 매뉴얼 씨가 작업 표준서 한 줄("물-결합재비 0.5 미만이고 28일 이상")로 시험지 <b>76.7%</b>를 맞힌 과제다(지원서 5번 칸).</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>회귀 업무는 교과서 식 두 개로 합니다. 물-결합재비가 낮을수록, 오래 굳힐수록 강해진다는 백 년 된 지식입니다. 데이터로 상수를 고치지 않았습니다. 슬래그와 플라이 애시를 결합재에 넣은 것만 제 경험입니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">회귀 합격선 · 매뉴얼 씨의 경험식 (사람의 지식, 학습 없음)</span>
+    <div class="two" style="gap:12px">
+      <div>
+        <div class="eq" style="margin:0 0 8px">28일 강도 f<sub>28</sub> = 96.5 / 7<sup>물-결합재비</sup> MPa &nbsp;(에이브럼스 식, Abrams 1918 · 원식 14,000 psi ÷ 7<sup>x</sup>)</div>
+        <div class="eq" style="margin:0 0 8px">재령 t일 강도 f(t) = f<sub>28</sub> × t / (4 + 0.85t) &nbsp;(ACI 209R-92 표 2.2.1, 습윤 양생 1종 시멘트 a = 4.0 · b = 0.85)</div>
+        <p style="font-size:14.5px;margin:6px 0">원래 식은 물-<b>시멘트</b>비를 쓴다. 그대로 쓰면 슬래그·플라이 애시를 섞은 배합에서 크게 틀려 시험지 R²가 <b id="wcR2">0.058</b>까지 떨어진다. 결합재 전체로 넓히는 지식이 있어야 <b id="wbR2">0.735</b>가 나온다.</p>
+        <div class="ctrls" style="margin:6px 0 0"><label>물-결합재비 <input type="range" id="mWb" min="0.25" max="0.9" step="0.01" value="0.45"><output id="mWbO">0.45</output></label><label>재령 <select id="mAge" class="btn"><option>3</option><option>7</option><option>14</option><option selected>28</option><option>56</option><option>90</option><option>365</option></select> 일</label></div>
+        <div class="caption" id="manInfo" aria-live="polite"></div>
+      </div>
+      <div><div class="cwrap"><canvas class="fig" id="manCv" aria-label="가로축 실제 강도, 세로축 경험식이 낸 강도인 산점도. 시험지 258건. 대각선에 가까울수록 잘 맞힌 것이다"></canvas></div></div>
+    </div>
+  </div>
+  <div class="card" id="unitTrap">
+    <span class="tag">핵심 장면 · 단위의 함정 — 표준화 전후로 이웃이 바뀐다</span>
+    <div class="ctrls" style="margin:0 0 8px"><label>시험 배합 <select id="utPick" class="btn" style="max-width:calc(100vw - 140px)"></select></label></div>
+    <div id="utHead"></div>
+    <div class="two" style="gap:12px">
+      <div><h4 style="margin:6px 0">표준화 안 함 · kg과 일을 그대로 더한 거리</h4><div class="tw"><table class="tb" id="utRaw" style="font-size:13px"></table></div></div>
+      <div><h4 style="margin:6px 0">표준화 · 표준편차 단위로 맞춘 거리</h4><div class="tw"><table class="tb" id="utStd" style="font-size:13px"></table></div></div>
+    </div>
+    <h4 style="margin:14px 0 6px">가장 가까운 이웃 한 건과의 거리, 어느 특징이 얼마나 차지했나 (거리 제곱의 몫)</h4>
+    <div class="two" style="gap:12px"><div class="bars" id="utBarRaw"></div><div class="bars" id="utBarStd"></div></div>
+    <div class="caption" id="utInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>왜 표준화하나</h4>
+      <p>거리는 특징마다의 차이를 그냥 더한다. 시멘트 20kg 차이와 재령 20일 차이, 물 20kg 차이가 모두 "20"이다. 그런데 물 20kg은 강도를 크게 바꾸고 굵은 골재 20kg은 거의 안 바꾼다. 아래 표의 마지막 열은 표준화하지 않았을 때 각 특징이 거리에서 차지하는 평균 몫(분산의 비율)이다. <b>물은 1%, 고성능 감수제는 0.1%</b>밖에 안 된다. 강도를 가장 크게 좌우하는 특징이 거리에서는 거의 투명 인간이다. 그래서 특징마다 평균을 빼고 표준편차로 나눈다. 평균과 표준편차는 <b>훈련 데이터로만</b> 구한다.</p>
+      <div class="tw"><table class="tb" id="stdTbl" style="font-size:13.5px"></table></div>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>표 형식(CSV 등)으로, 한 줄에 배합(또는 로트) 하나, 맞히려는 숫자 열 하나가 있으면 된다.</li>
+        <li>Colab 코드(A장) 1번 칸의 데이터 읽기, <code>FEATURES</code>, <code>PASS_MPA</code> 세 곳만 바꾼다. 3번 칸의 경험식은 내 업무의 기존 기준(사내 공식, 규격표)으로 바꾼다.</li>
+        <li>KNN은 단위에 가장 예민한 지원자다. 표준화는 빼지 않는다. 이상값이 많으면 중앙값과 사분위 범위를 쓰는 <code>RobustScaler</code>도 고려한다.</li>
+        <li>글자로 된 특징(공장, 원자재 등급)은 원-핫 인코딩으로 숫자 열로 바꾼다. 0/1 열과 표준화한 숫자 열이 거리에서 어떤 무게를 갖는지 따로 확인한다.</li>
+        <li>행이 수십만 건을 넘으면 예측이 느려진다(06장). 그때는 다른 지원자를 함께 본다.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 축을 골라 보기 (색 = 강도 등급, 속이 빈 점 = 봉인된 시험지)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <label>가로축 <select id="dxSel" class="btn"></select></label>
+      <label>세로축 <select id="dySel" class="btn"></select></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="dataCv" aria-label="콘크리트 배합 1,030건의 산점도. 고른 두 특징을 가로·세로축으로 하고, 강도 등급마다 색이 다르다. 시험지 258건은 속이 빈 점으로 표시된다"></canvas></div>
+    <div class="legend" id="dataLeg"></div>
+  </div>
+  <div class="card">
+    <span class="tag">표 · 실기 과제지 전체 (1,030줄)</span>
+    <div class="datatb" id="concTbl" tabindex="0" aria-label="콘크리트 데이터 표"></div>
+    <p class="foot">파란 머리글이 특징(X), 빨간 열이 타겟(y)이다. 이 면접의 본시험 타겟은 압축 강도(MPa) 그 자체이고, 35MPa 합격은 추가 과제의 타겟이다. "봉인" 표시가 붙은 258줄은 05장에서 한 번만 연다. 같은 배합·같은 재령이 여러 줄 있는 것은 같은 배합을 여러 번 시험했기 때문이다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 실행 결과로 확인</p>
+  </div>
+  <p>코드를 처음부터 외워 쓸 필요는 없다. 생성형 AI에게 상황을 정확히 알려 주면 Colab에서 바로 돌아가는 코드를 받을 수 있다. 다만 AI는 그럴듯하지만 틀린 코드를 자신 있게 내놓기도 한다. 위원회 규정은 하나다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다. 데이터를 받으면 열 이름만 고치면 된다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, 기본 라이브러리) ② 데이터(주소, 열 이름, 타겟이 숫자인지 이름표인지) ③ 규정(나누기·표준화·k 고르는 법) ④ 출력(R²·MAE·합격선 비교) ⑤ 금지(시험 데이터로 k 고르기 금지, 설명 주석은 한국어)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"KNN 코드 짜 줘." — AI가 분류기(KNeighborsClassifier)를 골라 강도 숫자에 쓰거나, 표준화를 빼거나, 시험 데이터로 k를 고른 뒤 그 점수를 그대로 보고할 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 코드도 버전에 따라 다르게 돈다</h4>
+    <p>지금의 scikit-learn(1.x)에서 <code>KNeighborsRegressor</code>와 <code>KNeighborsClassifier</code>는 첫 인자 <code>n_neighbors</code>만 이름 없이 넘길 수 있다. <code>weights</code>, <code>metric</code> 같은 나머지는 이름을 붙여야 하는 <b>키워드 전용 인자</b>다. <code>KNeighborsRegressor(5, "distance")</code>처럼 쓰면 <code>TypeError</code>가 난다. 위치로 넘기던 옛 코드를 보고 배운 AI가 자주 내는 실수다. 강도 같은 연속값을 분류기에 넣으면 <code>ValueError: Unknown label type: continuous</code>가 난다. 오류가 나는 실수는 차라리 친절하다. 시험지로 k를 고르는 실수는 오류 없이 점수만 부풀린다.</p>
+    <p style="margin:0">거리가 똑같은 이웃이 여럿이면(같은 배합을 여러 번 시험한 줄) k번째 자리에 누구를 넣을지는 <code>algorithm</code>("auto"가 고르는 kd-tree, ball-tree, brute)과 데이터 순서에 따라 달라질 수 있다. 그래서 이 페이지(브라우저)와 A장의 Colab 결과가 소수점 셋째 자리에서 조금 다를 수 있다. A장 4번 칸은 직접 짠 KNN과 scikit-learn의 답을 한 건씩 비교한다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Choosing k</div>
+    <h2>수습 기간 — 배울 것은 없고, 고를 것이 있다</h2>
+    <p class="lin">fit = 외우기 → k와 거리 고르기(하나 빼고 맞히기) → 시험지는 그대로 봉인</p>
+  </div>
+  <p>다른 지원자는 수습 기간에 가중치를 고친다. KNN에게는 고칠 가중치가 없다. <code>fit()</code>은 772줄을 저장하고 끝난다. 대신 근무 조건을 골라야 한다. <b>몇 명에게 물을지(k)</b>, <b>거리를 어떤 눈금으로 잴지(표준화)</b>, <b>가까운 이웃의 말을 더 크게 들을지(거리 가중)</b>. 이 셋을 고르는 것이 KNN의 수습이다.</p>
+  <div class="card">
+    <span class="tag">움직이는 그림 ① · k를 바꾸면 예측 지도가 바뀐다 (특징 2개: 물-결합재비 · 재령, 훈련 772건)</span>
+    <div class="cwrap"><canvas class="fig" id="mapCv" aria-label="가로축 물-결합재비, 세로축 재령(로그 눈금). 배경색은 그 자리에 새 배합을 놓았을 때 KNN이 예측하는 강도다. 진할수록 강하다. k가 작으면 얼룩덜룩하고, 크면 매끈해진다. 점은 훈련 배합이다"></canvas></div>
+    <div class="ctrls">
+      <label>이웃 수 k <input type="range" id="mapK" min="1" max="100" step="1" value="1"><output id="mapKO">1</output></label>
+      <button class="btn blue" id="mapPlay">▶ k를 1부터 키우기</button>
+      <button class="btn" id="mapW" aria-pressed="false">거리 가중</button>
+    </div>
+    <div class="caption" id="mapInfo" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 ② · k 고르기 — 시험지 없이 "하나 빼고 맞히기"(LOO 교차 검증), 특징 8개</span>
+    <div class="choice" role="group" aria-label="한 바퀴의 네 단계" id="looChips"><button data-v="0" aria-pressed="false">① 훈련 배합 하나를 뺀다</button><button data-v="1" aria-pressed="false">② 나머지 771건에서 이웃 k개</button><button data-v="2" aria-pressed="false">③ 평균으로 맞혀 본다</button><button data-v="3" aria-pressed="false">④ 772번 반복해 R²</button></div>
+    <div class="cwrap" style="margin-top:10px"><canvas class="fig" id="looCv" aria-label="가로축 k(1~30), 세로축 R². 세 선: 훈련 R²(자기 자신을 포함해 맞힌 점수, k = 1에서 1에 가깝다), 표준화한 LOO R², 표준화하지 않은 LOO R². 가장 높은 LOO 점에 표시가 붙는다"></canvas></div>
+    <div class="ctrls">
+      <button class="btn blue" id="looPlay">▶ k = 1부터 30까지 재 보기</button><button class="btn" id="looReset">처음으로</button>
+    </div>
+    <div class="caption" id="looInfo" aria-live="polite">▶를 누르면 k마다 772번씩 "하나 빼고 맞히기"를 해서 점을 찍는다.</div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>훈련 R²가 k = 1에서 거의 1인 까닭</h4>
+      <p>훈련 배합에게 "너와 가장 가까운 배합은?"이라고 물으면 자기 자신(거리 0)이 답한다. 그래서 k = 1의 훈련 점수는 외운 답을 읽는 것과 같다. 이 점수로 k를 고르면 늘 k = 1이 뽑힌다. 그래서 자기 자신을 빼고 맞히는 <b>LOO</b>(leave-one-out)로 잰다. KNN은 "하나 빼기"가 다시 학습할 필요 없이 거리표에서 한 줄을 지우면 끝나서, LOO가 특히 싸다.</p>
+    </div>
+    <div class="explain">
+      <h4>왜 시험지로 k를 고르면 안 되나</h4>
+      <p>시험지 258건으로 k를 1부터 30까지 재 보고 가장 좋은 k를 고르면, 그 점수는 "시험지에 맞춘 k"의 점수다. 처음 보는 배합에서는 더 낮게 나온다. 시험지는 근무 조건을 다 고른 뒤 <b>한 번만</b> 연다. 그래서 위 그림은 훈련 772건만 쓴다. 05장의 시험 점수는 여기서 고른 근무 조건(k = 5, 표준화)으로 낸다.</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>수습비 0원, 이건 인정. fit이 1밀리초도 안 걸려. 대신 외우는 숫자가 6,176개야. 5-4 로지스틱 회귀는 9개였는데. 그리고 질문 하나마다 거리를 772번 재. 장부가 두꺼워질수록 건당 요금이 오르는 직원이지.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Evaluation</div>
+    <h2>성과 평가 — 봉인된 시험지를 연다</h2>
+    <p class="lin">R² 하나로 끝내지 않는다. MAE, 예측과 실제의 차이, 근무 조건별 성적, 같은 이웃의 분류 성적, 예측 비용까지 본다</p>
+  </div>
+  <div class="card">
+    <span class="tag">과제 A · 강도(MPa) 회귀, 시험지 258건 (특징 8개, 표준화, k = 5, 브라우저 계산)</span>
+    <div id="evalStat"><p class="muted">계산 중…</p></div>
+  </div>
+  <div class="card">
+    <span class="tag">예측 강도 vs 실제 강도 · 근무 조건을 바꿔 보기</span>
+    <div class="choice" role="group" aria-label="모델 고르기" id="pvChoice"></div>
+    <div class="two" style="gap:12px;margin-top:10px">
+      <div><div class="cwrap"><canvas class="fig" id="pvCv" aria-label="가로축 실제 강도, 세로축 예측 강도인 시험지 258건의 산점도. 대각선 위에 있으면 정확히 맞힌 것이다. 35MPa 선이 점선으로 그려져 있다"></canvas></div></div>
+      <div><div class="tw"><table class="tb" id="rTbl" style="font-size:13.5px"></table></div><p class="foot">합격선은 매뉴얼 경험식의 시험 R²다. 기준선은 늘 훈련 평균을 답하는 모델이다. 표준화 하나로 R² 0.716 → 0.767, 판정이 바뀐다.</p></div>
+    </div>
+    <div class="caption" id="pvInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 B · 같은 이웃의 다수결로 35MPa 합격 판정 (k = 5)</span>
+      <div class="tw"><div id="cmB"></div></div>
+      <div id="clsStat" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
+      <span class="tag">예산 · 학습은 공짜, 예측은 건당 요금</span>
+      <div id="costStat"></div>
+      <div class="ctrls"><button class="btn" id="costRun">시험지 258건 예측 시간 다시 재기</button></div>
+      <p class="foot" id="costInfo"></p>
+    </div>
+  </div>
+
+  <div class="interview" id="iv1"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 맞는 일과 안 맞는 일, 근무 조건(하이퍼파라미터), 비용</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym">k</span><span class="no">APP-01 → EMP-0001</span><span class="nm">KNN (k-최근접 이웃)</span><span class="rl">지도 본부 › 입문팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">비슷한 사례를 기억하는 직원.</b> 식을 만들지 않아 굽은 관계도 따라가고, "이 다섯 배합과 비슷해서"라고 근거를 보여 준다. 대신 거리 재는 법에 운명을 맡기고, 데이터가 커질수록 느려진다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>가정이 거의 없다.</b> 강도가 재령에 따라 곡선으로 오르는 관계를 식 없이 따라간다.</li>
+          <li><b>근거를 보여 준다.</b> "이 배합들과 비슷하다"는 이웃 목록이 곧 설명이다(02장).</li>
+          <li><b>회귀와 분류를 한 사람이 한다.</b> 이웃을 찾는 과정은 같고 마지막 한 줄만 다르다.</li>
+          <li><b>새 데이터를 바로 쓴다.</b> 새 시험 결과가 들어오면 장부에 한 줄 더하면 끝이다. 다시 학습할 것이 없다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>단위에 가장 예민하다.</b> 표준화를 빼면 이 면접에서 판정이 보류로 바뀐다.</li>
+          <li><b>쓸모없는 특징도 똑같이 센다.</b> 강도와 상관없는 특징이 섞이면 거리가 흐려진다. 특징 2개(물-결합재비·재령)만 쓴 KNN이 8개를 쓴 KNN보다 나았다(A장 8번 칸).</li>
+          <li><b>예측이 느리고 무겁다.</b> 질문마다 n건과 거리를 재고, 데이터 전체를 들고 다닌다.</li>
+          <li><b>데이터 밖으로 못 나간다.</b> 이웃의 평균이므로 훈련 데이터에 없던 더 강한 배합(82MPa 이상)은 절대 예측하지 못한다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">차원의 저주 · 특징 수(차원)가 늘면 "가장 가까운 것"과 "가장 먼 것"의 차이가 사라진다</span>
+    <div class="two" style="gap:12px">
+      <div><div class="cwrap"><canvas class="fig" id="cursCv" aria-label="가로축 차원 수(로그 눈금), 세로축 (가장 먼 거리 − 가장 가까운 거리) ÷ 가장 가까운 거리. 차원이 늘수록 값이 0에 가까워진다. 콘크리트의 8차원 위치에 표시가 있다"></canvas></div></div>
+      <div><div class="ctrls" style="margin:0 0 8px"><label>차원 <input type="range" id="cursD" min="0" max="7" step="1" value="3"><output id="cursDO">8</output></label></div><div class="cwrap"><canvas class="fig" id="cursHist" aria-label="고른 차원에서 질문 한 점과 무작위 점 500개 사이 거리의 분포. 차원이 크면 좁은 봉우리로 몰린다"></canvas></div></div>
+    </div>
+    <div class="caption" id="cursInfo" aria-live="polite"></div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn KNeighborsRegressor / KNeighborsClassifier)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>n_neighbors</code></td><td>5</td><td>물어볼 이웃 수 k. 작으면 예민(과대적합), 크면 둔함(과소적합). 훈련 데이터 안의 교차 검증으로 고른다. 이 데이터의 LOO에서는 4~5가 가장 좋았다(04장). 두 클래스 분류면 홀수로 둔다.</td></tr>
+        <tr><td><code>weights</code></td><td>"uniform"</td><td>"distance"로 두면 거리의 역수로 무게를 준다. 이 면접에서는 R² 0.767 → 0.814로 가장 큰 개선이었다. 거리가 0인 이웃(똑같은 배합)이 있으면 그 이웃들의 값만 쓴다.</td></tr>
+        <tr><td><code>metric</code>, <code>p</code></td><td>"minkowski", 2</td><td>거리 재는 법. p = 2가 유클리드 거리, p = 1이 맨해튼 거리(차이의 절댓값 합)다. 거리를 바꾸면 "누가 이웃인가"가 바뀐다.</td></tr>
+        <tr><td><code>algorithm</code></td><td>"auto"</td><td>이웃을 빨리 찾는 방법(kd-tree, ball-tree, brute). 답은 같고 속도만 다르다. 단, 거리가 같은 이웃이 있으면 고르는 순서가 다를 수 있다.</td></tr>
+        <tr><td>(전처리) <code>StandardScaler</code></td><td>—</td><td>KNN 안의 인자는 아니지만 사실상 가장 중요한 근무 조건이다. <code>Pipeline</code>으로 묶어 두면 교차 검증 때도 훈련 몫으로만 맞춰진다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">외울 숫자 · 한 번 예측할 때의 계산 (훈련 772건 기준)</span>
+      <div class="bars" id="memBars"></div>
+      <p class="foot">KNN은 외울 숫자가 데이터 크기에 비례해 늘어난다. 로지스틱 회귀·선형 회귀는 데이터가 백만 건이 되어도 외울 숫자가 그대로다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">맞는 일 · 안 맞는 일</span>
+      <table class="tb" style="font-size:14px"><tbody>
+        <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>특징이 몇 개~수십 개이고 데이터가 수만 건 이하인 표 데이터, "비슷한 과거 사례"를 근거로 보여 줘야 하는 판정(유사 배합 찾기, 추천), 새 사례가 계속 쌓이는 업무, 다른 지원자를 부르기 전의 첫 기준선</td></tr>
+        <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>특징이 수백 개 이상이거나 쓸모없는 특징이 많은 데이터(차원의 저주), 실시간으로 아주 많은 질문을 받는 업무, 훈련 범위 밖을 예측해야 하는 일(더 센 배합 설계), 단위를 맞추기 어려운 섞인 데이터</td></tr>
+        <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td>데이터가 아주 크면 정확한 이웃 대신 "거의 가장 가까운 이웃"을 빨리 찾는 근사 검색(ANN)을 쓴다. 생성형 AI의 문서 검색(벡터 검색)이 이 방식이다.</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

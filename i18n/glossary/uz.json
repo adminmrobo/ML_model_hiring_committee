@@ -1,0 +1,1182 @@
+{
+ "재령": {
+  "t": "yoshi (qotish muddati)",
+  "n": "betonning yoshi, sutkada; ru «возраст бетона»"
+ },
+ "28일 강도": {
+  "t": "28 sutkalik mustahkamlik",
+  "n": ""
+ },
+ "압축 강도": {
+  "t": "siqilishdagi mustahkamlik",
+  "n": ""
+ },
+ "MPa": {
+  "t": "MPa",
+  "n": "megapaskal"
+ },
+ "결합재": {
+  "t": "bogʻlovchi",
+  "n": "bogʻlovchi material (sement + shlak + kul)"
+ },
+ "물-결합재비": {
+  "t": "suv–bogʻlovchi nisbati",
+  "n": "S/B"
+ },
+ "물-시멘트비": {
+  "t": "suv–sement nisbati",
+  "n": "S/S"
+ },
+ "시멘트": {
+  "t": "sement",
+  "n": ""
+ },
+ "고로 슬래그": {
+  "t": "maydalangan domna shlaki",
+  "n": "qisqa: domna shlaki"
+ },
+ "플라이 애시": {
+  "t": "uchuvchi kul",
+  "n": "ru «зола-унос»; 'zola-unos' ham ishlatiladi"
+ },
+ "혼화재": {
+  "t": "mineral qoʻshimcha",
+  "n": ""
+ },
+ "고성능 감수제": {
+  "t": "superplastifikator",
+  "n": ""
+ },
+ "굵은 골재": {
+  "t": "yirik toʻldiruvchi",
+  "n": "shagʻal / chaqiq tosh"
+ },
+ "잔골재": {
+  "t": "mayda toʻldiruvchi",
+  "n": "qum"
+ },
+ "배합": {
+  "t": "beton tarkibi",
+  "n": "qorishma tarkibi (retsepti); jadvaldagi bitta qator"
+ },
+ "시편": {
+  "t": "namuna",
+  "n": "sinov namunasi (silindr)"
+ },
+ "양생": {
+  "t": "parvarishlash",
+  "n": "betonni parvarishlash (namlik va harorat)"
+ },
+ "수화": {
+  "t": "gidratatsiya",
+  "n": ""
+ },
+ "레미콘": {
+  "t": "tayyor beton qorishmasi",
+  "n": ""
+ },
+ "에이브럼스 식": {
+  "t": "Abrams qonuni",
+  "n": "Abrams formulasi"
+ },
+ "인공지능": {
+  "t": "sunʼiy intellekt",
+  "n": ""
+ },
+ "룰 베이스": {
+  "t": "qoidalarga asoslangan",
+  "n": "qoidalarga asoslangan tizim"
+ },
+ "전문가 시스템": {
+  "t": "ekspert tizimi",
+  "n": ""
+ },
+ "머신러닝": {
+  "t": "mashinali oʻqitish",
+  "n": "'machine learning' ham ishlatiladi"
+ },
+ "딥러닝": {
+  "t": "chuqur oʻqitish",
+  "n": ""
+ },
+ "IF 함수": {
+  "t": "IF funksiyasi",
+  "n": "Excel"
+ },
+ "순서도": {
+  "t": "blok-sxema",
+  "n": ""
+ },
+ "NOR": {
+  "t": "NOR",
+  "n": "mantiqiy element"
+ },
+ "샘플": {
+  "t": "namuna",
+  "n": "jadvalning bitta qatori"
+ },
+ "특징": {
+  "t": "belgi",
+  "n": "xususiyat (feature); kirish ustuni"
+ },
+ "타겟": {
+  "t": "maqsadli oʻzgaruvchi",
+  "n": "target"
+ },
+ "시험지": {
+  "t": "imtihon varaqasi",
+  "n": "metafora = test toʻplami (oʻqitishda ishlatilmaydi)"
+ },
+ "회귀": {
+  "t": "regressiya",
+  "n": ""
+ },
+ "분류": {
+  "t": "klassifikatsiya",
+  "n": "tasniflash ham ishlatiladi"
+ },
+ "지도 학습": {
+  "t": "nazorat ostida oʻqitish",
+  "n": ""
+ },
+ "비지도 학습": {
+  "t": "nazoratsiz oʻqitish",
+  "n": ""
+ },
+ "정확도": {
+  "t": "aniqlik",
+  "n": "accuracy; precision bilan adashtirmang"
+ },
+ "기준선": {
+  "t": "bazaviy daraja",
+  "n": "baseline"
+ },
+ "합격선": {
+  "t": "ishga olish chegarasi",
+  "n": "metafora = Manual janobning test balli"
+ },
+ "KNN": {
+  "t": "KNN",
+  "n": "k-eng yaqin qoʻshnilar"
+ },
+ "유클리드 거리": {
+  "t": "Evklid masofasi",
+  "n": ""
+ },
+ "맨해튼 거리": {
+  "t": "Manxetten masofasi",
+  "n": ""
+ },
+ "다수결": {
+  "t": "koʻpchilik ovozi",
+  "n": ""
+ },
+ "거리 가중": {
+  "t": "masofa boʻyicha vaznlash",
+  "n": "weights='distance'"
+ },
+ "게으른 학습": {
+  "t": "dangasa oʻqitish",
+  "n": "lazy learning; namunalarga asoslangan oʻqitish"
+ },
+ "차원의 저주": {
+  "t": "oʻlchamlilik laʼnati",
+  "n": ""
+ },
+ "근사 이웃 검색": {
+  "t": "taqribiy yaqin qoʻshni qidiruvi",
+  "n": "ANN"
+ },
+ "표준화": {
+  "t": "standartlashtirish",
+  "n": "StandardScaler"
+ },
+ "데이터 누수": {
+  "t": "maʼlumotlar sizib chiqishi",
+  "n": "data leakage"
+ },
+ "교차 검증": {
+  "t": "kross-validatsiya",
+  "n": ""
+ },
+ "LOO": {
+  "t": "LOO",
+  "n": "leave-one-out"
+ },
+ "과대적합": {
+  "t": "ortiqcha moslashish",
+  "n": "overfitting"
+ },
+ "과소적합": {
+  "t": "yetarlicha moslashmaslik",
+  "n": "underfitting"
+ },
+ "R²": {
+  "t": "R²",
+  "n": "determinatsiya koeffitsiyenti"
+ },
+ "MAE": {
+  "t": "MAE",
+  "n": "oʻrtacha absolyut xato"
+ },
+ "선형 회귀": {
+  "t": "chiziqli regressiya",
+  "n": ""
+ },
+ "가중치": {
+  "t": "vazn",
+  "n": "koeffitsiyent"
+ },
+ "절편": {
+  "t": "ozod had",
+  "n": "intercept"
+ },
+ "잔차": {
+  "t": "qoldiq",
+  "n": ""
+ },
+ "최소제곱": {
+  "t": "eng kichik kvadratlar usuli",
+  "n": ""
+ },
+ "정규방정식": {
+  "t": "normal tenglama",
+  "n": ""
+ },
+ "파생 특징": {
+  "t": "hosila belgi",
+  "n": ""
+ },
+ "정답 누설": {
+  "t": "maqsad sizib chiqishi",
+  "n": "target leakage"
+ },
+ "경사 하강": {
+  "t": "gradiyent tushish",
+  "n": ""
+ },
+ "학습률": {
+  "t": "oʻqitish tezligi",
+  "n": "learning rate"
+ },
+ "발산": {
+  "t": "uzoqlashish",
+  "n": "divergensiya"
+ },
+ "MSE": {
+  "t": "MSE",
+  "n": "oʻrtacha kvadratik xato"
+ },
+ "RMSE": {
+  "t": "RMSE",
+  "n": ""
+ },
+ "다항 회귀": {
+  "t": "polinomial regressiya",
+  "n": ""
+ },
+ "다항 특징": {
+  "t": "polinomial belgilar",
+  "n": "PolynomialFeatures"
+ },
+ "상호작용 항": {
+  "t": "oʻzaro taʼsir hadi",
+  "n": ""
+ },
+ "차수": {
+  "t": "daraja",
+  "n": ""
+ },
+ "릿지": {
+  "t": "Ridge",
+  "n": "Ridge regressiya (L2)"
+ },
+ "라쏘": {
+  "t": "Lasso",
+  "n": "Lasso regressiya (L1)"
+ },
+ "엘라스틱넷": {
+  "t": "Elastic Net",
+  "n": "ElasticNet"
+ },
+ "규제": {
+  "t": "regulyarizatsiya",
+  "n": ""
+ },
+ "닫힌 해": {
+  "t": "yopiq koʻrinishdagi yechim",
+  "n": "analitik yechim"
+ },
+ "좌표 하강": {
+  "t": "koordinatali tushish",
+  "n": ""
+ },
+ "소프트 임계값": {
+  "t": "yumshoq chegaralash",
+  "n": "soft thresholding"
+ },
+ "조건수": {
+  "t": "shartlilik soni",
+  "n": ""
+ },
+ "특징 선택": {
+  "t": "belgilarni tanlash",
+  "n": ""
+ },
+ "특징공학": {
+  "t": "belgilar muhandisligi",
+  "n": "feature engineering"
+ },
+ "결정 계수": {
+  "t": "determinatsiya koeffitsiyenti",
+  "n": "R²"
+ },
+ "평균 절대 오차": {
+  "t": "oʻrtacha absolyut xato",
+  "n": "MAE"
+ },
+ "로지스틱 회귀": {
+  "t": "logistik regressiya",
+  "n": ""
+ },
+ "선형 점수": {
+  "t": "chiziqli ball",
+  "n": "z = w·x + b"
+ },
+ "시그모이드": {
+  "t": "sigmoid",
+  "n": "logistik funksiya"
+ },
+ "로짓": {
+  "t": "logit",
+  "n": ""
+ },
+ "오즈": {
+  "t": "imkoniyatlar nisbati",
+  "n": "odds"
+ },
+ "소프트맥스": {
+  "t": "softmax",
+  "n": ""
+ },
+ "결정 경계": {
+  "t": "qaror chegarasi",
+  "n": ""
+ },
+ "임계값": {
+  "t": "chegara qiymat",
+  "n": "threshold"
+ },
+ "교차 엔트로피": {
+  "t": "kross-entropiya",
+  "n": ""
+ },
+ "혼동행렬": {
+  "t": "chalkashlik matritsasi",
+  "n": "confusion matrix; xatolik matritsasi"
+ },
+ "정밀도": {
+  "t": "precision",
+  "n": "keep in English; 'aniqlik' accuracy uchun band"
+ },
+ "재현율": {
+  "t": "toʻliqlik",
+  "n": "recall"
+ },
+ "ROC 곡선": {
+  "t": "ROC egri chizigʻi",
+  "n": ""
+ },
+ "나이브 베이즈": {
+  "t": "naiv Bayes",
+  "n": "model name per conventions (also: sodda Bayes klassifikatori)"
+ },
+ "베이즈 정리": {
+  "t": "Bayes teoremasi",
+  "n": ""
+ },
+ "사전 확률": {
+  "t": "aprior ehtimollik",
+  "n": ""
+ },
+ "가능도": {
+  "t": "haqiqatga oʻxshashlik",
+  "n": "likelihood"
+ },
+ "사후 확률": {
+  "t": "aposterior ehtimollik",
+  "n": ""
+ },
+ "조건부 독립": {
+  "t": "shartli mustaqillik",
+  "n": ""
+ },
+ "가우시안 분포": {
+  "t": "Gauss taqsimoti",
+  "n": "normal taqsimot"
+ },
+ "가능도 비": {
+  "t": "haqiqatga oʻxshashlik nisbati",
+  "n": "likelihood ratio"
+ },
+ "생성 모델": {
+  "t": "generativ model",
+  "n": "diskriminativ modelga qarama-qarshi"
+ },
+ "var_smoothing": {
+  "t": "var_smoothing",
+  "n": "GaussianNB parametri"
+ },
+ "라플라스 평활": {
+  "t": "Laplas tekislashi",
+  "n": ""
+ },
+ "상관계수": {
+  "t": "korrelyatsiya koeffitsiyenti",
+  "n": ""
+ },
+ "왜도": {
+  "t": "asimmetriya",
+  "n": "skewness"
+ },
+ "로그 변환": {
+  "t": "logarifmik almashtirish",
+  "n": ""
+ },
+ "웰퍼드 방법": {
+  "t": "Welford usuli",
+  "n": ""
+ },
+ "partial_fit": {
+  "t": "partial_fit",
+  "n": "inkremental oʻqitish"
+ },
+ "로그 손실": {
+  "t": "log loss",
+  "n": "logarifmik yoʻqotish"
+ },
+ "확률 보정": {
+  "t": "ehtimollikni kalibrlash",
+  "n": ""
+ },
+ "결정 트리": {
+  "t": "qaror daraxti",
+  "n": ""
+ },
+ "회귀 트리": {
+  "t": "regressiya daraxti",
+  "n": ""
+ },
+ "마디": {
+  "t": "tugun",
+  "n": ""
+ },
+ "문턱": {
+  "t": "boʻlinish chegarasi",
+  "n": ""
+ },
+ "탐욕 알고리즘": {
+  "t": "ochkoʻz algoritm",
+  "n": "greedy algorithm"
+ },
+ "앙상블": {
+  "t": "ansambl",
+  "n": ""
+ },
+ "불순도": {
+  "t": "notozalik",
+  "n": "impurity"
+ },
+ "지니 불순도": {
+  "t": "Gini notozaligi",
+  "n": "Gini impurity"
+ },
+ "엔트로피": {
+  "t": "entropiya",
+  "n": ""
+ },
+ "정보 이득": {
+  "t": "axborot ortishi",
+  "n": "information gain"
+ },
+ "평균 제곱 오차": {
+  "t": "oʻrtacha kvadratik xato",
+  "n": "MSE"
+ },
+ "가지치기": {
+  "t": "butash",
+  "n": "pruning"
+ },
+ "비용 복잡도 가지치기": {
+  "t": "narx-murakkablik butashi",
+  "n": "ccp_alpha"
+ },
+ "특징 중요도": {
+  "t": "belgi ahamiyati",
+  "n": "feature importance"
+ },
+ "랜덤 포레스트": {
+  "t": "tasodifiy oʻrmon",
+  "n": "random forest"
+ },
+ "배깅": {
+  "t": "bagging",
+  "n": ""
+ },
+ "부트스트랩": {
+  "t": "butstrep",
+  "n": "bootstrap"
+ },
+ "복원 추출": {
+  "t": "qaytariladigan tanlash",
+  "n": ""
+ },
+ "OOB": {
+  "t": "OOB",
+  "n": "out-of-bag"
+ },
+ "특징 무작위": {
+  "t": "belgilarni tasodifiy tanlash",
+  "n": "max_features"
+ },
+ "Extra Trees": {
+  "t": "Extra Trees",
+  "n": ""
+ },
+ "순열 중요도": {
+  "t": "permutatsion ahamiyat",
+  "n": ""
+ },
+ "분산": {
+  "t": "dispersiya",
+  "n": ""
+ },
+ "편향": {
+  "t": "siljish",
+  "n": "bias"
+ },
+ "하이퍼파라미터": {
+  "t": "giperparametr",
+  "n": ""
+ },
+ "서포트 벡터 머신": {
+  "t": "tayanch vektorlar usuli (SVM)",
+  "n": ""
+ },
+ "마진": {
+  "t": "chegara oraligʻi",
+  "n": "margin"
+ },
+ "서포트 벡터": {
+  "t": "tayanch vektor",
+  "n": ""
+ },
+ "초평면": {
+  "t": "gipertekislik",
+  "n": ""
+ },
+ "소프트 마진": {
+  "t": "yumshoq oraliq",
+  "n": "soft margin"
+ },
+ "힌지 손실": {
+  "t": "hinge yoʻqotish",
+  "n": "hinge loss"
+ },
+ "커널 트릭": {
+  "t": "yadro hiylasi",
+  "n": "kernel trick"
+ },
+ "RBF 커널": {
+  "t": "RBF yadrosi",
+  "n": ""
+ },
+ "SVR": {
+  "t": "SVR",
+  "n": "tayanch vektorlar regressiyasi"
+ },
+ "ε 띠": {
+  "t": "ε-quvur",
+  "n": "ε-tube"
+ },
+ "일대일": {
+  "t": "birga-bir (OvO)",
+  "n": ""
+ },
+ "쌍대 문제": {
+  "t": "ikkilangan masala",
+  "n": "dual masala"
+ },
+ "SMO": {
+  "t": "SMO",
+  "n": ""
+ },
+ "커널 근사": {
+  "t": "yadro approksimatsiyasi",
+  "n": ""
+ },
+ "GBM": {
+  "t": "GBM",
+  "n": "gradiyent busting"
+ },
+ "부스팅": {
+  "t": "busting",
+  "n": "boosting"
+ },
+ "약한 학습기": {
+  "t": "kuchsiz oʻquvchi",
+  "n": "weak learner"
+ },
+ "잎": {
+  "t": "barg",
+  "n": ""
+ },
+ "HistGradientBoosting": {
+  "t": "HistGradientBoosting",
+  "n": ""
+ },
+ "XGBoost": {
+  "t": "XGBoost",
+  "n": ""
+ },
+ "LightGBM": {
+  "t": "LightGBM",
+  "n": ""
+ },
+ "CatBoost": {
+  "t": "CatBoost",
+  "n": ""
+ },
+ "덧대기": {
+  "t": "qoʻshib borish",
+  "n": "additiv model"
+ },
+ "손실 함수": {
+  "t": "yoʻqotish funksiyasi",
+  "n": ""
+ },
+ "기울기": {
+  "t": "gradiyent",
+  "n": ""
+ },
+ "로그 오즈": {
+  "t": "log-odds",
+  "n": "logarifmik imkoniyatlar nisbati"
+ },
+ "조기 종료": {
+  "t": "erta toʻxtatish",
+  "n": ""
+ },
+ "검증 몫": {
+  "t": "validatsiya ulushi",
+  "n": "validation_fraction"
+ },
+ "서브샘플": {
+  "t": "qism-tanlanma",
+  "n": "subsample"
+ },
+ "K-Means": {
+  "t": "K-Means",
+  "n": "k-oʻrtachalar"
+ },
+ "K-Medoids": {
+  "t": "K-Medoids",
+  "n": ""
+ },
+ "메도이드": {
+  "t": "medoid",
+  "n": ""
+ },
+ "군집": {
+  "t": "klasterlash",
+  "n": "ot sifatida: klaster"
+ },
+ "비지도학습": {
+  "t": "nazoratsiz oʻqitish",
+  "n": ""
+ },
+ "MiniBatchKMeans": {
+  "t": "MiniBatchKMeans",
+  "n": ""
+ },
+ "중심": {
+  "t": "markaz",
+  "n": "sentroid"
+ },
+ "관성": {
+  "t": "inersiya",
+  "n": "klaster ichidagi kvadratlar yigʻindisi"
+ },
+ "k-means++": {
+  "t": "k-means++",
+  "n": ""
+ },
+ "n_init": {
+  "t": "n_init",
+  "n": ""
+ },
+ "지역 최솟값": {
+  "t": "lokal minimum",
+  "n": ""
+ },
+ "PCA": {
+  "t": "PCA",
+  "n": "bosh komponentlar tahlili"
+ },
+ "엘보 방법": {
+  "t": "tirsak usuli",
+  "n": "elbow method"
+ },
+ "실루엣 점수": {
+  "t": "siluet koeffitsiyenti",
+  "n": "silhouette score"
+ },
+ "ARI": {
+  "t": "ARI",
+  "n": "tuzatilgan Rand indeksi"
+ },
+ "NMI": {
+  "t": "NMI",
+  "n": "normallashtirilgan oʻzaro axborot"
+ },
+ "채점 봉투": {
+  "t": "muhrlangan javoblar konverti",
+  "n": "metafora = yashirilgan haqiqiy yorliqlar"
+ },
+ "업무 점수": {
+  "t": "ish balli",
+  "n": "seriya metrikasi: har klasterda bitta vakilni belgilab, yorliqni tarqatish aniqligi"
+ },
+ "계층적 군집": {
+  "t": "ierarxik klasterlash",
+  "n": ""
+ },
+ "병합 군집": {
+  "t": "aglomerativ klasterlash",
+  "n": ""
+ },
+ "분할 군집": {
+  "t": "boʻluvchi klasterlash",
+  "n": "divisive"
+ },
+ "덴드로그램": {
+  "t": "dendrogramma",
+  "n": ""
+ },
+ "연결 방식": {
+  "t": "bogʻlanish usuli",
+  "n": "linkage"
+ },
+ "와드 연결": {
+  "t": "Ward bogʻlanishi",
+  "n": ""
+ },
+ "사슬 효과": {
+  "t": "zanjir effekti",
+  "n": "chaining"
+ },
+ "거리표": {
+  "t": "masofalar matritsasi",
+  "n": ""
+ },
+ "Lance-Williams 식": {
+  "t": "Lance–Williams formulasi",
+  "n": ""
+ },
+ "NN-chain": {
+  "t": "NN-chain",
+  "n": ""
+ },
+ "자르는 높이": {
+  "t": "kesish balandligi",
+  "n": "distance_threshold"
+ },
+ "순도": {
+  "t": "tozalik",
+  "n": "purity"
+ },
+ "코페네틱 상관": {
+  "t": "kofenetik korrelyatsiya",
+  "n": ""
+ },
+ "DBSCAN": {
+  "t": "DBSCAN",
+  "n": ""
+ },
+ "HDBSCAN": {
+  "t": "HDBSCAN",
+  "n": ""
+ },
+ "OPTICS": {
+  "t": "OPTICS",
+  "n": ""
+ },
+ "eps": {
+  "t": "eps",
+  "n": ""
+ },
+ "min_samples": {
+  "t": "min_samples",
+  "n": ""
+ },
+ "핵심점": {
+  "t": "yadro nuqta",
+  "n": "core point"
+ },
+ "가장자리 점": {
+  "t": "chegara nuqta",
+  "n": "border point"
+ },
+ "잡음": {
+  "t": "shovqin",
+  "n": "shovqin nuqta, yorliq −1"
+ },
+ "밀도 도달": {
+  "t": "zichlik boʻyicha erishuvchanlik",
+  "n": "density-reachable"
+ },
+ "k-거리 그래프": {
+  "t": "k-masofa grafigi",
+  "n": ""
+ },
+ "무릎": {
+  "t": "tizza nuqtasi",
+  "n": "knee point"
+ },
+ "무작위 기준선": {
+  "t": "tasodifiy bazaviy daraja",
+  "n": ""
+ },
+ "픽셀": {
+  "t": "piksel",
+  "n": ""
+ },
+ "t-SNE": {
+  "t": "t-SNE",
+  "n": ""
+ },
+ "GMM": {
+  "t": "GMM",
+  "n": "Gauss aralashmasi modeli"
+ },
+ "가우시안": {
+  "t": "Gauss taqsimoti",
+  "n": ""
+ },
+ "정규분포": {
+  "t": "normal taqsimot",
+  "n": ""
+ },
+ "혼합 모델": {
+  "t": "aralashma modeli",
+  "n": ""
+ },
+ "공분산": {
+  "t": "kovariatsiya",
+  "n": ""
+ },
+ "비중": {
+  "t": "aralashma vazni",
+  "n": "weights_"
+ },
+ "EM": {
+  "t": "EM",
+  "n": "kutilma–maksimallashtirish"
+ },
+ "소속 확률": {
+  "t": "tegishlilik ehtimolligi",
+  "n": "responsibility"
+ },
+ "국소 최적": {
+  "t": "lokal optimum",
+  "n": ""
+ },
+ "reg_covar": {
+  "t": "reg_covar",
+  "n": ""
+ },
+ "공분산 모양": {
+  "t": "kovariatsiya turi",
+  "n": "covariance_type"
+ },
+ "모수": {
+  "t": "parametr",
+  "n": ""
+ },
+ "BIC": {
+  "t": "BIC",
+  "n": "Bayes axborot mezoni"
+ },
+ "AIC": {
+  "t": "AIC",
+  "n": "Akaike axborot mezoni"
+ },
+ "과신": {
+  "t": "haddan tashqari ishonch",
+  "n": "overconfidence"
+ },
+ "주성분": {
+  "t": "bosh komponenta",
+  "n": "components_"
+ },
+ "차원 축소": {
+  "t": "oʻlchamlilikni kamaytirish",
+  "n": ""
+ },
+ "UMAP": {
+  "t": "UMAP",
+  "n": ""
+ },
+ "KernelPCA": {
+  "t": "KernelPCA",
+  "n": "yadroli PCA"
+ },
+ "차원": {
+  "t": "oʻlcham",
+  "n": ""
+ },
+ "투영": {
+  "t": "proyeksiya",
+  "n": ""
+ },
+ "공분산 행렬": {
+  "t": "kovariatsiya matritsasi",
+  "n": ""
+ },
+ "고유벡터": {
+  "t": "xos vektor",
+  "n": ""
+ },
+ "고유값": {
+  "t": "xos qiymat",
+  "n": ""
+ },
+ "직교": {
+  "t": "ortogonal",
+  "n": ""
+ },
+ "평균 중심화": {
+  "t": "oʻrtachaga nisbatan markazlashtirish",
+  "n": ""
+ },
+ "거듭제곱법": {
+  "t": "darajali iteratsiya usuli",
+  "n": "power method"
+ },
+ "특이값 분해": {
+  "t": "singulyar yoyilma (SVD)",
+  "n": ""
+ },
+ "화이트닝": {
+  "t": "oqartirish",
+  "n": "whitening; whiten=True"
+ },
+ "설명된 분산 비율": {
+  "t": "tushuntirilgan dispersiya ulushi",
+  "n": "explained_variance_ratio_"
+ },
+ "누적 설명된 분산": {
+  "t": "kumulyativ tushuntirilgan dispersiya",
+  "n": ""
+ },
+ "엘보": {
+  "t": "tirsak",
+  "n": "elbow"
+ },
+ "주성분 점수": {
+  "t": "bosh komponenta qiymatlari",
+  "n": "PC scores"
+ },
+ "복원": {
+  "t": "qayta tiklash",
+  "n": "inverse_transform"
+ },
+ "복원 오차": {
+  "t": "qayta tiklash xatosi",
+  "n": ""
+ },
+ "5-NN 정확도": {
+  "t": "5-NN aniqligi",
+  "n": ""
+ },
+ "비선형 차원 축소": {
+  "t": "nochiziqli oʻlchamlilikni kamaytirish",
+  "n": ""
+ },
+ "매니폴드 학습": {
+  "t": "manifold oʻqitish",
+  "n": "manifold learning; koʻpxillik"
+ },
+ "임베딩": {
+  "t": "embedding",
+  "n": "joylashtirish; inglizcha shakli keng ishlatiladi"
+ },
+ "perplexity": {
+  "t": "perplexity",
+  "n": ""
+ },
+ "n_neighbors": {
+  "t": "n_neighbors",
+  "n": ""
+ },
+ "min_dist": {
+  "t": "min_dist",
+  "n": ""
+ },
+ "이웃 확률": {
+  "t": "qoʻshnilik ehtimolligi",
+  "n": ""
+ },
+ "t-분포": {
+  "t": "t-taqsimot",
+  "n": "Styudent taqsimoti"
+ },
+ "KL 발산": {
+  "t": "KL divergensiyasi",
+  "n": "Kulbak–Leybler divergensiyasi"
+ },
+ "조기 과장": {
+  "t": "erta boʻrttirish",
+  "n": "early exaggeration"
+ },
+ "반스-헛 근사": {
+  "t": "Barnes–Hut approksimatsiyasi",
+  "n": ""
+ },
+ "이웃 그래프": {
+  "t": "qoʻshnilar grafi",
+  "n": "k-NN graf"
+ },
+ "음의 표본": {
+  "t": "salbiy tanlash",
+  "n": "negative sampling"
+ },
+ "transform": {
+  "t": "transform",
+  "n": ""
+ },
+ "trustworthiness": {
+  "t": "trustworthiness",
+  "n": "ishonchlilik"
+ },
+ "이웃 보존율": {
+  "t": "qoʻshnilarni saqlash ulushi",
+  "n": ""
+ },
+ "순위 상관": {
+  "t": "rang korrelyatsiyasi",
+  "n": "Spirmen"
+ },
+ "모델 채용 위원회": {
+  "t": "Modellarni ishga olish qoʻmitasi",
+  "n": "seriya nomi"
+ },
+ "위원장 박사": {
+  "t": "Rais (Doktor)",
+  "n": ""
+ },
+ "인사 담당 조수": {
+  "t": "Kadrlar yordamchisi",
+  "n": ""
+ },
+ "실무 면접관 초파리": {
+  "t": "Meva pashshasi (texnik suhbatdosh)",
+  "n": ""
+ },
+ "예산 담당 Money-Robo": {
+  "t": "Money-Robo (byudjet masʼuli)",
+  "n": "Money-Robo oʻzgarmaydi"
+ },
+ "매뉴얼 씨": {
+  "t": "Manual janob",
+  "n": "qoidalarga asoslangan tizim timsoli"
+ },
+ "지원자": {
+  "t": "nomzod",
+  "n": ""
+ },
+ "합격": {
+  "t": "Ishga olindi",
+  "n": "kontekstga qarab: oʻtdi"
+ },
+ "보류": {
+  "t": "Kutishda",
+  "n": ""
+ },
+ "채용 현황": {
+  "t": "Ishga olish taxtasi",
+  "n": ""
+ },
+ "지원서 1장": {
+  "t": "Ariza, 1-sahifa",
+  "n": ""
+ },
+ "실기 과제지": {
+  "t": "amaliy imtihon",
+  "n": ""
+ },
+ "지도 본부": {
+  "t": "Nazoratli boʻlim",
+  "n": ""
+ },
+ "비지도 본부": {
+  "t": "Nazoratsiz boʻlim",
+  "n": ""
+ },
+ "입문팀": {
+  "t": "Boshlangʻich jamoa",
+  "n": ""
+ },
+ "회귀팀": {
+  "t": "Regressiya jamoasi",
+  "n": ""
+ },
+ "분류팀": {
+  "t": "Klassifikatsiya jamoasi",
+  "n": ""
+ },
+ "겸용팀": {
+  "t": "Ikki vazifali jamoa",
+  "n": ""
+ },
+ "군집팀": {
+  "t": "Klasterlash jamoasi",
+  "n": ""
+ },
+ "차원축소팀": {
+  "t": "Oʻlchamni kamaytirish jamoasi",
+  "n": ""
+ },
+ "면접": {
+  "t": "suhbat",
+  "n": ""
+ },
+ "채용 공고": {
+  "t": "Vakansiya eʼloni",
+  "n": ""
+ },
+ "수습 기간": {
+  "t": "sinov muddati",
+  "n": "metafora = oʻqitish"
+ },
+ "성과 평가": {
+  "t": "samaradorlikni baholash",
+  "n": "metafora = baholash"
+ },
+ "배치 조건": {
+  "t": "joriy etish shartlari",
+  "n": ""
+ },
+ "수습비": {
+  "t": "oʻqitish xarajati",
+  "n": ""
+ },
+ "연봉": {
+  "t": "maosh",
+  "n": "metafora = ishlatish xarajati"
+ },
+ "강도 3등급": {
+  "t": "uch mustahkamlik darajasi (past / oʻrta / yuqori)",
+  "n": "<25, 25–45, ≥45 MPa"
+ }
+}

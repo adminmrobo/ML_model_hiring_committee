@@ -1,0 +1,542 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-4 면접<span class="dept">지도 본부 › 분류팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-4 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 시그마 기호가 그려진 지원자 로지스틱 회귀의 사원증이 떠 있다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>로지스틱 회귀 — 이름은 회귀, 일은 분류</h1>
+        <p class="lede" style="margin-top:14px">0편에서 매뉴얼 씨는 "물-결합재비 0.5 미만이고 28일 이상 굳혔으면 합격"처럼 딱 잘라 답했다. 오늘의 지원자는 다르게 답한다. <b>"이 배합이 35MPa를 넘을 확률은 0.82입니다."</b></p>
+        <p class="lede">로지스틱 회귀는 특징에 가중치를 곱해 더한 <b>선형 점수</b>를 만들고, 그 점수를 <b>시그모이드</b>라는 S자 곡선에 넣어 0과 1 사이의 확률로 바꾼다. 확률이 정해 둔 <b>임계값</b>(보통 0.5)을 넘으면 그 클래스로 판정한다. 직선 하나로 일하지만, 확률로 답하기 때문에 "얼마나 확신하는지"까지 알려 준다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m4">04 수습 기간</a><span class="arr">→</span><a href="#iv4">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>σ(z)</b><span>점수를 확률로 바꾸는 시그모이드</span></div>
+            <div><b>0.5</b><span>기본 임계값. 넘으면 클래스 1</span></div>
+            <div><b>9</b><span>외울 숫자 (특징 8개의 가중치 + 절편 1)</span></div>
+            <div><b id="heroLine">87.5%</b><span>넘어야 할 합격선 (5-0 매뉴얼 씨)</span></div>
+          </div>
+          <p class="foot">실기 과제는 콘크리트 배합 1,030건이다. 시험지 258건은 05장까지 봉인한다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="front" data-move="pop" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>오늘은 분류팀 첫 지원자예요. 0편에서 매뉴얼 씨가 세운 합격선 76.7%를 넘는지 봅니다. 판정은 숫자가 하고, 저는 읽기만 해요.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="board" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>지원서 1장부터 넘겨 드릴게요. 칸을 누르면 그 내용을 자세히 다루는 장으로 갑니다.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="point" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>배합표 여덟 칸으로 합격을 점친다고? 처음 보는 배합에서도 되는지, 왜 그렇게 판단했는지 다 물어볼 거야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="calc" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>외울 숫자가 몇 개야? 싸고 빠르면 일단 마음에 들어. 레미콘 한 차 버리는 값이 얼만데.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">σ</span><div class="bub"><span class="who">지원자 · 로지스틱 회귀</span>안녕하십니까. 점수를 확률로 바꿔 답하는 로지스틱 회귀입니다. 이름에 "회귀"가 붙어 있지만 하는 일은 분류입니다.</div></div>
+    </div>
+    <div id="comicIntro" aria-label="장면: 점수, 시그모이드, 문턱"></div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-0_job_posting.html">5-0 채용 공고</a> — 규칙으로 하던 판단을 데이터로 만드는 까닭, 합격선 76.7%가 나온 곳</span>
+      <span><a href="5-1_knn.html">5-1 KNN</a> · <a href="5-2_linear_regression.html">5-2 선형 회귀</a> · <a href="5-3_polynomial_regularization.html">5-3 다항 회귀와 규제</a> — 같은 콘크리트로 강도(MPa)를 맞히는 회귀팀. 선형 점수와 규제 C의 뿌리</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-7_classification_eight.html" target="_blank" rel="noopener">패밀리 조직도 4-7 분류파 여덟</a></span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — 로지스틱 회귀를 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="로지스틱 회귀 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-4 · 지원서<br>지원자 번호 APP-04<br>지원 부서 지도 본부 › 분류팀</div>
+      <div class="sh-title">Logistic Regression<small>로지스틱 회귀 · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">σ</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m2">
+        <h3>1. 이진 분류 <small>Binary Classification</small></h3>
+        <p class="d">클래스 1일 확률을 추정하고, 임계값으로 0 또는 1을 판정한다.</p>
+        <svg viewBox="0 0 300 200" role="img" aria-label="두 무리의 점: 왼쪽 아래 검은 점(클래스 0), 오른쪽 위 파란 점(클래스 1), 그 사이를 비스듬한 파란 직선이 가른다">
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="ahb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <path d="M30,185 L30,12" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><path d="M30,185 L292,185" stroke="#111" stroke-width="2" marker-end="url(#ah)"/>
+          <text x="10" y="100" font-size="15" font-style="italic" font-family="serif">x₂</text><text x="160" y="199" font-size="15" font-style="italic" font-family="serif">x₁</text>
+          <g fill="#111"><circle cx="50" cy="85" r="5.5"/><circle cx="72" cy="100" r="5.5"/><circle cx="52" cy="125" r="5.5"/><circle cx="80" cy="128" r="5.5"/><circle cx="98" cy="112" r="5.5"/><circle cx="72" cy="152" r="5.5"/><circle cx="100" cy="150" r="5.5"/><circle cx="122" cy="136" r="5.5"/><circle cx="127" cy="162" r="5.5"/><circle cx="148" cy="152" r="5.5"/><circle cx="165" cy="168" r="5.5"/><circle cx="92" cy="172" r="5.5"/><circle cx="58" cy="168" r="5.5"/><circle cx="118" cy="108" r="5.5"/></g>
+          <g fill="#1f6fe5"><circle cx="112" cy="40" r="5.5"/><circle cx="137" cy="47" r="5.5"/><circle cx="162" cy="40" r="5.5"/><circle cx="152" cy="66" r="5.5"/><circle cx="178" cy="62" r="5.5"/><circle cx="200" cy="60" r="5.5"/><circle cx="186" cy="88" r="5.5"/><circle cx="212" cy="84" r="5.5"/><circle cx="232" cy="98" r="5.5"/><circle cx="206" cy="112" r="5.5"/><circle cx="242" cy="122" r="5.5"/><circle cx="258" cy="104" r="5.5"/><circle cx="226" cy="132" r="5.5"/></g>
+          <path d="M56,28 L250,176" stroke="#1f6fe5" stroke-width="3"/>
+          <rect x="204" y="4" width="92" height="44" rx="5" fill="#fff" stroke="#c7cfdd"/><circle cx="216" cy="17" r="5" fill="#111"/><text x="226" y="22" font-size="12.5">클래스 0</text><circle cx="216" cy="36" r="5" fill="#1f6fe5"/><text x="226" y="41" font-size="12.5">클래스 1</text>
+        </svg>
+        <span class="go">→ 02 실기 과제지</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>2. 선형 점수 <small>Linear Score</small></h3>
+        <p class="d">입력 특징에 가중치를 곱해 더한다(선형 결합).</p>
+        <svg viewBox="0 0 300 160" role="img" aria-label="입력 x1과 x2가 가중치 w1, w2를 달고 합 기호 시그마로 들어가고, 아래에서 절편 b가 더해져 점수 z가 나온다">
+          <circle cx="45" cy="38" r="20" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="45" y="44" text-anchor="middle" font-size="17" font-style="italic" font-family="serif">x₁</text>
+          <circle cx="45" cy="112" r="20" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="45" y="118" text-anchor="middle" font-size="17" font-style="italic" font-family="serif">x₂</text>
+          <circle cx="165" cy="75" r="30" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.5"/><text x="165" y="86" text-anchor="middle" font-size="30" font-family="serif">Σ</text>
+          <circle cx="165" cy="140" r="17" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="165" y="146" text-anchor="middle" font-size="16" font-style="italic" font-family="serif">b</text>
+          <path d="M65,44 L134,68" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/><path d="M65,106 L134,82" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/><path d="M165,123 L165,108" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/><path d="M196,75 L258,75" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+          <text x="96" y="44" font-size="14" font-style="italic" font-family="serif">w₁</text><text x="96" y="118" font-size="14" font-style="italic" font-family="serif">w₂</text><text x="268" y="81" font-size="18" font-style="italic" font-family="serif">z</text>
+        </svg>
+        <div class="fbox"><span class="mth">z = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + b</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>3. 시그모이드 함수 <small>Sigmoid Function</small></h3>
+        <p class="d">선형 점수 z를 시그모이드에 넣어 0~1 사이의 확률로 바꾼다.</p>
+        <div class="fbox"><span class="mth">σ(z) = <span class="frac"><span class="r">1</span><span>1 + e<sup>−z</sup></span></span></span></div>
+        <svg viewBox="0 0 300 180" role="img" aria-label="S자 시그모이드 곡선. z가 0일 때 0.5이고, z가 커지면 1에, 작아지면 0에 가까워진다">
+          <path d="M45,168 L45,14" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/><path d="M38,160 L292,160" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/>
+          <path d="M45,95 L290,95" stroke="#111" stroke-width="1" stroke-dasharray="5 4"/><path d="M165,160 L165,22" stroke="#111" stroke-width="1" stroke-dasharray="5 4"/>
+          <path d="M45.0,156.2 L49.0,155.7 L53.0,155.2 L57.0,154.7 L61.0,154.0 L65.0,153.3 L69.0,152.5 L73.0,151.7 L77.0,150.7 L81.0,149.7 L85.0,148.5 L89.0,147.2 L93.0,145.8 L97.0,144.3 L101.0,142.6 L105.0,140.8 L109.0,138.8 L113.0,136.6 L117.0,134.3 L121.0,131.8 L125.0,129.1 L129.0,126.3 L133.0,123.3 L137.0,120.2 L141.0,116.9 L145.0,113.4 L149.0,109.9 L153.0,106.3 L157.0,102.5 L161.0,98.8 L165.0,95.0 L169.0,91.2 L173.0,87.5 L177.0,83.7 L181.0,80.1 L185.0,76.6 L189.0,73.1 L193.0,69.8 L197.0,66.7 L201.0,63.7 L205.0,60.9 L209.0,58.2 L213.0,55.7 L217.0,53.4 L221.0,51.2 L225.0,49.2 L229.0,47.4 L233.0,45.7 L237.0,44.2 L241.0,42.8 L245.0,41.5 L249.0,40.3 L253.0,39.3 L257.0,38.3 L261.0,37.5 L265.0,36.7 L269.0,36.0 L273.0,35.3 L277.0,34.8 L281.0,34.3 L285.0,33.8" fill="none" stroke="#1f6fe5" stroke-width="3.5"/>
+          <g font-size="12.5" text-anchor="end"><text x="38" y="35">1</text><text x="38" y="99">0.5</text><text x="38" y="164">0</text></g>
+          <text x="48" y="12" font-size="13" font-style="italic" font-family="serif">σ(z)</text>
+          <g font-size="12" text-anchor="middle"><text x="62" y="176">−3</text><text x="96" y="176">−2</text><text x="131" y="176">−1</text><text x="165" y="176">0</text><text x="199" y="176">1</text><text x="234" y="176">2</text><text x="268" y="176">3</text></g>
+          <text x="294" y="176" font-size="13" font-style="italic" font-family="serif" text-anchor="end">z</text>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>4. 확률 예측 <small>Probability Prediction</small></h3>
+        <p class="d">시그모이드의 출력이 곧 클래스 1일 확률 P(y=1 | x)다.</p>
+        <svg viewBox="0 0 300 92" role="img" aria-label="점수 z가 시그모이드 상자를 지나 확률 0.82가 된다">
+          <text x="10" y="58" font-size="17" font-style="italic" font-family="serif">z</text><path d="M24,52 L62,52" stroke="#1f6fe5" stroke-width="2.5" marker-end="url(#ahb)"/>
+          <rect x="66" y="24" width="96" height="56" rx="9" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="114" y="47" text-anchor="middle" font-size="14">시그모이드</text><text x="114" y="68" text-anchor="middle" font-size="14" font-style="italic" font-family="serif">σ(z)</text>
+          <path d="M162,52 L196,52" stroke="#1f6fe5" stroke-width="2.5" marker-end="url(#ahb)"/>
+          <rect x="200" y="30" width="86" height="44" rx="9" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="243" y="58" text-anchor="middle" font-size="17">0.82</text>
+          <text x="243" y="18" text-anchor="middle" font-size="13" font-style="italic" font-family="serif">P(y = 1 | x)</text>
+        </svg>
+        <div class="fbox"><span class="mth">P(y=1 | x) = σ(z) = <span class="frac"><span class="r">1</span><span>1 + e<sup>−z</sup></span></span></span><br><span class="mth">P(y=0 | x) = 1 − P(y=1 | x)</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>5. 결정 경계 <small>Decision Boundary</small></h3>
+        <p class="d">특징 공간에서 직선(평면) 하나가 두 클래스를 가른다. z = 0인 곳이다.</p>
+        <svg viewBox="0 0 300 200" role="img" aria-label="두 무리의 점 사이를 가르는 직선에 '결정 경계'라는 화살표 이름표가 붙어 있다">
+          <path d="M30,185 L30,12" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><path d="M30,185 L292,185" stroke="#111" stroke-width="2" marker-end="url(#ah)"/>
+          <text x="10" y="100" font-size="15" font-style="italic" font-family="serif">x₂</text><text x="160" y="199" font-size="15" font-style="italic" font-family="serif">x₁</text>
+          <g fill="#111"><circle cx="52" cy="70" r="5.5"/><circle cx="70" cy="92" r="5.5"/><circle cx="50" cy="112" r="5.5"/><circle cx="78" cy="122" r="5.5"/><circle cx="96" cy="106" r="5.5"/><circle cx="68" cy="148" r="5.5"/><circle cx="98" cy="146" r="5.5"/><circle cx="118" cy="132" r="5.5"/><circle cx="124" cy="160" r="5.5"/><circle cx="146" cy="150" r="5.5"/><circle cx="88" cy="170" r="5.5"/><circle cx="56" cy="170" r="5.5"/></g>
+          <g fill="#1f6fe5"><circle cx="122" cy="32" r="5.5"/><circle cx="146" cy="30" r="5.5"/><circle cx="134" cy="52" r="5.5"/><circle cx="160" cy="50" r="5.5"/><circle cx="182" cy="44" r="5.5"/><circle cx="170" cy="72" r="5.5"/><circle cx="196" cy="68" r="5.5"/><circle cx="214" cy="56" r="5.5"/><circle cx="190" cy="92" r="5.5"/><circle cx="216" cy="88" r="5.5"/><circle cx="238" cy="78" r="5.5"/><circle cx="210" cy="112" r="5.5"/></g>
+          <path d="M84,16 L216,180" stroke="#1f6fe5" stroke-width="3"/>
+          <rect x="204" y="4" width="92" height="44" rx="5" fill="#fff" stroke="#c7cfdd"/><circle cx="216" cy="17" r="5" fill="#111"/><text x="226" y="22" font-size="12.5">클래스 0</text><circle cx="216" cy="36" r="5" fill="#1f6fe5"/><text x="226" y="41" font-size="12.5">클래스 1</text>
+          <text x="236" y="140" font-size="13">결정</text><text x="236" y="156" font-size="13">경계</text><path d="M232,148 L200,160" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+        </svg>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>6. 임계값 <small>Threshold</small></h3>
+        <p class="d">확률을 임계값(보통 0.5)에 대어 클래스 이름표로 바꾼다.</p>
+        <svg viewBox="0 0 300 116" role="img" aria-label="0부터 1까지의 수직선 가운데 0.5에 점이 있고, 왼쪽은 클래스 0 예측, 오른쪽은 클래스 1 예측 화살표다">
+          <text x="80" y="18" text-anchor="middle" font-size="14" font-weight="700">클래스 0 예측</text><text x="222" y="18" text-anchor="middle" font-size="14" font-weight="700">클래스 1 예측</text>
+          <path d="M138,34 L40,34" stroke="#7fb0f5" stroke-width="7"/><path d="M26,34 L44,24 L44,44 z" fill="#7fb0f5"/><path d="M162,34 L262,34" stroke="#1f6fe5" stroke-width="7"/><path d="M276,34 L258,24 L258,44 z" fill="#1f6fe5"/>
+          <path d="M22,70 L150,70" stroke="#7fb0f5" stroke-width="3"/><path d="M150,70 L278,70" stroke="#111" stroke-width="3"/>
+          <path d="M22,60 L22,80 M278,60 L278,80" stroke="#111" stroke-width="2.5"/>
+          <circle cx="150" cy="70" r="9" fill="#1f6fe5" stroke="#111" stroke-width="2"/>
+          <g font-size="15" text-anchor="middle" font-weight="700"><text x="22" y="102">0</text><text x="150" y="102">0.5</text><text x="278" y="102">1</text></g>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">P(y=1 | x) &lt; 0.5 → 클래스 0으로 판정<br>P(y=1 | x) ≥ 0.5 → 클래스 1로 판정</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>7. 손실 함수 <small>Loss Function</small></h3>
+        <p class="d">이진 교차 엔트로피 손실을 가장 작게 만드는 쪽으로 배운다.</p>
+        <div class="fbox"><span class="mth">L = −[ y log(p) + (1−y) log(1−p) ]</span><br><span style="font-size:13.5px">여기서 <span class="mth">p = P(y=1 | x)</span></span></div>
+        <div class="twin">
+          <div><b>y = 1일 때</b><br><svg class="dot" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#1f6fe5"/></svg><br><span class="mth">L = −log(p)</span><br>p가 낮으면 큰 벌점</div>
+          <div><b>y = 0일 때</b><br><svg class="dot" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#111"/></svg><br><span class="mth">L = −log(1−p)</span><br>p가 높으면 큰 벌점</div>
+        </div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>8. 학습 <small>Training</small></h3>
+        <p class="d">훈련 데이터에서 손실을 줄이도록 가중치 w와 절편 b를 고친다.</p>
+        <svg viewBox="0 0 300 236" role="img" aria-label="훈련 데이터에서 출발해 z 계산, 시그모이드, 손실 계산, 가중치 업데이트를 차례로 지나고, 수렴할 때까지 처음으로 되돌아가는 순환 흐름도">
+          <rect x="96" y="4" width="128" height="42" rx="7" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="160" y="21" text-anchor="middle" font-size="13">훈련 데이터</text><text x="148" y="39" text-anchor="middle" font-size="13" font-style="italic" font-family="serif">(X, y)</text><circle cx="190" cy="34" r="4.5" fill="#1f6fe5"/><circle cx="203" cy="34" r="4.5" fill="#1f6fe5"/>
+          <path d="M160,46 L160,58" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+          <g font-size="13" text-anchor="middle"><rect x="84" y="62" width="168" height="30" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="168" y="82">z = wᵀx + b 계산</text>
+          <path d="M168,92 L168,102" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+          <rect x="84" y="106" width="168" height="30" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="168" y="126">시그모이드 σ(z) 적용</text>
+          <path d="M168,136 L168,146" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+          <rect x="84" y="150" width="168" height="30" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="168" y="170">손실 L 계산</text>
+          <path d="M168,180 L168,190" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+          <rect x="84" y="194" width="168" height="30" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="168" y="214">가중치 (w, b) 업데이트</text></g>
+          <path d="M84,209 C56,209 52,77 80,77" fill="none" stroke="#1f6fe5" stroke-width="2.5" marker-end="url(#ahb)"/>
+          <g font-size="11.5" text-anchor="middle"><text x="22" y="132">수렴할</text><text x="22" y="146">때까지</text><text x="22" y="160">반복</text></g>
+        </svg>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>9. 다중 분류 <small>Multiclass Classification</small></h3>
+        <p class="d">소프트맥스 함수로 클래스가 여러 개인 문제로 넓힌다(다항 로지스틱 회귀).</p>
+        <svg viewBox="0 0 300 172" role="img" aria-label="입력 x1부터 xn이 선형 점수 상자 z = Wx + b로 모이고, 소프트맥스 상자를 지나 클래스별 확률 P(y=1|x), P(y=2|x), P(y=3|x)가 된다">
+          <g font-size="13" font-style="italic" font-family="serif" text-anchor="middle">
+          <circle cx="20" cy="26" r="15" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="20" y="31">x₁</text>
+          <circle cx="20" cy="70" r="15" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="20" y="75">x₂</text>
+          <text x="20" y="104" font-style="normal">⋮</text>
+          <circle cx="20" cy="140" r="15" fill="#fff" stroke="#111" stroke-width="1.5"/><text x="20" y="145">xₙ</text></g>
+          <path d="M35,28 L72,66 M35,70 L72,76 M35,138 L72,90" stroke="#1f6fe5" stroke-width="1.8"/>
+          <rect x="74" y="40" width="72" height="78" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <text x="110" y="62" text-anchor="middle" font-size="12.5">선형</text><text x="110" y="78" text-anchor="middle" font-size="12.5">점수</text><text x="110" y="104" text-anchor="middle" font-size="11.5" font-style="italic" font-family="serif">z = Wx + b</text>
+          <path d="M146,79 L156,79" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+          <rect x="158" y="26" width="76" height="106" rx="7" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <text x="196" y="46" text-anchor="middle" font-size="12.5">소프트맥스</text>
+          <text x="196" y="72" text-anchor="middle" font-size="11" font-style="italic" font-family="serif">P(y=k | x) =</text>
+          <text x="196" y="94" text-anchor="middle" font-size="12" font-style="italic" font-family="serif">e^zₖ</text><path d="M172,100 L220,100" stroke="#111"/><text x="196" y="118" text-anchor="middle" font-size="11" font-style="italic" font-family="serif">Σⱼ e^zⱼ</text>
+          <path d="M234,79 L244,79" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+          <text x="272" y="12" text-anchor="middle" font-size="10.5">클래스 확률</text>
+          <g font-size="10.5" font-style="italic" font-family="serif" text-anchor="middle"><rect x="246" y="20" width="52" height="24" rx="4" fill="#e6f0fe" stroke="#1f6fe5"/><text x="272" y="36">P(y=1|x)</text>
+          <rect x="246" y="52" width="52" height="24" rx="4" fill="#e6f0fe" stroke="#1f6fe5"/><text x="272" y="68">P(y=2|x)</text>
+          <rect x="246" y="84" width="52" height="24" rx="4" fill="#e6f0fe" stroke="#1f6fe5"/><text x="272" y="100">P(y=3|x)</text><text x="272" y="128" font-style="normal">⋮</text></g>
+        </svg>
+        <div class="note">소프트맥스는 점수를 K개 클래스의 확률(합 1)로 바꾸고, 가장 큰 확률의 클래스를 고른다.</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "무슨 일을 하나", 2~4번이 "어떻게 답하나", 5~6번이 "답을 이름표로 바꾸는 법", 7~8번이 "어떻게 배우나", 9번이 "클래스가 여럿이면"이다. 이 면접은 이 순서를 그대로 따라 01장(2~4번) → 02장(1번) → 04장(5·7·8번) → 05장(6·9번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 점수를 확률로 바꾸는 직원</h2>
+    <p class="lin">선형 점수 z → 시그모이드 σ(z) → 확률 → 임계값</p>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">σ</span><div class="bub"><span class="who">지원자 · 로지스틱 회귀</span>저는 두 단계로 일합니다. 먼저 특징마다 가중치를 곱해 더한 점수를 냅니다. 그다음 그 점수를 S자 곡선에 넣어 확률로 바꿉니다. 확률이 0.5를 넘으면 "35MPa 합격입니다"라고 답합니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 물-결합재비 하나로 합격 확률을 (훈련 배합 772건)</span>
+    <div class="cwrap"><canvas class="fig" id="sigCv" aria-label="가로축은 물-결합재비. 위쪽 줄에 35MPa 합격 배합, 아래쪽 줄에 불합격 배합이 점으로 찍혀 있고, 그 위로 '합격 확률'을 나타내는 S자 곡선이 그려진다. 물-결합재비가 클수록 확률이 내려간다. 슬라이더로 곡선의 위치와 가파름을 바꾼다"></canvas></div>
+    <div class="ctrls">
+      <label>경계 물-결합재비 (확률 0.5인 곳) <input type="range" id="sgMid" min="0.25" max="0.85" step="0.01" value="0.65"><output id="sgMidO">0.65</output></label>
+      <label>가파름 w <input type="range" id="sgW" min="1" max="40" step="0.5" value="6"><output id="sgWO">6.0</output></label>
+    </div>
+    <div class="ctrls">
+      <button class="btn blue" id="sgFit">학습으로 찾기 ▶</button>
+      <button class="btn" id="sgLin" aria-pressed="false">선형 회귀로 했다면?</button>
+      <button class="btn" id="sgReset">처음으로</button>
+    </div>
+    <div class="caption" id="sigInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>점수 z는 무엇인가</h4>
+      <p>z = w·x + b는 5-2 선형 회귀가 만드는 식과 똑같다. 다른 점은 이 숫자를 답으로 내지 않는다는 것이다. z는 −∞부터 +∞까지 어디든 갈 수 있는 "합격 쪽 증거의 크기"다. 0이면 반반, 클수록 합격 쪽, 작을수록 불합격 쪽이다. 물-결합재비는 클수록 약해지므로 가중치 w가 음수다.</p>
+      <div class="eq">z = <b>w</b>·(물-결합재비) + <b>b</b> &nbsp;(w &lt; 0)&nbsp;→&nbsp; p = σ(z) = 1 / (1 + e<sup>−z</sup>)</div>
+    </div>
+    <div class="explain">
+      <h4>이름은 왜 "회귀"인가</h4>
+      <p>확률 p를 오즈 p/(1−p)로 바꾸고 로그를 씌우면 다시 z가 된다. 즉 로지스틱 회귀는 <b>로그 오즈를 직선으로 회귀</b>하는 모델이다. 이 로그 오즈를 로짓(logit)이라 부르고, 그 역함수가 시그모이드(로지스틱 함수)다. 회귀하는 대상은 확률의 로그 오즈이고, 그 결과로 하는 일은 분류다.</p>
+      <div class="eq">log( p / (1 − p) ) = z = w·x + b</div>
+    </div>
+  </div>
+  <div class="explain">
+    <h4>점이 왜 겹치나</h4>
+    <p>위아래 두 줄의 점이 꽤 겹친다. 물-결합재비가 같아도 7일 굳힌 시편과 90일 굳힌 시편은 강도가 다르다. 특징 하나로는 위아래 줄이 겹치는 것이 당연하고, 그래서 답이 0/1이 아니라 <b>확률</b>이어야 한다. 04장에서 재령을 두 번째 특징으로 더하면 겹침이 크게 준다.</p>
+  </div>
+  <div class="explain">
+    <h4>선형 회귀로 분류하면 안 되는 까닭</h4>
+    <p style="margin:0">위 그림의 "선형 회귀로 했다면?"을 눌러 보자. 합격을 1, 불합격을 0으로 두고 직선을 맞추면, 물-결합재비가 아주 낮은 배합에게는 1보다 큰 값, 아주 높은 배합에게는 0보다 작은 값을 낸다. 확률로 읽을 수 없다. 게다가 극단적인 배합 몇 개가 들어오면 직선이 그쪽으로 끌려가 0.5가 되는 지점이 엉뚱하게 움직인다. 시그모이드는 끝을 0과 1에 묶어 두기 때문에 이런 일이 없다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 콘크리트 배합 1,030건, 특징 8개</h2>
+    <p class="lin">한 줄이 배합 하나(샘플), 배합량과 재령이 특징(X), 압축 강도에서 만든 이름표가 타겟(y)이다</p>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 A · 이진 분류 (본시험)</span>
+      <h3>35MPa 합격 여부</h3>
+      <p style="margin:6px 0 0;font-size:15px">압축 강도가 35MPa 이상이면 합격(1), 아니면 불합격(0). 훈련 772건 중 48.8%가 합격이다. 매뉴얼 씨가 작업 표준서 한 줄로 시험지 <b>76.7%</b>를 맞힌 과제다(지원서 1~8번 칸).</p>
+    </div>
+    <div class="card">
+      <span class="tag">과제 B · 다중 분류 (추가 과제)</span>
+      <h3>강도 3등급</h3>
+      <p style="margin:6px 0 0;font-size:15px">저강도(25MPa 미만) · 보통 강도(25~45) · 고강도(45 이상). 시험지에는 74 · 116 · 68건이다. 소프트맥스로 세 등급의 확률을 낸다(지원서 9번 칸).</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 축을 골라 보기 (색 = 강도 등급, 속이 빈 점 = 봉인된 시험지)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <label>가로축 <select id="dxSel" class="btn"></select></label>
+      <label>세로축 <select id="dySel" class="btn"></select></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="dataCv" aria-label="콘크리트 배합 1,030건의 산점도. 고른 두 특징을 가로·세로축으로 하고, 강도 등급마다 색이 다르다. 시험지 258건은 속이 빈 점으로 표시된다"></canvas></div>
+    <div class="legend" id="dataLeg"></div>
+  </div>
+  <div class="card">
+    <span class="tag">표 · 실기 과제지 전체 (1,030줄)</span>
+    <div class="datatb" id="concTbl" tabindex="0" aria-label="콘크리트 데이터 표"></div>
+    <p class="foot">파란 머리글이 특징(X), 빨간 열이 타겟(y)이다. 압축 강도(MPa) 자체는 회귀팀(5-1~5-3)의 타겟이고, 이 면접에서는 그것을 문턱에 대어 만든 이름표를 쓴다. "봉인" 표시가 붙은 258줄은 05장에서 한 번만 연다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>왜 표준화하나</h4>
+      <p>굵은 골재는 1,000kg 가까이, 고성능 감수제는 몇 kg, 재령은 1~365일이다. 그대로 넣으면 숫자가 큰 특징이 점수 z를 좌우하고, 규제(C)는 큰 가중치에 벌점을 주므로 단위에 따라 벌점이 달라진다. 그래서 특징마다 평균을 빼고 표준편차로 나눈다. 평균과 표준편차는 <b>훈련 데이터로만</b> 구한다. 시험지까지 섞어 구하면 시험 내용을 미리 엿본 셈이 된다.</p>
+      <div class="tw"><table class="tb" id="stdTbl" style="font-size:13.5px"></table></div>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>표 형식(CSV 등)으로, 한 줄에 배합(또는 로트) 하나, 품질 결과 열 하나가 있으면 된다.</li>
+        <li>Colab 코드(A장) 1번 칸의 데이터 읽기, <code>FEATURES</code>, <code>PASS_MPA</code> 세 곳만 바꾼다.</li>
+        <li>합격 기준은 내 업무의 기준으로 바꾼다. 35MPa와 등급 문턱(25·45MPa)은 이 시리즈가 수업용으로 정한 값이다.</li>
+        <li>글자로 된 특징(공장, 원자재 등급)은 원-핫 인코딩으로 숫자 열로 바꾼다. 빈칸은 먼저 채우거나 지운다.</li>
+        <li>합격·불합격 비율을 먼저 센다. 불합격이 몇 %뿐이면 정확도 대신 재현율·정밀도를 본다(05장).</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 실행 결과로 확인</p>
+  </div>
+  <p>코드를 처음부터 외워 쓸 필요는 없다. 생성형 AI에게 상황을 정확히 알려 주면 Colab에서 바로 돌아가는 코드를 받을 수 있다. 다만 AI는 그럴듯하지만 틀린 코드를 자신 있게 내놓기도 한다. 위원회 규정은 하나다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다. 데이터를 받으면 열 이름만 고치면 된다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, 기본 라이브러리) ② 데이터(주소, 열 이름, 타겟, 클래스 수) ③ 규정(나누기·표준화·난수) ④ 출력(무엇을 출력할지) ⑤ 금지(테스트 데이터로 학습 금지, 설명 주석은 한국어)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"로지스틱 회귀 코드 짜 줘." — AI가 데이터를 지어내거나(iris를 씀), 나누기 없이 훈련 데이터로 평가하거나, 내 버전에서 돌지 않는 인자를 쓸 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 코드도 버전에 따라 다르게 돈다</h4>
+    <p>scikit-learn 1.8부터 <code>LogisticRegression</code>의 <code>penalty</code> 인자는 사라지는 중(1.10에서 삭제 예정)이고, 규제 종류는 <code>l1_ratio</code>로 정한다(0 = L2, 1 = L1, 그 사이 = Elastic Net, 규제 없음은 <code>C=np.inf</code>). <code>multi_class</code> 인자는 1.5에서 예고된 뒤 없어졌고, 클래스가 셋 이상이면 소프트맥스(다항)로 자동 학습한다. AI는 예전 버전의 코드를 많이 보고 배웠기 때문에 옛 인자를 쓰는 일이 잦다. 첫 줄에서 <code>print(sklearn.__version__)</code>로 버전을 찍고, 경고(FutureWarning)를 무시하지 않는다.</p>
+    <p style="margin:0">A장의 Colab 코드는 이 점을 반영해 버전에 따라 L1 규제를 다르게 부른다. 실행 결과도 함께 실었다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Training</div>
+    <h2>수습 기간 — 경사 하강으로 경계를 옮긴다</h2>
+    <p class="lin">z 계산 → 시그모이드 → 손실 → 가중치 업데이트, 손실이 더 줄지 않을 때까지 반복</p>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 · 특징 2개로 35MPa 합격을 가르는 수습 (훈련 배합 772건)</span>
+    <div class="ctrls" style="margin:0 0 10px">
+      <div class="choice" role="group" aria-label="과제 고르기"><button data-v="expert" aria-pressed="true">전문가 특징: 물-결합재비 · 재령</button><button data-v="raw" aria-pressed="false">날것 특징: 시멘트 · 물</button></div>
+    </div>
+    <div class="two" style="gap:12px">
+      <div><div class="cwrap"><canvas class="fig" id="trainCv" aria-label="고른 두 특징의 산점도. 배경색은 합격(클래스 1) 확률이고, 파란 선이 결정 경계(확률 0.5)다. 점의 테두리가 굵을수록 그 배합의 손실이 크다"></canvas></div></div>
+      <div><div class="cwrap"><canvas class="fig" id="lossCv" aria-label="가로축 반복 횟수, 세로축 평균 손실의 선 그래프. 학습이 진행되면 손실이 줄어든다"></canvas></div>
+        <div class="stepchips" id="loopChips" aria-label="한 걸음의 네 단계"><button data-s="0">① z = w·x + b</button><button data-s="1">② p = σ(z)</button><button data-s="2">③ 손실 L</button><button data-s="3">④ w, b 업데이트</button></div></div>
+    </div>
+    <div class="ctrls">
+      <button class="btn blue" id="trPlay">▶ 재생</button><button class="btn" id="trStep">한 걸음</button><button class="btn" id="trReset">처음으로</button>
+      <label>학습률 η <input type="range" id="trLr" min="-2" max="0.6" step="0.1" value="-0.3"><output id="trLrO">0.50</output></label>
+      <label>규제 C <select id="trC" class="btn"><option value="0.1">0.1 (세게)</option><option value="1" selected>1 (기본값)</option><option value="100">100 (약하게)</option><option value="inf">없음 (∞)</option></select></label>
+    </div>
+    <div class="caption" id="trainInfo" aria-live="polite"></div>
+    <p class="foot">점을 누르면 그 배합 하나의 확률과 손실을 본다(지원서 7번 칸). 재령은 1~365일로 퍼져 있어 로그 눈금으로 그렸고, 모델에도 log(재령)을 넣었다. 두 버튼을 오가며 "같은 지원자, 다른 특징"의 차이를 보자. 전문가 특징은 0편 매뉴얼 씨가 쓰던 바로 그 두 숫자다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>한 걸음에 일어나는 일</h4>
+      <p>모든 훈련 배합에 대해 ① 점수 z를 내고 ② 확률 p로 바꾸고 ③ 정답 y와 비교해 손실을 잰다. ④ 그다음 손실이 줄어드는 방향으로 가중치를 조금 옮긴다. 로지스틱 회귀의 기울기는 놀랄 만큼 단순하다. 배합마다 "틀린 만큼(p − y)"에 특징 x를 곱해 평균 낸 것이다.</p>
+      <div class="eq">w ← w − <i>η</i> · 평균[ (p − y) · x ] − <i>η</i>·(규제 몫)<br>b ← b − <i>η</i> · 평균[ (p − y) ]</div>
+    </div>
+    <div class="explain">
+      <h4>왜 교차 엔트로피인가</h4>
+      <p>정답이 합격(y=1)인데 p=0.99라고 하면 손실은 −log 0.99 ≈ 0.01, p=0.01이라고 하면 −log 0.01 ≈ 4.6이다. <b>확신하고 틀리면 크게</b> 벌한다. 오차 제곱을 쓰면 시그모이드와 만나 손실 곡면이 울퉁불퉁해지지만, 교차 엔트로피는 볼록해서 경사 하강이 늘 같은 바닥에 닿는다.</p>
+      <p style="margin:0;font-size:14px" class="muted">scikit-learn은 같은 손실을 경사 하강 대신 더 빠른 방법(lbfgs 등)으로 푼다. 도착하는 바닥은 같다.</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="count" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>수습비는 싸네. 한 걸음에 곱하기 몇 번, 다 외워도 숫자 세 개(w₁, w₂, b)야. 특징 여덟 개를 다 써도 아홉 개면 끝이고.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Evaluation</div>
+    <h2>성과 평가 — 봉인된 시험지를 연다</h2>
+    <p class="lin">정확도 하나로 끝내지 않는다. 혼동행렬, 틀림의 종류, 임계값, 등급별 재현율, 규제까지 본다</p>
+  </div>
+  <div class="card">
+    <span class="tag">과제 A · 35MPa 합격 여부, 시험지 258건 (특징 8개, 브라우저에서 C = 1로 학습)</span>
+    <div id="evalStat"><p class="muted">계산 중…</p></div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">혼동행렬 · 행 = 정답, 열 = 예측 (임계값 0.5)</span>
+      <div class="tw"><div id="cm7"></div></div>
+      <p class="foot">대각선이 맞힌 수다. 대각선 밖의 빨간 칸이 틀린 곳이다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">이름표별 성적 · 정밀도 / 재현율</span>
+      <div class="tw"><table class="tb" id="prTbl" style="font-size:13.5px"></table></div>
+      <p class="foot">정밀도: "합격"이라고 한 것 중 실제 합격 비율. 재현율: 실제 합격 중 찾아낸 비율.</p>
+    </div>
+  </div>
+  <div class="explain" style="border-left-color:var(--stamp)">
+    <h4>두 가지 틀림은 값이 다르다</h4>
+    <p id="hiddenTxt" style="margin:0">계산 중…</p>
+  </div>
+  <div class="card">
+    <span class="tag">과제 B · 강도 3등급 (소프트맥스) — 혼동행렬과 배합 하나의 등급별 확률</span>
+    <div class="two" style="gap:12px"><div><div class="tw"><div id="cm3"></div></div><div id="g3Stat" style="margin-top:10px"></div></div><div><div class="ctrls" style="margin:0 0 8px"><label style="min-width:0;max-width:100%">시험 배합 <select id="mixPick" class="btn" style="max-width:100%;min-width:0;width:100%"></select></label></div><div class="bars" id="probBars"></div></div></div>
+  </div>
+  <div class="card">
+    <span class="tag">임계값 실험 · 과제 A 모델 그대로, 시험지 258건</span>
+    <div class="ctrls" style="margin:0 0 8px"><label>임계값 <input type="range" id="thR" min="0.05" max="0.95" step="0.01" value="0.5"><output id="thO">0.50</output></label><span class="muted" style="font-size:13.5px">P(합격) ≥ 임계값이면 "합격"으로 출하</span></div>
+    <div class="two" style="gap:12px">
+      <div><div id="th2x2"></div><div id="thStat" style="margin-top:10px"></div></div>
+      <div><div class="cwrap"><canvas class="fig" id="rocCv" aria-label="ROC 곡선. 가로축 거짓 양성 비율(불합격 배합을 합격이라 한 비율), 세로축 재현율(합격 배합을 합격이라 한 비율). 지금 임계값의 위치가 점으로 표시된다"></canvas></div></div>
+    </div>
+    <div class="caption" id="thInfo" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <span class="tag">규제 손잡이 C · 값을 고르면 브라우저가 다시 학습한다</span>
+    <div class="choice" role="group" aria-label="C 고르기" id="cChoice"></div>
+    <div class="cwrap" style="margin-top:10px"><canvas class="fig" id="cCv" aria-label="가로축 C(로그 눈금), 세로축 정확도. 훈련 정확도와 시험 정확도 두 선과 합격선. C가 아주 작으면 둘 다 떨어지고, 0.1을 넘으면 거의 평평하다"></canvas></div>
+    <div class="caption" id="cInfo" aria-live="polite">C를 하나씩 눌러 점을 채워 보세요.</div>
+  </div>
+
+  <div class="interview" id="iv4"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 맞는 일과 안 맞는 일, 근무 조건(하이퍼파라미터)</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym">σ</span><span class="no">APP-04 → EMP-0004</span><span class="nm">로지스틱 회귀</span><span class="rl">지도 본부 › 분류팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">확률로 답하는 직선.</b> 단순하고 빠르고 설명할 수 있다. 경계가 직선이라는 한계는 특징을 잘 만들어 주면 상당 부분 넘는다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>확률로 답한다.</b> 임계값을 업무에 맞게 옮길 수 있다(05장).</li>
+          <li><b>설명할 수 있다.</b> 가중치의 부호와 크기가 곧 "어느 특징이 어느 쪽으로 미나"다(아래 그림).</li>
+          <li><b>가볍다.</b> 외울 숫자가 특징 수 + 1개(다중 분류면 × 클래스 수)뿐이다. 학습·예측이 빠르다.</li>
+          <li><b>기준선으로 좋다.</b> 복잡한 모델을 쓰기 전에 먼저 돌려 볼 첫 지원자다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>경계가 직선(평면)이다.</b> 동심원처럼 굽은 경계는 특징을 바꿔 주지 않으면 못 긋는다.</li>
+          <li><b>특징끼리의 상호작용</b>(길이 × 높이 같은)을 스스로 만들지 못한다. 사람이 만들어 넣어야 한다.</li>
+          <li><b>단위에 민감하다.</b> 표준화가 거의 필수다.</li>
+          <li><b>곡선 관계를 못 따라간다.</b> 강도는 재령에 따라 처음엔 빨리, 나중엔 천천히 오른다. log(재령) 같은 특징을 사람이 만들어 줘야 한다(04장).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">설명할 수 있는 직원 · 과제 A 모델의 가중치 (표준화한 특징 기준). 등급을 고르면 과제 B의 그 등급 가중치</span>
+    <div class="choice" role="group" aria-label="종 고르기" id="wChoice"></div>
+    <div class="bars" id="wBars" style="margin-top:12px"></div>
+    <div class="caption" id="wInfo" aria-live="polite"></div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn LogisticRegression)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>C</code></td><td>1.0</td><td>규제 세기의 <b>역수</b>. 작을수록 규제가 세다(가중치를 작게 누른다). 5-3 릿지의 <code>alpha</code>와 방향이 반대다. 이 데이터에서는 0.1 이상이면 결과가 거의 같았다(05장).</td></tr>
+        <tr><td><code>l1_ratio</code> (1.8+)<br><code>penalty</code> (1.7 이하)</td><td>0 (L2)</td><td>규제 종류. 0 = L2(릿지와 같은 벌점, 기본), 1 = L1(라쏘와 같은 벌점, 쓸모없는 가중치를 0으로), 사이 값 = Elastic Net. L1을 쓰려면 <code>solver="saga"</code>나 <code>"liblinear"</code>가 필요하다.</td></tr>
+        <tr><td><code>solver</code></td><td>"lbfgs"</td><td>손실의 바닥을 찾는 방법. 대부분 기본값으로 충분하다. 데이터가 아주 크면 "saga".</td></tr>
+        <tr><td><code>max_iter</code></td><td>100</td><td>반복 횟수 상한. "수렴하지 않았다(ConvergenceWarning)"가 뜨면 늘리고, 표준화를 했는지 먼저 확인한다.</td></tr>
+        <tr><td><code>class_weight</code></td><td>None</td><td>"balanced"로 두면 수가 적은 클래스의 손실에 더 큰 무게를 준다. 불합격이 몇 %뿐인 공정 데이터에서 불합격을 놓칠 때 쓴다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">C와 alpha — 같은 손잡이, 반대 눈금</span>
+      <svg viewBox="0 0 420 150" style="width:100%;height:auto" role="img" aria-label="두 개의 화살표. 위 화살표는 릿지의 alpha로 오른쪽으로 갈수록 규제가 세다. 아래 화살표는 로지스틱 회귀의 C로 오른쪽으로 갈수록 규제가 약하다">
+        <g font-family="IBM Plex Sans KR, sans-serif" font-size="14">
+        <text x="10" y="24" fill="currentColor" font-weight="700">릿지 · alpha</text>
+        <defs><linearGradient id="gA" x1="0" x2="1"><stop offset="0" stop-color="#9cc0f7"/><stop offset="1" stop-color="#c0392b"/></linearGradient><linearGradient id="gC" x1="0" x2="1"><stop offset="0" stop-color="#c0392b"/><stop offset="1" stop-color="#9cc0f7"/></linearGradient></defs>
+        <rect x="10" y="34" width="380" height="14" rx="7" fill="url(#gA)"/><path d="M390,41 l14,0" stroke="#c0392b" stroke-width="3"/><path d="M404,34 l12,7 l-12,7z" fill="#c0392b"/>
+        <text x="10" y="66" fill="currentColor" font-size="12.5">작게 = 규제 약함</text><text x="390" y="66" fill="currentColor" font-size="12.5" text-anchor="end">크게 = 규제 셈</text>
+        <text x="10" y="96" fill="currentColor" font-weight="700">로지스틱 회귀 · SVM · C</text>
+        <rect x="10" y="106" width="380" height="14" rx="7" fill="url(#gC)"/><path d="M390,113 l14,0" stroke="#9cc0f7" stroke-width="3"/><path d="M404,106 l12,7 l-12,7z" fill="#9cc0f7"/>
+        <text x="10" y="138" fill="currentColor" font-size="12.5">작게 = 규제 셈</text><text x="390" y="138" fill="currentColor" font-size="12.5" text-anchor="end">크게 = 규제 약함</text></g>
+      </svg>
+      <p class="foot">C ≈ 1 / alpha로 기억한다. 빨간 쪽이 "가중치를 세게 누른다"다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">맞는 일 · 안 맞는 일</span>
+      <table class="tb" style="font-size:14px"><tbody>
+        <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>확률이 필요한 판정(합격 확률, 불량 확률), 이유를 설명해야 하는 판정(품질 보고서, 고객 클레임 대응), 전문가가 좋은 특징(물-결합재비 등)을 알려 줄 수 있는 표 데이터, 빠른 첫 기준선</td></tr>
+        <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>경계가 심하게 굽은 데이터(동심원, 초승달), 픽셀 그대로의 이미지(→ 딥러닝 시리즈), 특징 사이 상호작용이 핵심인데 사람이 만들기 어려운 문제</td></tr>
+        <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td><code>RidgeClassifier</code>는 정답을 −1/+1로 바꿔 릿지 회귀로 푸는 다른 지원자다. 빠르지만 확률을 내지 않는다.</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

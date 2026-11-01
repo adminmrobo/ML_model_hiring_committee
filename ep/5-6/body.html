@@ -1,0 +1,565 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-6 면접<span class="dept">지도 본부 › 겸용팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-6 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 T 기호가 그려진 지원자 결정 트리의 사원증이 떠 있고, 옆에서 작은 나무 그림이 한 마디씩 가지를 친다. 박사가 칠판 앞 설명을 하듯 끄덕이고, 조수가 다짐하고, 초파리가 지적하고, Money-Robo가 동전을 센다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>결정 트리 — 스무고개로 순서도를 스스로 그린다</h1>
+        <p class="lede" style="margin-top:14px">0편에서 매뉴얼 씨의 작업 표준서는 순서도였다. "물-결합재비가 0.5 미만인가? 예 → 28일 이상 굳혔나? 예 → 합격." 질문도, 질문의 순서도, 문턱 0.5와 28일도 사람이 정했다. 오늘의 지원자는 <b>같은 모양의 순서도를 데이터에서 직접 그린다.</b></p>
+        <p class="lede">결정 트리는 "재령이 42일 이하인가?" 같은 예/아니요 질문을 하나 던져 배합을 두 무리로 나누고, 나뉜 무리마다 또 질문을 던진다. 어떤 질문이 좋은지는 <b>나눈 뒤 무리가 얼마나 덜 섞였나</b>(불순도)로 잰다. 더 묻지 않는 끝(잎)에 닿으면 분류는 다수결로, 회귀는 평균으로 답한다. 그래서 분류팀과 회귀팀 일을 모두 하는 <b>겸용팀</b>이다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m1">01 질문 하나 고르기</a><span class="arr">→</span><a href="#m5">05 깊이와 가지치기</a><span class="arr">→</span><a href="#iv6">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>예 / 아니요</b><span>질문 하나 = 특징 하나와 문턱 하나</span></div>
+            <div><b>1 − Σp²</b><span>지니 불순도. 섞일수록 크다</span></div>
+            <div><b>잎</b><span>분류는 다수결, 회귀는 평균으로 답한다</span></div>
+            <div><b id="heroLine">76.7% · R² 0.735</b><span>넘어야 할 두 합격선 (분류 · 회귀)</span></div>
+          </div>
+          <p class="foot">실기 과제는 콘크리트 배합 1,030건이다. 시험지 258건은 05장까지 봉인한다. 이 면접은 분류와 회귀를 둘 다 본다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="board" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>오늘은 겸용팀 첫 지원자예요. 분류 합격선 76.7%와 회귀 합격선 R² 0.735, 둘 다 봅니다. 칠판에 순서도를 그리듯 일하는 지원자라 설명은 쉬울 거예요.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="firm" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>나무가 질문을 하나 던질 때마다 따라가며 적을게요. 깊이, 잎 수, 훈련 점수와 시험 점수를 같이 재겠습니다.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="point" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>질문을 끝없이 하면 훈련 배합 772건을 다 외우겠지. 처음 보는 배합에서도 되는지가 진짜 시험이야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="count" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>예측 한 건에 비교 몇 번이면 끝난다며? 질문값은 싸네. 대신 잎이 몇 개인지는 세어 볼 거야.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">T</span><div class="bub"><span class="who">지원자 · 결정 트리</span>안녕하십니까. 질문을 하나씩 던져 배합을 나누는 결정 트리입니다. 제가 그린 순서도는 그대로 작업 표준서로 옮겨 적을 수 있습니다.</div></div>
+    </div>
+    <div id="comicIntro" aria-label="장면: 스무고개 무대에서 생긴 일"></div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-0_job_posting.html">5-0 채용 공고</a> — 매뉴얼 씨의 순서도(작업 표준서)와 분류 합격선 76.7%</span>
+      <span><a href="5-1_knn.html">5-1 KNN</a> — 겸용(분류 + 회귀)의 첫 지원자, 회귀 합격선 R² 0.735가 나온 곳 · <a href="5-4_logistic_regression.html">5-4 로지스틱 회귀</a> — 직선 경계 하나로 가르는 분류</span>
+      <span>함께 보면 좋은 편: <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-7_classification_eight.html" target="_blank" rel="noopener">패밀리 4-7 분류파 여덟</a> · <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-6_regression_seven.html" target="_blank" rel="noopener">4-6 회귀파 일곱</a> · <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-10_ensemble_lineage.html" target="_blank" rel="noopener">4-10 앙상블 계보</a></span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — 결정 트리를 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="결정 트리 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-6 · 지원서<br>지원자 번호 APP-06<br>지원 부서 지도 본부 › 겸용팀</div>
+      <div class="sh-title">Decision Tree<small>결정 트리 (분류 + 회귀) · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">T</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m1">
+        <h3>1. 스무고개 <small>Twenty Questions</small></h3>
+        <p class="d">예/아니요 질문을 차례로 던져 배합 하나를 잎까지 보낸다.</p>
+        <svg viewBox="0 0 300 196" role="img" aria-label="순서도 모양의 나무. 맨 위 질문 '재령 ≤ 42일?'에서 예는 왼쪽 질문 '시멘트 ≤ 263?'으로, 아니요는 오른쪽 잎 '합격'으로 간다. 왼쪽 질문의 예는 '불합격', 아니요는 '합격' 잎이다">
+          <defs><marker id="dt_ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="dt_ahb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <circle cx="22" cy="22" r="7" fill="#111"/><text x="22" y="46" text-anchor="middle" font-size="11">배합</text><path d="M31,22 L90,22" stroke="#111" stroke-width="1.8" marker-end="url(#dt_ah)"/>
+          <rect x="94" y="6" width="120" height="34" rx="8" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="154" y="28" text-anchor="middle" font-size="13.5">재령 ≤ 42일?</text>
+          <path d="M120,40 L72,74" stroke="#1f6fe5" stroke-width="2" marker-end="url(#dt_ahb)"/><path d="M190,40 L236,74" stroke="#1f6fe5" stroke-width="2" marker-end="url(#dt_ahb)"/>
+          <text x="84" y="58" font-size="12" font-weight="700" fill="#1f6fe5">예</text><text x="218" y="58" font-size="12" font-weight="700" fill="#1f6fe5">아니요</text>
+          <rect x="8" y="78" width="124" height="34" rx="8" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="70" y="100" text-anchor="middle" font-size="13.5">시멘트 ≤ 263?</text>
+          <rect x="196" y="78" width="88" height="34" rx="17" fill="#fff" stroke="#111" stroke-width="1.8"/><text x="240" y="100" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1f6fe5">합격</text>
+          <path d="M44,112 L32,146" stroke="#1f6fe5" stroke-width="2" marker-end="url(#dt_ahb)"/><path d="M96,112 L118,146" stroke="#1f6fe5" stroke-width="2" marker-end="url(#dt_ahb)"/>
+          <text x="22" y="132" font-size="12" font-weight="700" fill="#1f6fe5">예</text><text x="112" y="132" font-size="12" font-weight="700" fill="#1f6fe5">아니요</text>
+          <rect x="2" y="150" width="76" height="34" rx="17" fill="#fff" stroke="#111" stroke-width="1.8"/><text x="40" y="172" text-anchor="middle" font-size="13.5" font-weight="700">불합격</text>
+          <rect x="88" y="150" width="76" height="34" rx="17" fill="#fff" stroke="#111" stroke-width="1.8"/><text x="126" y="172" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1f6fe5">합격</text>
+          <text x="236" y="150" text-anchor="middle" font-size="11.5" fill="#3b4252">네모 = 질문(마디)</text><text x="236" y="168" text-anchor="middle" font-size="11.5" fill="#3b4252">둥근 칸 = 잎(답)</text>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>2. 축에 나란한 칸 <small>Axis-aligned Splits</small></h3>
+        <p class="d">질문 하나는 특징 공간에 축과 나란한 선을 하나 긋는다. 나무는 공간을 네모 칸으로 나눈다.</p>
+        <svg viewBox="0 0 300 196" role="img" aria-label="두 특징의 산점도. 세로선 하나가 공간을 좌우로 나누고(첫 질문), 왼쪽 칸만 가로선이 다시 위아래로 나눈다(둘째 질문). 파란 점이 많은 칸은 옅은 파랑으로 칠해져 있다">
+          <rect x="150" y="12" width="138" height="168" fill="#e6f0fe"/><rect x="30" y="12" width="120" height="70" fill="#e6f0fe"/>
+          <path d="M30,182 L30,8" stroke="#111" stroke-width="2" marker-end="url(#dt_ah)"/><path d="M30,182 L294,182" stroke="#111" stroke-width="2" marker-end="url(#dt_ah)"/>
+          <text x="10" y="100" font-size="15" font-style="italic" font-family="serif">x₂</text><text x="160" y="196" font-size="15" font-style="italic" font-family="serif">x₁</text>
+          <g fill="#111"><circle cx="48" cy="112" r="5"/><circle cx="70" cy="140" r="5"/><circle cx="92" cy="104" r="5"/><circle cx="62" cy="164" r="5"/><circle cx="112" cy="150" r="5"/><circle cx="130" cy="120" r="5"/><circle cx="102" cy="170" r="5"/><circle cx="176" cy="160" r="5"/><circle cx="56" cy="64" r="5"/></g>
+          <g fill="#1f6fe5"><circle cx="60" cy="34" r="5"/><circle cx="90" cy="52" r="5"/><circle cx="120" cy="30" r="5"/><circle cx="134" cy="62" r="5"/><circle cx="176" cy="40" r="5"/><circle cx="210" cy="70" r="5"/><circle cx="240" cy="36" r="5"/><circle cx="196" cy="110" r="5"/><circle cx="232" cy="128" r="5"/><circle cx="262" cy="96" r="5"/><circle cx="256" cy="156" r="5"/><circle cx="214" cy="150" r="5"/><circle cx="104" cy="128" r="5"/></g>
+          <path d="M150,12 L150,180" stroke="#1f6fe5" stroke-width="3"/><path d="M30,82 L150,82" stroke="#1f6fe5" stroke-width="3" stroke-dasharray="7 4"/>
+          <rect x="154" y="2" width="70" height="18" rx="4" fill="#fff" stroke="#1f6fe5"/><text x="189" y="15" text-anchor="middle" font-size="11.5" fill="#1f6fe5">① 첫 질문</text>
+          <rect x="34" y="86" width="78" height="18" rx="4" fill="#fff" stroke="#1f6fe5"/><text x="73" y="99" text-anchor="middle" font-size="11.5" fill="#1f6fe5">② 둘째 질문</text>
+        </svg>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>3. 지니 불순도 <small>Gini Impurity</small></h3>
+        <p class="d">한 무리가 얼마나 섞였나. 한 종류뿐이면 0, 반반이면 0.5(두 종류일 때)다.</p>
+        <div class="fbox"><span class="mth">G = 1 − Σ<sub>k</sub> p<sub>k</sub><sup>2</sup></span><br><span style="font-size:13px">p<sub>k</sub> = 그 무리에서 종류 k의 비율</span></div>
+        <svg viewBox="0 0 300 120" role="img" aria-label="세 개의 상자. 첫 상자는 파란 점 8개뿐이라 G는 0, 둘째 상자는 파란 점 4개와 검은 점 4개라 G는 0.5, 셋째 상자는 파란 점 6개와 검은 점 2개라 G는 0.375다">
+          <g fill="none" stroke="#111" stroke-width="1.8"><rect x="8" y="8" width="84" height="76" rx="8"/><rect x="108" y="8" width="84" height="76" rx="8"/><rect x="208" y="8" width="84" height="76" rx="8"/></g>
+          <g fill="#1f6fe5"><circle cx="26" cy="28" r="6"/><circle cx="44" cy="28" r="6"/><circle cx="62" cy="28" r="6"/><circle cx="80" cy="28" r="6"/><circle cx="26" cy="60" r="6"/><circle cx="44" cy="60" r="6"/><circle cx="62" cy="60" r="6"/><circle cx="80" cy="60" r="6"/>
+            <circle cx="126" cy="28" r="6"/><circle cx="162" cy="28" r="6"/><circle cx="144" cy="60" r="6"/><circle cx="180" cy="60" r="6"/>
+            <circle cx="226" cy="28" r="6"/><circle cx="244" cy="28" r="6"/><circle cx="262" cy="28" r="6"/><circle cx="280" cy="28" r="6"/><circle cx="226" cy="60" r="6"/><circle cx="262" cy="60" r="6"/></g>
+          <g fill="#111"><circle cx="144" cy="28" r="6"/><circle cx="180" cy="28" r="6"/><circle cx="126" cy="60" r="6"/><circle cx="162" cy="60" r="6"/><circle cx="244" cy="60" r="6"/><circle cx="280" cy="60" r="6"/></g>
+          <g font-size="13.5" text-anchor="middle" font-weight="700"><text x="50" y="106">G = 0</text><text x="150" y="106">G = 0.5</text><text x="250" y="106">G = 0.375</text></g>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>4. 가장 좋은 질문 <small>Best Split</small></h3>
+        <p class="d">모든 특징·모든 문턱을 다 시험해, 나눈 뒤 불순도의 가중 평균이 가장 작은 질문을 고른다.</p>
+        <svg viewBox="0 0 300 132" role="img" aria-label="훈련 배합 772건, 지니 0.500인 뿌리 마디가 '재령 ≤ 42일?' 질문으로 나뉜다. 예 쪽 567건은 지니 0.464, 아니요 쪽 205건은 지니 0.283이다">
+          <rect x="70" y="4" width="160" height="40" rx="8" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="150" y="21" text-anchor="middle" font-size="13">재령 ≤ 42일?</text><text x="150" y="38" text-anchor="middle" font-size="12" font-family="monospace">772건 · G 0.500</text>
+          <path d="M110,44 L72,78" stroke="#1f6fe5" stroke-width="2" marker-end="url(#dt_ahb)"/><path d="M190,44 L228,78" stroke="#1f6fe5" stroke-width="2" marker-end="url(#dt_ahb)"/>
+          <text x="78" y="62" font-size="12" font-weight="700" fill="#1f6fe5">예</text><text x="214" y="62" font-size="12" font-weight="700" fill="#1f6fe5">아니요</text>
+          <rect x="6" y="82" width="132" height="40" rx="8" fill="#fff" stroke="#111" stroke-width="1.6"/><text x="72" y="99" text-anchor="middle" font-size="12" font-family="monospace">567건</text><text x="72" y="116" text-anchor="middle" font-size="12" font-family="monospace">G 0.464</text>
+          <rect x="162" y="82" width="132" height="40" rx="8" fill="#fff" stroke="#111" stroke-width="1.6"/><text x="228" y="99" text-anchor="middle" font-size="12" font-family="monospace">205건</text><text x="228" y="116" text-anchor="middle" font-size="12" font-family="monospace">G 0.283</text>
+        </svg>
+        <div class="fbox" style="font-size:13.5px">줄어든 불순도 = 0.500 − <span class="frac"><span>567 × 0.464 + 205 × 0.283</span><span>772</span></span> ≈ <b>0.084</b></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>5. 잎의 답 <small>Leaf Prediction</small></h3>
+        <p class="d">더 묻지 않는 끝(잎)에 모인 훈련 배합으로 답한다.</p>
+        <div class="twin">
+          <div><b>분류 잎</b><br><svg viewBox="0 0 92 20" style="width:92px;height:20px;display:inline-block" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="#1f6fe5"/><circle cx="32" cy="10" r="7" fill="#1f6fe5"/><circle cx="54" cy="10" r="7" fill="#1f6fe5"/><circle cx="76" cy="10" r="7" fill="#111"/></svg><br>다수결<br><b style="color:#1f6fe5">→ 합격</b><br><span style="font-size:12px">(합격 확률 3/4)</span></div>
+          <div><b>회귀 잎</b><br><span class="mth">31 · 38 · 42</span><br>평균<br><b style="color:#1f6fe5">→ 37.0MPa</b><br><span style="font-size:12px">(잎의 평균 강도)</span></div>
+        </div>
+        <div class="note">그래서 같은 나무 모양으로 분류도 회귀도 한다. 겸용팀인 까닭이다.</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>6. 회귀 트리 <small>Regression Tree</small></h3>
+        <p class="d">질문은 오차 제곱 평균(MSE)이 가장 줄도록 고른다. 예측선은 계단 모양이 된다.</p>
+        <svg viewBox="0 0 300 168" role="img" aria-label="가로축 x, 세로축 강도 y의 산점도. 검은 점들이 오른쪽으로 갈수록 올라가고, 그 위를 네 칸짜리 파란 계단선이 따라간다. 계단 한 칸의 높이는 그 칸에 든 점들의 평균이다">
+          <path d="M30,156 L30,8" stroke="#111" stroke-width="2" marker-end="url(#dt_ah)"/><path d="M30,156 L294,156" stroke="#111" stroke-width="2" marker-end="url(#dt_ah)"/>
+          <text x="8" y="84" font-size="15" font-style="italic" font-family="serif">y</text><text x="160" y="168" font-size="15" font-style="italic" font-family="serif">x</text>
+          <g fill="#111"><circle cx="44" cy="140" r="4.5"/><circle cx="56" cy="128" r="4.5"/><circle cx="70" cy="138" r="4.5"/><circle cx="84" cy="122" r="4.5"/><circle cx="100" cy="104" r="4.5"/><circle cx="112" cy="96" r="4.5"/><circle cx="126" cy="110" r="4.5"/><circle cx="140" cy="92" r="4.5"/><circle cx="156" cy="74" r="4.5"/><circle cx="170" cy="66" r="4.5"/><circle cx="184" cy="80" r="4.5"/><circle cx="198" cy="60" r="4.5"/><circle cx="214" cy="42" r="4.5"/><circle cx="230" cy="34" r="4.5"/><circle cx="246" cy="48" r="4.5"/><circle cx="262" cy="30" r="4.5"/><circle cx="276" cy="38" r="4.5"/></g>
+          <path d="M36,132 L92,132 L92,100 L148,100 L148,70 L206,70 L206,38 L286,38" fill="none" stroke="#1f6fe5" stroke-width="3.5"/>
+          <g stroke="#1f6fe5" stroke-width="1" stroke-dasharray="3 3"><path d="M92,20 L92,154"/><path d="M148,20 L148,154"/><path d="M206,20 L206,154"/></g>
+        </svg>
+        <div class="fbox"><span class="mth">MSE = 평균 (y − ȳ<sub>잎</sub>)<sup>2</sup></span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>7. 깊이와 과대적합 <small>Depth &amp; Overfitting</small></h3>
+        <p class="d">질문을 끝까지 하면 훈련 점수는 1에 닿는다. 시험 점수는 어느 깊이부터 잘 오르지 않는다.</p>
+        <svg viewBox="0 0 300 170" role="img" aria-label="가로축 깊이, 세로축 점수. 훈련 점수 선은 깊이가 깊어질수록 1까지 오른다. 시험 점수 선은 처음에는 같이 오르다가 점점 평평해져 두 선 사이가 벌어진다. 점선 합격선이 가로로 그어져 있다">
+          <path d="M34,150 L34,8" stroke="#111" stroke-width="2" marker-end="url(#dt_ah)"/><path d="M34,150 L292,150" stroke="#111" stroke-width="2" marker-end="url(#dt_ah)"/>
+          <text x="160" y="166" text-anchor="middle" font-size="12.5">깊이 →</text><text x="6" y="80" font-size="12.5">점수</text>
+          <path d="M34,72 L288,72" stroke="#111" stroke-width="1.2" stroke-dasharray="5 4"/><text x="40" y="66" font-size="11.5">합격선</text>
+          <path d="M44,132 C80,100 110,70 150,46 S230,22 284,20" fill="none" stroke="#1f6fe5" stroke-width="3" stroke-dasharray="7 4"/>
+          <path d="M44,126 C80,98 110,74 150,58 S230,46 284,44" fill="none" stroke="#1f6fe5" stroke-width="3.5"/>
+          <text x="226" y="16" font-size="12" fill="#1f6fe5">훈련 (점선)</text><text x="226" y="60" font-size="12" font-weight="700" fill="#1f6fe5">시험</text>
+          <path d="M250,24 L250,42" stroke="#111" stroke-width="1.4" marker-start="url(#dt_ah)" marker-end="url(#dt_ah)"/><text x="196" y="112" font-size="11.5">벌어진 틈 = 외운 몫</text><path d="M240,104 L250,46" stroke="#111" stroke-width="1"/>
+        </svg>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>8. 가지치기 <small>Pruning</small></h3>
+        <p class="d">너무 깊은 나무를 줄여 처음 보는 배합에서 덜 흔들리게 한다.</p>
+        <svg viewBox="0 0 300 136" role="img" aria-label="나무 그림. 위쪽 마디와 가지는 파란 실선이고, 아래쪽 잔가지들은 회색 점선이며 가위 표시로 잘려 나간다">
+          <g stroke="#1f6fe5" stroke-width="2.4"><path d="M150,18 L80,58"/><path d="M150,18 L220,58"/><path d="M80,58 L46,98"/><path d="M80,58 L114,98"/><path d="M220,58 L254,98"/><path d="M220,58 L186,98"/></g>
+          <g stroke="#9aa3b5" stroke-width="1.8" stroke-dasharray="4 3"><path d="M46,98 L30,128"/><path d="M46,98 L62,128"/><path d="M114,98 L100,128"/><path d="M114,98 L128,128"/><path d="M254,98 L240,128"/><path d="M254,98 L270,128"/></g>
+          <g fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"><rect x="132" y="6" width="36" height="24" rx="5"/><rect x="62" y="46" width="36" height="24" rx="5"/><rect x="202" y="46" width="36" height="24" rx="5"/></g>
+          <g fill="#fff" stroke="#111" stroke-width="1.6"><circle cx="46" cy="98" r="9"/><circle cx="114" cy="98" r="9"/><circle cx="186" cy="98" r="9"/><circle cx="254" cy="98" r="9"/></g>
+          <g fill="#c7cdd8"><circle cx="30" cy="128" r="5"/><circle cx="62" cy="128" r="5"/><circle cx="100" cy="128" r="5"/><circle cx="128" cy="128" r="5"/><circle cx="240" cy="128" r="5"/><circle cx="270" cy="128" r="5"/></g>
+          <g transform="translate(160 112) rotate(-20)" stroke="#111" stroke-width="2" fill="none"><circle cx="-14" cy="8" r="6"/><circle cx="-14" cy="-8" r="6"/><path d="M-9,5 L14,-6"/><path d="M-9,-5 L14,6"/></g>
+          <path d="M20,113 L284,113" stroke="#c0392b" stroke-width="1.4" stroke-dasharray="6 4"/>
+        </svg>
+        <div class="fbox l" style="font-size:13px"><b>max_depth</b> 질문 깊이의 상한<br><b>min_samples_leaf</b> 잎에 남길 최소 배합 수<br><b>ccp_alpha</b> 잎 하나를 늘리는 데 매기는 값</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m6">
+        <h3>9. 특징 중요도 <small>Feature Importance</small></h3>
+        <p class="d">질문마다 줄인 불순도를 특징별로 더하면 "어느 특징을 많이 물었나"가 나온다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="가로 막대 그래프(회귀 트리의 예). 시멘트 0.38, 재령 0.31, 물 0.12, 고로 슬래그 0.11, 나머지 넷 합쳐 0.09 순서로 막대가 짧아진다">
+          <g font-size="12.5" text-anchor="end"><text x="78" y="22">시멘트</text><text x="78" y="50">재령</text><text x="78" y="78">물</text><text x="78" y="106">고로 슬래그</text><text x="78" y="134">나머지 넷</text></g>
+          <g fill="#1f6fe5"><rect x="86" y="10" width="182" height="16" rx="3"/><rect x="86" y="38" width="149" height="16" rx="3"/><rect x="86" y="66" width="58" height="16" rx="3"/><rect x="86" y="94" width="53" height="16" rx="3"/></g><rect x="86" y="122" width="43" height="16" rx="3" fill="#9cc0f7"/>
+          <g font-size="12" font-family="monospace"><text x="262" y="23" text-anchor="end" fill="#fff">0.38</text><text x="241" y="51">0.31</text><text x="150" y="79">0.12</text><text x="145" y="107">0.11</text><text x="135" y="135">0.09</text></g>
+          <path d="M86,4 L86,144" stroke="#111" stroke-width="1.5"/>
+        </svg>
+        <div class="note">합은 1이다. 나무 여러 그루를 쓰는 5-7 랜덤 포레스트와 5-9 GBM도 같은 방식으로 센다.</div>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "무슨 모양으로 일하나", 3~4번이 "질문을 어떻게 고르나", 2·5·6번이 "나눈 칸에서 어떻게 답하나(분류와 회귀)", 7~8번이 "얼마나 깊이 물을까", 9번이 "무엇을 많이 물었나"다. 이 면접은 01장(1·3·4번) → 04장(2·5·6번) → 05장(7·8번) → 06장(9번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 질문 하나를 고르는 직원</h2>
+    <p class="lin">특징 하나 × 문턱 하나 = 질문 하나. 나눈 뒤 덜 섞일수록 좋은 질문이다</p>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">T</span><div class="bub"><span class="who">지원자 · 결정 트리</span>제 일의 핵심은 첫 질문 하나를 고르는 것입니다. 여덟 특징의 모든 문턱을 하나도 빼지 않고 시험해 보고, 나눈 두 무리가 가장 덜 섞이는 질문을 고릅니다. 그다음은 두 무리에서 같은 일을 되풀이할 뿐입니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 질문 하나로 훈련 배합 772건 나누기 (깊이 1 나무)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="과제 고르기"><button data-v="cls" aria-pressed="true">분류: 35MPa 합격 (지니)</button><button data-v="reg" aria-pressed="false">회귀: 강도 MPa (MSE)</button></div>
+      <label>특징 <select id="q1Feat" class="btn"></select></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="splitCv" aria-label="위쪽 그래프는 문턱을 옮길 때 나눈 뒤 불순도(분류는 지니, 회귀는 MSE)가 어떻게 바뀌는지 보여 주는 곡선이고, 가장 낮은 곳이 별표로 표시된다. 아래쪽은 고른 특징 값을 가로축으로 훈련 배합을 점으로 찍은 것이다. 분류에서는 합격 배합이 위 줄, 불합격 배합이 아래 줄이고, 회귀에서는 세로축이 강도다. 빨간 세로선이 지금 문턱이다"></canvas></div>
+    <div class="ctrls">
+      <label>문턱 <input type="range" id="q1Thr" min="0" max="1" step="0.001" value="0.5"><output id="q1ThrO">-</output></label>
+      <button class="btn blue" id="q1Best">가장 좋은 문턱 찾기 ▶</button>
+      <button class="btn" id="q1All">여덟 특징 모두 비교</button>
+      <button class="btn" id="q1Man">매뉴얼 씨의 문턱 (물-결합재비 0.5)</button>
+    </div>
+    <div class="two" style="gap:12px;margin-top:8px">
+      <div id="q1Stat"></div>
+      <div class="bars" id="q1Bars" aria-live="polite"></div>
+    </div>
+    <div class="caption" id="q1Info" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>지니 불순도 — "무작위로 두 번 뽑아 종류가 다를 확률"</h4>
+      <p>무리에서 배합 하나를 뽑고, 다시 넣고 또 하나를 뽑는다. 두 배합의 이름표가 다를 확률이 지니 불순도다. 합격 비율이 p면 1 − p² − (1 − p)²이다. 다 합격이면 0, 반반이면 0.5. 질문의 점수는 <b>나눈 두 무리의 지니를 배합 수로 가중 평균</b>한 값이고, 이것이 작을수록 좋은 질문이다. 뿌리에서 이 값이 줄어든 만큼을 "불순도 감소"라 부른다.</p>
+      <div class="eq">질문의 점수 = (n<sub>예</sub>/n)·G(예) + (n<sub>아니요</sub>/n)·G(아니요) &nbsp;→ 가장 작은 질문을 고른다</div>
+    </div>
+    <div class="explain">
+      <h4>엔트로피와 정보 이득 — 같은 생각, 다른 눈금</h4>
+      <p>섞임을 엔트로피 H = −Σ p<sub>k</sub> log₂ p<sub>k</sub>로 재기도 한다. 반반이면 1비트, 한쪽뿐이면 0이다. 엔트로피가 줄어든 만큼을 <b>정보 이득</b>이라 하고, ID3·C4.5 계열 나무가 이것을 쓴다. scikit-learn에서는 <code>criterion="entropy"</code>나 <code>"log_loss"</code>로 바꾼다. 두 눈금은 거의 같은 질문을 고르므로 기본값 지니로 충분한 경우가 많다.</p>
+      <div class="eq">H = −Σ p<sub>k</sub> log₂ p<sub>k</sub> · 정보 이득 = H(부모) − 가중 평균 H(자식)</div>
+    </div>
+  </div>
+  <div class="explain">
+    <h4>회귀에서는 "섞임" 대신 "흩어짐"</h4>
+    <p style="margin:0">강도처럼 숫자를 맞히는 회귀 트리는 무리 안의 <b>분산</b>(평균에서 얼마나 흩어졌나 = 그 무리의 평균으로 답할 때의 MSE)을 불순도로 쓴다. 위 그림에서 "회귀"를 누르면 같은 문턱 찾기가 MSE로 바뀐다. 나눈 두 무리가 각자 평균 근처에 모일수록 좋은 질문이다. 질문을 고르는 방법은 그대로이고 눈금만 바뀐다. 그래서 하나의 지원자가 분류와 회귀를 함께 한다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 같은 배합, 세 가지 질문</h2>
+    <p class="lin">한 줄이 배합 하나(샘플), 배합량과 재령이 특징(X). 타겟(y)은 과제마다 다르다</p>
+  </div>
+  <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:0 0 16px">
+    <div class="card" style="margin:0"><span class="tag">과제 A · 이진 분류 (본시험 ①)</span><h3>35MPa 합격 여부</h3><p style="margin:6px 0 0;font-size:15px">합격(1)·불합격(0). 합격선은 매뉴얼 씨의 작업 표준서가 시험지에서 낸 <b>76.7%</b>, 기준선(늘 불합격)은 49.6%.</p></div>
+    <div class="card" style="margin:0"><span class="tag">과제 B · 회귀 (본시험 ②)</span><h3>압축 강도(MPa)</h3><p style="margin:6px 0 0;font-size:15px">2.3~82.6MPa의 숫자. 합격선은 매뉴얼 경험식의 시험 <b>R² 0.735</b>(MAE 6.72MPa), 기준선(늘 평균)은 MAE 13.52MPa.</p></div>
+    <div class="card" style="margin:0"><span class="tag">과제 C · 다중 분류 (추가 과제)</span><h3>강도 3등급</h3><p style="margin:6px 0 0;font-size:15px">저강도(25 미만)·보통(25~45)·고강도(45 이상). 잎에서 세 등급의 다수결. 기준선(늘 보통)은 45.0%.</p></div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>제 작업 표준서 제1조도 사실 나무입니다. 첫 질문 "물-결합재비 0.5 미만인가", 둘째 질문 "28일 이상인가", 잎은 셋입니다. 질문과 문턱은 선배들의 경험에서 왔습니다. 이번 지원자는 그것을 데이터에서 뽑는다니 궁금합니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 축을 골라 보기 (색 = 강도 등급, 속이 빈 점 = 봉인된 시험지)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <label>가로축 <select id="dxSel" class="btn"></select></label>
+      <label>세로축 <select id="dySel" class="btn"></select></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="dataCv" aria-label="콘크리트 배합 1,030건의 산점도. 고른 두 특징을 가로·세로축으로 하고, 강도 등급마다 색이 다르다. 시험지 258건은 속이 빈 점으로 표시된다. 세로축이 강도이면 25·35·45MPa 가로선이 그려진다"></canvas></div>
+    <div class="legend" id="dataLeg"></div>
+  </div>
+  <div class="card">
+    <span class="tag">표 · 실기 과제지 전체 (1,030줄)</span>
+    <div class="datatb" id="concTbl" tabindex="0" aria-label="콘크리트 데이터 표"></div>
+    <p class="foot">파란 머리글이 특징(X), 빨간 열이 세 과제의 타겟(y)이다. "봉인" 표시가 붙은 258줄은 05장에서 한 번만 연다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>표준화가 필요 없는 지원자</h4>
+      <p>KNN(5-1)과 로지스틱 회귀(5-4)는 특징의 단위에 예민해서 표준화를 거의 꼭 했다. 결정 트리의 질문은 "시멘트 ≤ 263.5kg인가?"처럼 <b>한 특징 안에서 크기 순서</b>만 본다. kg을 g으로 바꾸든, 표준화를 하든, 재령에 log를 씌우든 순서는 그대로라 같은 배합이 같은 쪽으로 간다(문턱 숫자만 바뀐다). 아래 단추로 직접 확인해 보자.</p>
+      <div class="ctrls" style="margin:6px 0 0"><button class="btn" id="stdTest">표준화한 특징으로 다시 키워 보기</button></div>
+      <div class="caption" id="stdInfo" aria-live="polite">끝까지 키운 분류 나무를 두 번 키워 시험지 정확도를 비교한다.</div>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>표 형식(CSV 등)으로, 한 줄에 배합(또는 로트) 하나, 품질 결과 열 하나가 있으면 된다.</li>
+        <li>Colab 코드(A장) 1번 칸의 데이터 읽기, <code>FEATURES</code>, <code>PASS_MPA</code> 세 곳만 바꾼다. 3번 칸의 두 합격선은 내 업무의 기존 기준(사내 규정, 경험식)으로 바꾼다.</li>
+        <li>표준화는 하지 않아도 된다. 단, 글자로 된 특징(공장, 원자재 등급)은 숫자로 바꿔야 한다. scikit-learn 1.3부터 결정 트리가 빈칸(NaN)을 그대로 받아 "빈칸이면 어느 쪽"까지 배운다.</li>
+        <li>행이 수십 건뿐이면 나무가 크게 흔들린다(06장). 그때는 깊이를 낮게 묶거나 5-7 랜덤 포레스트를 함께 본다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 실행 결과로 확인</p>
+  </div>
+  <p>결정 트리 코드는 짧다. <code>DecisionTreeClassifier().fit(X, y)</code> 한 줄이면 나무가 자란다. 그래서 오히려 위험하다. 기본값은 <b>끝까지 키우기</b>라 훈련 점수가 거의 100%로 나오고, 그 숫자를 시험 점수로 착각하기 쉽다. 위원회 규정은 그대로다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다. 분류와 회귀를 한 번에 부탁해도 된다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, 기본 라이브러리) ② 데이터(주소, 열 이름, 분류·회귀 타겟) ③ 규정(나누기·난수, 깊이별 훈련/시험 비교) ④ 출력(나무 규칙, 특징 중요도) ⑤ 금지(시험지로 깊이 고르기 금지, 옛 인자 금지)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"결정 트리 코드 짜 줘." — AI가 iris 데이터를 쓰거나, 연속값 강도를 분류기에 넣거나, 훈련 점수 1.0을 자랑스럽게 출력하고 끝낼 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다. 괜찮은 줄을 눌러도 왜 괜찮은지 알려 준다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say asst"><img data-who="asst" data-mood="shock" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>훈련 정확도 0.999라고 적힌 보고서를 받을 뻔했어요! 나무는 끝까지 키우면 훈련 배합을 거의 다 외우니까, 점수는 꼭 시험지로 다시 잽니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 코드도 버전에 따라 다르게 돈다</h4>
+    <p>회귀 트리의 <code>criterion="mse"</code>와 <code>"mae"</code>는 scikit-learn 1.0에서 <code>"squared_error"</code>와 <code>"absolute_error"</code>로 이름이 바뀌었고 1.2에서 옛 이름이 없어졌다. 분류의 <code>"log_loss"</code>는 1.1에서 들어왔다(<code>"entropy"</code>와 같은 뜻). <code>max_features="auto"</code>는 1.3에서 없어졌다. 빈칸(NaN)을 그대로 받는 기능은 1.3에서 들어왔고, 단조 제약 <code>monotonic_cst</code>(예: "재령이 늘면 강도 예측이 줄지 않게")는 1.4에서 들어왔다. AI는 예전 코드를 많이 보고 배웠기 때문에 <code>"mse"</code>를 아직도 자주 쓴다.</p>
+    <p style="margin:0">첫 줄에서 <code>print(sklearn.__version__)</code>로 버전을 찍고, 경고(FutureWarning)를 읽는다. 같은 점수의 질문이 여럿이면 scikit-learn은 특징을 무작위 순서로 보므로 <code>random_state</code>를 고정해야 결과가 매번 같다. A장의 코드는 <code>random_state=0</code>이다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Training</div>
+    <h2>수습 기간 — 한 마디씩 나무가 자란다</h2>
+    <p class="lin">가장 좋은 질문으로 나눈다 → 나뉜 무리마다 같은 일을 되풀이 → 더 나눌 까닭이 없으면 잎</p>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 ① · 매뉴얼 씨의 두 숫자(물-결합재비 · 재령)만 주고 나무를 키우기 (훈련 배합 772건)</span>
+    <div class="ctrls" style="margin:0 0 10px">
+      <div class="choice" role="group" aria-label="과제 고르기" id="grTask"><button data-v="cls" aria-pressed="true">분류: 35MPa 합격</button><button data-v="reg" aria-pressed="false">회귀: 강도 MPa</button></div>
+    </div>
+    <div class="two" style="gap:12px">
+      <div><div class="cwrap"><canvas class="fig" id="growCv" aria-label="가로축 물-결합재비, 세로축 재령(로그 눈금)인 훈련 배합 산점도. 나무가 질문을 하나 할 때마다 축과 나란한 선이 그어지고 칸이 나뉜다. 분류에서는 칸의 색이 합격 비율, 회귀에서는 칸의 평균 강도를 나타낸다. 방금 생긴 선은 빨간색이다"></canvas></div></div>
+      <div><div class="treebox" id="growRules" aria-live="polite" style="font-family:var(--mono);font-size:13px;line-height:1.55;background:var(--panel2);border-radius:10px;padding:10px 12px;max-height:340px;overflow:auto;white-space:pre"></div></div>
+    </div>
+    <div class="ctrls">
+      <button class="btn blue" id="grPlay">▶ 자라기</button><button class="btn" id="grStep">한 마디 나누기</button><button class="btn" id="grReset">처음으로</button>
+      <label>깊이 상한 <select id="grMax" class="btn"><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option></select></label>
+      <button class="btn" id="grManual" aria-pressed="false">매뉴얼 씨의 칸 겹쳐 보기</button>
+    </div>
+    <div class="caption" id="growInfo" aria-live="polite"></div>
+    <p class="foot">오른쪽 상자는 지금까지 자란 나무를 규칙 글로 적은 것이다(A장의 <code>export_text</code>와 같은 꼴). 마디는 깊이 우선이 아니라 위층부터 차례로 나눠 보인다. 순서만 다를 뿐 다 자란 나무는 같다. 재령은 그림에서만 로그 눈금이다. 나무는 순서만 보므로 log를 씌워도 같은 나무가 자란다.</p>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 ② · 회귀 트리의 예측선은 계단이다 (특징 하나, 훈련 배합 772건)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <label>특징 <select id="stFeat" class="btn"><option value="cement">시멘트</option><option value="wb" selected>물-결합재비</option><option value="age">재령(일)</option></select></label>
+      <label>깊이 <input type="range" id="stDepth" min="1" max="8" step="1" value="2"><output id="stDepthO">2</output></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="stairCv" aria-label="가로축은 고른 특징, 세로축은 압축 강도인 산점도. 그 위에 회귀 트리의 예측이 파란 계단선으로 그려진다. 깊이를 올리면 계단 칸이 잘게 쪼개진다. 점선은 매뉴얼 경험식(재령 28일 기준)이다"></canvas></div>
+    <div class="caption" id="stairInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>탐욕스럽게, 한 번에 한 질문씩</h4>
+      <p>나무는 "지금 이 마디에서 가장 좋은 질문"만 고르고 뒤를 돌아보지 않는다. 이것을 <b>탐욕 알고리즘</b>이라 한다. 모든 가능한 나무 중 가장 좋은 나무를 찾는 일은 너무 어려워서(경우의 수가 폭발한다) 거의 모든 구현이 이렇게 한다. 그래서 첫 질문이 조금만 바뀌어도 아래 나무 전체가 달라질 수 있다(06장).</p>
+      <div class="eq">마디마다: 특징 8개 × 문턱 후보 전부 → 점수가 가장 좋은 질문 → 두 자식 마디로 나눔</div>
+    </div>
+    <div class="explain">
+      <h4>언제 멈추나</h4>
+      <p>기본 설정(scikit-learn)은 거의 멈추지 않는다. 마디가 한 종류만 남거나(순수), 배합이 하나만 남거나, 남은 배합이 모두 같은 배합이라 더 나눌 문턱이 없을 때만 멈춘다. 이 데이터에는 똑같은 배합을 여러 재령이 아니라 <b>같은 재령에서 여러 번</b> 시험한 줄도 있어서, 끝까지 키워도 훈련 정확도가 정확히 100%는 되지 않는다. 멈추는 규칙을 사람이 정해 주는 것이 05장의 가지치기다.</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>수습비 계산 끝! 마디마다 특징 8개를 줄 세우고 문턱을 하나씩 대 보니까 학습은 금방이야. 예측은 질문 깊이만큼 비교하면 끝 — 끝까지 키워도 열몇 번이지. 다만 잎이 수백 개면 표준서가 두꺼워져.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Evaluation</div>
+    <h2>성과 평가 — 봉인된 시험지를 연다</h2>
+    <p class="lin">기본 설정(끝까지 키운 나무)으로 분류와 회귀를 채점하고, 깊이와 가지치기를 바꿔 본다</p>
+  </div>
+  <div class="card">
+    <span class="tag">과제 A · 35MPa 합격 여부, 시험지 258건 (특징 8개, 기본 설정 = 끝까지 키운 나무, 브라우저 계산)</span>
+    <div id="evalCls"><p class="muted">계산 중…</p></div>
+  </div>
+  <div class="card">
+    <span class="tag">과제 B · 강도(MPa) 회귀, 시험지 258건 (특징 8개, 기본 설정 = 끝까지 키운 나무, 브라우저 계산)</span>
+    <div id="evalReg"><p class="muted">계산 중…</p></div>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 A 혼동행렬 · 행 = 정답, 열 = 예측</span>
+      <div class="tw"><div id="cmA"></div></div>
+      <p class="foot" id="cmAInfo">대각선이 맞힌 수다. 대각선 밖의 빨간 칸이 틀린 곳이다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">과제 B · 예측 강도 vs 실제 강도</span>
+      <div class="cwrap"><canvas class="fig" id="pvCv" aria-label="가로축 실제 강도, 세로축 회귀 트리가 낸 예측 강도인 산점도. 시험지 258건. 대각선에 가까울수록 잘 맞힌 것이다. 예측값이 잎의 평균이라 같은 높이에 여러 점이 가로로 늘어선다"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">과제 C · 강도 3등급 (끝까지 키운 나무, 잎마다 다수결)</span>
+    <div class="two" style="gap:12px"><div><div class="tw"><div id="cm3"></div></div></div><div id="g3Stat"></div></div>
+  </div>
+  <div class="card">
+    <span class="tag">깊이 손잡이 · max_depth를 바꿔 훈련 점수와 시험 점수를 함께 보기</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="과제 고르기" id="dpTask"><button data-v="cls" aria-pressed="true">분류 정확도</button><button data-v="reg" aria-pressed="false">회귀 R²</button></div>
+    </div>
+    <div class="choice" role="group" aria-label="깊이 고르기" id="dpChoice"></div>
+    <div class="cwrap" style="margin-top:10px"><canvas class="fig" id="dpCv" aria-label="가로축 깊이(1부터 끝까지), 세로축 점수. 훈련 점수 선은 깊어질수록 1에 다가가고, 시험 점수 선은 오르다가 완만해진다. 점선은 합격선이다. 고른 깊이에 세로선이 그어진다"></canvas></div>
+    <div class="caption" id="dpInfo" aria-live="polite"></div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say fly"><img data-who="fly" data-mood="cry" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>훈련 99.9%? 772건을 거의 다 외웠다는 말이잖아. 잎 하나에 배합 한두 건이면 그건 규칙이 아니라 기억이야. 그래도 시험지에서 높다니… 이 데이터가 원래 칸 나누기에 잘 맞는 거야?</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">가지치기 실험 · 손잡이 하나를 골라 값을 바꾸면 브라우저가 다시 키운다</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="가지치기 방법" id="prKind"><button data-v="leaf" aria-pressed="true">min_samples_leaf</button><button data-v="ccp" aria-pressed="false">ccp_alpha</button></div>
+      <label>값 <input type="range" id="prVal" min="0" max="5" step="1" value="0"><output id="prValO">1</output></label>
+    </div>
+    <div class="tw"><table class="tb" id="prTbl" style="font-size:14px"></table></div>
+    <div class="caption" id="prInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>세 가지 가지치기</h4>
+      <p><b>max_depth</b>는 질문의 깊이를 묶는다. 가장 쉽고, 규칙을 사람이 읽을 수 있는 크기로 만든다. <b>min_samples_leaf</b>는 "잎에는 배합이 적어도 m건"을 요구한다. 한두 건짜리 잎(외운 답)을 막는다. <b>ccp_alpha</b>는 나무를 끝까지 키운 뒤, "잎 하나를 늘려서 줄인 불순도가 alpha보다 작은" 가지부터 거꾸로 잘라 낸다(최소 비용 복잡도 가지치기). 앞의 둘은 자라기 전에 멈추고(사전 가지치기), 마지막은 자란 뒤에 자른다(사후 가지치기).</p>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>값은 시험지로 고르지 않는다</h4>
+      <p style="margin:0">위 표에서 시험 점수가 가장 높은 값을 고르고 싶어진다. 그러면 시험지가 근무 조건을 정하는 데 쓰여 더는 봉인된 시험지가 아니다. 실제로는 훈련 772건 안에서 교차 검증(<code>GridSearchCV</code>)으로 고른다. A장 8번 칸에서 교차 검증은 회귀에 <code>min_samples_leaf=5</code>를 골랐다. 그 조건의 시험 R²(0.828)는 끝까지 키운 나무(Colab 0.891, 브라우저 0.881)보다 낮다. 교차 검증의 선택이 시험지에서 꼭 최고는 아니며, 그래도 그것이 공정한 절차다.</p>
+    </div>
+  </div>
+
+  <div class="interview" id="iv6"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 작업 표준서로 번역, 특징 중요도, 근무 조건(하이퍼파라미터), 다음 지원자</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym">T</span><span class="no">APP-06 → EMP-0006</span><span class="nm">결정 트리</span><span class="rl">지도 본부 › 겸용팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">데이터가 그린 순서도.</b> 읽을 수 있고, 단위를 가리지 않고, 분류와 회귀를 같은 방법으로 한다. 혼자 두면 끝까지 외우고, 데이터가 조금만 바뀌어도 모양이 흔들린다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>읽을 수 있다.</b> 얕은 나무는 그대로 작업 표준서가 된다(아래 그림).</li>
+          <li><b>단위를 가리지 않는다.</b> 표준화가 필요 없고, 순서만 같으면 어떤 눈금이든 같은 나무다.</li>
+          <li><b>상호작용을 스스로 찾는다.</b> "재령이 짧으면 시멘트를, 길면 감수제를 본다"처럼 갈래마다 다른 특징을 묻는다. 5-4 로지스틱 회귀가 못 하던 일이다.</li>
+          <li><b>분류와 회귀를 한 방법으로.</b> 잎에서 다수결이냐 평균이냐만 다르다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>외운다.</b> 기본 설정은 끝까지 키워 훈련 점수가 거의 100%다. 가지치기가 필요하다(05장).</li>
+          <li><b>흔들린다.</b> 훈련 데이터가 조금만 바뀌어도 첫 질문부터 달라질 수 있다(아래 실험).</li>
+          <li><b>계단으로만 답한다.</b> 회귀 예측이 매끄럽지 않고, 훈련 데이터 범위 밖(더 오래 굳힌 배합 등)으로는 늘려 말하지 못한다.</li>
+          <li><b>비스듬한 경계에 약하다.</b> "물-결합재비"처럼 두 특징의 비율이 답이면 축에 나란한 계단을 여러 개 쌓아 흉내 낸다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say asst"><img data-who="asst" data-mood="firm" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>깊이 3짜리 나무를 매뉴얼 씨의 표준서 옆에 붙여 두겠습니다. 사람이 읽을 수 있는 규칙으로도 합격선을 넘는지 같이 적어 둘게요.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">작업 표준서로 번역 · 나무를 깊이 3에서 잘라 규칙 글로 옮기기 (과제 A, 브라우저 계산)</span>
+    <div class="ctrls" style="margin:0 0 8px"><div class="choice" role="group" aria-label="깊이 고르기" id="ruleDepth"><button data-v="2" aria-pressed="false">깊이 2</button><button data-v="3" aria-pressed="true">깊이 3</button><button data-v="4" aria-pressed="false">깊이 4</button></div></div>
+    <div class="two" style="gap:12px">
+      <div><div id="ruleText" style="font-family:var(--mono);font-size:13px;line-height:1.55;background:var(--panel2);border-radius:10px;padding:10px 12px;white-space:pre;overflow:auto;max-height:360px"></div></div>
+      <div><div id="ruleStat"></div><div class="caption" id="ruleInfo" aria-live="polite"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">특징 중요도 · 끝까지 키운 나무에서 특징마다 줄인 불순도의 몫 (브라우저 계산)</span>
+    <div class="choice" role="group" aria-label="과제 고르기" id="impTask"><button data-v="cls" aria-pressed="true">분류 (지니)</button><button data-v="reg" aria-pressed="false">회귀 (MSE)</button></div>
+    <div class="bars" id="impBars" style="margin-top:12px"></div>
+    <div class="caption" id="impInfo" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <span class="tag">흔들리는 나무 · 훈련 배합 중 무작위로 10%를 빼고 다시 키우기 (분류, 끝까지)</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="shakeGo">다시 뽑아 키우기 ×5</button><span class="muted" style="font-size:13.5px">누를 때마다 다른 10%를 뺀다.</span></div>
+    <div class="tw"><table class="tb" id="shakeTbl" style="font-size:13.5px"></table></div>
+    <div class="caption" id="shakeInfo" aria-live="polite">단추를 눌러 보세요. 첫 질문과 둘째 질문, 잎 수, 시험 정확도가 어떻게 바뀌는지 본다.</div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn DecisionTreeClassifier / DecisionTreeRegressor)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>criterion</code></td><td>"gini" / "squared_error"</td><td>불순도의 눈금. 분류는 "gini", "entropy", "log_loss". 회귀는 "squared_error"(MSE), "absolute_error"(MAE, 느리지만 이상값에 덜 끌림), "friedman_mse", "poisson". 옛 이름 "mse"·"mae"는 없어졌다.</td></tr>
+        <tr><td><code>max_depth</code></td><td>None</td><td>질문 깊이 상한. None이면 끝까지. 사람이 읽을 규칙이 필요하면 3~4. 이 데이터에서 분류는 깊이 3부터, 회귀는 깊이 6부터 합격선을 넘었다(05장).</td></tr>
+        <tr><td><code>min_samples_leaf</code></td><td>1</td><td>잎에 남길 최소 샘플 수. 1이면 배합 한 건짜리 잎(외운 답)이 생긴다. 5~20이면 예측이 덜 흔들린다.</td></tr>
+        <tr><td><code>min_samples_split</code></td><td>2</td><td>이보다 적은 마디는 더 나누지 않는다. min_samples_leaf와 비슷한 손잡이.</td></tr>
+        <tr><td><code>max_leaf_nodes</code></td><td>None</td><td>잎 수 상한. 정하면 좋은 질문부터(불순도를 많이 줄이는 마디부터) 나눈다.</td></tr>
+        <tr><td><code>ccp_alpha</code></td><td>0.0</td><td>사후 가지치기의 세기. <code>cost_complexity_pruning_path</code>로 후보 값을 뽑고 교차 검증으로 고른다.</td></tr>
+        <tr><td><code>class_weight</code></td><td>None</td><td>"balanced"면 적은 클래스의 불순도에 더 큰 무게를 준다. 불량이 드문 공정 데이터에서.</td></tr>
+        <tr><td><code>random_state</code></td><td>None</td><td>같은 점수의 질문이 여럿일 때 고르는 순서를 고정한다. 결과를 재현하려면 꼭 정한다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">맞는 일 · 안 맞는 일</span>
+      <table class="tb" style="font-size:14px"><tbody>
+        <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>규칙으로 설명해야 하는 판정(품질 기준서, 고객 설명), 단위가 제각각인 표 데이터, 특징 사이 상호작용이 있는 데이터, 빈칸이 섞인 현장 데이터, 랜덤 포레스트·GBM의 부품</td></tr>
+        <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>매끄러운 곡선으로 답해야 하는 회귀(계단이 거칠다), 훈련 범위 밖으로 늘려 말해야 하는 예측, 데이터가 아주 적은 문제(나무가 흔들린다), 픽셀 그대로의 이미지(→ 딥러닝 시리즈)</td></tr>
+        <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td><code>ExtraTreeClassifier</code>는 문턱을 무작위로 뽑는 친척이다. 혼자서는 잘 안 쓰고 5-7의 Extra Trees(나무 여러 그루)로 쓴다.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card">
+      <span class="tag">다음 지원자들에게 · 나무 한 그루의 약점을 숲이 메운다</span>
+      <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+        <li><a href="5-7_random_forest.html"><b>5-7 랜덤 포레스트</b></a> — 위 "흔들리는 나무"를 거꾸로 이용한다. 데이터를 다시 뽑고 특징도 무작위로 골라 서로 다른 나무 수백 그루를 키우고 다수결·평균을 낸다. 흔들림이 서로 지워진다.</li>
+        <li><a href="5-9_gbm.html"><b>5-9 GBM</b></a> — 얕은 나무를 차례로 덧대며 "아직 틀린 만큼(잔차)"을 배운다. 여기서 놀라운 점 하나: GBM은 <b>분류를 할 때도 속에서는 회귀 트리</b>를 쓴다. 합격 확률의 로그 오즈를 조금씩 고치는 숫자를 맞혀야 하기 때문이다. 오늘 배운 MSE 회귀 트리가 그 부품이다.</li>
+        <li>계보 전체는 <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-10_ensemble_lineage.html" target="_blank" rel="noopener">패밀리 4-10 앙상블 계보</a>에 있다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

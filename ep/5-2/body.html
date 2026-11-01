@@ -1,0 +1,508 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-2 면접<span class="dept">지도 본부 › 회귀팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-2 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 베타 기호가 그려진 지원자 선형 회귀의 사원증이 떠 있고, 옆에 점들 사이를 지나는 직선이 그려져 있다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>선형 회귀 — 오차 제곱을 가장 작게 하는 직선</h1>
+        <p class="lede" style="margin-top:14px">오늘부터 질문이 바뀐다. "35MPa를 넘는가?"가 아니라 <b>"이 배합은 몇 MPa인가?"</b>다. 답이 이름표가 아니라 크기가 있는 숫자이므로 회귀다. 회귀팀의 합격선은 매뉴얼 씨가 들고 온 현장 경험식이다. 물-결합재비와 재령만 넣으면 강도를 계산해 주는 오래된 공식이다.</p>
+        <p class="lede">선형 회귀는 특징마다 가중치를 곱해 더한 값 하나로 강도를 맞힌다. 예측과 실제의 차이(<b>잔차</b>)를 제곱해 모두 더한 값이 가장 작아지는 가중치를 고른다. 이것이 <b>최소제곱</b>이다. 답은 행렬 계산 한 번(<b>정규방정식</b>)으로 나오고, 조금씩 내려가는 <b>경사 하강</b>으로도 같은 곳에 닿는다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m1">01 직선 맞추기</a><span class="arr">→</span><a href="#m5">05 잔차의 무늬</a><span class="arr">→</span><a href="#iv2">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>ŷ = Xβ</b><span>특징의 가중합 하나로 강도(MPa)를 낸다</span></div>
+            <div><b>9</b><span>외울 숫자 (특징 8개의 가중치 + 절편 1)</span></div>
+            <div><b id="heroLine">0.735</b><span>넘어야 할 시험 R² (매뉴얼 씨 경험식)</span></div>
+            <div><b id="heroMae">6.72</b><span>매뉴얼 씨의 평균 오차 MAE (MPa)</span></div>
+          </div>
+          <p class="foot">실기 과제는 콘크리트 배합 1,030건이다. 시험지 258건은 05장까지 봉인한다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="scale" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>회귀팀 첫 면접이에요. 이번 합격선은 정확도가 아니라 R²로 잽니다. 매뉴얼 씨의 경험식이 시험지에서 낸 0.735를 넘어야 해요.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="ledger" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>평가표에는 R²와 MAE를 함께 적습니다. MAE는 "평균 몇 MPa 틀리나"라서 현장에서 바로 읽혀요.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="point" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>직선 하나로 강도를 맞힌다고? 콘크리트는 처음 며칠 확 굳고 나중엔 천천히 굳어. 그 곡선을 어떻게 따라갈 건지 볼 거야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="happy" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>학습이 행렬 한 번 풀기면 수습비가 거의 공짜네. 외울 숫자 아홉 개면 엑셀로도 돌리겠어.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">β</span><div class="bub"><span class="who">지원자 · 선형 회귀</span>안녕하십니까. 오차 제곱의 합이 가장 작은 직선을 긋는 선형 회귀입니다. 가장 오래되고 가장 단순한 회귀 모델입니다.</div></div>
+    </div>
+    <div id="comicIntro" aria-label="장면: 최소제곱, 직선의 한계, 값"></div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-0_job_posting.html">5-0 채용 공고</a> — 같은 데이터에 세 질문(회귀·이진 분류·3등급)을 던지는 까닭, 시험지 나누기 규정</span>
+      <span><a href="5-1_knn.html">5-1 KNN</a> — 같은 강도 맞히기를 "가까운 배합 k개의 평균"으로 하는 입문팀 지원자</span>
+      <span>함께 보면 좋은 편: <a href="5-4_logistic_regression.html">5-4 로지스틱 회귀</a>(같은 선형 점수 + 시그모이드) · <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-6_regression_seven.html" target="_blank" rel="noopener">패밀리 조직도 4-6 회귀파 일곱</a></span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — 선형 회귀를 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="선형 회귀 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-2 · 지원서<br>지원자 번호 APP-02<br>지원 부서 지도 본부 › 회귀팀</div>
+      <div class="sh-title">Linear Regression<small>선형 회귀 · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">β</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m2">
+        <h3>1. 회귀 <small>Regression</small></h3>
+        <p class="d">이름표가 아니라 크기가 있는 숫자(강도 MPa)를 맞힌다.</p>
+        <svg viewBox="0 0 300 200" role="img" aria-label="오른쪽 위로 올라가는 검은 점들 사이를 파란 직선 하나가 지난다. 세로축은 강도(MPa)다">
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="ahb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker>
+          <marker id="ahr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs>
+          <path d="M30,185 L30,12" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><path d="M30,185 L292,185" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><text x="8" y="100" font-size="15" font-style="italic" font-family="serif">y</text><text x="160" y="199" font-size="15" font-style="italic" font-family="serif">x</text><path d="M40,176.1 L285,35.9" stroke="#1f6fe5" stroke-width="3"/><g fill="#111"><circle cx="58.2" cy="166.3" r="5"/><circle cx="54.4" cy="159.0" r="5"/><circle cx="81.0" cy="159.9" r="5"/><circle cx="91.7" cy="139.0" r="5"/><circle cx="106.9" cy="133.5" r="5"/><circle cx="122.5" cy="144.7" r="5"/><circle cx="129.9" cy="127.6" r="5"/><circle cx="151.7" cy="102.0" r="5"/><circle cx="163.9" cy="99.5" r="5"/><circle cx="195.3" cy="91.6" r="5"/><circle cx="197.6" cy="108.5" r="5"/><circle cx="209.9" cy="73.0" r="5"/><circle cx="224.9" cy="65.2" r="5"/><circle cx="238.0" cy="74.1" r="5"/><circle cx="251.1" cy="42.4" r="5"/><circle cx="268.4" cy="40.6" r="5"/></g><rect x="168" y="6" width="124" height="44" rx="5" fill="#fff" stroke="#c7cfdd"/><circle cx="180" cy="19" r="5" fill="#111"/><text x="190" y="24" font-size="12.5">배합 (데이터)</text><path d="M174,38 L188,38" stroke="#1f6fe5" stroke-width="3"/><text x="192" y="42" font-size="12.5">예측 직선</text><text x="36" y="26" font-size="12" fill="#3b4252">강도 (MPa)</text>
+        </svg>
+        <span class="go">→ 02 실기 과제지</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>2. 선형 모델 <small>Linear Model</small></h3>
+        <p class="d">특징에 가중치를 곱해 더하고 절편을 더한 값이 곧 예측이다.</p>
+        <svg viewBox="0 0 300 168" role="img" aria-label="입력 x1, x2부터 xn까지가 가중치 w1, w2, wn을 달고 합 기호 시그마로 들어가고, 아래에서 절편 b가 더해져 예측 y hat이 바로 나온다">
+          <g font-size="16" font-style="italic" font-family="serif" text-anchor="middle">
+          <circle cx="40" cy="26" r="19" fill="#fff" stroke="#111" stroke-width="1.6"/><text x="40" y="32">x₁</text>
+          <circle cx="40" cy="78" r="19" fill="#fff" stroke="#111" stroke-width="1.6"/><text x="40" y="84">x₂</text>
+          <text x="40" y="112" font-style="normal">⋮</text>
+          <circle cx="40" cy="142" r="19" fill="#fff" stroke="#111" stroke-width="1.6"/><text x="40" y="148">xₙ</text></g>
+          <circle cx="168" cy="80" r="30" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.5"/><text x="168" y="91" text-anchor="middle" font-size="30" font-family="serif">Σ</text>
+          <circle cx="168" cy="146" r="16" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><text x="168" y="152" text-anchor="middle" font-size="16" font-style="italic" font-family="serif">b</text>
+          <path d="M59,30 L137,70" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/><path d="M59,78 L136,80" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/><path d="M59,138 L138,92" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/><path d="M168,130 L168,113" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/><path d="M199,80 L250,80" stroke="#1f6fe5" stroke-width="2" marker-end="url(#ahb)"/>
+          <g font-size="14" font-style="italic" font-family="serif"><text x="92" y="40">w₁</text><text x="94" y="74">w₂</text><text x="92" y="132">wₙ</text><text x="258" y="86" font-size="19">ŷ</text></g>
+          <text x="262" y="108" font-size="11.5" text-anchor="middle">예측 강도</text>
+        </svg>
+        <div class="fbox"><span class="mth">ŷ = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + … + w<sub>n</sub>x<sub>n</sub> + b</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>3. 잔차 <small>Residual</small></h3>
+        <p class="d">실제 값과 예측 값의 차이. 점에서 직선까지의 세로 거리다.</p>
+        <svg viewBox="0 0 300 200" role="img" aria-label="검은 점마다 파란 직선까지 세로 점선이 그어져 있고, 그중 하나에 e = y − ŷ라는 이름표가 붙어 있다">
+          <path d="M30,185 L30,12" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><path d="M30,185 L292,185" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><text x="8" y="100" font-size="15" font-style="italic" font-family="serif">y</text><text x="160" y="199" font-size="15" font-style="italic" font-family="serif">x</text><path d="M40,152.5 L285,50.3" stroke="#1f6fe5" stroke-width="3"/><path d="M60,167.6 L60,144.1" stroke="#111" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M95,102.9 L95,129.5" stroke="#111" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M130,132.2 L130,115.0" stroke="#111" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M165,67.5 L165,100.4" stroke="#111" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M200,106.8 L200,85.8" stroke="#111" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M235,50.1 L235,71.2" stroke="#111" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M268,76.2 L268,57.4" stroke="#111" stroke-width="1.6" stroke-dasharray="4 3"/><g fill="#111"><circle cx="60" cy="167.6" r="5.5"/><circle cx="95" cy="102.9" r="5.5"/><circle cx="130" cy="132.2" r="5.5"/><circle cx="165" cy="67.5" r="5.5"/><circle cx="200" cy="106.8" r="5.5"/><circle cx="235" cy="50.1" r="5.5"/><circle cx="268" cy="76.2" r="5.5"/></g><circle cx="165" cy="100.4" r="4.5" fill="#fff" stroke="#1f6fe5" stroke-width="2"/><rect x="173" y="72" width="72" height="20" rx="4" fill="#fff"/><text x="177" y="87" font-size="14" font-style="italic" font-family="serif">e = y − ŷ</text><text x="151" y="58" font-size="13" font-style="italic" font-family="serif" text-anchor="end">y</text><text x="155" y="118" font-size="13" font-style="italic" font-family="serif" fill="#1f6fe5" text-anchor="end">ŷ</text>
+        </svg>
+        <div class="fbox"><span class="mth">e<sub>i</sub> = y<sub>i</sub> − ŷ<sub>i</sub></span> &nbsp;<span style="font-size:13px">(+ 덜 예측, − 더 예측)</span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m1">
+        <h3>4. 최소제곱 <small>Least Squares</small></h3>
+        <p class="d">잔차를 제곱해 모두 더한 값이 가장 작은 직선을 고른다.</p>
+        <svg viewBox="0 0 300 200" role="img" aria-label="각 잔차를 한 변으로 하는 연파랑 정사각형들이 직선과 점 사이에 그려져 있다. 정사각형 넓이의 합이 가장 작은 직선이 답이다">
+          <path d="M30,185 L30,12" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><path d="M30,185 L292,185" stroke="#111" stroke-width="2" marker-end="url(#ah)"/><path d="M40,152.5 L285,50.3" stroke="#1f6fe5" stroke-width="3"/><rect x="60" y="144.1" width="23.5" height="23.5" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.3" opacity=".9"/><rect x="95" y="102.9" width="26.6" height="26.6" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.3" opacity=".9"/><rect x="130" y="115.0" width="17.2" height="17.2" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.3" opacity=".9"/><rect x="165" y="67.5" width="32.9" height="32.9" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.3" opacity=".9"/><rect x="200" y="85.8" width="21.0" height="21.0" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.3" opacity=".9"/><rect x="235" y="50.1" width="21.1" height="21.1" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.3" opacity=".9"/><rect x="268" y="57.4" width="18.8" height="18.8" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.3" opacity=".9"/><g fill="#111"><circle cx="60" cy="167.6" r="5"/><circle cx="95" cy="102.9" r="5"/><circle cx="130" cy="132.2" r="5"/><circle cx="165" cy="67.5" r="5"/><circle cx="200" cy="106.8" r="5"/><circle cx="235" cy="50.1" r="5"/><circle cx="268" cy="76.2" r="5"/></g><text x="292" y="150" font-size="12.5" text-anchor="end">넓이의 합이</text><text x="292" y="166" font-size="12.5" text-anchor="end">가장 작은 직선</text>
+        </svg>
+        <div class="fbox"><span class="mth">최소화 &nbsp;MSE = <span class="frac"><span class="r">1</span><span>n</span></span> Σ (y<sub>i</sub> − ŷ<sub>i</sub>)<sup>2</sup></span></div>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>5. 정규방정식 <small>Normal Equation</small></h3>
+        <p class="d">기울기가 0인 곳을 식으로 풀면 가중치가 한 번에 나온다.</p>
+        <div class="fbox"><span class="mth">β = (X<sup>T</sup>X)<sup>−1</sup> X<sup>T</sup>y</span></div>
+        <svg viewBox="0 0 300 150" role="img" aria-label="왼쪽에 1로 채운 첫 열과 특징 열들로 된 세로로 긴 행렬 X와 정답 벡터 y가 있고, 화살표를 지나 절편과 가중치가 담긴 짧은 벡터 베타가 된다">
+          <rect x="12" y="10" width="96" height="130" rx="4" fill="#fff" stroke="#111" stroke-width="1.6"/>
+          <rect x="12" y="10" width="22" height="130" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="1.4"/>
+          <g font-size="12" text-anchor="middle"><text x="23" y="30">1</text><text x="23" y="52">1</text><text x="23" y="74">1</text><text x="23" y="100">⋮</text><text x="23" y="130">1</text></g>
+          <g fill="#111"><circle cx="48" cy="26" r="3"/><circle cx="66" cy="26" r="3"/><circle cx="84" cy="26" r="3"/><circle cx="98" cy="26" r="3"/><circle cx="48" cy="48" r="3"/><circle cx="66" cy="48" r="3"/><circle cx="84" cy="48" r="3"/><circle cx="98" cy="48" r="3"/><circle cx="48" cy="70" r="3"/><circle cx="66" cy="70" r="3"/><circle cx="84" cy="70" r="3"/><circle cx="98" cy="70" r="3"/><circle cx="48" cy="126" r="3"/><circle cx="66" cy="126" r="3"/><circle cx="84" cy="126" r="3"/><circle cx="98" cy="126" r="3"/></g>
+          <text x="60" y="104" font-size="13" text-anchor="middle">⋮</text>
+          <rect x="122" y="10" width="20" height="130" rx="4" fill="#fff" stroke="#111" stroke-width="1.6"/><g fill="#111"><circle cx="132" cy="26" r="3"/><circle cx="132" cy="48" r="3"/><circle cx="132" cy="70" r="3"/><circle cx="132" cy="126" r="3"/></g>
+          <path d="M152,75 L196,75" stroke="#1f6fe5" stroke-width="2.5" marker-end="url(#ahb)"/>
+          <text x="174" y="66" font-size="11" text-anchor="middle" fill="#1f6fe5">한 번에</text>
+          <rect x="206" y="34" width="22" height="84" rx="4" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <g font-size="12" font-style="italic" font-family="serif" text-anchor="middle"><text x="217" y="50">b</text><text x="217" y="68">w₁</text><text x="217" y="86">w₂</text><text x="217" y="106" font-style="normal">⋮</text></g>
+          <g font-size="16" font-style="italic" font-family="serif"><text x="240" y="82">β</text></g>
+          <text x="248" y="104" font-size="11.5">절편과</text><text x="248" y="118" font-size="11.5">가중치</text>
+        </svg>
+        <div class="note" style="text-align:center"><span class="mth">X</span>: 배합 n줄 × (1 + 특징) &nbsp;·&nbsp; <span class="mth">y</span>: 실제 강도</div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>6. 경사 하강 <small>Gradient Descent</small></h3>
+        <p class="d">손실이 줄어드는 방향으로 가중치를 조금씩 옮겨 같은 바닥에 닿는다.</p>
+        <svg viewBox="0 0 300 186" role="img" aria-label="밥그릇 모양의 손실 곡선 위를 빨간 점들이 화살표를 따라 한 걸음씩 내려가 바닥(정규방정식의 답)에 가까워진다">
+          <path d="M40,170 L40,14" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/><path d="M34,162 L292,162" stroke="#111" stroke-width="1.8" marker-end="url(#ah)"/><path d="M50.0,150.0 L53.9,142.3 L57.8,134.9 L61.7,127.7 L65.6,120.8 L69.5,114.2 L73.4,107.8 L77.3,101.6 L81.2,95.7 L85.1,90.1 L89.0,84.7 L92.9,79.5 L96.8,74.7 L100.7,70.0 L104.6,65.6 L108.5,61.5 L112.4,57.6 L116.3,54.0 L120.2,50.7 L124.1,47.6 L128.0,44.7 L131.9,42.1 L135.8,39.7 L139.7,37.7 L143.6,35.8 L147.5,34.2 L151.4,32.9 L155.3,31.8 L159.2,31.0 L163.1,30.4 L167.0,30.1 L170.9,30.0 L174.8,30.2 L178.7,30.6 L182.6,31.3 L186.5,32.3 L190.4,33.5 L194.3,34.9 L198.2,36.6 L202.1,38.6 L206.0,40.8 L209.9,43.3 L213.8,46.0 L217.7,49.0 L221.6,52.2 L225.5,55.7 L229.4,59.4 L233.3,63.4 L237.2,67.6 L241.1,72.1 L245.0,76.9 L248.9,81.9 L252.8,87.1 L256.7,92.6 L260.6,98.4 L264.5,104.4 L268.4,110.7 L272.3,117.2 L276.2,124.0 L280.1,131.0 L284.0,138.3" fill="none" stroke="#1f6fe5" stroke-width="3" transform="scale(1,-1) translate(0,-182)"/><path d="M62.0,54.8 L100.0,113.6" stroke="#c0392b" stroke-width="2" marker-end="url(#ahr)"/><path d="M103.0,114.6 L125.5,136.6" stroke="#c0392b" stroke-width="2" marker-end="url(#ahr)"/><path d="M128.5,137.6 L141.3,145.5" stroke="#c0392b" stroke-width="2" marker-end="url(#ahr)"/><path d="M144.3,146.5 L151.0,148.9" stroke="#c0392b" stroke-width="2" marker-end="url(#ahr)"/><circle cx="62.0" cy="54.8" r="5" fill="#c0392b"/><circle cx="103.0" cy="114.6" r="5" fill="#c0392b"/><circle cx="128.5" cy="137.6" r="5" fill="#c0392b"/><circle cx="144.3" cy="146.5" r="5" fill="#c0392b"/><circle cx="154.0" cy="149.9" r="5" fill="#c0392b"/><circle cx="170" cy="152" r="6" fill="#fff" stroke="#1f6fe5" stroke-width="2.5"/><text x="170" y="178" font-size="12.5" text-anchor="middle">최솟값 (정규방정식의 답)</text><text x="46" y="14" font-size="13" font-style="italic" font-family="serif">MSE</text><text x="292" y="156" font-size="14" font-style="italic" font-family="serif" text-anchor="end">w</text><text x="70" y="44" font-size="12.5">한 걸음씩</text><text x="70" y="59" font-size="12.5">내려간다</text>
+        </svg>
+        <div class="fbox"><span class="mth">w ← w − η · <span class="frac"><span class="r">∂ MSE</span><span>∂w</span></span></span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>7. 평가 지표 <small>MAE · RMSE · R²</small></h3>
+        <p class="d">평균 몇 MPa 틀리나, 큰 실수를 얼마나 하나, 평균선보다 얼마나 나은가.</p>
+        <div class="fbox l" style="font-size:14px;line-height:1.9">
+          <span class="mth">MAE</span> = 평균 |y − ŷ|<br>
+          <span class="mth">RMSE</span> = √ 평균 (y − ŷ)<sup>2</sup><br>
+          <span class="mth">R<sup>2</sup></span> = 1 − <span class="frac"><span class="r">Σ (y − ŷ)<sup>2</sup></span><span>Σ (y − ȳ)<sup>2</sup></span></span>
+        </div>
+        <svg viewBox="0 0 300 70" role="img" aria-label="R²의 눈금: 0은 늘 평균만 말하는 것과 같고, 1은 모두 맞힌 것이다. 0보다 작으면 평균만도 못하다">
+          <path d="M20,34 L280,34" stroke="#111" stroke-width="2.5"/><path d="M20,24 L20,44 M150,24 L150,44 M280,24 L280,44" stroke="#111" stroke-width="2"/>
+          <path d="M150,34 L280,34" stroke="#1f6fe5" stroke-width="6"/>
+          <g font-size="13" text-anchor="middle" font-weight="700"><text x="20" y="18">음수</text><text x="150" y="18">0</text><text x="280" y="18">1</text></g>
+          <g font-size="11.5" text-anchor="middle"><text x="40" y="62">평균만도 못함</text><text x="150" y="62">평균선과 같음</text><text x="262" y="62">모두 맞힘</text></g>
+        </svg>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#m6">
+        <h3>8. 가중치 해석 <small>Coefficients</small></h3>
+        <p class="d">가중치의 부호와 크기가 "그 특징이 늘면 강도가 얼마나 바뀌나"다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="가로 막대 그래프. 가운데 0선을 기준으로 시멘트, 재령, 슬래그는 오른쪽(+)으로, 물은 왼쪽(−)으로 막대가 뻗는다">
+          <path d="M150,8 L150,142" stroke="#111" stroke-width="1.5"/>
+          <g font-size="12.5" text-anchor="end"><text x="76" y="27">시멘트</text><text x="76" y="55">슬래그</text><text x="76" y="83">재령</text><text x="76" y="111">물</text><text x="76" y="139">골재</text></g>
+          <rect x="150" y="16" width="120" height="16" rx="3" fill="#1f6fe5"/><rect x="150" y="44" width="84" height="16" rx="3" fill="#1f6fe5"/><rect x="150" y="72" width="76" height="16" rx="3" fill="#1f6fe5"/>
+          <rect x="114" y="100" width="36" height="16" rx="3" fill="#fff" stroke="#1f6fe5" stroke-width="2" stroke-dasharray="4 2"/><rect x="150" y="128" width="11" height="16" rx="3" fill="#9cc0f7"/>
+          <text x="276" y="28" font-size="12">+</text><text x="110" y="113" font-size="13" text-anchor="end">−</text>
+        </svg>
+        <div class="fbox" style="font-size:13.5px">표준화한 특징이면 <span class="mth">w<sub>j</sub></span> = 그 특징이 1 표준편차 늘 때 ŷ의 변화(MPa)</div>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>9. 특징 만들기 <small>Feature Engineering</small></h3>
+        <p class="d">곡선 관계는 특징을 바꿔 펴 준다. 직선 모델의 힘은 좋은 특징에서 나온다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽 그림: 재령에 따라 강도가 처음에 빨리, 나중에 천천히 오르는 곡선 위의 점들을 직선이 제대로 지나지 못한다. 오른쪽 그림: 가로축을 log(재령)으로 바꾸자 점들이 거의 직선 위에 놓인다">
+          <path d="M10,116 L10,14" stroke="#111" stroke-width="1.6" marker-end="url(#ah)"/><path d="M10,116 L136,116" stroke="#111" stroke-width="1.6" marker-end="url(#ah)"/><path d="M14.0,60.5 L126.0,12.6" stroke="#1f6fe5" stroke-width="2.6"/><g fill="#111"><circle cx="14.3" cy="93.6" r="4"/><circle cx="14.9" cy="77.0" r="4"/><circle cx="16.1" cy="62.3" r="4"/><circle cx="18.3" cy="53.1" r="4"/><circle cx="22.6" cy="42.1" r="4"/><circle cx="31.2" cy="34.7" r="4"/><circle cx="41.6" cy="31.0" r="4"/><circle cx="69.2" cy="27.4" r="4"/><circle cx="126.0" cy="25.5" r="4"/></g><text x="76" y="132" font-size="12" text-anchor="middle">재령 (일)</text><path d="M164,116 L164,14" stroke="#111" stroke-width="1.6" marker-end="url(#ah)"/><path d="M164,116 L290,116" stroke="#111" stroke-width="1.6" marker-end="url(#ah)"/><path d="M168.0,87.9 L280.0,16.9" stroke="#1f6fe5" stroke-width="2.6"/><g fill="#111"><circle cx="168.0" cy="93.6" r="4"/><circle cx="188.9" cy="77.0" r="4"/><circle cx="204.9" cy="62.3" r="4"/><circle cx="218.1" cy="53.1" r="4"/><circle cx="231.3" cy="42.1" r="4"/><circle cx="244.4" cy="34.7" r="4"/><circle cx="253.4" cy="31.0" r="4"/><circle cx="266.6" cy="27.4" r="4"/><circle cx="280.0" cy="25.5" r="4"/></g><text x="230" y="132" font-size="12" text-anchor="middle">log(재령)</text><path d="M136,60 L158,60" stroke="#1f6fe5" stroke-width="2.5" marker-end="url(#ahb)"/><text x="147" y="52" font-size="11" text-anchor="middle" fill="#1f6fe5">log</text><text x="14" y="12" font-size="11.5">강도</text>
+        </svg>
+        <div class="fbox" style="font-size:13.5px">재령 → <span class="mth">log</span>(재령)<br>물 ÷ 결합재 → 물-결합재비</div>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1번 칸이 "무슨 일을 하나", 2~4번이 "무엇을 가장 작게 하나", 5~6번이 "그 답을 어떻게 찾나", 7번이 "어떻게 채점하나", 8~9번이 "어떻게 읽고 어떻게 더 잘하게 하나"다. 이 면접은 01장(2~4번) → 02장(1번) → 04장(5·6번) → 05장(7·9번) → 06장(8번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 잔차 제곱이 가장 작은 직선</h2>
+    <p class="lin">직선 ŷ = w·x + b → 잔차 e = y − ŷ → 제곱해 평균(MSE) → 가장 작은 w, b</p>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">β</span><div class="bub"><span class="who">지원자 · 선형 회귀</span>저는 점들 사이에 직선을 하나 긋습니다. 직선이 점에서 벗어난 만큼을 제곱해 모두 더하고, 그 합이 가장 작은 직선을 고릅니다. 고른 직선에 새 배합을 넣으면 그 높이가 제 답입니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 특징 하나로 강도를 맞히는 직선 (훈련 배합 772건)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="가로축 특징 고르기" id="fitFeat"><button data-v="wb" aria-pressed="true">물-결합재비</button><button data-v="cement" aria-pressed="false">시멘트</button><button data-v="age" aria-pressed="false">재령</button></div>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="fitCv" aria-label="가로축은 고른 특징, 세로축은 압축 강도(MPa)인 산점도. 파란 직선이 예측이고, 점마다 직선까지 잔차 막대가 그려진다. 슬라이더로 직선의 기울기와 높이를 바꾼다"></canvas></div>
+    <div class="ctrls">
+      <label>기울기 w <input type="range" id="fitW" min="-1" max="1" step="0.01" value="0"><output id="fitWO">0</output></label>
+      <label>높이 (특징 평균에서의 ŷ) <input type="range" id="fitH" min="15" max="55" step="0.1" value="35.8"><output id="fitHO">35.8</output></label>
+    </div>
+    <div class="ctrls">
+      <button class="btn blue" id="fitLs">최소제곱으로 찾기 ▶</button>
+      <button class="btn" id="fitSq" aria-pressed="false">잔차 제곱 보기</button>
+      <button class="btn" id="fitReset">처음으로 (평균선)</button>
+    </div>
+    <div class="caption" id="fitInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>처음 직선은 왜 평평한가</h4>
+      <p>기울기 0, 높이는 훈련 배합의 평균 강도다. 어떤 배합이 와도 "평균 35.8MPa"라고만 답하는 직선이고, 이것이 회귀의 <b>기준선</b>이다. R²는 이 평균선보다 잔차 제곱합을 몇 % 줄였는지를 잰다. 그래서 평균선의 R²는 정확히 0이다. 기울기를 움직여 R²가 0보다 커지는 방향을 찾아보자.</p>
+      <div class="eq">R² = 1 − (내 직선의 잔차 제곱합) ÷ (평균선의 잔차 제곱합)</div>
+    </div>
+    <div class="explain">
+      <h4>왜 하필 제곱인가</h4>
+      <p>잔차를 그냥 더하면 +와 −가 지워져 엉터리 직선도 합이 0이 된다. 절댓값을 더해도 되지만(그러면 MAE를 줄이는 다른 회귀가 된다), 제곱하면 미분이 깔끔해져 답이 식 하나로 나온다(04장 정규방정식). 대신 큰 잔차를 더 크게 벌하므로 <b>튀는 값 몇 개에 직선이 끌려간다</b>. "잔차 제곱 보기"에서 큰 정사각형이 바로 그 끌어당기는 힘이다.</p>
+      <div class="eq">MSE = 평균[ (y − ŷ)² ] &nbsp;·&nbsp; RMSE = √MSE (단위가 MPa로 돌아온다)</div>
+    </div>
+  </div>
+  <div class="explain">
+    <h4>특징을 바꿔 보면 보이는 것</h4>
+    <p style="margin:0">물-결합재비는 클수록 강도가 낮아져 기울기가 음수다. 시멘트는 양수다. 재령을 고르면 점들이 처음에 가파르게 오르다 눕는 <b>곡선</b>을 그리는데, 직선은 이 모양을 따라가지 못한다. 7일 근처와 365일 근처에서 직선이 점들 위로 지나가고, 28~90일에서는 아래로 지나간다. 이 어긋남이 05장의 "잔차의 무늬"이고, 이 면접의 승부처다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 콘크리트 배합 1,030건, 강도를 숫자로</h2>
+    <p class="lin">한 줄이 배합 하나(샘플), 배합량과 재령이 특징(X), 압축 강도(MPa) 그 자체가 타겟(y)이다</p>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 · 회귀</span>
+      <h3>압축 강도(MPa) 맞히기</h3>
+      <p style="margin:6px 0 0;font-size:15px">5-4에서는 강도를 35MPa 문턱에 대어 합격/불합격 이름표로 바꿨다. 이 면접은 문턱 없이 강도 숫자를 그대로 맞힌다(지원서 1번 칸). 훈련 772건의 평균은 <b id="yMean">35.8</b>MPa, 표준편차는 <b id="ySd">16.7</b>MPa다. 늘 평균만 말하는 기준선의 시험 MAE는 <b id="baseMae">13.52</b>MPa다.</p>
+    </div>
+    <div class="card" style="border-color:var(--c-man)">
+      <span class="tag">회귀팀 합격선 · 기존 직원 매뉴얼 씨의 경험식 (학습 없음)</span>
+      <div class="eq" style="margin:6px 0">f₂₈ = 96.5 ÷ 7<sup>물-결합재비</sup> &nbsp;→&nbsp; f(t) = f₂₈ · t ÷ (4 + 0.85t)</div>
+      <p style="margin:0;font-size:14.5px">앞쪽은 "물이 많을수록 약하다"는 100년이 넘은 에이브럼스 식이고, 뒤쪽은 재령 t일의 강도가 28일 강도의 몇 배인지 주는 ACI 209R의 보정이다. 숫자 네 개(96.5, 7, 4, 0.85)는 교과서 값이며 이 데이터로 배우지 않았다. 시험지 R² <b id="manR2">0.735</b>, MAE <b id="manMae">6.72</b>MPa. 원래 식처럼 물-<b>시멘트</b>비를 넣으면 R²가 <b id="manWc">0.058</b>로 무너진다. 슬래그·플라이 애시도 굳는다는 <b>지식</b>이 식을 살린다.</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 축을 골라 보기 (색 = 강도 등급, 속이 빈 점 = 봉인된 시험지)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <label>가로축 <select id="dxSel" class="btn"></select></label>
+      <label>세로축 <select id="dySel" class="btn"></select></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="dataCv" aria-label="콘크리트 배합 1,030건의 산점도. 고른 두 특징을 가로·세로축으로 하고, 강도 등급마다 색이 다르다. 시험지 258건은 속이 빈 점으로 표시된다. 처음에는 가로축 재령, 세로축 압축 강도로 강도가 처음에 빨리 오르다 눕는 곡선이 보인다"></canvas></div>
+    <div class="legend" id="dataLeg"></div>
+  </div>
+  <div class="card">
+    <span class="tag">표 · 실기 과제지 전체 (1,030줄)</span>
+    <div class="datatb" id="concTbl" tabindex="0" aria-label="콘크리트 데이터 표"></div>
+    <p class="foot">파란 머리글이 특징(X), 빨간 열이 타겟(y)이다. 물-결합재비는 표에 없는 <b>파생 특징</b>으로, 물 ÷ (시멘트 + 슬래그 + 플라이 애시)다. "봉인" 표시가 붙은 258줄은 05장에서 한 번만 연다.</p>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>선형 회귀에 표준화가 필요한가</h4>
+      <p>규제 없는 선형 회귀는 <b>표준화해도 예측이 똑같다</b>. 시멘트를 kg 대신 톤으로 적으면 가중치가 1,000배 커질 뿐 직선은 그대로다(면접 결과의 "조건 바꿔 다시 보기"에서 확인한다). 그래도 표준화하는 까닭은 둘이다. ① 가중치끼리 크기를 비교할 수 있다(06장). ② 경사 하강이 훨씬 빨리 수렴한다(04장). 5-3의 규제(Ridge·Lasso)부터는 표준화가 점수 자체를 바꾼다. 평균과 표준편차는 <b>훈련 데이터로만</b> 구한다.</p>
+      <div class="tw"><table class="tb" id="stdTbl" style="font-size:13.5px"></table></div>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>표 형식(CSV 등)으로, 한 줄에 배합(또는 로트) 하나, 맞히려는 숫자 열 하나(강도, 슬럼프, 수율 등)가 있으면 된다.</li>
+        <li>Colab 코드(A장) 1번 칸의 데이터 읽기, <code>FEATURES</code>, 타겟 열 세 곳만 바꾼다.</li>
+        <li>합격선은 내 현장의 경험식이나 지금 쓰는 계산표로 바꾼다. 없으면 "늘 평균" 기준선과 먼저 비교한다.</li>
+        <li>글자로 된 특징(공장, 원자재 등급)은 원-핫 인코딩으로 숫자 열로 바꾼다. 빈칸은 먼저 채우거나 지운다.</li>
+        <li>타겟의 단위를 확인한다. MAE·RMSE는 타겟과 같은 단위로 나온다. R²만 보면 단위 감각을 잃는다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 실행 결과로 확인</p>
+  </div>
+  <p>선형 회귀 코드는 짧아서 AI가 거의 틀리지 않을 것 같다. 그런데 짧은 코드일수록 틀린 한 줄이 결과 전체를 바꾼다. 정답 열이 특징에 섞이면 R²가 1에 가깝게 나오고, 훈련 데이터로 채점하면 실력보다 좋게 나온다. 위원회 규정은 같다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다. 데이터를 받으면 열 이름만 고치면 된다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, 기본 라이브러리) ② 데이터(주소, 열 이름, 타겟, 단위) ③ 규정(나누기·표준화·난수) ④ 출력(R²·MAE·RMSE, 가중치, 합격선 비교) ⑤ 금지(테스트 데이터로 학습 금지, 설명 주석은 한국어)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"선형 회귀 코드 짜 줘." — AI가 보스턴 집값처럼 이미 없어진 예제 데이터를 쓰거나, 정답 열을 특징에 넣거나, 내 버전에서 돌지 않는 인자를 쓸 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 코드도 버전에 따라 다르게 돈다</h4>
+    <p><code>LinearRegression(normalize=True)</code>는 scikit-learn 1.0에서 예고된 뒤 1.2에서 없어졌다. 표준화가 필요하면 <code>StandardScaler</code>를 따로 쓴다(파이프라인으로 묶으면 편하다). RMSE를 구하던 <code>mean_squared_error(..., squared=False)</code>도 1.4에서 예고된 뒤 1.6에서 없어졌고, 지금은 <code>root_mean_squared_error</code>를 쓴다. 예제 데이터 <code>load_boston</code>은 1.2에서 삭제됐다. AI는 예전 코드를 많이 보고 배웠기 때문에 이 셋을 자주 쓴다. 첫 줄에서 <code>print(sklearn.__version__)</code>로 버전을 찍고, 경고(FutureWarning)를 무시하지 않는다.</p>
+    <p style="margin:0">A장의 Colab 코드는 이 점을 반영해 버전에 따라 RMSE를 다르게 부른다. 실행 결과도 함께 실었다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Training</div>
+    <h2>수습 기간 — 한 번에 풀까, 조금씩 내려갈까</h2>
+    <p class="lin">정규방정식은 바닥의 위치를 식으로 계산하고, 경사 하강은 손실 곡면을 한 걸음씩 내려간다. 도착하는 곳은 같다</p>
+  </div>
+  <div class="card">
+    <span class="tag">움직이는 그림 · 물-결합재비 하나로 강도를 맞히는 경사 하강 (훈련 배합 772건)</span>
+    <div class="ctrls" style="margin:0 0 10px">
+      <div class="choice" role="group" aria-label="표준화 고르기" id="gdScale"><button data-v="std" aria-pressed="true">특징 표준화 함</button><button data-v="raw" aria-pressed="false">표준화 안 함 (날것 그대로)</button></div>
+    </div>
+    <div class="two" style="gap:12px">
+      <div><div class="cwrap"><canvas class="fig" id="gdData" aria-label="가로축 물-결합재비, 세로축 압축 강도의 산점도. 파란 직선이 지금의 예측이고, 학습이 진행되면 점들 사이로 기울어진다"></canvas></div>
+        <div class="stepchips" id="loopChips" aria-label="한 걸음의 네 단계"><button data-s="0">① ŷ = w·x + b</button><button data-s="1">② 잔차 e = y − ŷ</button><button data-s="2">③ 손실 MSE</button><button data-s="3">④ w, b 업데이트</button></div></div>
+      <div><div class="cwrap"><canvas class="fig" id="gdBowl" aria-label="가로축 가중치 w, 세로축 절편 b인 손실 지도. 색이 진할수록 손실(MSE)이 작다. 빨간 점이 경사 하강의 발자국이고, 파란 별이 정규방정식의 답이다"></canvas></div>
+        <div class="cwrap"><canvas class="fig" id="gdLoss" aria-label="가로축 반복 횟수, 세로축 훈련 MSE. 점선은 정규방정식의 MSE다"></canvas></div></div>
+    </div>
+    <div class="ctrls">
+      <button class="btn blue" id="gdPlay">▶ 재생</button><button class="btn" id="gdStep">한 걸음</button><button class="btn" id="gdReset">처음으로</button>
+      <label>학습률 η <input type="range" id="gdLr" min="-2.5" max="0.1" step="0.05" value="-1.3"><output id="gdLrO">0.05</output></label>
+      <button class="btn" id="gdNe">정규방정식으로 한 번에</button>
+    </div>
+    <div class="caption" id="gdInfo" aria-live="polite"></div>
+    <p class="foot">오른쪽 위 그림은 (w, b)를 바꿔 가며 잰 손실(MSE)의 지도다. 표준화하면 그릇이 동그래서 곧장 바닥으로 가고, 날것 그대로면 길쭉한 골짜기가 생겨 경사 하강이 바닥 근처에서 한참 기어간다. 학습률을 크게 올리면 바닥을 넘어 튀어 나간다(발산).</p>
+  </div>
+  <div class="card">
+    <span class="tag">특징 8개 전부 · 두 길로 풀어 비교하기 (표준화, 훈련 772건)</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="twoRun">두 방법으로 학습 ▶</button><span class="muted" style="font-size:13.5px">경사 하강은 학습률 0.2로 10 · 100 · 1,000번 걷는다</span></div>
+    <div class="tw"><table class="tb" id="twoTbl" style="font-size:13.5px"><tbody><tr><td class="muted">버튼을 누르면 브라우저가 계산한다.</td></tr></tbody></table></div>
+    <div class="caption" id="twoInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>정규방정식 — 바닥은 기울기가 0인 곳</h4>
+      <p>MSE는 가중치에 대한 2차식이라 그릇 모양이고 바닥이 하나다. 바닥에서는 기울기가 0이므로, 그 조건을 식으로 쓰면 연립방정식 (XᵀX)β = Xᵀy가 된다. 특징이 8개면 9×9 방정식 하나를 풀면 끝이다. 반복도, 학습률도 필요 없다.</p>
+      <div class="eq">β = (XᵀX)<sup>−1</sup> Xᵀy &nbsp;— 특징 d개면 (d+1)×(d+1) 행렬을 푼다</div>
+    </div>
+    <div class="explain">
+      <h4>경사 하강 — 그런데 왜 굳이 걸어 내려가나</h4>
+      <p>특징이 수만 개면 XᵀX가 수만×수만 행렬이 되어 풀기 버겁고, 데이터가 메모리에 다 안 들어가면 XᵀX를 만들 수도 없다. 경사 하강은 데이터를 조금씩 보며 걸어가므로 이럴 때 쓴다. 신경망처럼 바닥을 식으로 풀 수 없는 모델은 경사 하강밖에 없다. 한 걸음의 식은 5-4 로지스틱 회귀와 꼴이 같다. "틀린 만큼 × 특징"의 평균이다.</p>
+      <div class="eq">w ← w + <i>η</i> · 2·평균[ (y − ŷ) · x ] &nbsp;·&nbsp; b ← b + <i>η</i> · 2·평균[ y − ŷ ]</div>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="count" data-move="pop" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>9×9 방정식 한 번이면 수습 끝이라고? 경사 하강으로 천 번 걸어도 같은 자리면, 우리 공장 규모에선 한 번에 푸는 쪽이 싸지.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Evaluation</div>
+    <h2>성과 평가 — 봉인된 시험지를 연다</h2>
+    <p class="lin">R² 하나로 끝내지 않는다. MAE·RMSE, 예측 대 실제, 잔차의 무늬, 그리고 좋은 특징까지 본다</p>
+  </div>
+  <div class="card">
+    <span class="tag">시험지 258건 · 특징 8개, 브라우저에서 정규방정식으로 학습</span>
+    <div id="evalStat"><p class="muted">계산 중…</p></div>
+  </div>
+  <div class="card">
+    <span class="tag">예측 대 실제, 그리고 잔차의 무늬 · 시험지 258건</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="모델 고르기" id="resModel"><button data-v="m8" aria-pressed="true">특징 8개 그대로</button><button data-v="m10" aria-pressed="false">+ 물-결합재비 · log(재령)</button></div>
+      <label>잔차 그림 가로축 <select id="resX" class="btn"><option value="age">재령 (일, 로그 눈금)</option><option value="pred">예측 강도</option><option value="wb">물-결합재비</option><option value="cement">시멘트</option></select></label>
+    </div>
+    <div class="two" style="gap:12px">
+      <div><div class="cwrap"><canvas class="fig" id="pvaCv" aria-label="가로축 실제 강도, 세로축 예측 강도의 산점도. 대각선 위에 놓일수록 잘 맞힌 것이다"></canvas></div></div>
+      <div><div class="cwrap"><canvas class="fig" id="resCv" aria-label="가로축은 고른 값, 세로축은 잔차(실제 − 예측). 0선 위아래로 점이 흩어져 있고, 구간별 평균 잔차를 이은 빨간 선이 함께 그려진다. 특징 8개 모델에서 재령 축으로 보면 빨간 선이 아래-위-아래로 휘는 무늬가 생긴다"></canvas></div></div>
+    </div>
+    <div class="caption" id="resInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>MAE와 RMSE는 왜 다른가</h4>
+      <p id="maeTxt">계산 중…</p>
+    </div>
+    <div class="explain">
+      <h4>R²를 읽는 법</h4>
+      <p>R² 0.567은 "평균만 말할 때의 잔차 제곱합을 56.7% 줄였다"는 뜻이다. 강도의 흩어짐 중 절반 남짓을 설명했다고도 읽는다. R²는 단위가 없어 다른 데이터와 비교하기 좋지만, 현장에서 "몇 MPa 틀리나"는 말해 주지 않는다. 그래서 MAE와 꼭 같이 쓴다. 시험지에서는 R²가 음수도 나온다. 평균만도 못하다는 뜻이다(5-3의 4차 다항식).</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">좋은 특징 실험 · 특징 묶음을 고르면 브라우저가 다시 학습한다 (시험 R²)</span>
+    <div class="choice" role="group" aria-label="특징 묶음 고르기" id="feChoice"></div>
+    <div class="bars" id="feBars" style="margin-top:12px"></div>
+    <div class="caption" id="feInfo" aria-live="polite">묶음을 하나씩 눌러 막대를 채워 보세요.</div>
+  </div>
+
+  <div class="interview" id="iv2"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 맞는 일과 안 맞는 일, 근무 조건(하이퍼파라미터)</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym">β</span><span class="no">APP-02 → EMP-0002</span><span class="nm">선형 회귀</span><span class="rl">지도 본부 › 회귀팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">좋은 특징을 주면 일을 잘하는 직선.</b> 학습이 가장 빠르고 가중치로 설명할 수 있다. 곡선은 스스로 못 그리지만, 사람이 특징을 펴 주면 경험식을 넘는다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>학습이 한 번에 끝난다.</b> 정규방정식 하나, 반복도 학습률도 없다(04장).</li>
+          <li><b>설명할 수 있다.</b> 가중치가 곧 "그 특징이 늘면 강도가 몇 MPa 바뀌나"다(아래 그림).</li>
+          <li><b>가볍다.</b> 외울 숫자가 특징 수 + 1개뿐이다. 엑셀 한 줄로도 예측한다.</li>
+          <li><b>기준선으로 좋다.</b> 회귀 문제에서 가장 먼저 돌려 볼 첫 지원자다. 다른 지원자는 이 점수를 넘어야 쓸 까닭이 생긴다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>곡선을 못 그린다.</b> 재령에 따른 강도처럼 휘는 관계는 log 같은 특징을 사람이 만들어 줘야 한다(05장).</li>
+          <li><b>상호작용을 모른다.</b> "슬래그는 오래 굳혀야 힘을 낸다"처럼 두 특징이 함께 일하는 효과는 곱한 특징을 넣어야 한다(5-3).</li>
+          <li><b>튀는 값에 끌려간다.</b> 제곱 손실이라 큰 잔차 몇 개가 직선을 당긴다.</li>
+          <li><b>서로 닮은 특징</b>(시멘트·물·골재처럼 합이 거의 일정한 배합량)이 있으면 가중치가 흔들리고 부호가 뒤집히기도 한다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">설명할 수 있는 직원 · 가중치 막대 (훈련 데이터로 학습)</span>
+    <div class="choice" role="group" aria-label="가중치 보기 고르기" id="wChoice"></div>
+    <div class="bars" id="wBars" style="margin-top:12px"></div>
+    <div class="caption" id="wInfo" aria-live="polite"></div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>LinearRegression(fit_intercept)</code></td><td>True</td><td>절편 b를 둘지. 거의 늘 True. False면 직선이 원점을 지나도록 강제한다.</td></tr>
+        <tr><td><code>LinearRegression(positive)</code></td><td>False</td><td>True면 모든 가중치를 0 이상으로 묶는다. "시멘트를 더 넣으면 약해진다" 같은 말이 안 되는 부호를 막고 싶을 때 쓴다.</td></tr>
+        <tr><td>특징 목록</td><td>—</td><td>선형 회귀의 진짜 근무 조건이다. 하이퍼파라미터가 거의 없는 대신 <b>무엇을 넣느냐</b>가 성적을 정한다. log(재령) 하나로 R² 0.567 → 0.844(05장).</td></tr>
+        <tr><td><code>SGDRegressor(eta0, max_iter)</code></td><td>0.01, 1000</td><td>경사 하강으로 푸는 다른 이름의 같은 지원자. 데이터가 아주 클 때 쓴다. 표준화가 필수이고, 기본값은 <code>penalty="l2"</code>(규제 있음)이라 순수 선형 회귀와 같게 하려면 <code>penalty=None</code>으로 둔다.</td></tr>
+        <tr><td><code>Ridge(alpha)</code> · <code>Lasso(alpha)</code></td><td>1.0</td><td>가중치에 벌점을 더한 선형 회귀. 특징이 많거나 서로 닮았을 때 쓴다. 5-3에서 면접한다. 로지스틱 회귀의 <code>C</code>와 방향이 반대다(C ≈ 1/alpha).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">회귀팀 성적표 · 같은 시험지 258건</span>
+      <div class="tw"><table class="tb" id="teamTbl" style="font-size:13.5px"></table></div>
+      <p class="foot">브라우저 계산. 다항 회귀(5-3)와 KNN(5-1)은 면접 예정이다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">맞는 일 · 안 맞는 일</span>
+      <table class="tb" style="font-size:14px"><tbody>
+        <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>관계가 대체로 곧은 숫자 예측(원료량 → 비용, 온도 → 소비 전력), 가중치로 설명해야 하는 보고서, 전문가가 좋은 특징(물-결합재비, log 재령)을 알려 줄 수 있는 표 데이터, 다른 회귀 모델의 첫 기준선</td></tr>
+        <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>휘거나 포화하는 관계를 특징 없이 맞히기, 특징끼리의 상호작용이 핵심인 문제, 튀는 값이 많은 데이터(→ 절댓값 손실이나 Huber 손실), 특징이 데이터 수보다 많은 경우(→ 5-3 규제)</td></tr>
+        <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td>5-4 로지스틱 회귀는 이 직선의 값에 시그모이드를 씌워 확률로 바꾼 지원자다. 선형 점수 z = w·x + b는 같다.</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>

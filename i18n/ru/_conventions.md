@@ -1,0 +1,24 @@
+# Русский conventions (translate from Korean `ko`; the reviewed English in i18n/en/<same file>.json, same key, is a reference for meaning and fragment structure)
+
+- Series: Комиссия по найму моделей. Hiring verdicts (verdict keys, English Hired/Rejected): **Принят / Отложено / Отклонён**.
+- Concrete test (35 MPa or more?), untagged 합격/불합격 (English Pass/Fail): **Годен / Не годен** (labels); in prose «проходит / не проходит». Chart '35MPa 합격선' = «порог 35 МПа».
+- 합격선 (hiring bar) = **планка найма**. 시험지 = **экзаменационный лист** (held-out test set). 훈련 = обучение. 채점 봉투 = **запечатанный конверт с ответами**. 업무 점수 = **рабочий балл**.
+- Units in prose: МПа, кг/м³, сут (age: «28 сут» or «28 дней» in prose; «сут» on charts). Code stays MPa.
+- Speaker labels inside `<span class="who">…</span>`:
+  - 위원장 박사 → Председатель (Доктор) · 위원장 · 박사 → Председатель · Доктор
+  - 인사 담당 조수 → Ассистент по кадрам · 인사 담당 · 조수 → Кадры · Ассистент
+  - 실무 면접관 초파리 → Дрозофила (технический интервьюер) · 실무 면접관 · 초파리 연구원 → Технический интервьюер · Дрозофила
+  - 예산 담당 Money-Robo → Money-Robo (бюджет) · 예산 담당 · Money-Robo → Бюджет · Money-Robo
+  - 기존 직원 · 매뉴얼 씨 → Действующий сотрудник · Мистер Инструкция · 지원자 · X → Кандидат · X
+  - Short comic names: 박사 → Доктор, 조수 → Ассистент, 초파리 → Дрозофила.
+- Teams: Вводная группа · Группа регрессии · Группа классификации · Универсальная группа · Группа кластеризации · Группа снижения размерности. Отдел обучения с учителем / Отдел обучения без учителя.
+- Section refs: "03장" → «раздел 03», "B장" → «раздел B». 00장 = Анкета, стр. 1.
+- Money: 0원 → 0 ₽ (metaphor for compute cost; keep the joke).
+- Mr. Manual = Мистер Инструкция, speaks like a regulation: «Статья 1. … Статья 2. …».
+- Author: «Ан Сансон (руководитель M-Robo)».
+- Style: plain, short textbook sentences; quotes «ёлочки». Dialogue: Доктор polite «вы», Ассистент brisk polite, Дрозофила blunt «ты», Money-Robo casual, money-minded.
+- Russian needs agreement with numbers (1 смесь, 2 смеси, 5 смесей). In JS fragments after a number you cannot know the number: use forms that work for any count — a noun in a label form («смесей: 12» → reshape as "смесей: " before the number when the order allows, or use abbreviations «шт.», «изобр.», «кл.»). Read ctx and reshape neighbours.
+- Counters: 장 → «изобр.», 개 → ∅ or «шт.», 건 → «шт.» / reshape, 번 → «раз» (works for most counts as «раз»), 묶음 → «кл.», 일 → «сут».
+- Particle-only fragments: ∅ (single character ∅ = intentionally empty).
+- AI prompts ("한국어 주석"): «комментарии на русском».
+- Model names: KNN, линейная регрессия, полиномиальная регрессия, логистическая регрессия, наивный Байес, дерево решений, случайный лес, SVM, GBM, K-Means, иерархическая кластеризация, DBSCAN, GMM, PCA, t-SNE · UMAP.

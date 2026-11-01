@@ -1,0 +1,494 @@
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
+    <div class="kicker">모델 채용 위원회 · 5-11 면접<span class="dept">비지도 본부 › 군집팀</span></div>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-11 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 H 기호가 그려진 지원자 계층적 군집의 사원증이 떠 있고, 그 옆에서 점 여덟 개가 가까운 둘부터 짝지어지며 작은 가계도(덴드로그램)가 아래에서 위로 자라고, 빨간 점선 가위가 오르내리며 묶음 수를 바꾼다. 박사가 칠판을 들고 '가까운 둘부터 합쳐요'라고 말하고, 초파리가 기록하며 몇 묶음에서 자를지 묻는다"></canvas>
+    <div class="hero-grid">
+      <div>
+        <h1>계층적 군집 — 가장 닮은 둘부터 합쳐 가계도를 그린다</h1>
+        <p class="lede" style="margin-top:14px">공장 현장 일지에 손으로 쓴 숫자가 <b>1,797장</b> 쌓여 있다. 정답 이름표는 없다. 오늘의 지원자는 묶음 수를 미리 정하지 않는다. 처음에는 한 장이 한 묶음이다. 그중 <b>가장 닮은 두 장</b>을 합친다. 그다음 가장 닮은 두 묶음을 또 합친다. 1,796번 합치면 모두가 한 묶음이 되고, 합친 기록은 아래가 닮은 사이, 위가 먼 사이인 <b>가계도(덴드로그램)</b>로 남는다.</p>
+        <p class="lede">묶음이 몇 개 필요한지는 마지막에 정한다. 가계도를 어느 <b>높이에서 자르느냐</b>가 곧 묶음 수다. 남은 문제는 "묶음과 묶음이 얼마나 가까운가"를 재는 법(<b>연결 방식</b>)이다. 가장 가까운 한 쌍으로 잴지, 가장 먼 쌍으로 잴지, 평균으로 잴지, 합쳤을 때 늘어나는 흩어짐으로 잴지. 이 선택 하나로 성적이 0.794에서 0.000까지 갈린다.</p>
+        <div class="chips" aria-label="10분 핵심 경로"><span class="muted">10분 핵심 경로</span><a href="#overview">00 지원서 1장</a><span class="arr">→</span><a href="#m1">01 스무 장 합치기</a><span class="arr">→</span><a href="#dendro">04 가계도 자르기</a><span class="arr">→</span><a href="#envelope">05 채점 봉투</a><span class="arr">→</span><a href="#iv11">면접 결과</a></div>
+      </div>
+      <div>
+        <div class="sizebox">
+          <h3>지원자 요약</h3>
+          <div class="sizegrid">
+            <div><b>1,797장</b><span>정답 없는 손글씨 (8×8 = 64칸)</span></div>
+            <div><b>1,796번</b><span>가장 가까운 둘을 합치는 횟수</span></div>
+            <div><b>161만 쌍</b><span>미리 재 두는 거리 (1,797 × 1,796 ÷ 2)</span></div>
+            <div><b id="heroLine">ARI 0.108</b><span>넘어야 할 합격선 (매뉴얼 씨 8묶음)</span></div>
+          </div>
+          <p class="foot">실기 과제는 손글씨 숫자 1,797장을 비슷한 글씨끼리 묶는 일이다. 정답(0~9)은 채점 봉투에 봉인해 05장에서만 연다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cast" aria-label="등장인물 소개">
+      <div class="say doc"><img data-who="doc" data-mood="board" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>군집팀 두 번째 지원자예요. 이번에도 정답 없이 묶고, 채점 봉투는 마지막에 엽니다. 합격선은 매뉴얼 씨의 정리 규칙이 낸 ARI 0.108, 그리고 무작위로 나눴을 때의 0입니다.</div></div>
+      <div class="say asst"><img data-who="asst" data-mood="firm" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>이 지원자는 합칠 때마다 "얼마나 먼 사이를 합쳤나"를 높이로 적어요. 저는 그 1,796줄 기록을 장부로 받아 가계도로 세우겠습니다.</div></div>
+      <div class="say fly"><img data-who="fly" data-mood="type" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>가계도는 좋은데, 결국 어디서 자를 거야? 정답을 안 보고 자를 높이를 정할 수 있어? 그리고 내일 새 글씨가 오면 어느 갈래에 붙여?</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>모든 두 장 사이 거리를 먼저 잰다고? 1,797장이면 161만 쌍이야. 10만 장이면 50억 쌍. 장부 값이 장수의 제곱으로 오르는 직원은 처음 봐.</div></div>
+      <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>저는 규칙 세 줄로 나눕니다. 가운데가 비었는가, 잉크가 많은가, 위가 무거운가. 2 × 2 × 2 = 8묶음. 묶음 이름은 사람이 붙이면 됩니다.</div></div>
+      <div class="say app"><span class="sym" aria-hidden="true">H</span><div class="bub"><span class="who">지원자 · 계층적 군집</span>안녕하십니까. 계층적 군집입니다. 저는 묶음 수를 묻지 않습니다. 가장 닮은 둘부터 하나씩 합쳐 가계도 한 장을 드리겠습니다. 몇 묶음으로 쓰실지는 그 가계도를 보고 정하시면 됩니다.</div></div>
+    </div>
+    <aside class="prereq" aria-label="먼저 읽으면 좋은 편">
+      <b>먼저 읽으면 좋은 편</b>
+      <span><a href="5-1_knn.html">5-1 KNN</a> — "가까움"을 거리로 재는 법. 오늘도 64칸 픽셀 사이 유클리드 거리를 쓴다 · <a href="5-6_decision_tree.html">5-6 결정 트리</a> — 위에서 아래로 나누는 나무. 오늘은 아래에서 위로 합치는 나무다</span>
+      <span>함께 보면 좋은 편: <a href="5-10_kmeans.html">5-10 K-Means</a> — 같은 군집팀, 중심 k개로 묶는 지원자 · <a href="https://adminmrobo.github.io/ML_00_Algorithm-family-build_02/4-8_unsupervised_nine.html" target="_blank" rel="noopener">패밀리 조직도 4-8 비지도 아홉</a> · <a href="https://adminmrobo.github.io/AI_image_classification/4-2_cat_human.html" target="_blank" rel="noopener">이미지 분류 4-2 고양이 vs 사람</a> — 사진은 숫자 행렬이다</span>
+    </aside>
+  </div>
+</header>
+
+<!-- ═══════════ 00 지원서 1장 (OVERVIEW) ═══════════ -->
+<section class="part" id="overview">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">00</div>
+    <div class="en">Overview · Application form</div>
+    <h2>지원서 1장 — 계층적 군집을 한 장으로</h2>
+    <p class="lin">아홉 칸이 곧 이 면접의 순서다. 칸을 누르면 자세히 보는 장으로 간다</p>
+  </div>
+  <div class="sheet-tools"><button class="btn" id="sheetPrint">이 한 장만 인쇄</button><span class="muted">A4 한 장으로 인쇄된다. 수업 자료로 나눠 줄 수 있다.</span></div>
+  <div class="sheet" role="group" aria-label="계층적 군집 지원서 1장: 아홉 칸 요약">
+    <div class="clip" aria-hidden="true"></div>
+    <div class="sh-head">
+      <div class="sh-form">FORM 5-11 · 지원서<br>지원자 번호 APP-11<br>지원 부서 비지도 본부 › 군집팀</div>
+      <div class="sh-title">Hierarchical Clustering<small>계층적 군집 · 병합(아래에서 위로) · 지원서 1장</small></div>
+      <div class="sh-photo" aria-hidden="true">H</div>
+    </div>
+    <div class="grid9">
+      <a class="pn" href="#m1">
+        <h3>1. 가장 가까운 둘부터 <small>Agglomerative</small></h3>
+        <p class="d">처음엔 한 장이 한 묶음. 가장 가까운 두 묶음을 하나로 합치기를 되풀이한다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="검은 점 일곱 개가 흩어져 있다. 그중 가장 가까운 두 점이 파란 타원으로 둘러싸여 '1번째 합치기'라고 적혀 있고, 조금 떨어진 다른 두 점이 연한 파란 점선 타원으로 '2번째'라고 적혀 있다">
+          <defs><marker id="h1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker>
+          <marker id="h1b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe5"/></marker></defs>
+          <ellipse cx="70" cy="52" rx="34" ry="20" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2.4"/>
+          <ellipse cx="196" cy="98" rx="40" ry="22" fill="none" stroke="#1f6fe5" stroke-width="1.8" stroke-dasharray="5 4"/>
+          <g fill="#111"><circle cx="58" cy="52" r="6"/><circle cx="82" cy="52" r="6"/><circle cx="178" cy="98" r="6"/><circle cx="214" cy="98" r="6"/><circle cx="130" cy="34" r="6"/><circle cx="250" cy="40" r="6"/><circle cx="110" cy="118" r="6"/></g>
+          <g font-size="12.5" fill="#1f6fe5"><text x="36" y="22">1번째 합치기</text><text x="210" y="134">2번째</text></g>
+          <text x="150" y="146" text-anchor="middle" font-size="12">1,797묶음 → 1,796 → ⋯ → 1묶음</text>
+        </svg>
+        <span class="go">→ 01 자기소개</span>
+      </a>
+      <a class="pn" href="#m2">
+        <h3>2. 거리 <small>Euclidean Distance on 64 Pixels</small></h3>
+        <p class="d">글씨 두 장의 64칸 밝기를 칸마다 빼서 제곱해 더하고 제곱근. 작을수록 닮았다.</p>
+        <svg viewBox="0 0 300 150" role="img" aria-label="8×8 격자 두 개가 나란히 있다. 왼쪽 격자에는 0 모양, 오른쪽 격자에는 조금 다른 0 모양이 검게 칠해져 있고, 두 격자 사이에 양쪽 화살표와 d라고 적혀 있다">
+          <g id="h2g" stroke="#111" stroke-width=".6" fill="none"><rect x="20" y="16" width="96" height="96"/></g>
+          <g fill="#111"><rect x="44" y="28" width="48" height="12"/><rect x="32" y="40" width="12" height="48"/><rect x="92" y="40" width="12" height="48"/><rect x="44" y="88" width="48" height="12"/></g>
+          <rect x="184" y="16" width="96" height="96" stroke="#111" stroke-width=".6" fill="none"/>
+          <g fill="#111"><rect x="208" y="28" width="36" height="12"/><rect x="196" y="40" width="12" height="48"/><rect x="256" y="52" width="12" height="36"/><rect x="244" y="40" width="12" height="12" opacity=".5"/><rect x="208" y="88" width="48" height="12"/></g>
+          <path d="M126,64 L174,64" stroke="#1f6fe5" stroke-width="2.4" marker-start="url(#h1b)" marker-end="url(#h1b)"/>
+          <text x="150" y="56" text-anchor="middle" font-size="15" font-style="italic" font-family="serif" fill="#1f6fe5">d</text>
+          <text x="150" y="138" text-anchor="middle" font-size="12">칸마다 밝기 0~16 · 특징 64개</text>
+        </svg>
+        <div class="fbox"><span class="mth">d(a, b) = √ Σ<sub>j=1..64</sub> (a<sub>j</sub> − b<sub>j</sub>)²</span></div>
+        <span class="go">→ 02 실기 과제지</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>3. 연결 방식 <small>Linkage: Single · Complete · Average · Ward</small></h3>
+        <p class="d">묶음과 묶음 사이를 무엇으로 잴까. 가장 가까운 쌍, 가장 먼 쌍, 모든 쌍의 평균, 합친 뒤 흩어짐.</p>
+        <svg viewBox="0 0 300 160" role="img" aria-label="네 칸 그림. 각 칸에 점 세 개 묶음 두 개가 있다. single 칸은 가장 가까운 두 점을 잇는 선, complete 칸은 가장 먼 두 점을 잇는 선, average 칸은 모든 쌍을 잇는 흐린 선들, ward 칸은 두 묶음의 평균점(×)을 잇는 선이 그려져 있다">
+          <g font-size="12" text-anchor="middle"><text x="75" y="14">single</text><text x="225" y="14">complete</text><text x="75" y="92">average</text><text x="225" y="92">ward</text></g>
+          <path d="M150,4 L150,156 M4,80 L296,80" stroke="#999" stroke-width="1"/>
+          <g id="h3p" fill="#111"><circle cx="28" cy="44" r="4"/><circle cx="40" cy="30" r="4"/><circle cx="46" cy="54" r="4"/><circle cx="104" cy="34" r="4"/><circle cx="112" cy="58" r="4"/><circle cx="124" cy="42" r="4"/></g>
+          <path d="M46,54 L104,34" stroke="#1f6fe5" stroke-width="2.4"/>
+          <use href="#h3p" x="150"/><path d="M178,44 L274,42" stroke="#1f6fe5" stroke-width="2.4"/>
+          <use href="#h3p" y="78"/><g stroke="#1f6fe5" stroke-width="1" opacity=".55"><path d="M28,122 L104,112 M28,122 L112,136 M28,122 L124,120 M40,108 L104,112 M40,108 L112,136 M40,108 L124,120 M46,132 L104,112 M46,132 L112,136 M46,132 L124,120"/></g>
+          <use href="#h3p" x="150" y="78"/><g stroke="#1f6fe5" stroke-width="2.4"><path d="M188,121 L263,123"/></g><g font-size="15" fill="#c0392b" text-anchor="middle" font-weight="700"><text x="188" y="126">×</text><text x="263" y="128">×</text></g>
+        </svg>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>4. 와드 연결 <small>Ward: Minimum Variance Increase</small></h3>
+        <p class="d">합쳤을 때 묶음 안의 흩어짐(제곱 거리 합)이 가장 적게 느는 두 묶음을 합친다.</p>
+        <svg viewBox="0 0 300 130" role="img" aria-label="두 작은 원 묶음 A와 B가 있고 각각 평균점 μA, μB가 ×로 표시되어 있다. 화살표 아래에 합친 큰 묶음이 있고, 늘어난 흩어짐이 빨간 점선 원으로 표시되어 있다">
+          <circle cx="54" cy="44" r="26" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/><circle cx="130" cy="44" r="20" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <g font-size="14" fill="#c0392b" text-anchor="middle" font-weight="700"><text x="54" y="49">×</text><text x="130" y="49">×</text></g>
+          <g font-size="12" font-style="italic" font-family="serif" text-anchor="middle"><text x="54" y="86">A (n<tspan font-size="9" dy="3">A</tspan><tspan dy="-3">)</tspan></text><text x="130" y="86">B (n<tspan font-size="9" dy="3">B</tspan><tspan dy="-3">)</tspan></text></g>
+          <path d="M160,44 L196,44" stroke="#111" stroke-width="2" marker-end="url(#h1a)"/>
+          <circle cx="246" cy="44" r="40" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4"/><circle cx="246" cy="44" r="30" fill="#e6f0fe" stroke="#1f6fe5" stroke-width="2"/>
+          <text x="246" y="112" text-anchor="middle" font-size="12" fill="#c0392b">늘어난 흩어짐 = Δ</text>
+        </svg>
+        <div class="fbox"><span class="mth">Δ(A, B) = n<sub>A</sub>n<sub>B</sub> ⁄ (n<sub>A</sub>+n<sub>B</sub>) · ‖μ<sub>A</sub> − μ<sub>B</sub>‖²</span><br><span style="font-size:13px">K-Means가 줄이려는 관성과 같은 양이다</span></div>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+      <a class="pn" href="#dendro">
+        <h3>5. 덴드로그램 <small>Dendrogram = Merge History</small></h3>
+        <p class="d">합친 기록을 나무로 그린다. 두 갈래가 만나는 높이 = 합칠 때의 거리.</p>
+        <svg viewBox="0 0 300 160" role="img" aria-label="잎 여섯 개 a부터 f까지가 아래에 있고, a와 b가 낮은 높이에서, d와 e가 조금 높은 곳에서 만난다. 그 위로 c가 ab와, f가 de와 합쳐지고, 맨 위에서 두 갈래가 하나가 된다. 왼쪽에 높이 축이 있다">
+          <path d="M30,140 L30,10" stroke="#111" stroke-width="2" marker-end="url(#h1a)"/><text x="14" y="78" font-size="12" font-style="italic" font-family="serif">높이</text>
+          <g stroke="#1f6fe5" stroke-width="2.4" fill="none">
+            <path d="M60,138 L60,118 L90,118 L90,138"/><path d="M75,118 L75,88 L120,88 L120,138"/>
+            <path d="M180,138 L180,108 L210,108 L210,138"/><path d="M195,108 L195,78 L250,78 L250,138"/>
+            <path d="M97,88 L97,30 L222,30 L222,78"/><path d="M160,30 L160,16"/></g>
+          <g font-size="13" font-style="italic" font-family="serif" text-anchor="middle"><text x="60" y="154">a</text><text x="90" y="154">b</text><text x="120" y="154">c</text><text x="180" y="154">d</text><text x="210" y="154">e</text><text x="250" y="154">f</text></g>
+        </svg>
+        <span class="go">→ 04 가계도</span>
+      </a>
+      <a class="pn" href="#dendro">
+        <h3>6. 자르는 높이 = 묶음 수 <small>Cut the Tree</small></h3>
+        <p class="d">가로선 하나로 나무를 자른다. 선에 걸린 갈래 수가 묶음 수다.</p>
+        <svg viewBox="0 0 300 160" role="img" aria-label="5번 칸과 같은 나무에 빨간 가로 점선이 높이 60쯤에 그어져 있다. 선이 세 갈래를 자르고, 잘린 갈래 아래가 각각 파랑, 초록, 주황으로 칠해져 '3묶음'이라고 적혀 있다">
+          <g fill="none" stroke-width="2.4">
+            <path d="M60,138 L60,118 L90,118 L90,138 M75,118 L75,88 L120,88 L120,138" stroke="#1f6fe5"/>
+            <path d="M180,138 L180,108 L210,108 L210,138" stroke="#2f9d63"/><path d="M250,138 L250,78" stroke="#d0782b"/><path d="M195,108 L195,78" stroke="#2f9d63"/>
+            <path d="M195,78 L250,78 M97,88 L97,30 L222,30 L222,78 M160,30 L160,16" stroke="#111"/></g>
+          <path d="M40,62 L290,62" stroke="#c0392b" stroke-width="2.2" stroke-dasharray="6 4"/><text x="288" y="56" text-anchor="end" font-size="12.5" fill="#c0392b">여기서 자르면 3묶음</text>
+          <g font-size="12" text-anchor="middle"><text x="90" y="154" fill="#1f6fe5">묶음 1</text><text x="195" y="154" fill="#2f9d63">묶음 2</text><text x="252" y="154" fill="#d0782b">묶음 3</text></g>
+        </svg>
+        <div class="fbox l" style="font-size:13.5px">scikit-learn: <code>n_clusters=10</code> 또는 <code>distance_threshold=300</code><br>한 번 만든 나무로 묶음 수를 몇 번이든 바꿔 본다</div>
+        <span class="go">→ 04 가계도</span>
+      </a>
+      <a class="pn" href="#m5">
+        <h3>7. 사슬 효과 <small>Chaining in Single Linkage</small></h3>
+        <p class="d">가장 가까운 한 쌍만 보면, 징검다리처럼 이어진 점들이 모두 한 묶음이 된다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽과 오른쪽에 촘촘한 점 무리 두 개가 있고, 그 사이를 점들이 한 줄로 징검다리처럼 잇는다. single 연결은 파란 선으로 모두를 한 묶음으로 이었고, 아래에 'ARI 0.000 · 1,788장이 한 묶음'이라고 적혀 있다">
+          <g fill="#111"><circle cx="40" cy="50" r="4"/><circle cx="52" cy="38" r="4"/><circle cx="30" cy="66" r="4"/><circle cx="56" cy="62" r="4"/><circle cx="44" cy="78" r="4"/>
+          <circle cx="250" cy="50" r="4"/><circle cx="262" cy="64" r="4"/><circle cx="240" cy="70" r="4"/><circle cx="268" cy="44" r="4"/><circle cx="254" cy="82" r="4"/>
+          <circle cx="80" cy="64" r="4"/><circle cx="104" cy="60" r="4"/><circle cx="128" cy="66" r="4"/><circle cx="152" cy="60" r="4"/><circle cx="176" cy="66" r="4"/><circle cx="200" cy="62" r="4"/><circle cx="222" cy="66" r="4"/></g>
+          <path d="M56,62 L80,64 L104,60 L128,66 L152,60 L176,66 L200,62 L222,66 L240,70" fill="none" stroke="#1f6fe5" stroke-width="2.4"/>
+          <rect x="16" y="24" width="270" height="72" rx="30" fill="none" stroke="#1f6fe5" stroke-width="1.6" stroke-dasharray="5 4"/>
+          <text x="150" y="120" text-anchor="middle" font-size="12.5" fill="#c0392b">single · 10묶음 중 하나에 1,788장 · ARI 0.000</text>
+        </svg>
+        <span class="go">→ 05 성과 평가</span>
+      </a>
+      <a class="pn" href="#predict">
+        <h3>8. 예측이 없다 <small>No predict() for New Samples</small></h3>
+        <p class="d">가계도는 가진 글씨로만 만든다. 새 글씨를 어느 갈래에 붙일 규칙은 따로 정해야 한다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="왼쪽에 완성된 작은 가계도가 있고, 오른쪽에서 새 글씨(물음표 상자)가 다가온다. 가계도 위에 'predict 없음'이라고 빨간 글씨가 있고, 아래 점선 화살표가 '가장 가까운 묶음 평균에 붙이기(덧붙인 규칙)'를 가리킨다">
+          <g stroke="#1f6fe5" stroke-width="2.2" fill="none"><path d="M30,116 L30,96 L56,96 L56,116 M43,96 L43,70 L90,70 L90,116 M118,116 L118,86 L146,86 L146,116 M66,70 L66,44 L132,44 L132,86"/></g>
+          <rect x="226" y="58" width="44" height="44" rx="6" fill="#fff" stroke="#111" stroke-width="2"/><text x="248" y="88" text-anchor="middle" font-size="24" font-weight="700">?</text>
+          <path d="M220,80 L168,80" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#h1a)"/>
+          <text x="196" y="30" text-anchor="middle" font-size="13" fill="#c0392b" font-weight="700">predict() 없음</text>
+          <text x="150" y="136" text-anchor="middle" font-size="11.5">→ 다시 합치거나, 가까운 묶음 평균에 붙이는 규칙을 덧붙인다</text>
+        </svg>
+        <span class="go">→ 06 인사 카드</span>
+      </a>
+      <a class="pn" href="#m4">
+        <h3>9. 비용은 장수의 제곱 <small>O(n²) Memory · Time</small></h3>
+        <p class="d">모든 두 장의 거리를 재 둔다. 장수가 10배가 되면 거리표는 100배가 된다.</p>
+        <svg viewBox="0 0 300 140" role="img" aria-label="계단 모양의 삼각형 거리표 세 개가 커지는 순서로 놓여 있다. 첫째 아래에 n = 1,797 · 161만 쌍, 둘째 아래에 n = 1만 · 5천만 쌍, 셋째 아래에 n = 10만 · 50억 쌍이라고 적혀 있다">
+          <path d="M14,96 L14,76 L34,96 Z" fill="#1f6fe5"/><path d="M84,96 L84,56 L124,96 Z" fill="#1f6fe5" opacity=".75"/><path d="M180,96 L180,12 L264,96 Z" fill="#1f6fe5" opacity=".5"/>
+          <g font-size="11.5" text-anchor="middle"><text x="26" y="114">1,797장</text><text x="26" y="130">161만 쌍</text><text x="104" y="114">1만 장</text><text x="104" y="130">5천만 쌍</text><text x="222" y="114">10만 장</text><text x="222" y="130">50억 쌍 (약 40GB)</text></g>
+        </svg>
+        <span class="go">→ 04 수습 기간</span>
+      </a>
+    </div>
+    <div class="sh-foot"><span><i class="ln"></i><b>파랑:</b> 모델 / 연결</span><span><i class="dt"></i><b style="color:#111">검정:</b> 데이터</span></div>
+  </div>
+  <div class="explain" style="margin-top:18px">
+    <h4>이 한 장을 읽는 순서</h4>
+    <p>1·2번 칸이 "무엇을 하나"(가까운 둘부터 합치기, 가까움을 재는 거리), 3·4번이 "묶음 사이는 어떻게 재나"(연결 방식, 와드), 5·6번이 "결과를 어떻게 쓰나"(가계도, 자르는 높이), 7번이 "어떻게 실패하나"(사슬 효과), 8·9번이 "현장에 들일 때의 조건"(새 글씨, 비용)이다. 이 면접은 01장(1번) → 02장(2번) → 04장(3·4·5·6·9번) → 05장(7번) → 06장(8번)으로 간다.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════ 01 자기소개 ═══════════ -->
+<section class="part" id="m1">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">01</div>
+    <div class="en">Self-introduction · Concept</div>
+    <h2>자기소개 — 한 장씩 따로에서, 모두 한 묶음까지</h2>
+    <p class="lin">모든 쌍의 거리를 잰다 → 가장 가까운 두 묶음을 합친다 → 새 묶음과 나머지의 거리를 고쳐 쓴다 → 한 묶음이 될 때까지 되풀이</p>
+  </div>
+  <div id="comicIntro"></div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say app"><span class="sym" aria-hidden="true">H</span><div class="bub"><span class="who">지원자 · 계층적 군집</span>과제지 맨 앞 스무 장으로 먼저 보여 드리겠습니다. "한 번 합치기"를 누를 때마다 지금 가장 가까운 두 묶음을 합치고, 그 거리만큼의 높이에 가로줄을 긋습니다. 스무 장이면 열아홉 번 합칩니다.</div></div>
+  </div>
+  <div class="card">
+    <span class="tag">직접 만져 보기 · 과제지 맨 앞 20장(받은 순서 그대로)을 합치기 · 브라우저 계산</span>
+    <div class="cwrap"><canvas class="fig" id="miniCv" aria-label="아래쪽에 손글씨 숫자 스무 장이 한 줄로 놓여 있고, 그 위로 가계도가 자란다. 두 묶음이 합쳐질 때마다 두 갈래를 잇는 가로줄이 그 거리만큼의 높이에 그려진다. 방금 합친 갈래는 빨간색, 이미 묶인 글씨들은 같은 색 띠로 표시된다"></canvas></div>
+    <div class="ctrls">
+      <button class="btn blue" id="mStep">＋ 한 번 합치기</button>
+      <button class="btn" id="mPlay">▶ 끝까지</button>
+      <button class="btn" id="mReset">처음으로 (20묶음)</button>
+      <div class="choice" role="group" aria-label="연결 방식" id="mLink"><button data-v="ward" aria-pressed="true">ward</button><button data-v="average" aria-pressed="false">average</button><button data-v="complete" aria-pressed="false">complete</button><button data-v="single" aria-pressed="false">single</button></div>
+    </div>
+    <div class="caption" id="mInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>묶음 수를 묻지 않는다</h4>
+      <p>5-10 K-Means는 처음에 "몇 묶음?"을 물었다. 오늘의 지원자는 묻지 않는다. 한 장이 한 묶음인 상태에서 시작해, 가장 가까운 둘을 합치는 일을 모두가 한 묶음이 될 때까지 되풀이한다. 그 과정 전체가 <b>가계도</b> 한 장에 담긴다. 10묶음이 필요하면 10묶음이 남는 높이에서, 3묶음이 필요하면 더 위에서 자른다. 나무는 다시 키우지 않는다. 이렇게 아래에서 위로 합치는 방식을 <b>병합</b>(agglomerative) 군집이라 하고, 반대로 전체를 위에서부터 둘로 쪼개 내려가는 방식을 <b>분할</b>(divisive) 군집이라 한다. 흔히 쓰는 것은 병합이다.</p>
+      <div class="eq">거리 재기 → 가장 가까운 둘 합치기 → 거리 고쳐 쓰기 → (n − 1번 반복) → 높이를 골라 자르기</div>
+    </div>
+    <div class="explain">
+      <h4>한 번 합치면 되돌리지 않는다</h4>
+      <p>합치기는 <b>욕심쟁이</b>(greedy)다. 지금 가장 가까운 둘을 합칠 뿐, 나중에 더 좋은 짝이 나타나도 이미 합친 것을 떼어 내지 않는다. 그래서 초반에 잘못 붙은 한 쌍이 끝까지 따라간다. 위 그림에서 연결 방식을 single로 바꾸면, 글씨 한 장이 이미 커진 묶음에 하나씩 매달리는 모습이 보인다. 무엇을 "가깝다"고 보느냐(연결 방식)가 가계도의 모양을 통째로 바꾼다. 04장에서 1,797장 전체로 다시 본다.</p>
+      <div class="eq">K-Means: 묶음 수 k를 먼저 · 중심을 옮겨 가며 고친다 &nbsp;·&nbsp; 계층적: 묶음 수는 나중 · 합친 것은 고치지 않는다</div>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q1"></div>
+</div>
+</section>
+
+<!-- ═══════════ 02 실기 과제지 ═══════════ -->
+<section class="part" id="m2">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">02</div>
+    <div class="en">Practical test · Data</div>
+    <h2>실기 과제지 — 정답 없는 1,797장</h2>
+    <p class="lin">한 장이 샘플 하나, 64칸 밝기가 특징(X)이다. 타겟은 없다. 정답(0~9)은 채점 봉투에 봉인되어 있다</p>
+  </div>
+  <div class="two">
+    <div class="card">
+      <span class="tag">과제 · 군집 (정답 없이 묶기)</span>
+      <h3>비슷한 글씨끼리 묶기</h3>
+      <p style="margin:6px 0 0;font-size:15px">손글씨 숫자 1,797장(scikit-learn <code>load_digits</code>, 8×8 픽셀, 밝기 0~16)을 비슷한 글씨끼리 묶는다. 지원자는 X만 본다. 정답을 쓰지 않으니 시험지를 따로 떼지 않고 <b>1,797장 전체</b>로 묶는다. 채점은 05장에서 봉투를 열어 <b>ARI</b>(정답과 얼마나 겹치나, 무작위 ≈ 0, 완벽 = 1)로 한다.</p>
+    </div>
+    <div class="card">
+      <span class="tag">합격선 · 매뉴얼 씨의 정리 규칙</span>
+      <h3>규칙 세 줄 → 8묶음</h3>
+      <p style="margin:6px 0 0;font-size:15px">① 가운데 네 칸의 잉크 합이 12 미만인가(가운데가 비었나) ② 잉크 합이 300을 넘나 ③ 위쪽 절반에 잉크가 절반 넘게 있나. 2 × 2 × 2 = 8묶음. 숨긴 정답과 견주면 <b id="lineAri">ARI 0.108</b>. 이것이 군집팀 합격선이다. 무작위로 10묶음을 만들면 ARI는 <b id="lineRand">0.000</b>이다.</p>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">그림 · 과제지 전체 1,797장 (글씨를 누르면 64칸 숫자가 보인다)</span>
+    <div class="ctrls" style="margin:0 0 8px"><div class="choice" role="group" aria-label="늘어놓는 순서" id="gOrder"><button data-v="raw" aria-pressed="true">받은 순서</button><button data-v="man" aria-pressed="false">매뉴얼 씨 8묶음 순</button></div><span class="muted" style="font-size:13.5px" id="gNote"></span></div>
+    <div class="two" style="gap:14px">
+      <div class="cwrap"><canvas class="fig" id="gridCv" aria-label="손글씨 숫자 1,797장이 작은 칸에 빽빽하게 늘어서 있다. '매뉴얼 씨 8묶음 순'을 고르면 같은 규칙 묶음끼리 모이고 묶음마다 다른 색 띠가 붙는다"></canvas></div>
+      <div><div class="cwrap"><canvas class="fig" id="pxCv" aria-label="고른 글씨 한 장을 8×8 칸으로 크게 그리고, 칸마다 밝기 숫자(0~16)를 적었다"></canvas></div><div class="caption" id="pxInfo" aria-live="polite" style="margin-top:6px"></div></div>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>제 규칙은 숫자 세 개만 봅니다. 가운데, 잉크 양, 위아래 무게. 64칸을 다 보면 좋겠지만, 사람이 64칸짜리 규칙을 쓸 수는 없지요. 오늘 지원자는 64칸을 한꺼번에 견준다니 지켜보겠습니다.</div></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>사진도 숫자 표다</h4>
+      <p>글씨 한 장은 8 × 8 = 64칸이고, 칸마다 0(흰 종이)~16(진한 잉크)의 숫자가 있다. 지원자에게 글씨는 숫자 64개짜리 한 줄이다. 두 장이 "닮았다"는 것은 64개 숫자가 칸마다 비슷하다는 뜻이고, 그 차이를 하나로 모은 것이 <b>유클리드 거리</b>다. 같은 0이라도 조금 기울거나 굵으면 칸이 어긋나 거리가 커진다. 반대로 3과 9처럼 아래쪽 꼬리만 다른 숫자는 칸 대부분이 겹쳐 가깝게 잴 수 있다. 05장 채점 봉투에서 이 일이 실제로 일어난다.</p>
+    </div>
+    <div class="explain" style="border-left-color:var(--stamp)">
+      <h4>데이터 교체 안내 — 내 공장 데이터로 바꾸려면</h4>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>한 줄에 샘플 하나, 같은 길이의 숫자 열이면 된다. 스캔한 서식 칸이라면 같은 크기(예: 28×28)로 맞춘 뒤 한 줄로 편다. Colab 코드(A장) 1번 칸의 <code>X</code>만 바꾼다.</li>
+        <li>단위가 다른 특징(kg, 일, ℃)이 섞여 있으면 거리 전에 표준화를 검토한다. 이 과제처럼 모든 칸이 같은 밝기 단위면 하지 않는 편이 낫다(05장: 표준화하면 ARI 0.794 → 0.664).</li>
+        <li>샘플이 2만 장을 넘으면 거리표만 수 GB다. 표본으로 가계도를 만들거나, <code>connectivity</code>(가까운 이웃끼리만 합치기)를 주거나, BIRCH·K-Means로 먼저 작게 묶는다.</li>
+        <li>글자로 된 특징이나 0/1 특징이 많으면 유클리드 대신 다른 거리(<code>metric="manhattan"</code>, "cosine")와 average·complete 연결을 쓴다. ward는 유클리드만 받는다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q2"></div>
+</div>
+</section>
+
+<!-- ═══════════ 03 AI 비서에게 코드 받기 ═══════════ -->
+<section class="part" id="m3">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">03</div>
+    <div class="en">Implementation · With a generative AI</div>
+    <h2>AI 비서에게 코드 받기 — 맡기되 확인한다</h2>
+    <p class="lin">① 프롬프트 → ② 틀린 곳 찾기 → ③ 체크리스트 → ④ 버전 메모</p>
+  </div>
+  <p>군집 코드는 오류 없이 돌아가고 숫자도 그럴듯하게 나와서 틀린 줄을 알아채기 어렵다. 묶음 번호를 정답처럼 채점하거나, 지도학습 습관대로 표준화하거나, 없는 <code>predict</code>를 부른다. 위원회 규정은 같다. <b>AI가 낸 코드는 지원자의 자기소개서와 같다. 읽고, 의심하고, 돌려서 확인한다.</b></p>
+  <div class="card">
+    <span class="tag">① 프롬프트 — 이렇게 부탁한다</span>
+    <pre class="code" style="white-space:pre-wrap;max-height:none;background:var(--panel2);color:var(--text);border-color:var(--rule)" id="mainPrompt"></pre>
+    <div class="ctrls"><button class="btn blue" id="copyMain">프롬프트 복사</button><span class="muted" style="font-size:13.5px">〔 〕 안을 내 데이터로 바꾼다.</span></div>
+    <div class="pair" style="margin:12px 0 0">
+      <div><div class="ptag nn">좋은 프롬프트의 다섯 요소</div><p>① 환경(Colab, scikit-learn·scipy만, 버전 출력) ② 데이터(무엇이 X이고, 정답은 채점에만 쓴다) ③ 규정(연결 방식 비교, 묶음 수는 정답 없이 고른 근거와 함께) ④ 출력(덴드로그램, ARI·실루엣, 업무 점수) ⑤ 금지(정답으로 묶음 수를 고르지 않기, 묶음 번호를 정확도로 채점하지 않기)</p></div>
+      <div><div class="ptag fly">덜 좋은 프롬프트</div><p>"손글씨를 계층적 군집으로 분류하고 정확도 알려 줘." — "분류"와 "정확도"라는 말 때문에 AI가 묶음 번호와 정답을 그대로 맞대 보거나, 정답을 넣어 학습하는 코드를 낼 수 있다.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <span class="tag">② 틀린 곳 찾기 — AI가 이런 코드를 냈다 (흔한 실수 다섯 개를 일부러 넣은 예시)</span>
+    <p style="font-size:15px;margin:4px 0 10px">줄을 눌러 문제가 있는 곳을 찾아보자. 다섯 군데다. 찾으면 그 줄이 빨갛게 바뀌고 까닭이 나온다.</p>
+    <div class="bughunt" id="bugCode" role="list" aria-label="틀린 곳 찾기 코드. 줄을 눌러 고른다"></div>
+    <div class="ctrls"><span class="pill" id="bugScore">0 / 5</span><button class="btn" id="bugReveal">정답 모두 보기</button><button class="btn" id="bugReset">처음부터</button></div>
+    <div class="caption bugmsg" id="bugMsg" aria-live="polite">줄을 하나 눌러 보세요.</div>
+  </div>
+  <div class="card">
+    <span class="tag">③ 검증 체크리스트 — 코드를 돌리기 전에</span>
+    <ul class="checks" id="checks"></ul>
+    <p class="foot" id="checkScore"></p>
+  </div>
+  <div class="explain">
+    <h4>④ 버전 메모 — 같은 계층적 군집도 인자 이름이 바뀌어 왔다</h4>
+    <p>scikit-learn <code>AgglomerativeClustering</code>의 거리 인자는 <code>affinity</code>였다가 <code>metric</code>으로 바뀌었다(1.2에서 예고, 1.4에서 삭제). 지금 <code>affinity=</code>를 쓰면 <code>TypeError</code>가 난다. 높이를 정해 자르는 <code>distance_threshold</code>는 0.21부터, 합친 높이를 남기는 <code>compute_distances=True</code>는 0.24부터 있다. 둘 다 없으면 <code>distances_</code> 속성이 생기지 않는다. ward는 유클리드 거리만 받는다(<code>metric="cosine"</code>이면 <code>ValueError</code>).</p>
+    <p style="margin:0">덴드로그램 그림은 scikit-learn이 아니라 scipy의 <code>scipy.cluster.hierarchy.linkage</code>와 <code>dendrogram</code>으로 그리는 것이 가장 쉽다(A장 6번 칸). scipy의 연결 행렬 Z는 한 줄에 [왼쪽 번호, 오른쪽 번호, 높이, 크기]를 적는다. 두 라이브러리가 같은 ward를 써도 묶음 번호(0~9)는 다르게 붙는다. 묶음 번호에는 뜻이 없다. AI가 낸 인자는 <b>내가 설치한 버전의 공식 문서</b>로 확인한다.</p>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q3"></div>
+</div>
+</section>
+
+<!-- ═══════════ 04 수습 기간 ═══════════ -->
+<section class="part" id="m4">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">04</div>
+    <div class="en">Probation · Merging all 1,797</div>
+    <h2>수습 기간 — 1,796번 합치고, 가계도를 자른다</h2>
+    <p class="lin">거리 161만 쌍 재기 → 연결 방식 네 가지로 끝까지 합치기 → 가계도를 그려 자를 높이 고르기 → 채점 봉투는 아직 봉인</p>
+  </div>
+  <p>수습 기간에 지원자가 하는 일은 하나다. 1,797장 사이 거리를 모두 재고, 한 묶음이 될 때까지 합친다. 이 페이지는 그 일을 <b>이 브라우저에서 직접</b> 한다(NN-chain이라는 빠른 순서로 합치며, scikit-learn·scipy와 같은 결과를 낸다). 위원회가 고를 것은 둘이다. <b>묶음 사이를 어떻게 잴지(연결 방식)</b>, <b>어디서 자를지(묶음 수)</b>. 둘 다 정답 없이 고른다.</p>
+  <div class="card" id="chainCard">
+    <span class="tag">움직이는 그림 ① · 합칠수록 가장 큰 묶음은 얼마나 커지나 — 연결 방식 네 가지, 1,797장 전체 (브라우저 계산)</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="연결 방식" id="cLink"><button data-v="ward" aria-pressed="true">ward</button><button data-v="average" aria-pressed="false">average</button><button data-v="complete" aria-pressed="false">complete</button><button data-v="single" aria-pressed="false">single</button></div>
+      <button class="btn blue" id="cPlay">▶ 1,797 → 1묶음 재생</button>
+      <label>묶음 수 <input type="range" id="cK" min="0" max="100" step="1" value="69"><output id="cKO">10</output></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="chainCv" aria-label="가로축은 남은 묶음 수(오른쪽 1,797에서 왼쪽 1까지, 로그 눈금), 세로축은 가장 큰 묶음이 차지하는 비율. 연결 방식 네 가지의 선이 있다. single 선은 묶음이 수백 개 남았을 때 이미 비율이 0.9를 넘고, ward 선은 묶음이 몇 개 남지 않을 때까지 낮게 머문다. 아래 줄에는 고른 연결 방식에서 가장 큰 묶음 열 개의 평균 글씨와 장수가 그려진다"></canvas></div>
+    <div class="caption" id="cInfo" aria-live="polite">이 장에 오면 거리 161만 쌍을 재고 연결 방식 네 가지로 끝까지 합친다(이 브라우저에서 1~2초).</div>
+  </div>
+  <div class="card" id="dendro">
+    <span class="tag">움직이는 그림 ② · 가계도(덴드로그램) — 마지막 30갈래만, 갈래 끝에는 그 갈래의 평균 글씨</span>
+    <div class="ctrls" style="margin:0 0 8px">
+      <div class="choice" role="group" aria-label="가계도 연결 방식" id="dLink"><button data-v="ward" aria-pressed="true">ward</button><button data-v="average" aria-pressed="false">average</button><button data-v="complete" aria-pressed="false">complete</button><button data-v="single" aria-pressed="false">single</button></div>
+      <label>자를 곳 · 묶음 수 <input type="range" id="dK" min="2" max="30" step="1" value="10"><output id="dKO">10</output></label>
+    </div>
+    <div class="cwrap"><canvas class="fig" id="dendCv" aria-label="가계도. 위가 늦게 합친 먼 사이, 아래가 일찍 합친 가까운 사이다. 빨간 가로 점선이 고른 묶음 수가 남는 높이에 그어져 있고, 선 아래의 갈래들이 묶음마다 다른 색으로 칠해진다. 아래 끝에는 갈래 30개 각각의 평균 글씨와 장수가 있다"></canvas></div>
+    <div class="caption" id="dInfo" aria-live="polite"></div>
+  </div>
+  <div class="two">
+    <div class="explain">
+      <h4>연결 방식 = "묶음 사이 거리"의 정의</h4>
+      <p>낱장 둘의 거리는 하나뿐이지만, 묶음 둘의 거리는 정하기 나름이다. <b>single</b>은 두 묶음에서 가장 가까운 한 쌍의 거리, <b>complete</b>는 가장 먼 쌍의 거리, <b>average</b>는 모든 쌍의 평균, <b>ward</b>는 합쳤을 때 묶음 안 제곱 거리 합이 늘어나는 양이다. single은 징검다리 한 쌍만 있으면 합치므로 큰 묶음이 작은 낱장을 계속 삼킨다(①의 single 선). ward는 큰 묶음을 합칠수록 값이 커지도록 되어 있어 크기가 고른 묶음을 만든다. 합친 뒤의 거리는 모두 <b>Lance-Williams 식</b> 한 줄로 고쳐 쓴다.</p>
+      <div class="eq">single: min · complete: max · average: 평균 · ward: Δ흩어짐 (n<sub>A</sub>n<sub>B</sub>⁄(n<sub>A</sub>+n<sub>B</sub>)·‖μ<sub>A</sub>−μ<sub>B</sub>‖²)</div>
+    </div>
+    <div class="explain">
+      <h4>어디서 자를까 — 정답 없이 고르는 법</h4>
+      <p>① <b>업무 지식</b>: 숫자는 0~9 열 가지다. 위원회는 이것으로 10묶음을 기본으로 정했다. ② <b>높이가 크게 뛰는 곳</b>: 합칠 때 높이가 갑자기 커지면 "먼 사이를 억지로 합쳤다"는 신호다. 그 바로 아래에서 자른다. ③ <b>실루엣 점수</b>: 글씨마다 "내 묶음 안 평균 거리"와 "가장 가까운 다른 묶음까지의 평균 거리"를 견준다(1에 가까울수록 잘 갈림, 0 근처면 경계, 음수면 잘못 붙음). 셋이 늘 같은 답을 주지는 않는다. ②는 이 과제에서 2묶음을, ③은 9묶음을 가리킨다(05장). 채점 봉투는 아직 봉인되어 있다.</p>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="calc" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>장부 정리했어. 거리 <b>1,613,706</b>쌍, 한 쌍에 8바이트면 거리표만 <b>약 13MB</b>야. 이 브라우저는 거리 재기 <b id="msD">—</b>, ward로 끝까지 합치기 <b id="msZ">—</b>. 싸네. 근데 10만 장이면 거리표가 40GB야. 장수가 10배면 값은 100배. 그건 내가 결재 못 해.</div></div>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q4"></div>
+</div>
+</section>
+
+<!-- ═══════════ 05 성과 평가 ═══════════ -->
+<section class="part" id="m5">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">05</div>
+    <div class="en">Performance review · Opening the answer envelope</div>
+    <h2>성과 평가 — 채점 봉투를 연다</h2>
+    <p class="lin">숨긴 정답과 견주는 점수(ARI·NMI), 정답 없이 재는 점수(실루엣), 그리고 업무 점수(대표 한 장에만 이름 붙이기)</p>
+  </div>
+  <div class="card">
+    <span class="tag">본 조건 · ward 연결, 원래 픽셀, 10묶음 (브라우저 계산)</span>
+    <div id="evalStat"><p class="muted">계산 중…</p></div>
+  </div>
+  <div class="cast" style="margin:0 0 16px">
+    <div class="say asst"><img data-who="asst" data-mood="shock" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>봉투를 열기 전에 하나 짚을게요. 지원자가 붙인 묶음 번호 0~9는 숫자 0~9가 아니에요! "묶음 3"이 숫자 3이라는 보장은 없어요. 그래서 정확도가 아니라 ARI로 채점합니다.</div></div>
+  </div>
+  <div class="card" id="envelope">
+    <span class="tag">채점 봉투 열기 · 묶음 10개 × 숨긴 정답 0~9</span>
+    <div class="ctrls" style="margin:0 0 8px"><button class="btn blue" id="envOpen">✉ 채점 봉투 열기</button><span class="muted" style="font-size:13.5px" id="envNote">지금은 묶음마다 평균 글씨와 장수만 보인다.</span></div>
+    <div class="cwrap"><canvas class="fig" id="envCv" aria-label="표. 줄마다 지원자가 만든 묶음 하나이고, 맨 앞에 그 묶음의 평균 글씨가 있다. 봉투를 열면 칸마다 그 묶음에 들어간 숫자 0~9의 장수가 진하기로 칠해진다. 대부분의 줄은 한 칸에 몰려 있고, 3과 9가 한 줄에 섞이고, 1이 세 줄로 나뉜 것이 보인다"></canvas></div>
+    <div class="caption" id="envInfo" aria-live="polite"></div>
+  </div>
+  <div class="card" id="bizCard">
+    <span class="tag">업무 점수 · 묶음마다 대표 한 장에만 사람이 이름을 붙이면, 1,797장 중 몇 %가 맞게 이름 붙나</span>
+    <div class="ctrls" style="margin:0 0 8px"><label>묶음 수 = 사람이 이름 붙일 장수 <input type="range" id="bK" min="2" max="60" step="1" value="10"><output id="bKO">10</output></label></div>
+    <div class="cwrap"><canvas class="fig" id="repCv" aria-label="묶음마다 대표 한 장(그 묶음 평균에 가장 가까운 글씨)이 크게 그려져 있고, 아래에 사람이 붙인 이름과 그 이름이 묶음 안에서 맞은 장수가 적혀 있다"></canvas></div>
+    <div class="cwrap" style="margin-top:10px"><canvas class="fig" id="costCv" aria-label="가로축 사람이 이름 붙인 장수(묶음 수, 2~60), 세로축 1,797장 중 맞게 이름 붙은 비율. ward 선은 10장에서 85%, 12장에서 93%로 오르고 그 뒤로 완만하다. single 선은 바닥에 붙어 있다. 매뉴얼 씨(8장, 26%)와 K-Means(10장, 79%) 점이 찍혀 있다"></canvas></div>
+    <div class="caption" id="bizInfo" aria-live="polite"></div>
+  </div>
+  <div class="card">
+    <span class="tag">정답 없이 재는 점수 vs 채점 봉투 · ward 가계도를 2~20묶음으로 자를 때 (브라우저 계산)</span>
+    <div class="cwrap"><canvas class="fig" id="silCv" aria-label="가로축 묶음 수 2~20. 파란 선은 실루엣 점수(정답 없이), 빨간 선은 ARI(채점 봉투). 실루엣은 9묶음에서 가장 높고, ARI는 12묶음에서 가장 높다. 10묶음에 세로 점선이 있다"></canvas></div>
+    <div class="caption" id="silInfo" aria-live="polite">이 그림은 실루엣을 19번 계산한다(161만 쌍 × 19).</div>
+  </div>
+  <div class="card tw">
+    <span class="tag">연결 방식 네 가지 · 같은 1,797장, 같은 10묶음</span>
+    <table class="tb" id="linkTbl" style="font-size:14px;min-width:620px"></table>
+    <p class="foot">ARI·NMI·업무 점수는 채점 봉투(정답)로, 실루엣과 가장 큰 묶음은 정답 없이 잰다. 모두 이 브라우저 계산이며 A장 5번 칸(scikit-learn)과 같은 값이다.</p>
+  </div>
+
+  <div class="interview" id="iv11"></div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q5"></div>
+</div>
+</section>
+
+<!-- ═══════════ 06 인사 카드 ═══════════ -->
+<section class="part" id="m6">
+<div class="wrap">
+  <div class="part-head">
+    <div class="part-no">06</div>
+    <div class="en">Personnel card · Conclusion</div>
+    <h2>인사 카드 — 어디에 배치하고 어떻게 부리나</h2>
+    <p class="lin">강점과 약점, 근무 조건(하이퍼파라미터), 새 글씨가 왔을 때, 군집팀 중간 비교</p>
+  </div>
+  <div class="card" style="border:2px solid var(--ink)">
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:12px">
+      <div class="idcard"><span class="sym">H</span><span class="no">APP-11 → EMP-0011</span><span class="nm">계층적 군집 (병합, ward)</span><span class="rl">비지도 본부 › 군집팀</span></div>
+      <div class="muted" style="font-size:14px;max-width:52ch">한 줄 평: <b style="color:var(--text)">묶음 수를 나중에 정하게 해 주는 가계도 담당.</b> 작은 데이터에서 "몇 묶음이 자연스러운가"를 눈으로 보게 해 준다. 대신 장수의 제곱만큼 비싸고, 새 글씨를 받는 규칙이 없고, 연결 방식을 잘못 고르면 한 덩어리가 된다.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:16px;color:var(--ok)">강점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>묶음 수를 미리 정하지 않는다.</b> 나무 한 번으로 2묶음이든 30묶음이든 바로 자른다(04장).</li>
+          <li><b>결과가 매번 같다.</b> 무작위 시작점이 없어 같은 데이터면 같은 가계도가 나온다. K-Means의 초기값 운(n_init)이 없다.</li>
+          <li><b>구조가 보인다.</b> 1은 세 갈래로 나뉘고, 3과 9는 늦게야 갈라진다는 것을 가계도가 보여 준다. 묶음 사이의 "친척 관계"까지 준다.</li>
+          <li><b>거리만 있으면 된다.</b> 평균을 낼 수 없는 데이터(문자열, 그래프)도 거리표만 있으면 average·complete·single로 묶는다.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px;color:var(--stamp)">약점</h3>
+        <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">
+          <li><b>비싸다.</b> 거리표가 장수의 제곱. 1,797장은 13MB지만 10만 장은 40GB다.</li>
+          <li><b>예측(<code>predict</code>)이 없다.</b> 새 글씨를 받으려면 다시 합치거나, 묶음 평균에 붙이는 규칙을 덧붙여야 한다(아래).</li>
+          <li><b>되돌리지 않는다.</b> 초반에 잘못 합친 쌍은 끝까지 간다.</li>
+          <li><b>연결 방식에 운명이 걸린다.</b> 같은 데이터에서 ward 0.794, single 0.000. 잡음 몇 장이 징검다리가 되면 single은 무너진다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card tw">
+    <span class="tag">근무 조건 · 자주 만지는 하이퍼파라미터 (scikit-learn AgglomerativeClustering)</span>
+    <table class="tb">
+      <thead><tr><th>인자</th><th>기본값</th><th>뜻과 쓰는 법</th></tr></thead>
+      <tbody>
+        <tr><td><code>n_clusters</code></td><td>2</td><td>자른 뒤 남길 묶음 수. 이 면접은 10(숫자 열 가지라는 업무 지식). <code>distance_threshold</code>를 쓰면 None으로 둔다.</td></tr>
+        <tr><td><code>distance_threshold</code></td><td>None</td><td>이 높이 위의 합치기는 하지 않는다. 묶음 수 대신 높이로 자른다. 이 과제의 ward에서 300이면 9묶음, 400이면 7묶음(A장 7번 칸).</td></tr>
+        <tr><td><code>linkage</code></td><td>"ward"</td><td>묶음 사이 거리의 정의. "ward"·"complete"·"average"·"single". 이 면접의 성적을 가장 크게 바꾼 인자다(05장).</td></tr>
+        <tr><td><code>metric</code></td><td>"euclidean"</td><td>낱장 사이 거리. "manhattan", "cosine", "precomputed"(거리표를 직접 줌). ward는 euclidean만. 옛 이름 <code>affinity</code>는 지금 오류다(03장).</td></tr>
+        <tr><td><code>connectivity</code></td><td>None</td><td>이웃 그래프(<code>kneighbors_graph</code>)를 주면 이웃끼리만 합친다. 큰 데이터에서 빨라지고, 이미지 픽셀처럼 이웃이 정해진 데이터에 맞는다.</td></tr>
+        <tr><td><code>compute_distances</code></td><td>False</td><td>True면 합친 높이를 <code>distances_</code>에 남긴다. 덴드로그램을 그리려면 필요하다(또는 scipy <code>linkage</code>).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" id="predict">
+    <span class="tag">새 글씨가 오면? · 8×8 칸에 직접 숫자를 그려 보기 (칸을 누르거나 끌면 진해진다)</span>
+    <div class="two" style="gap:14px">
+      <div>
+        <div class="cwrap" style="max-width:300px"><canvas class="fig" id="padCv" aria-label="8×8 칸 그림판. 칸을 누르거나 끌면 그 칸의 잉크가 진해진다" style="touch-action:none;cursor:crosshair"></canvas></div>
+        <div class="ctrls"><button class="btn" id="padClear">지우기</button><button class="btn" id="padSample">과제지에서 한 장 불러오기</button><div class="choice" role="group" aria-label="붓" id="padPen"><button data-v="16" aria-pressed="true">진하게</button><button data-v="0" aria-pressed="false">지우개</button></div></div>
+      </div>
+      <div><div class="cwrap"><canvas class="fig" id="padOut" aria-label="그린 글씨를 가장 가까운 묶음 평균 세 개와 견준 결과. 묶음마다 평균 글씨, 거리, 그 묶음의 대표에게 붙은 이름이 있다"></canvas></div><div class="caption" id="padInfo" aria-live="polite" style="margin-top:6px"></div></div>
+    </div>
+  </div>
+  <div class="cast" style="margin:0 0 6px">
+    <div class="say robo"><img data-who="robo" data-mood="dq" data-move="shake" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>잠깐, 경고! 새 글씨 한 장 올 때마다 1,798장으로 처음부터 다시 합치면 그때마다 161만 쌍이야. 그래서 위 그림판은 계층적 군집이 아니라 "묶음 평균 10개 중 가장 가까운 곳"이라는 싼 규칙을 덧붙인 거야. 장부에 따로 적어 둬.</div></div>
+  </div>
+  <div class="card" id="ledgerCard">
+    <span class="tag">군집팀 중간 비교 · 같은 1,797장, 같은 채점 봉투</span>
+    <div class="tw"><table class="tb" id="cluLedger" style="font-size:14px;min-width:640px"></table></div>
+    <p class="foot" id="cluFoot"></p>
+  </div>
+  <div class="card">
+    <span class="tag">맞는 일 · 안 맞는 일</span>
+    <table class="tb" style="font-size:14px"><tbody>
+      <tr><td style="color:var(--ok);font-weight:700;white-space:nowrap">맞는 일</td><td>수천 건 이하의 데이터에서 "몇 묶음이 자연스러운가"를 먼저 보고 싶을 때, 묶음 사이 친척 관계가 필요한 일(제품 계통 정리, 불량 유형 분류 체계, 문서·유전자 계통도), 거리만 정의되고 평균은 낼 수 없는 데이터, 결과가 매번 같아야 하는 보고서</td></tr>
+      <tr><td style="color:var(--stamp);font-weight:700;white-space:nowrap">안 맞는 일</td><td>수만 건 이상(거리표가 감당 안 된다), 새 데이터가 계속 들어와 바로 배정해야 하는 일(예측이 없다), 잡음이 많은 데이터를 single 연결로 묶는 일(사슬 효과), 묶음 모양이 길쭉하거나 밀도가 다른 데이터(5-12 DBSCAN이 낫다)</td></tr>
+      <tr><td style="font-weight:700;white-space:nowrap">덧붙임</td><td>실무에서는 K-Means로 먼저 수백 묶음으로 줄이고, 그 중심들로 가계도를 그리는 2단계가 흔하다. 가계도의 장점(구조, 묶음 수 나중에)을 큰 데이터에서도 쓸 수 있다.</td></tr>
+    </tbody></table>
+  </div>
+  <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
+  <div class="quiz" data-quiz="q6"></div>
+</div>
+</section>
