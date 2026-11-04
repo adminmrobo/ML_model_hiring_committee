@@ -7,16 +7,16 @@
   - 위원장 박사 → 主席博士 · 위원장 · 박사 → 主席 · 博士
   - 인사 담당 조수 → 人事助理 · 인사 담당 · 조수 → 人事 · 助理
   - 실무 면접관 초파리 → 技术面试官果蝇 · 실무 면접관 · 초파리 연구원 → 技术面试官 · 果蝇研究员
-  - 예산 담당 Money-Robo → 预算官 Money-Robo · 예산 담당 · Money-Robo → 预算 · Money-Robo
+  - 예산 담당 주판봇 → 预算官算盘宝 · 예산 담당 · 주판봇 → 预算 · 算盘宝
   - 기존 직원 · 매뉴얼 씨 → 现任员工 · 手册先生
   - 지원자 · X → 应聘者 · X
   - Short comic names: 박사 → 博士, 조수 → 助理, 초파리 → 果蝇.
 - Teams: 入门组 · 回归组 · 分类组 · 两用组 · 聚类组 · 降维组. 监督学习本部 / 无监督学习本部.
 - Section references: "03장" → "第03章", "B장" → "B章". 00장 = the one-page application (申请表·第1页).
-- Money: 0원 → 0元; Money-Robo's costs are metaphors for compute (keep the joke).
+- Money: 0원 → 0元; 算盘宝's costs are metaphors for compute (keep the joke).
 - Mr. Manual = 手册先生, speaks like a regulation: "第一条 …… 第二条 ……".
 - Author: 安相宣 is NOT confirmed — write the author as "Ahn Sangsun（M-Robo 公司代表）".
-- Voice: explanations plain, short, declarative (教材体，不用"您"); dialogue keeps character voice: 博士 calm and polite, 助理 brisk, 果蝇 blunt and casual, Money-Robo casual and money-minded.
+- Voice: explanations plain, short, declarative (教材体，不用"您"); dialogue keeps character voice: 博士 calm and polite, 助理 brisk, 果蝇 blunt and casual, 算盘宝 casual and money-minded.
 - Punctuation: full-width Chinese punctuation （，。：；“”（））in Chinese sentences; keep half-width around numbers/code/math. No spaces between Chinese characters; one space between Chinese and a number/Latin word is optional — follow the Korean fragment's leading/trailing spaces only where they separate numbers/Latin words.
 - Counters glued after numbers: 장 → 张, 개 → 个 (or ∅ when the noun follows), 건 → 个/条/组 (mixes: 组配合比 → use " 组"), 번 → 次, 묶음 → 簇, 일 → 天 (on canvas: 天 is fine, it's short).
 - Particle-only fragments ('는','은','이라고','라고','이','가'): ∅ (the single character ∅ = intentionally empty; an empty tr means "not translated").

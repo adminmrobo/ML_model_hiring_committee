@@ -1,6 +1,6 @@
 # 라이선스 / License
 
-© 안상선 ((주)M-Robo 대표) · Ahn Sangsun (M-Robo Co., Ltd.)
+© 안상선 · Ahn Sangsun
 
 이 저장소의 글, 그림, 페이지는 **크리에이티브 커먼즈 저작자표시-비영리 4.0 국제 라이선스(CC BY-NC 4.0)**를 따릅니다.
 
@@ -13,4 +13,4 @@ The text, images and pages in this repository are licensed under **Creative Comm
 
 데이터 / Data: UCI Concrete Compressive Strength (Yeh, 1998) — CC BY 4.0 · scikit-learn load_digits — BSD-3-Clause.
 
-Money-Robo는 (주)M-Robo 서비스의 마스코트 캐릭터입니다. / Money-Robo is the mascot character of M-Robo's service.
+등장인물(박사·조수·초파리 연구원·주판봇) © 안상선. / Characters (the Doctor, the Assistant, the Fruit Fly researcher, AbaBot) © Ahn Sangsun.

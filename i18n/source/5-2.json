@@ -2147,9 +2147,9 @@
   "where": "페이지 HTML · 5-2",
   "tr": ""
  },
- "7baa39eceba4": {
-  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-2 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 베타 기호가 그려진 지원자 선형 회귀의 사원증이 떠 있고, 옆에 점들 사이를 지나는 직선이 그려져 있다",
-  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-2 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 베타 기호가 그려진 지원자 선형 회귀의 사원증이 떠 있고, 옆에 점들 사이를 지나는 직선이 그려져 있다⟧\"></canvas>",
+ "ed8f54c735fd": {
+  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-2 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 베타 기호가 그려진 지원자 선형 회귀의 사원증이 떠 있고, 옆에 점들 사이를 지나는 직선이 그려져 있다",
+  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-2 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 베타 기호가 그려진 지원자 선형 회귀의 사원증이 떠 있고, 옆에 점들 사이를 지나는 직선이 그려져 있다⟧\"></canvas>",
   "where": "페이지 HTML · 5-2",
   "tr": ""
  },
@@ -2213,9 +2213,9 @@
   "where": "페이지 HTML · 5-2",
   "tr": ""
  },
- "76dccdc0c743": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>학습이 행렬 한 번 풀기면 수습비가 거의 공짜네. 외울 숫자 아홉 개면 엑셀로도 돌리겠어.",
-  "ctx": "a-who=\"robo\" data-mood=\"happy\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>학습이 행렬 한 번 풀기면 수습비가 거의 공짜네. 외울 숫자 아홉 개면 엑셀로도 돌리겠어.⟧</div></div>",
+ "1ef9a618c66b": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>학습이 행렬 한 번 풀기면 수습비가 거의 공짜네. 외울 숫자 아홉 개면 엑셀로도 돌리겠어.",
+  "ctx": "a-who=\"robo\" data-mood=\"happy\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>학습이 행렬 한 번 풀기면 수습비가 거의 공짜네. 외울 숫자 아홉 개면 엑셀로도 돌리겠어.⟧</div></div>",
   "where": "페이지 HTML · 5-2",
   "tr": ""
  },
@@ -2915,9 +2915,9 @@
   "where": "페이지 HTML · 5-2",
   "tr": ""
  },
- "b152c263dd92": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>9×9 방정식 한 번이면 수습 끝이라고? 경사 하강으로 천 번 걸어도 같은 자리면, 우리 공장 규모에선 한 번에 푸는 쪽이 싸지.",
-  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"pop\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>9×9 방정식 한 번이면 수습 끝이라고? 경사 하강으로 천 번 걸어도 같은 자리면, 우리 공장 규모에선 한 번에 푸는 쪽이 싸지.⟧</div></div>",
+ "219c2d1efd61": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>9×9 방정식 한 번이면 수습 끝이라고? 경사 하강으로 천 번 걸어도 같은 자리면, 우리 공장 규모에선 한 번에 푸는 쪽이 싸지.",
+  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"pop\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>9×9 방정식 한 번이면 수습 끝이라고? 경사 하강으로 천 번 걸어도 같은 자리면, 우리 공장 규모에선 한 번에 푸는 쪽이 싸지.⟧</div></div>",
   "where": "페이지 HTML · 5-2",
   "tr": ""
  },
@@ -3191,9 +3191,9 @@
   "where": "페이지 HTML · 5-2",
   "tr": ""
  },
- "5cf12e2e8161": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>숫자 아홉 개, 학습은 행렬 한 번 풀기. 특징 두 개 얹어도 열한 개야. 이만큼 싼 직원은 없지.",
-  "ctx": "a-who=\"robo\" data-mood=\"coin\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>숫자 아홉 개, 학습은 행렬 한 번 풀기. 특징 두 개 얹어도 열한 개야. 이만큼 싼 직원은 없지.⟧</div></div>",
+ "b675776344b5": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>숫자 아홉 개, 학습은 행렬 한 번 풀기. 특징 두 개 얹어도 열한 개야. 이만큼 싼 직원은 없지.",
+  "ctx": "a-who=\"robo\" data-mood=\"coin\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>숫자 아홉 개, 학습은 행렬 한 번 풀기. 특징 두 개 얹어도 열한 개야. 이만큼 싼 직원은 없지.⟧</div></div>",
   "where": "페이지 HTML · 5-2",
   "tr": ""
  },

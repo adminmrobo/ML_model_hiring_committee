@@ -2435,9 +2435,9 @@
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
- "1550ab4f88fb": {
-  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, Money-Robo가 그래프를 들고 나무 수를 묻는다",
-  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, Money-Robo가 그래프를 들고 나무 수를 묻는다⟧\"></canvas>",
+ "023f68473c12": {
+  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, 주판봇이 그래프를 들고 나무 수를 묻는다",
+  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, 주판봇이 그래프를 들고 나무 수를 묻는다⟧\"></canvas>",
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
@@ -2513,9 +2513,9 @@
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
- "848abff3632d": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.",
-  "ctx": "-who=\"robo\" data-mood=\"chart\" data-move=\"sway\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.⟧</div></div>",
+ "2b90bd94fab7": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.",
+  "ctx": "-who=\"robo\" data-mood=\"chart\" data-move=\"sway\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.⟧</div></div>",
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
@@ -3197,9 +3197,9 @@
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
- "54ab9e1e4806": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id=\"memN\">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.",
-  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id=\"memN\">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.⟧</div></div>",
+ "f562d8708b7c": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id=\"memN\">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.",
+  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id=\"memN\">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.⟧</div></div>",
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
@@ -3407,9 +3407,9 @@
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
- "1cc59a29ad13": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.",
-  "ctx": "a-who=\"robo\" data-mood=\"stack\" data-move=\"pop\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.⟧</div></div>",
+ "12c657e8ffb8": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.",
+  "ctx": "a-who=\"robo\" data-mood=\"stack\" data-move=\"pop\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.⟧</div></div>",
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
@@ -3485,9 +3485,9 @@
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },
- "be0c58ea8b3a": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자 4천 개 남짓에 예측은 질문 900번. 생각보다 싸네! 다만 학습은 한 줄로 서서 하니까, 데이터가 커지면 Hist 판으로 갈아타는 조건으로 도장 찍을게.",
-  "ctx": "ta-who=\"robo\" data-mood=\"wow\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자 4천 개 남짓에 예측은 질문 900번. 생각보다 싸네! 다만 학습은 한 줄로 서서 하니까, 데이터가 커지면 Hist 판으로 갈아타는 조건으로 도장 찍을게.⟧</div></div>",
+ "60fe7ac9edaa": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>외울 숫자 4천 개 남짓에 예측은 질문 900번. 생각보다 싸네! 다만 학습은 한 줄로 서서 하니까, 데이터가 커지면 Hist 판으로 갈아타는 조건으로 도장 찍을게.",
+  "ctx": "ta-who=\"robo\" data-mood=\"wow\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>외울 숫자 4천 개 남짓에 예측은 질문 900번. 생각보다 싸네! 다만 학습은 한 줄로 서서 하니까, 데이터가 커지면 Hist 판으로 갈아타는 조건으로 도장 찍을게.⟧</div></div>",
   "where": "페이지 HTML · 5-9",
   "tr": ""
  },

@@ -1083,9 +1083,9 @@
   "t": "the Fruit Fly (technical interviewer)",
   "n": "series-fixed"
  },
- "예산 담당 Money-Robo": {
-  "t": "Money-Robo (budget officer)",
-  "n": "series-fixed; keep Money-Robo"
+ "예산 담당 주판봇": {
+  "t": "AbaBot (budget officer)",
+  "n": "series-fixed; keep AbaBot"
  },
  "매뉴얼 씨": {
   "t": "Mr. Manual",
@@ -1178,5 +1178,9 @@
  "강도 3등급": {
   "t": "three strength grades (low / normal / high)",
   "n": "<25, 25–45, ≥45 MPa"
+ },
+ "주판봇": {
+  "t": "AbaBot",
+  "n": "series-fixed character name (lab robot)"
  }
 }

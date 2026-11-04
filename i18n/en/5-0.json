@@ -1985,11 +1985,11 @@
   "where": "페이지 HTML · 5-0",
   "tr": "The Model Hiring Committee · 5-0 <span class=\"dept\">Job Posting · Current employee review</span>"
  },
- "5e70d578a9b5": {
-  "ko": "면접실. 벽에 '모델 채용 위원회 · 채용 공고' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자에는 기존 직원 매뉴얼 씨의 사원증이 놓여 있고, 옆에 콘크리트 공시체 세 개가 서 있다",
-  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 채용 공고' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자에는 기존 직원 매뉴얼 씨의 사원증이 놓여 있고, 옆에 콘크리트 공시체 세 개가 서 있다⟧\"></canvas>",
+ "a768ccf63dd0": {
+  "ko": "면접실. 벽에 '모델 채용 위원회 · 채용 공고' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자에는 기존 직원 매뉴얼 씨의 사원증이 놓여 있고, 옆에 콘크리트 공시체 세 개가 서 있다",
+  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 채용 공고' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자에는 기존 직원 매뉴얼 씨의 사원증이 놓여 있고, 옆에 콘크리트 공시체 세 개가 서 있다⟧\"></canvas>",
   "where": "페이지 HTML · 5-0",
-  "tr": "The interview room. A banner on the wall reads 'The Model Hiring Committee · Job Posting'. Behind a long table sit the Chair (Doctor), the HR Assistant, the Fruit Fly (technical interviewer), and Money-Robo (budget officer). On the chair in front lies the ID badge of the current employee, Mr. Manual, and three concrete test cylinders stand beside it"
+  "tr": "The interview room. A banner on the wall reads 'The Model Hiring Committee · Job Posting'. Behind a long table sit the Chair (Doctor), the HR Assistant, the Fruit Fly (technical interviewer), and AbaBot (budget officer). On the chair in front lies the ID badge of the current employee, Mr. Manual, and three concrete test cylinders stand beside it"
  },
  "1f2e5b3217c7": {
   "ko": "콘크리트 공장에 오래 일한 직원이 있다. 이름은 매뉴얼 씨. 작업 표준서에 적힌 if 규칙대로 배합을 판정한다. <b>\"물-결합재비가 0.5 미만이고 28일 이상 굳혔으면 35MPa 합격.\"</b> 이 한 줄로 몇 년을 버텼다.",
@@ -2063,11 +2063,11 @@
   "where": "페이지 HTML · 5-0",
   "tr": "<span class=\"who\">Technical interviewer · the Fruit Fly</span>I don't care how well it did on old mixes. I only care whether it works on mixes it has never seen."
  },
- "cf76d5465cf8": {
-  "ko": "<span class=\"who\">예산 담당 · Money-Robo</span>매뉴얼 씨는 연봉이 0원이야. 새로 뽑으려면 그만한 값을 해야지.",
-  "ctx": "ta-who=\"robo\" data-mood=\"coin\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 · Money-Robo</span>매뉴얼 씨는 연봉이 0원이야. 새로 뽑으려면 그만한 값을 해야지.⟧</div></div>",
+ "9ce2798e06d0": {
+  "ko": "<span class=\"who\">예산 담당 · 주판봇</span>매뉴얼 씨는 연봉이 0원이야. 새로 뽑으려면 그만한 값을 해야지.",
+  "ctx": "ta-who=\"robo\" data-mood=\"coin\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 · 주판봇</span>매뉴얼 씨는 연봉이 0원이야. 새로 뽑으려면 그만한 값을 해야지.⟧</div></div>",
   "where": "페이지 HTML · 5-0",
-  "tr": "<span class=\"who\">Budget officer · Money-Robo</span>Mr. Manual's salary is $0. If we hire someone new, they'd better be worth it."
+  "tr": "<span class=\"who\">Budget officer · AbaBot</span>Mr. Manual's salary is $0. If we hire someone new, they'd better be worth it."
  },
  "76fffe6b6603": {
   "ko": "<span class=\"who\">기존 직원 · 매뉴얼 씨</span>제1조. 물-결합재비가 0.5 미만이고 재령이 28일 이상이면 합격으로 판정한다. 제2조. 그 밖에는 불합격으로 판정한다. 이상입니다.",
@@ -3155,15 +3155,15 @@
   "where": "페이지 HTML · 5-0",
   "tr": "You've read “5-0 Job Posting” to the end. The committee and Mr. Manual each have a word to leave."
  },
- "ed7d42bf6bc9": {
-  "ko": "어두운 나무 벽 회의실. 가운데 의자에 정장 차림의 박사가 두 손을 모으고 앉아 있고, 왼쪽에는 헬멧을 쓴 초파리 연구원이 팔짱을 끼고 앉아 있다. 오른쪽에는 서류판을 든 조수가 서 있고 그 옆 의자에 Money-Robo가 앉아 있다. 긴 탁자 위에는 빈 종이 다섯 장과 동전 몇 무더기가 놓여 있다",
-  "ctx": "<figure class=\"scene\" style=\"max-width:560px\"><img data-scene=\"sc_meeting\" alt=\"⟦어두운 나무 벽 회의실. 가운데 의자에 정장 차림의 박사가 두 손을 모으고 앉아 있고, 왼쪽에는 헬멧을 쓴 초파리 연구원이 팔짱을 끼고 앉아 있다. 오른쪽에는 서류판을 든 조수가 서 있고 그 옆 의자에 Money-Robo가 앉아 있다. 긴 탁자 위에는 빈 종이 다섯 장과 동전 몇 무더기가 놓여 있다⟧\"><figcaption>위원회의 첫 회의. 탁자 위 빈 종이는 앞으로 채울 평가표다. 합격선은 오늘 매뉴얼 씨의 시험지 점수로 정했다.</figcaption><",
+ "d850fc87a315": {
+  "ko": "어두운 나무 벽 회의실. 가운데 의자에 정장 차림의 박사가 두 손을 모으고 앉아 있고, 왼쪽에는 헬멧을 쓴 초파리 연구원이 팔짱을 끼고 앉아 있다. 오른쪽에는 서류판을 든 조수가 서 있고 그 옆 의자에 주판봇이 앉아 있다. 긴 탁자 위에는 빈 종이 다섯 장과 나무 주판 하나가 놓여 있다",
+  "ctx": "<figure class=\"scene\" style=\"max-width:560px\"><img data-scene=\"sc_meeting\" alt=\"⟦어두운 나무 벽 회의실. 가운데 의자에 정장 차림의 박사가 두 손을 모으고 앉아 있고, 왼쪽에는 헬멧을 쓴 초파리 연구원이 팔짱을 끼고 앉아 있다. 오른쪽에는 서류판을 든 조수가 서 있고 그 옆 의자에 주판봇이 앉아 있다. 긴 탁자 위에는 빈 종이 다섯 장과 나무 주판 하나가 놓여 있다⟧\"><figcaption>위원회의 첫 회의. 탁자 위 빈 종이는 앞으로 채울 평가표다. 합격선은 오늘 매뉴얼 씨의 시험지 점수로 정했다.</figcaption><",
   "where": "페이지 HTML · 5-0",
-  "tr": "A conference room with dark wood walls. In the middle chair sits the Doctor in a suit, hands folded; on the left sits the Fruit Fly in a helmet, arms crossed. On the right stands the Assistant holding a clipboard, and Money-Robo sits in the chair beside. On the long table lie five blank sheets of paper and a few piles of coins"
+  "tr": "A conference room with dark wood walls. In the middle chair sits the Doctor in a suit, hands folded; on the left sits the Fruit Fly in a helmet, arms crossed. On the right stands the Assistant holding a clipboard, and AbaBot sits in the chair beside. On the long table lie five blank sheets of paper and a wooden abacus"
  },
  "0f18f514cce3": {
   "ko": "위원회의 첫 회의. 탁자 위 빈 종이는 앞으로 채울 평가표다. 합격선은 오늘 매뉴얼 씨의 시험지 점수로 정했다.",
-  "ctx": "판을 든 조수가 서 있고 그 옆 의자에 Money-Robo가 앉아 있다. 긴 탁자 위에는 빈 종이 다섯 장과 동전 몇 무더기가 놓여 있다\"><figcaption>⟦위원회의 첫 회의. 탁자 위 빈 종이는 앞으로 채울 평가표다. 합격선은 오늘 매뉴얼 씨의 시험지 점수로 정했다.⟧</figcaption></figure>",
+  "ctx": "른쪽에는 서류판을 든 조수가 서 있고 그 옆 의자에 주판봇이 앉아 있다. 긴 탁자 위에는 빈 종이 다섯 장과 나무 주판 하나가 놓여 있다\"><figcaption>⟦위원회의 첫 회의. 탁자 위 빈 종이는 앞으로 채울 평가표다. 합격선은 오늘 매뉴얼 씨의 시험지 점수로 정했다.⟧</figcaption></figure>",
   "where": "페이지 HTML · 5-0",
   "tr": "The committee's first meeting. The blank sheets on the table are evaluation sheets to be filled in. The hiring bar was set today by Mr. Manual's exam-paper score."
  },
@@ -3203,11 +3203,11 @@
   "where": "페이지 HTML · 5-0",
   "tr": "<span class=\"who\">Technical interviewer · the Fruit Fly</span>Training 75.6%, exam paper 76.7%. With only two rules, he had no room to memorize anything. The candidates will have much higher training scores; let's see if that holds on the exam paper too."
  },
- "ac58fb2156b5": {
-  "ko": "<span class=\"who\">예산 담당 · Money-Robo</span>연봉 0원짜리 직원을 넘으려면 최소 76.7%. 첫 지원자 KNN은 배합 772건을 통째로 외운다던데, 창고비가 좀 들겠어.",
-  "ctx": "a-who=\"robo\" data-mood=\"calc\" data-move=\"sway\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 · Money-Robo</span>연봉 0원짜리 직원을 넘으려면 최소 76.7%. 첫 지원자 KNN은 배합 772건을 통째로 외운다던데, 창고비가 좀 들겠어.⟧</div></div>",
+ "dedd3477ab3d": {
+  "ko": "<span class=\"who\">예산 담당 · 주판봇</span>연봉 0원짜리 직원을 넘으려면 최소 76.7%. 첫 지원자 KNN은 배합 772건을 통째로 외운다던데, 창고비가 좀 들겠어.",
+  "ctx": "a-who=\"robo\" data-mood=\"calc\" data-move=\"sway\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 · 주판봇</span>연봉 0원짜리 직원을 넘으려면 최소 76.7%. 첫 지원자 KNN은 배합 772건을 통째로 외운다던데, 창고비가 좀 들겠어.⟧</div></div>",
   "where": "페이지 HTML · 5-0",
-  "tr": "<span class=\"who\">Budget officer · Money-Robo</span>To beat a $0-salary employee, you need at least 76.7%. I hear the first candidate, KNN, memorizes all 772 mixes whole. That'll cost us some warehouse fees."
+  "tr": "<span class=\"who\">Budget officer · AbaBot</span>To beat a $0-salary employee, you need at least 76.7%. I hear the first candidate, KNN, memorizes all 772 mixes whole. That'll cost us some warehouse fees."
  },
  "702aa30499a8": {
   "ko": "<span class=\"who\">기존 직원 · 매뉴얼 씨</span>부칙. 이 표준서로 판정할 수 없는 배합은 새 직원에게 넘긴다. 시행일은 오늘로 한다.",

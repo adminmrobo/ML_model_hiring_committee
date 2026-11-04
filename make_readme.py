@@ -11,7 +11,7 @@ URL = os.environ.get('SITE_URL', '')   # 예: https://adminmrobo.github.io/ML_05
 
 L = {
  'ko': dict(name='모델 채용 위원회 — 머신러닝 열다섯 명의 입사 면접',
-  intro='콘크리트 공장이 품질 판단을 맡길 새 직원을 뽑습니다. 지원자는 KNN부터 t-SNE · UMAP까지 머신러닝 모델 열다섯 명이고, 합격선은 사람이 쓴 규칙으로 일해 온 기존 직원 매뉴얼 씨의 점수입니다. 위원장 박사, 인사 담당 조수, 실무 면접관 초파리, 예산 담당 Money-Robo가 면접을 보고, 합격과 보류는 페이지가 브라우저에서 직접 계산한 숫자가 정합니다.',
+  intro='콘크리트 공장이 품질 판단을 맡길 새 직원을 뽑습니다. 지원자는 KNN부터 t-SNE · UMAP까지 머신러닝 모델 열다섯 명이고, 합격선은 사람이 쓴 규칙으로 일해 온 기존 직원 매뉴얼 씨의 점수입니다. 위원장 박사, 인사 담당 조수, 실무 면접관 초파리, 예산 담당 주판봇이 면접을 보고, 합격과 보류는 페이지가 브라우저에서 직접 계산한 숫자가 정합니다.',
   author='글: 안상선 ((주)M-Robo 대표)', lic='라이선스: CC BY-NC 4.0 (비상업적 이용, 출처 표기 필수) — [LICENSE.md](LICENSE.md)', start='시작',
   langs='언어 / Languages', langtxt='모든 페이지를 영어·중국어·일본어·우즈베크어·러시아어로도 볼 수 있습니다. 위쪽 메뉴의 언어 선택 상자로 바꾸고, 처음 방문하면 브라우저 언어에 맞는 판으로 자동으로 이동합니다(고른 언어는 기억). 주소 뒤에 ?lang=en 처럼 붙여 직접 지정할 수도 있습니다. Colab 코드의 주석과 실행 결과는 한국어 원문 그대로입니다.',
   langcol=('언어', '폴더'), default='한국어 (기본)',
@@ -22,7 +22,7 @@ L = {
   data='데이터', datatxt=['지도 본부(5-1 ~ 5-9): UCI Machine Learning Repository, Concrete Compressive Strength (Yeh, 1998, 1,030건, CC BY 4.0)', '비지도 본부(5-10 ~ 5-15): scikit-learn 내장 손글씨 숫자 load_digits (1,797장)'],
   files='각 HTML은 그림·데이터·스크립트를 파일 안에 담고 있어 빌드 없이 브라우저로 열면 됩니다(글꼴만 Google Fonts에서 불러옵니다). 편끼리의 링크는 같은 폴더 구조에서 작동하므로 파일 이름을 바꾸지 마세요.'),
  'en': dict(name='The Model Hiring Committee — Fifteen Machine-Learning Candidates',
-  intro='A concrete plant is hiring a new employee to make its quality calls. The candidates are fifteen machine-learning models, from KNN to t-SNE · UMAP, and the hiring bar is the score of Mr. Manual, the current employee who works from rules written by people. The Chair (Doctor), the HR Assistant, the Fruit Fly and Money-Robo run the interviews, and every Hired or On hold verdict is decided by numbers the page computes in your browser.',
+  intro='A concrete plant is hiring a new employee to make its quality calls. The candidates are fifteen machine-learning models, from KNN to t-SNE · UMAP, and the hiring bar is the score of Mr. Manual, the current employee who works from rules written by people. The Chair (Doctor), the HR Assistant, the Fruit Fly and AbaBot run the interviews, and every Hired or On hold verdict is decided by numbers the page computes in your browser.',
   author='Author: Ahn Sangsun (CEO, M-Robo Co., Ltd.)', lic='License: CC BY-NC 4.0 (non-commercial use, attribution required) — [LICENSE.md](LICENSE.md)', start='Start',
   eps='Episodes', cols=('Ep.', 'File', 'Title', 'Team', 'Verdict'), order='Start with the full map in 5-0 Job Posting; every episode leads back to it. Candidates are numbered from easiest to hardest, but each episode stands on its own.',
   team=dict(job='Job posting', start='Starter Team', reg='Regression Team', cls='Classification Team', dual='Dual-role Team', clu='Clustering Team', dr='Dimensionality Reduction Team'), res={'pass': 'Hired', 'hold': 'On hold'},
@@ -30,7 +30,7 @@ L = {
   data='Data', datatxt=['Supervised Division (5-1 – 5-9): UCI Machine Learning Repository, Concrete Compressive Strength (Yeh, 1998, 1,030 mixes, CC BY 4.0)', 'Unsupervised Division (5-10 – 5-15): scikit-learn built-in handwritten digits, load_digits (1,797 images)'],
   files='Each HTML file contains its images, data and scripts, so you just open it in a browser (only fonts load from Google Fonts). Links between episodes work in the same folder layout, so keep the file names.'),
  'zh': dict(name='模型招聘委员会 — 十五位机器学习应聘者的入职面试',
-  intro='一家混凝土工厂要招一名新员工来负责质量判定。应聘者是从 KNN 到 t-SNE · UMAP 的十五个机器学习模型，录用线是靠人写的规则工作的现任员工“手册先生”的得分。主席博士、人事助理、技术面试官果蝇和预算官 Money-Robo 主持面试，录用还是待定，由页面在浏览器中直接计算的数字决定。',
+  intro='一家混凝土工厂要招一名新员工来负责质量判定。应聘者是从 KNN 到 t-SNE · UMAP 的十五个机器学习模型，录用线是靠人写的规则工作的现任员工“手册先生”的得分。主席博士、人事助理、技术面试官果蝇和预算官算盘宝主持面试，录用还是待定，由页面在浏览器中直接计算的数字决定。',
   author='作者：Ahn Sangsun（M-Robo 公司代表）', lic='许可：CC BY-NC 4.0（非商业使用，须注明出处） — [LICENSE.md](LICENSE.md)', start='开始',
   eps='篇章目录', cols=('篇', '文件', '标题', '小组', '判定'), order='先在 5-0 招聘启事看全图，每一篇结束后都会回到 5-0。编号从易到难，但每篇也可单独阅读。',
   team=dict(job='招聘启事', start='入门组', reg='回归组', cls='分类组', dual='两用组', clu='聚类组', dr='降维组'), res={'pass': '录用', 'hold': '待定'},
@@ -38,7 +38,7 @@ L = {
   data='数据', datatxt=['监督学习本部（5-1 ~ 5-9）：UCI Machine Learning Repository，Concrete Compressive Strength（Yeh, 1998，1,030 组，CC BY 4.0）', '无监督学习本部（5-10 ~ 5-15）：scikit-learn 内置手写数字 load_digits（1,797 张）'],
   files='每个 HTML 文件都内含图片、数据和脚本，用浏览器直接打开即可（只有字体从 Google Fonts 加载）。篇与篇之间的链接依赖相同的文件夹结构，请勿更改文件名。'),
  'ja': dict(name='モデル採用委員会 — 機械学習モデル15名の入社面接',
-  intro='コンクリート工場が品質判定を任せる新しい社員を採用します。応募者は KNN から t-SNE・UMAP までの機械学習モデル15名、採用ラインは人が書いたルールで働いてきた既存社員マニュアルさんのスコアです。委員長の博士、人事担当の助手、実務面接官のショウジョウバエ、予算担当 Money-Robo が面接し、採用か保留かはページがブラウザで直接計算した数字が決めます。',
+  intro='コンクリート工場が品質判定を任せる新しい社員を採用します。応募者は KNN から t-SNE・UMAP までの機械学習モデル15名、採用ラインは人が書いたルールで働いてきた既存社員マニュアルさんのスコアです。委員長の博士、人事担当の助手、実務面接官のショウジョウバエ、予算担当アバボットが面接し、採用か保留かはページがブラウザで直接計算した数字が決めます。',
   author='著者：アン・サンソン（株式会社 M-Robo 代表）', lic='ライセンス：CC BY-NC 4.0（非営利利用、出典表示必須） — [LICENSE.md](LICENSE.md)', start='スタート',
   eps='編の一覧', cols=('編', 'ファイル', 'タイトル', 'チーム', '判定'), order='まず 5-0 求人票で全体マップを見てください。各編の最後は 5-0 に戻ります。やさしい応募者から番号を振っていますが、各編は単独でも読めます。',
   team=dict(job='求人票', start='入門チーム', reg='回帰チーム', cls='分類チーム', dual='兼用チーム', clu='クラスタリングチーム', dr='次元削減チーム'), res={'pass': '採用', 'hold': '保留'},
@@ -46,7 +46,7 @@ L = {
   data='データ', datatxt=['教師あり本部（5-1 〜 5-9）：UCI Machine Learning Repository, Concrete Compressive Strength（Yeh, 1998, 1,030件, CC BY 4.0）', '教師なし本部（5-10 〜 5-15）：scikit-learn 内蔵の手書き数字 load_digits（1,797枚）'],
   files='各 HTML は画像・データ・スクリプトをファイル内に持っているので、ビルドなしでブラウザで開くだけです（フォントのみ Google Fonts から読み込みます）。編どうしのリンクは同じフォルダ構成で動くので、ファイル名は変えないでください。'),
  'uz': dict(name='Modellarni ishga olish qoʻmitasi — oʻn besh mashinali oʻqitish nomzodining suhbati',
-  intro='Beton zavodi sifat boʻyicha qarorlarni topshirish uchun yangi xodim qidirmoqda. Nomzodlar — KNN dan t-SNE · UMAP gacha boʻlgan oʻn beshta mashinali oʻqitish modeli, ishga olish chegarasi esa odamlar yozgan qoidalar bilan ishlaydigan amaldagi xodim Manual janobning balli. Suhbatni Rais (Doktor), Kadrlar yordamchisi, Meva pashshasi va Money-Robo oʻtkazadi; «Ishga olindi» yoki «Kutishda» qarorini sahifa brauzerda oʻzi hisoblagan sonlar belgilaydi.',
+  intro='Beton zavodi sifat boʻyicha qarorlarni topshirish uchun yangi xodim qidirmoqda. Nomzodlar — KNN dan t-SNE · UMAP gacha boʻlgan oʻn beshta mashinali oʻqitish modeli, ishga olish chegarasi esa odamlar yozgan qoidalar bilan ishlaydigan amaldagi xodim Manual janobning balli. Suhbatni Rais (Doktor), Kadrlar yordamchisi, Meva pashshasi va AbaBot oʻtkazadi; «Ishga olindi» yoki «Kutishda» qarorini sahifa brauzerda oʻzi hisoblagan sonlar belgilaydi.',
   author='Muallif: Ahn Sangsun (M-Robo kompaniyasi rahbari)', lic='Litsenziya: CC BY-NC 4.0 (notijorat foydalanish, manbani koʻrsatish majburiy) — [LICENSE.md](LICENSE.md)', start='Boshlash',
   eps='Boblar', cols=('Bob', 'Fayl', 'Sarlavha', 'Jamoa', 'Qaror'), order='Avval 5-0 vakansiya eʼlonida umumiy xaritani koʻring; har bir bob oxirida yana 5-0 ga qaytasiz. Nomzodlar osonidan qiyiniga qarab raqamlangan, lekin har bir bobni alohida oʻqish mumkin.',
   team=dict(job='Vakansiya eʼloni', start='Boshlangʻich jamoa', reg='Regressiya jamoasi', cls='Klassifikatsiya jamoasi', dual='Ikki vazifali jamoa', clu='Klasterlash jamoasi', dr='Oʻlchamni kamaytirish jamoasi'), res={'pass': 'Ishga olindi', 'hold': 'Kutishda'},
@@ -54,7 +54,7 @@ L = {
   data='Maʼlumotlar', datatxt=['Nazoratli boʻlim (5-1 – 5-9): UCI Machine Learning Repository, Concrete Compressive Strength (Yeh, 1998, 1,030 ta tarkib, CC BY 4.0)', 'Nazoratsiz boʻlim (5-10 – 5-15): scikit-learn ichidagi qoʻlyozma raqamlar load_digits (1,797 ta rasm)'],
   files='Har bir HTML fayl rasmlar, maʼlumotlar va skriptlarni oʻz ichida saqlaydi — brauzerda ochish kifoya (faqat shriftlar Google Fonts dan yuklanadi). Boblar orasidagi havolalar bir xil papka tuzilmasida ishlaydi, shuning uchun fayl nomlarini oʻzgartirmang.'),
  'ru': dict(name='Комиссия по найму моделей — собеседование пятнадцати кандидатов машинного обучения',
-  intro='Бетонный завод нанимает нового сотрудника, которому доверит решения о качестве. Кандидаты — пятнадцать моделей машинного обучения, от KNN до t-SNE · UMAP, а планка найма — результат действующего сотрудника, Мистера Инструкции, который работает по правилам, написанным людьми. Собеседование ведут Председатель (Доктор), Ассистент по кадрам, Дрозофила и Money-Robo, а решение «Принят» или «Отложено» выносят числа, которые страница считает прямо в браузере.',
+  intro='Бетонный завод нанимает нового сотрудника, которому доверит решения о качестве. Кандидаты — пятнадцать моделей машинного обучения, от KNN до t-SNE · UMAP, а планка найма — результат действующего сотрудника, Мистера Инструкции, который работает по правилам, написанным людьми. Собеседование ведут Председатель (Доктор), Ассистент по кадрам, Дрозофила и АбаБот, а решение «Принят» или «Отложено» выносят числа, которые страница считает прямо в браузере.',
   author='Автор: Ан Сансон (генеральный директор M-Robo Co., Ltd.)', lic='Лицензия: CC BY-NC 4.0 (некоммерческое использование, обязательное указание авторства) — [LICENSE.md](LICENSE.md)', start='Начать',
   eps='Главы', cols=('Глава', 'Файл', 'Название', 'Группа', 'Решение'), order='Начните с общей карты в 5-0 «Вакансия»; каждая глава возвращает к ней. Кандидаты пронумерованы от простого к сложному, но каждую главу можно читать отдельно.',
   team=dict(job='Вакансия', start='Вводная группа', reg='Группа регрессии', cls='Группа классификации', dual='Универсальная группа', clu='Группа кластеризации', dr='Группа снижения размерности'), res={'pass': 'Принят', 'hold': 'Отложено'},
@@ -194,7 +194,7 @@ def build(prefix='', bundle=False):
 
 LICENSE = '''# 라이선스 / License
 
-© 안상선 ((주)M-Robo 대표) · Ahn Sangsun (M-Robo Co., Ltd.)
+© 안상선 · Ahn Sangsun
 
 이 저장소의 글, 그림, 페이지는 **크리에이티브 커먼즈 저작자표시-비영리 4.0 국제 라이선스(CC BY-NC 4.0)**를 따릅니다.
 
@@ -207,7 +207,7 @@ The text, images and pages in this repository are licensed under **Creative Comm
 
 데이터 / Data: UCI Concrete Compressive Strength (Yeh, 1998) — CC BY 4.0 · scikit-learn load_digits — BSD-3-Clause.
 
-Money-Robo는 (주)M-Robo 서비스의 마스코트 캐릭터입니다. / Money-Robo is the mascot character of M-Robo's service.
+등장인물(박사·조수·초파리 연구원·주판봇) © 안상선. / Characters (the Doctor, the Assistant, the Fruit Fly researcher, AbaBot) © Ahn Sangsun.
 '''
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="series" id="series" aria-label="모델 채용 위원회 편 목록"></div>
     <div class="kicker">모델 채용 위원회 · 5-9 면접<span class="dept">지도 본부 › 겸용팀</span><span class="dept" style="color:var(--stamp);border-color:var(--stamp)">앙상블</span></div>
-    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, Money-Robo가 그래프를 들고 나무 수를 묻는다"></canvas>
+    <canvas class="stagecv" id="heroCv" width="1100" height="330" role="img" aria-label="면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, 주판봇이 그래프를 들고 나무 수를 묻는다"></canvas>
     <div class="hero-grid">
       <div>
         <h1>GBM — 앞 나무의 오답 노트를 넘겨받는다</h1>
@@ -27,7 +27,7 @@
       <div class="say doc"><img data-who="doc" data-mood="board" alt="" aria-hidden="true"><div class="bub"><span class="who">위원장 박사</span>겸용팀 마지막 지원자예요. 강도를 맞히는 회귀와 35MPa 합격을 가르는 분류를 둘 다 봅니다. 합격선은 회귀 R² 0.735, 분류 76.7%. 둘 다 넘어야 겸용팀에 앉습니다.</div></div>
       <div class="say asst"><img data-who="asst" data-mood="ledger" data-move="nod" alt="" aria-hidden="true"><div class="bub"><span class="who">인사 담당 조수</span>이번 지원자는 혼자가 아니라 나무 수백 그루가 한 줄로 일해요. 저는 그루마다 "아직 틀린 만큼"이 얼마나 줄어드는지 장부에 적겠습니다.</div></div>
       <div class="say fly"><img data-who="fly" data-mood="point" data-move="tilt" alt="" aria-hidden="true"><div class="bub"><span class="who">실무 면접관 초파리</span>남이 틀린 걸 계속 고친다고? 그러다 시편 하나하나의 우연까지 고쳐 버리면? 몇 그루에서 멈출지 누가 정하는지부터 물어볼 거야.</div></div>
-      <div class="say robo"><img data-who="robo" data-mood="chart" data-move="sway" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.</div></div>
+      <div class="say robo"><img data-who="robo" data-mood="chart" data-move="sway" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 주판봇</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.</div></div>
       <div class="say man"><span class="sym" aria-hidden="true">§</span><div class="bub"><span class="who">기존 직원 · 매뉴얼 씨</span>제 작업 표준서도 처음엔 한 줄이었습니다. 틀린 배합이 나올 때마다 예외 조항을 한 줄씩 덧붙였지요. 덧붙인 조항끼리 부딪혀 멈췄습니다만.</div></div>
       <div class="say app"><span class="sym" aria-hidden="true">GB</span><div class="bub"><span class="who">지원자 · GBM</span>안녕하십니까. 그레이디언트 부스팅입니다. 저도 매뉴얼 씨처럼 틀린 곳을 한 줄씩 덧붙입니다. 다만 덧붙일 내용을 사람이 아니라 데이터의 잔차가 정하고, 한 줄을 조금씩만 믿습니다.</div></div>
     </div>
@@ -395,7 +395,7 @@
     </div>
   </div>
   <div class="cast" style="margin:0 0 6px">
-    <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id="memN">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.</div></div>
+    <div class="say robo"><img data-who="robo" data-mood="count" data-move="bob" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 주판봇</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id="memN">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.</div></div>
   </div>
   <h3 style="margin:26px 0 10px">✓ 확인 문제</h3>
   <div class="quiz" data-quiz="q4"></div>
@@ -515,7 +515,7 @@
     <p class="foot" id="ledgerFoot"></p>
   </div>
   <div class="cast" style="margin:0 0 6px">
-    <div class="say robo"><img data-who="robo" data-mood="stack" data-move="pop" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 Money-Robo</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.</div></div>
+    <div class="say robo"><img data-who="robo" data-mood="stack" data-move="pop" alt="" aria-hidden="true"><div class="bub"><span class="who">예산 담당 주판봇</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.</div></div>
   </div>
   <div class="card">
     <span class="tag">맞는 일 · 안 맞는 일</span>

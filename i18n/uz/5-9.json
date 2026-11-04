@@ -2435,11 +2435,11 @@
   "where": "페이지 HTML · 5-9",
   "tr": "Modellarni ishga olish qoʻmitasi · 5-9 suhbat<span class=\"dept\">Nazoratli boʻlim › Ikki vazifali jamoa</span><span class=\"dept\" style=\"color:var(--stamp);border-color:var(--stamp)\">Ansambl</span>"
  },
- "1550ab4f88fb": {
-  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, Money-Robo가 그래프를 들고 나무 수를 묻는다",
-  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, Money-Robo가 그래프를 들고 나무 수를 묻는다⟧\"></canvas>",
+ "023f68473c12": {
+  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, 주판봇이 그래프를 들고 나무 수를 묻는다",
+  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-9 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 GB 기호가 그려진 지원자 GBM의 사원증이 떠 있고, 그 옆에서 오답(잔차) 막대가 나무가 한 그루씩 더해질 때마다 짧아진다. 조수가 장부를 들고 '오답 노트 넘겨요'라고 말하고, 주판봇이 그래프를 들고 나무 수를 묻는다⟧\"></canvas>",
   "where": "페이지 HTML · 5-9",
-  "tr": "Suhbat xonasi. Devorda 'Modellarni ishga olish qoʻmitasi · 5-9 suhbat' banneri osilgan, uzun stol ortida Rais (Doktor), Kadrlar yordamchisi, Meva pashshasi (texnik suhbatdosh) va Money-Robo (byudjet masʼuli) oʻtiribdi. Oldingi stul ustida GB belgisi chizilgan nomzod — GBM ning xodim guvohnomasi suzib turibdi, uning yonida xato (qoldiq) ustunlari har bir daraxt qoʻshilganda qisqarib boradi. Yordamchi daftarni ushlab 'Xatolar daftarini beraman' deydi, Money-Robo esa grafikni koʻtarib, daraxtlar sonini soʻraydi"
+  "tr": "Suhbat xonasi. Devorda 'Modellarni ishga olish qoʻmitasi · 5-9 suhbat' banneri osilgan, uzun stol ortida Rais (Doktor), Kadrlar yordamchisi, Meva pashshasi (texnik suhbatdosh) va AbaBot (byudjet masʼuli) oʻtiribdi. Oldingi stul ustida GB belgisi chizilgan nomzod — GBM ning xodim guvohnomasi suzib turibdi, uning yonida xato (qoldiq) ustunlari har bir daraxt qoʻshilganda qisqarib boradi. Yordamchi daftarni ushlab 'Xatolar daftarini beraman' deydi, AbaBot esa grafikni koʻtarib, daraxtlar sonini soʻraydi"
  },
  "70ef7953ca2e": {
   "ko": "GBM — 앞 나무의 오답 노트를 넘겨받는다",
@@ -2513,11 +2513,11 @@
   "where": "페이지 HTML · 5-9",
   "tr": "<span class=\"who\">Meva pashshasi (texnik suhbatdosh)</span>Boshqalarning xatosini tuzatib boraverasanmi? Oxiri har bir namunadagi tasodifni ham tuzatib qoʻysang-chi? Avval nechta daraxtda toʻxtashni kim belgilashini soʻrayman."
  },
- "848abff3632d": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.",
-  "ctx": "-who=\"robo\" data-mood=\"chart\" data-move=\"sway\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.⟧</div></div>",
+ "2b90bd94fab7": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.",
+  "ctx": "-who=\"robo\" data-mood=\"chart\" data-move=\"sway\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>나무 300그루를 한 줄로 세운다고? 앞 나무가 끝나야 다음 나무가 시작하잖아. 줄 서서 기다리는 시간도 다 인건비야.⟧</div></div>",
   "where": "페이지 HTML · 5-9",
-  "tr": "<span class=\"who\">Money-Robo (byudjet masʼuli)</span>300 ta daraxtni bir qatorga terasanmi? Oldingi daraxt tugamaguncha keyingisi boshlanmaydi-ku. Navbatda kutish vaqti ham — ish haqi."
+  "tr": "<span class=\"who\">AbaBot (byudjet masʼuli)</span>300 ta daraxtni bir qatorga terasanmi? Oldingi daraxt tugamaguncha keyingisi boshlanmaydi-ku. Navbatda kutish vaqti ham — ish haqi."
  },
  "e7b16b00faec": {
   "ko": "<span class=\"who\">기존 직원 · 매뉴얼 씨</span>제 작업 표준서도 처음엔 한 줄이었습니다. 틀린 배합이 나올 때마다 예외 조항을 한 줄씩 덧붙였지요. 덧붙인 조항끼리 부딪혀 멈췄습니다만.",
@@ -3197,11 +3197,11 @@
   "where": "페이지 HTML · 5-9",
   "tr": "Validatsiya R² boshqa oshmasa, toʻxtatiladi. Bu <b>erta toʻxtatish</b>. scikit-learn da u <code>n_iter_no_change=10, validation_fraction=0.1</code> bilan yoqiladi. Oʻqitish maʼlumotlarining 10% i ajratib qoʻyiladi va 10 ta daraxt davomida yaxshilanish boʻlmasa, toʻxtatiladi (A-boʻlim, 7-katak: 257 ta daraxtda toʻxtaydi). Bu suhbatda grafikka qarab inson belgiladi. Validatsiya egri chizigʻi tekislangan oraliqda nechta daraxt tanlansa ham natija oʻxshash, shuning uchun yaxlit son — <b>300 ta daraxt</b> (η = 0.1, chuqurlik 3) ish sharoiti qilib olinadi. Imtihon varaqasi hali muhrlangan."
  },
- "54ab9e1e4806": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id=\"memN\">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.",
-  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id=\"memN\">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.⟧</div></div>",
+ "f562d8708b7c": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id=\"memN\">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.",
+  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>장부 정리했어. 나무 한 그루에 문턱 최대 7개, 잎 값 8개. 300그루면 외울 숫자가 <b id=\"memN\">약 4,500</b>개야. KNN의 6,176개보다는 적어. 근데 학습은 줄 서서 한 그루씩이라 나눠서 빨리 끝낼 수가 없어. 예측 한 건은 질문 900번이면 끝나니 그건 싸다.⟧</div></div>",
   "where": "페이지 HTML · 5-9",
-  "tr": "<span class=\"who\">Money-Robo (byudjet masʼuli)</span>Hisob-kitobni yakunladim. Bitta daraxtda koʻpi bilan 7 ta chegara va 8 ta barg qiymati. 300 ta daraxtda yodlanadigan sonlar <b id=\"memN\">taxminan 4 500</b> ta. KNN ning 6 176 tasidan kam. Lekin oʻqitish navbat bilan bittadan daraxt, shuning uchun boʻlib, tezroq tugatib boʻlmaydi. Bitta bashorat 900 ta savol bilan tugaydi, bu arzon."
+  "tr": "<span class=\"who\">AbaBot (byudjet masʼuli)</span>Hisob-kitobni yakunladim. Bitta daraxtda koʻpi bilan 7 ta chegara va 8 ta barg qiymati. 300 ta daraxtda yodlanadigan sonlar <b id=\"memN\">taxminan 4 500</b> ta. KNN ning 6 176 tasidan kam. Lekin oʻqitish navbat bilan bittadan daraxt, shuning uchun boʻlib, tezroq tugatib boʻlmaydi. Bitta bashorat 900 ta savol bilan tugaydi, bu arzon."
  },
  "45ea64850782": {
   "ko": "회귀(R²·MAE)와 분류(정확도·혼동행렬)를 둘 다 본다. 나무 수에 따라 시험 성적이 어떻게 오르는지, 분류의 속이 어떻게 생겼는지까지",
@@ -3407,11 +3407,11 @@
   "where": "페이지 HTML · 5-9",
   "tr": "<span class=\"tag\">Oraliq hisob · Nazoratli boʻlimning Ikki vazifali jamoasigacha — besh nomzod (5-5 ~ 5-9) bir xil 258 ta tarkibli imtihon varaqasida</span>"
  },
- "1cc59a29ad13": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.",
-  "ctx": "a-who=\"robo\" data-mood=\"stack\" data-move=\"pop\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.⟧</div></div>",
+ "12c657e8ffb8": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.",
+  "ctx": "a-who=\"robo\" data-mood=\"stack\" data-move=\"pop\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>정산서 보니까 랜덤 포레스트랑 GBM이 분류 점수가 똑같네. 그럼 나는 학습을 나눠 맡길 수 있는 쪽, 아니면 HistGradientBoosting처럼 빠른 쪽에 동전을 걸겠어. 점수가 같으면 싼 직원이 이기는 거야.⟧</div></div>",
   "where": "페이지 HTML · 5-9",
-  "tr": "<span class=\"who\">Money-Robo (byudjet masʼuli)</span>Hisobotga qarasam, tasodifiy oʻrmon bilan GBM ning klassifikatsiya balli aynan bir xil ekan. Unda men oʻqitishni boʻlib berish mumkin boʻlganiga yoki HistGradientBoosting kabi tezkoriga tanga tikaman. Ball bir xil boʻlsa, arzon xodim yutadi."
+  "tr": "<span class=\"who\">AbaBot (byudjet masʼuli)</span>Hisobotga qarasam, tasodifiy oʻrmon bilan GBM ning klassifikatsiya balli aynan bir xil ekan. Unda men oʻqitishni boʻlib berish mumkin boʻlganiga yoki HistGradientBoosting kabi tezkoriga tanga tikaman. Ball bir xil boʻlsa, arzon xodim yutadi."
  },
  "604275b29953": {
   "ko": "특징이 수십~수백 개인 표 데이터의 회귀·분류(품질 예측, 수요 예측, 불량 판정, 신용 평가), 최고 성적이 필요하고 근무 조건을 조율할 시간이 있는 업무, 대회와 실무의 강한 기준선",
@@ -3485,11 +3485,11 @@
   "where": "페이지 HTML · 5-9",
   "tr": "<span class=\"who\">Meva pashshasi (texnik suhbatdosh)</span>Oʻqitishdagi 99.9% aniqlikni yozib qoʻyaman-u, eʼtiborga olmayman. Qancha uzoq ishlasa, tasodiflarni ham shuncha yodlaydigan xodim, shuning uchun uni qachon toʻxtashni belgilaydigan validatsiya ulushi bilan birga joylashtir."
  },
- "be0c58ea8b3a": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자 4천 개 남짓에 예측은 질문 900번. 생각보다 싸네! 다만 학습은 한 줄로 서서 하니까, 데이터가 커지면 Hist 판으로 갈아타는 조건으로 도장 찍을게.",
-  "ctx": "ta-who=\"robo\" data-mood=\"wow\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자 4천 개 남짓에 예측은 질문 900번. 생각보다 싸네! 다만 학습은 한 줄로 서서 하니까, 데이터가 커지면 Hist 판으로 갈아타는 조건으로 도장 찍을게.⟧</div></div>",
+ "60fe7ac9edaa": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>외울 숫자 4천 개 남짓에 예측은 질문 900번. 생각보다 싸네! 다만 학습은 한 줄로 서서 하니까, 데이터가 커지면 Hist 판으로 갈아타는 조건으로 도장 찍을게.",
+  "ctx": "ta-who=\"robo\" data-mood=\"wow\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>외울 숫자 4천 개 남짓에 예측은 질문 900번. 생각보다 싸네! 다만 학습은 한 줄로 서서 하니까, 데이터가 커지면 Hist 판으로 갈아타는 조건으로 도장 찍을게.⟧</div></div>",
   "where": "페이지 HTML · 5-9",
-  "tr": "<span class=\"who\">Money-Robo (byudjet masʼuli)</span>Yodlanadigan sonlar toʻrt mingdan sal koʻp, bashoratga 900 ta savol. Oʻylaganimdan arzon ekan! Lekin oʻqitish bir qatorda boʻladi, shuning uchun maʼlumot kattalashsa, Hist versiyasiga oʻtish sharti bilan muhr bosaman."
+  "tr": "<span class=\"who\">AbaBot (byudjet masʼuli)</span>Yodlanadigan sonlar toʻrt mingdan sal koʻp, bashoratga 900 ta savol. Oʻylaganimdan arzon ekan! Lekin oʻqitish bir qatorda boʻladi, shuning uchun maʼlumot kattalashsa, Hist versiyasiga oʻtish sharti bilan muhr bosaman."
  },
  "421ce43409ad": {
   "ko": "<b>데이터와 계산.</b> 실기 과제지는 UCI 콘크리트 압축 강도 데이터 1,030건이며, 시험지는 test_size=0.25, stratify=강도 3등급, random_state=42로 나눈 258건이다. 회귀 합격선은 매뉴얼 씨의 현장 경험식(에이브럼스 식을 물-결합재비로 넓히고 ACI 209R의 재령 보정을 곱한 식, 학습 없음)이 시험지에서 낸 R²이고, 분류 합격선은 5-0 매뉴얼 씨의 작업 표준서가 낸 정확도다. 35MPa 합격 기준과 25·45MPa 등급 문턱은 수업용으로 정한 값이다. 01·02·04·05장과 면접 결과, 06장 중간 정산의 5-9 줄은 이 페이지가 브라우저에서 직접 나무를 키워 계산한다(scikit-learn GradientBoosting과 같은 규칙: 시작값, friedman_mse 분할, 잎 값, 학습률. 같은 점수의 분할이 여럿이면 고르는 순서가 다를 수 있다). 브라우저의 데이터 사본은 강도가 소수 둘째 자리로 반올림되어 있어 회귀 R²가 Colab(A장)과 소수점 셋째 자리에서 조금 다르다(300그루: 브라우저 0.950, Colab 0.949). 04장의 검증 몫은 훈련 배합을 행 번호 순으로 세워 다섯 줄마다 한 줄을 뗀 것으로, A장 6번 칸과 같다. 미리 계산한 값은 06장의 HistGradientBoosting 점수, 중간 정산의 5-1 ~ 5-8 줄, 05장의 랜덤 포레스트 특징 중요도뿐이며 모두 Python(scikit-learn 1.9.1, random_state=0)으로 계산해 A장 11·12번 칸이 같은 값을 낸다. XGBoost·LightGBM·CatBoost는 이 빌드에서 실행하지 않았다. 03장의 'AI가 낸 코드'는 흔한 실수를 모아 일부러 만든 예시이며 특정 AI 서비스의 실제 답이 아니다.",

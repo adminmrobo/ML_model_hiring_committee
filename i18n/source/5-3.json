@@ -2417,9 +2417,9 @@
   "where": "페이지 HTML · 5-3",
   "tr": ""
  },
- "b61fbac284f9": {
-  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다",
-  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다⟧\"></canvas>",
+ "448b6792bd9f": {
+  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다",
+  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다⟧\"></canvas>",
   "where": "페이지 HTML · 5-3",
   "tr": ""
  },
@@ -2495,9 +2495,9 @@
   "where": "페이지 HTML · 5-3",
   "tr": ""
  },
- "c7e0bb118d4d": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.",
-  "ctx": "a-who=\"robo\" data-mood=\"wow\" data-move=\"shake\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.⟧</div></div>",
+ "6626c45d73a6": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.",
+  "ctx": "a-who=\"robo\" data-mood=\"wow\" data-move=\"shake\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.⟧</div></div>",
   "where": "페이지 HTML · 5-3",
   "tr": ""
  },
@@ -3143,9 +3143,9 @@
   "where": "페이지 HTML · 5-3",
   "tr": ""
  },
- "187726c4b23a": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.",
-  "ctx": "a-who=\"robo\" data-mood=\"stack\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.⟧</div></div>",
+ "9148c2c71d68": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.",
+  "ctx": "a-who=\"robo\" data-mood=\"stack\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.⟧</div></div>",
   "where": "페이지 HTML · 5-3",
   "tr": ""
  },
@@ -3485,9 +3485,9 @@
   "where": "페이지 HTML · 5-3",
   "tr": ""
  },
- "93c5bb4f7713": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>숫자 165개로 매뉴얼 씨보다 MAE 2MPa 덜 틀리네. 나는 라쏘 쪽이 좋아. 반 넘게 지우고도 점수가 거의 같으니까 가성비 최고지.",
-  "ctx": "-who=\"robo\" data-mood=\"happy\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>숫자 165개로 매뉴얼 씨보다 MAE 2MPa 덜 틀리네. 나는 라쏘 쪽이 좋아. 반 넘게 지우고도 점수가 거의 같으니까 가성비 최고지.⟧</div></div>",
+ "d1aeaac669bd": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>숫자 165개로 매뉴얼 씨보다 MAE 2MPa 덜 틀리네. 나는 라쏘 쪽이 좋아. 반 넘게 지우고도 점수가 거의 같으니까 가성비 최고지.",
+  "ctx": "-who=\"robo\" data-mood=\"happy\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>숫자 165개로 매뉴얼 씨보다 MAE 2MPa 덜 틀리네. 나는 라쏘 쪽이 좋아. 반 넘게 지우고도 점수가 거의 같으니까 가성비 최고지.⟧</div></div>",
   "where": "페이지 HTML · 5-3",
   "tr": ""
  },

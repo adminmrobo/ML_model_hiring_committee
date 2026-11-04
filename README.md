@@ -1,6 +1,6 @@
 # 모델 채용 위원회 — 머신러닝 열다섯 명의 입사 면접
 
-콘크리트 공장이 품질 판단을 맡길 새 직원을 뽑습니다. 지원자는 KNN부터 t-SNE · UMAP까지 머신러닝 모델 열다섯 명이고, 합격선은 사람이 쓴 규칙으로 일해 온 기존 직원 매뉴얼 씨의 점수입니다. 위원장 박사, 인사 담당 조수, 실무 면접관 초파리, 예산 담당 Money-Robo가 면접을 보고, 합격과 보류는 페이지가 브라우저에서 직접 계산한 숫자가 정합니다.
+콘크리트 공장이 품질 판단을 맡길 새 직원을 뽑습니다. 지원자는 KNN부터 t-SNE · UMAP까지 머신러닝 모델 열다섯 명이고, 합격선은 사람이 쓴 규칙으로 일해 온 기존 직원 매뉴얼 씨의 점수입니다. 위원장 박사, 인사 담당 조수, 실무 면접관 초파리, 예산 담당 주판봇이 면접을 보고, 합격과 보류는 페이지가 브라우저에서 직접 계산한 숫자가 정합니다.
 
 - 글: 안상선 ((주)M-Robo 대표)
 - 라이선스: CC BY-NC 4.0 (비상업적 이용, 출처 표기 필수) — [LICENSE.md](LICENSE.md)
@@ -100,7 +100,7 @@ python3 make_site.py          # site/ 다시 만들기
 
 # The Model Hiring Committee — Fifteen Machine-Learning Candidates
 
-A concrete plant is hiring a new employee to make its quality calls. The candidates are fifteen machine-learning models, from KNN to t-SNE · UMAP, and the hiring bar is the score of Mr. Manual, the current employee who works from rules written by people. The Chair (Doctor), the HR Assistant, the Fruit Fly and Money-Robo run the interviews, and every Hired or On hold verdict is decided by numbers the page computes in your browser.
+A concrete plant is hiring a new employee to make its quality calls. The candidates are fifteen machine-learning models, from KNN to t-SNE · UMAP, and the hiring bar is the score of Mr. Manual, the current employee who works from rules written by people. The Chair (Doctor), the HR Assistant, the Fruit Fly and AbaBot run the interviews, and every Hired or On hold verdict is decided by numbers the page computes in your browser.
 
 - Author: Ahn Sangsun (CEO, M-Robo Co., Ltd.)
 - License: CC BY-NC 4.0 (non-commercial use, attribution required) — [LICENSE.md](LICENSE.md)
@@ -187,7 +187,7 @@ Each HTML file contains its images, data and scripts, so you just open it in a b
 
 # 模型招聘委员会 — 十五位机器学习应聘者的入职面试
 
-一家混凝土工厂要招一名新员工来负责质量判定。应聘者是从 KNN 到 t-SNE · UMAP 的十五个机器学习模型，录用线是靠人写的规则工作的现任员工“手册先生”的得分。主席博士、人事助理、技术面试官果蝇和预算官 Money-Robo 主持面试，录用还是待定，由页面在浏览器中直接计算的数字决定。
+一家混凝土工厂要招一名新员工来负责质量判定。应聘者是从 KNN 到 t-SNE · UMAP 的十五个机器学习模型，录用线是靠人写的规则工作的现任员工“手册先生”的得分。主席博士、人事助理、技术面试官果蝇和预算官算盘宝主持面试，录用还是待定，由页面在浏览器中直接计算的数字决定。
 
 - 作者：Ahn Sangsun（M-Robo 公司代表）
 - 许可：CC BY-NC 4.0（非商业使用，须注明出处） — [LICENSE.md](LICENSE.md)
@@ -274,7 +274,7 @@ python3 make_site.py          # 重新生成 site/
 
 # モデル採用委員会 — 機械学習モデル15名の入社面接
 
-コンクリート工場が品質判定を任せる新しい社員を採用します。応募者は KNN から t-SNE・UMAP までの機械学習モデル15名、採用ラインは人が書いたルールで働いてきた既存社員マニュアルさんのスコアです。委員長の博士、人事担当の助手、実務面接官のショウジョウバエ、予算担当 Money-Robo が面接し、採用か保留かはページがブラウザで直接計算した数字が決めます。
+コンクリート工場が品質判定を任せる新しい社員を採用します。応募者は KNN から t-SNE・UMAP までの機械学習モデル15名、採用ラインは人が書いたルールで働いてきた既存社員マニュアルさんのスコアです。委員長の博士、人事担当の助手、実務面接官のショウジョウバエ、予算担当アバボットが面接し、採用か保留かはページがブラウザで直接計算した数字が決めます。
 
 - 著者：アン・サンソン（株式会社 M-Robo 代表）
 - ライセンス：CC BY-NC 4.0（非営利利用、出典表示必須） — [LICENSE.md](LICENSE.md)
@@ -361,7 +361,7 @@ python3 make_site.py          # site/ を作り直す
 
 # Modellarni ishga olish qoʻmitasi — oʻn besh mashinali oʻqitish nomzodining suhbati
 
-Beton zavodi sifat boʻyicha qarorlarni topshirish uchun yangi xodim qidirmoqda. Nomzodlar — KNN dan t-SNE · UMAP gacha boʻlgan oʻn beshta mashinali oʻqitish modeli, ishga olish chegarasi esa odamlar yozgan qoidalar bilan ishlaydigan amaldagi xodim Manual janobning balli. Suhbatni Rais (Doktor), Kadrlar yordamchisi, Meva pashshasi va Money-Robo oʻtkazadi; «Ishga olindi» yoki «Kutishda» qarorini sahifa brauzerda oʻzi hisoblagan sonlar belgilaydi.
+Beton zavodi sifat boʻyicha qarorlarni topshirish uchun yangi xodim qidirmoqda. Nomzodlar — KNN dan t-SNE · UMAP gacha boʻlgan oʻn beshta mashinali oʻqitish modeli, ishga olish chegarasi esa odamlar yozgan qoidalar bilan ishlaydigan amaldagi xodim Manual janobning balli. Suhbatni Rais (Doktor), Kadrlar yordamchisi, Meva pashshasi va AbaBot oʻtkazadi; «Ishga olindi» yoki «Kutishda» qarorini sahifa brauzerda oʻzi hisoblagan sonlar belgilaydi.
 
 - Muallif: Ahn Sangsun (M-Robo kompaniyasi rahbari)
 - Litsenziya: CC BY-NC 4.0 (notijorat foydalanish, manbani koʻrsatish majburiy) — [LICENSE.md](LICENSE.md)
@@ -448,7 +448,7 @@ Har bir HTML fayl rasmlar, maʼlumotlar va skriptlarni oʻz ichida saqlaydi — 
 
 # Комиссия по найму моделей — собеседование пятнадцати кандидатов машинного обучения
 
-Бетонный завод нанимает нового сотрудника, которому доверит решения о качестве. Кандидаты — пятнадцать моделей машинного обучения, от KNN до t-SNE · UMAP, а планка найма — результат действующего сотрудника, Мистера Инструкции, который работает по правилам, написанным людьми. Собеседование ведут Председатель (Доктор), Ассистент по кадрам, Дрозофила и Money-Robo, а решение «Принят» или «Отложено» выносят числа, которые страница считает прямо в браузере.
+Бетонный завод нанимает нового сотрудника, которому доверит решения о качестве. Кандидаты — пятнадцать моделей машинного обучения, от KNN до t-SNE · UMAP, а планка найма — результат действующего сотрудника, Мистера Инструкции, который работает по правилам, написанным людьми. Собеседование ведут Председатель (Доктор), Ассистент по кадрам, Дрозофила и АбаБот, а решение «Принят» или «Отложено» выносят числа, которые страница считает прямо в браузере.
 
 - Автор: Ан Сансон (генеральный директор M-Robo Co., Ltd.)
 - Лицензия: CC BY-NC 4.0 (некоммерческое использование, обязательное указание авторства) — [LICENSE.md](LICENSE.md)

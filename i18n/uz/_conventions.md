@@ -8,7 +8,7 @@
   - 위원장 박사 → Rais (Doktor) · 위원장 · 박사 → Rais · Doktor
   - 인사 담당 조수 → Kadrlar yordamchisi · 인사 담당 · 조수 → Kadrlar · Yordamchi
   - 실무 면접관 초파리 → Meva pashshasi (texnik suhbatdosh) · 실무 면접관 · 초파리 연구원 → Texnik suhbatdosh · Meva pashshasi
-  - 예산 담당 Money-Robo → Money-Robo (byudjet masʼuli) · 예산 담당 · Money-Robo → Byudjet · Money-Robo
+  - 예산 담당 주판봇 → AbaBot (byudjet masʼuli) · 예산 담당 · 주판봇 → Byudjet · AbaBot
   - 기존 직원 · 매뉴얼 씨 → Amaldagi xodim · Manual janob · 지원자 · X → Nomzod · X
   - Short comic names: 박사 → Doktor, 조수 → Yordamchi, 초파리 → Pashsha.
 - Teams: Boshlangʻich jamoa · Regressiya jamoasi · Klassifikatsiya jamoasi · Ikki vazifali jamoa · Klasterlash jamoasi · Oʻlchamni kamaytirish jamoasi. Nazoratli boʻlim / Nazoratsiz boʻlim.
@@ -16,7 +16,7 @@
 - Money: 0원 → 0 soʻm (metaphor for compute cost; keep the joke).
 - Mr. Manual = Manual janob, speaks like a regulation: "1-modda. … 2-modda. …".
 - Author: "Ahn Sangsun (M-Robo kompaniyasi rahbari)".
-- Style: plain, short textbook sentences (siz-form avoided in explanations; dialogue: Doktor polite "siz", Yordamchi brisk polite, Pashsha blunt "sen", Money-Robo casual, money-minded).
+- Style: plain, short textbook sentences (siz-form avoided in explanations; dialogue: Doktor polite "siz", Yordamchi brisk polite, Pashsha blunt "sen", AbaBot casual, money-minded).
 - Uzbek is agglutinative: suffixes attach to numbers with a hyphen (28-kun, 5-boʻlim, 3-daraja). When a fragment follows a number, start it with the right suffix/word (e.g. " ta", "-kun", " marta"). Read ctx carefully; reshape neighbouring fragments if word order requires.
 - Counters: 장 → " ta rasm", 개 → " ta" (or ∅), 건 → " ta" (mixes: " ta aralashma"), 번 → " marta", 묶음 → " ta klaster", 일 → " kun".
 - Particle-only fragments: ∅ (single character ∅ = intentionally empty).

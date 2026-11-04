@@ -2711,11 +2711,11 @@
   "where": "페이지 HTML · 5-15",
   "tr": "The Model Hiring Committee · Interview 5-15<span class=\"dept\">Unsupervised Division › Dimensionality Reduction Team</span><span class=\"dept\" style=\"color:var(--stamp);border-color:var(--stamp)\">Final interview</span>"
  },
- "cc5fb0e794c9": {
-  "ko": "면접실이 축하 파티처럼 꾸며져 있다. 벽에 '모델 채용 위원회 · 5-15 마지막 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 tS 기호가 그려진 공동 지원자 t-SNE · UMAP의 사원증이 떠 있고, 그 옆에서 흩어져 있던 작은 손글씨 숫자들이 비슷한 글씨끼리 모여 무리를 이룬다. Money-Robo가 그래프를 흔들며 지도 값을 묻고, 마지막에는 위원 네 명이 모두 뛰어오른다",
-  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실이 축하 파티처럼 꾸며져 있다. 벽에 '모델 채용 위원회 · 5-15 마지막 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 tS 기호가 그려진 공동 지원자 t-SNE · UMAP의 사원증이 떠 있고, 그 옆에서 흩어져 있던 작은 손글씨 숫자들이 비슷한 글씨끼리 모여 무리를 이룬다. Money-Robo가 그래프를 흔들며 지도 값을 묻고, 마지막에는 위원 네 명이 모두 뛰어오른다⟧\"></canvas>",
+ "01e5d67db368": {
+  "ko": "면접실이 축하 파티처럼 꾸며져 있다. 벽에 '모델 채용 위원회 · 5-15 마지막 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 tS 기호가 그려진 공동 지원자 t-SNE · UMAP의 사원증이 떠 있고, 그 옆에서 흩어져 있던 작은 손글씨 숫자들이 비슷한 글씨끼리 모여 무리를 이룬다. 주판봇이 그래프를 흔들며 지도 값을 묻고, 마지막에는 위원 네 명이 모두 뛰어오른다",
+  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실이 축하 파티처럼 꾸며져 있다. 벽에 '모델 채용 위원회 · 5-15 마지막 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 tS 기호가 그려진 공동 지원자 t-SNE · UMAP의 사원증이 떠 있고, 그 옆에서 흩어져 있던 작은 손글씨 숫자들이 비슷한 글씨끼리 모여 무리를 이룬다. 주판봇이 그래프를 흔들며 지도 값을 묻고, 마지막에는 위원 네 명이 모두 뛰어오른다⟧\"></canvas>",
   "where": "페이지 HTML · 5-15",
-  "tr": "The interview room is decorated like a celebration party. A banner on the wall reads 'The Model Hiring Committee · 5-15 Final interview', and behind a long table sit the Chair (Doctor), the HR Assistant, the Fruit Fly (technical interviewer) and Money-Robo (budget officer). Above the chair in front floats the ID badge of joint candidates t-SNE · UMAP with a tS symbol, and next to it small, scattered handwritten digits gather into groups of similar digits. Money-Robo waves a chart and asks what a map costs, and at the end all four committee members jump up"
+  "tr": "The interview room is decorated like a celebration party. A banner on the wall reads 'The Model Hiring Committee · 5-15 Final interview', and behind a long table sit the Chair (Doctor), the HR Assistant, the Fruit Fly (technical interviewer) and AbaBot (budget officer). Above the chair in front floats the ID badge of joint candidates t-SNE · UMAP with a tS symbol, and next to it small, scattered handwritten digits gather into groups of similar digits. AbaBot waves a chart and asks what a map costs, and at the end all four committee members jump up"
  },
  "43e599ff7bec": {
   "ko": "t-SNE · UMAP — 이웃을 지키며 지도를 펼친다",
@@ -2789,11 +2789,11 @@
   "where": "페이지 HTML · 5-15",
   "tr": "<span class=\"who\">The Fruit Fly (technical interviewer)</span>If 3 and 8 are drawn close on the map, does that mean they're really similar? If a group is drawn big, does that mean the handwriting is all over the place? First I'll ask whether you can trust that."
  },
- "6dec4bb54ee5": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>지도 한 장 그리는 데 몇 초야? 새 글씨가 매일 들어오는데, 들어올 때마다 지도를 처음부터 다시 그리면 그게 다 인건비라고.",
-  "ctx": "-who=\"robo\" data-mood=\"chart\" data-move=\"sway\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>지도 한 장 그리는 데 몇 초야? 새 글씨가 매일 들어오는데, 들어올 때마다 지도를 처음부터 다시 그리면 그게 다 인건비라고.⟧</div></div>",
+ "125f11b4fd54": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>지도 한 장 그리는 데 몇 초야? 새 글씨가 매일 들어오는데, 들어올 때마다 지도를 처음부터 다시 그리면 그게 다 인건비라고.",
+  "ctx": "-who=\"robo\" data-mood=\"chart\" data-move=\"sway\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>지도 한 장 그리는 데 몇 초야? 새 글씨가 매일 들어오는데, 들어올 때마다 지도를 처음부터 다시 그리면 그게 다 인건비라고.⟧</div></div>",
   "where": "페이지 HTML · 5-15",
-  "tr": "<span class=\"who\">Money-Robo (budget officer)</span>How many seconds to draw one map? New digits come in every day, and if you redraw the map from scratch each time, that's all labor cost."
+  "tr": "<span class=\"who\">AbaBot (budget officer)</span>How many seconds to draw one map? New digits come in every day, and if you redraw the map from scratch each time, that's all labor cost."
  },
  "5f5be5c89495": {
   "ko": "<span class=\"who\">기존 직원 · 매뉴얼 씨</span>저도 지도를 그렸습니다. 가로는 잉크 양, 세로는 위쪽 절반의 잉크 비율. 사람이 고른 두 숫자입니다. 같은 숫자끼리 잘 모이지 않더군요.",
@@ -3551,11 +3551,11 @@
   "where": "페이지 HTML · 5-15",
   "tr": "A UMAP map. The 1,797 handwritten digits are placed as small digit pictures. The smaller n_neighbors, the more small islands; the larger, the closer the islands get. A large min_dist spreads the groups wide"
  },
- "40adc42e029e": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>장부 정리했어. 정확한 t-SNE는 한 걸음마다 모든 쌍(500장이면 12만 쌍)을 세야 해. 1,797장이면 160만 쌍, 1,000걸음이면 16억 번이지. 그래서 scikit-learn은 먼 점들을 덩어리로 묶어 세는 반스-헛 근사로 5초에 끝내. UMAP은 줄 15개씩만 당기니 더 싸고. 외울 숫자는 둘 다 점마다 좌표 두 개, 3,594개야.",
-  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>장부 정리했어. 정확한 t-SNE는 한 걸음마다 모든 쌍(500장이면 12만 쌍)을 세야 해. 1,797장이면 160만 쌍, 1,000걸음이면 16억 번이지. 그래서 scikit-learn은 먼 점들을 덩어리로 묶어 세는 반스-헛 근사로 5초에 끝내. UMAP은 줄 15개씩만 당기니 더 싸고. 외울 숫자는 둘 다 점마다 좌표 두 개, 3,594개야.⟧</div></div>",
+ "4726f53b0bc3": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>장부 정리했어. 정확한 t-SNE는 한 걸음마다 모든 쌍(500장이면 12만 쌍)을 세야 해. 1,797장이면 160만 쌍, 1,000걸음이면 16억 번이지. 그래서 scikit-learn은 먼 점들을 덩어리로 묶어 세는 반스-헛 근사로 5초에 끝내. UMAP은 줄 15개씩만 당기니 더 싸고. 외울 숫자는 둘 다 점마다 좌표 두 개, 3,594개야.",
+  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>장부 정리했어. 정확한 t-SNE는 한 걸음마다 모든 쌍(500장이면 12만 쌍)을 세야 해. 1,797장이면 160만 쌍, 1,000걸음이면 16억 번이지. 그래서 scikit-learn은 먼 점들을 덩어리로 묶어 세는 반스-헛 근사로 5초에 끝내. UMAP은 줄 15개씩만 당기니 더 싸고. 외울 숫자는 둘 다 점마다 좌표 두 개, 3,594개야.⟧</div></div>",
   "where": "페이지 HTML · 5-15",
-  "tr": "<span class=\"who\">Money-Robo (budget officer)</span>Ledger's done. Exact t-SNE has to count every pair at each step (120,000 pairs for 500 images). For 1,797 images that's 1.6 million pairs; over 1,000 steps, 1.6 billion. That's why scikit-learn uses the Barnes–Hut approximation, counting far points in lumps, and finishes in 5 seconds. UMAP only pulls 15 strings each, so it's even cheaper. Numbers to memorize: for both, two coordinates per point, 3,594."
+  "tr": "<span class=\"who\">AbaBot (budget officer)</span>Ledger's done. Exact t-SNE has to count every pair at each step (120,000 pairs for 500 images). For 1,797 images that's 1.6 million pairs; over 1,000 steps, 1.6 billion. That's why scikit-learn uses the Barnes–Hut approximation, counting far points in lumps, and finishes in 5 seconds. UMAP only pulls 15 strings each, so it's even cheaper. Numbers to memorize: for both, two coordinates per point, 3,594."
  },
  "fb713d349e17": {
   "ko": "숨긴 정답으로 지도 넉 장을 같은 잣대(5-NN)로 채점 → 정답 없이 재는 점수(이웃 보존) → 업무 점수(대표 몇 장으로 이름 붙이기) → 믿지 말아야 할 것 → 새 글씨 놓기",
@@ -3917,11 +3917,11 @@
   "where": "페이지 HTML · 5-15",
   "tr": "<span class=\"tag\">Dimensionality Reduction Team tally · same 1,797 images, same yardstick (5-NN accuracy on the map · 5-fold)</span>"
  },
- "95fc67074f23": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>점수는 둘이 똑같으니 나는 매일 들어오는 새 글씨를 다시 안 그려도 되는 UMAP 쪽에 동전 걸게. t-SNE는 연구실에서 한 번 크게 그려 보는 용도로. 둘 다 한 번 그리면 외울 건 좌표뿐이라 싸다!",
-  "ctx": "ta-who=\"robo\" data-mood=\"coin\" data-move=\"pop\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>점수는 둘이 똑같으니 나는 매일 들어오는 새 글씨를 다시 안 그려도 되는 UMAP 쪽에 동전 걸게. t-SNE는 연구실에서 한 번 크게 그려 보는 용도로. 둘 다 한 번 그리면 외울 건 좌표뿐이라 싸다!⟧</div></div>",
+ "b6e1d7acbce4": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>점수는 둘이 똑같으니 나는 매일 들어오는 새 글씨를 다시 안 그려도 되는 UMAP 쪽에 동전 걸게. t-SNE는 연구실에서 한 번 크게 그려 보는 용도로. 둘 다 한 번 그리면 외울 건 좌표뿐이라 싸다!",
+  "ctx": "ta-who=\"robo\" data-mood=\"coin\" data-move=\"pop\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>점수는 둘이 똑같으니 나는 매일 들어오는 새 글씨를 다시 안 그려도 되는 UMAP 쪽에 동전 걸게. t-SNE는 연구실에서 한 번 크게 그려 보는 용도로. 둘 다 한 번 그리면 외울 건 좌표뿐이라 싸다!⟧</div></div>",
   "where": "페이지 HTML · 5-15",
-  "tr": "<span class=\"who\">Money-Robo (budget officer)</span>Both scored the same, so I'll put my coin on UMAP, which doesn't have to redraw for the new digits coming in every day. t-SNE is for drawing one big map in the lab. Once drawn, both only memorize coordinates — cheap!"
+  "tr": "<span class=\"who\">AbaBot (budget officer)</span>Both scored the same, so I'll put my coin on UMAP, which doesn't have to redraw for the new digits coming in every day. t-SNE is for drawing one big map in the lab. Once drawn, both only memorize coordinates — cheap!"
  },
  "ac16281ce81b": {
   "ko": "높은 차원 데이터를 눈으로 훑기(이미지·센서·유전자·문장 임베딩), 이상한 무리나 잘못 붙은 이름표 찾기, 라벨링 전에 데이터가 몇 무리인지 보기, 대표 몇 장만 보고 이름 붙이기, UMAP은 군집 전 차원 줄이기(10차원 등)",
@@ -4019,11 +4019,11 @@
   "where": "페이지 HTML · 5-15",
   "tr": "<span class=\"who\">The Fruit Fly (technical interviewer)</span>Fair enough. They gathered same digits together without peeking at the answers once. But if anyone writes \"the 4 and 9 groups are close\" in a report, I'm coming to find them. That could be a distance the map made up."
  },
- "ae42a055bb13": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>열다섯 명 면접 끝! 장부 맞춰 보니 이름표 1,797장 붙일 인건비가 대표 30장 값으로 줄었어. 이게 비지도 본부의 진짜 연봉 협상이지!",
-  "ctx": "ta-who=\"robo\" data-mood=\"wow\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>열다섯 명 면접 끝! 장부 맞춰 보니 이름표 1,797장 붙일 인건비가 대표 30장 값으로 줄었어. 이게 비지도 본부의 진짜 연봉 협상이지!⟧</div></div>",
+ "9eeb96b0ca7c": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>열다섯 명 면접 끝! 장부 맞춰 보니 이름표 1,797장 붙일 인건비가 대표 30장 값으로 줄었어. 이게 비지도 본부의 진짜 연봉 협상이지!",
+  "ctx": "ta-who=\"robo\" data-mood=\"wow\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>열다섯 명 면접 끝! 장부 맞춰 보니 이름표 1,797장 붙일 인건비가 대표 30장 값으로 줄었어. 이게 비지도 본부의 진짜 연봉 협상이지!⟧</div></div>",
   "where": "페이지 HTML · 5-15",
-  "tr": "<span class=\"who\">Money-Robo (budget officer)</span>Fifteen interviews done! Balancing the books, the labor cost of labeling 1,797 images dropped to the price of 30 representatives. That's the Unsupervised Division's real salary negotiation!"
+  "tr": "<span class=\"who\">AbaBot (budget officer)</span>Fifteen interviews done! Balancing the books, the labor cost of labeling 1,797 images dropped to the price of 30 representatives. That's the Unsupervised Division's real salary negotiation!"
  },
  "d7a37739a6c3": {
   "ko": "<span class=\"who\">기존 직원 · 매뉴얼 씨</span>제 작업 표준서는 이제 합격선으로 남습니다. 새 직원이 그 선을 넘었는지 늘 재어 볼 수 있으니, 그것도 쓸모 있는 일이지요. 지식이 없는 곳에서 멈추던 자리를 이제 데이터가 채웁니다.",

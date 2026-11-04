@@ -2417,11 +2417,11 @@
   "where": "페이지 HTML · 5-3",
   "tr": "The Model Hiring Committee · Interview 5-3<span class=\"dept\">Supervised Division › Regression Team</span>"
  },
- "b61fbac284f9": {
-  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다",
-  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다⟧\"></canvas>",
+ "448b6792bd9f": {
+  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다",
+  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-3 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 람다 기호가 그려진 지원자 다항 회귀와 규제의 사원증이 떠 있고, 옆에 구불구불한 곡선이 고삐에 묶여 펴졌다 휘었다 한다⟧\"></canvas>",
   "where": "페이지 HTML · 5-3",
-  "tr": "An interview room. A banner on the wall reads 'The Model Hiring Committee · Interview 5-3', and behind a long table sit the Chair (Doctor), the HR Assistant, the Fruit Fly (technical interviewer) and Money-Robo (budget officer). Above the chair in front floats the ID badge of candidate polynomial regression and regularization with a lambda symbol, and next to it a wiggly curve tied with reins straightens and bends"
+  "tr": "An interview room. A banner on the wall reads 'The Model Hiring Committee · Interview 5-3', and behind a long table sit the Chair (Doctor), the HR Assistant, the Fruit Fly (technical interviewer) and AbaBot (budget officer). Above the chair in front floats the ID badge of candidate polynomial regression and regularization with a lambda symbol, and next to it a wiggly curve tied with reins straightens and bends"
  },
  "9a18ff2c9e3e": {
   "ko": "다항 회귀와 규제 — 곡선을 긋고, 고삐를 맨다",
@@ -2495,11 +2495,11 @@
   "where": "페이지 HTML · 5-3",
   "tr": "<span class=\"who\">Technical interviewer · the Fruit Fly</span>You're blowing the features up to a hundred and sixty-some? First I want to see whether you memorized the training mixes or can get never-seen mixes right too."
  },
- "c7e0bb118d4d": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.",
-  "ctx": "a-who=\"robo\" data-mood=\"wow\" data-move=\"shake\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.⟧</div></div>",
+ "6626c45d73a6": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.",
+  "ctx": "a-who=\"robo\" data-mood=\"wow\" data-move=\"shake\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>외울 숫자가 9개에서 165개로? 몸값이 열여덟 배야. 그만큼 벌어 오는지 계산기 두드려 볼게.⟧</div></div>",
   "where": "페이지 HTML · 5-3",
-  "tr": "<span class=\"who\">Budget officer · Money-Robo</span>Numbers to memorize go from 9 to 165? That's eighteen times the price. I'll punch the calculator and see if it earns that much."
+  "tr": "<span class=\"who\">Budget officer · AbaBot</span>Numbers to memorize go from 9 to 165? That's eighteen times the price. I'll punch the calculator and see if it earns that much."
  },
  "cf4af4f50a64": {
   "ko": "<span class=\"who\">지원자 · 다항 회귀와 규제</span>안녕하십니까. 직선으로 안 되는 곳에 곡선을 긋는 다항 회귀입니다. 너무 구불구불해지지 않도록 규제라는 고삐를 함께 차고 왔습니다. 교과서에서는 고삐의 세기를 λ, scikit-learn에서는 alpha(α)라고 부릅니다.",
@@ -3143,11 +3143,11 @@
   "where": "페이지 HTML · 5-3",
   "tr": "The absolute value |w| is pointed at 0, so it can't be solved with one formula. So the weights are updated one at a time in turn. If only the j-th weight moves, the answer is \"the share left after the other weights have explained what they can (ρⱼ)\" shaved down by α. If the remaining share is smaller than α, it becomes <b>exactly 0</b>. This shaving is called soft thresholding. Go around all 164 once, and repeat until nothing changes."
  },
- "187726c4b23a": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.",
-  "ctx": "a-who=\"robo\" data-mood=\"stack\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.⟧</div></div>",
+ "9148c2c71d68": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.",
+  "ctx": "a-who=\"robo\" data-mood=\"stack\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>라쏘는 마음에 들어. α = 0.1이면 164개 중 98개를 0으로 지우니까 외울 숫자가 66개(+ 절편)로 줄잖아. 릿지는 하나도 안 지우고 다 조금씩 깎기만 하고.⟧</div></div>",
   "where": "페이지 HTML · 5-3",
-  "tr": "<span class=\"who\">Budget officer · Money-Robo</span>I like Lasso. At α = 0.1 it erases 98 of 164 to 0, so the numbers to memorize drop to 66 (+ intercept). Ridge doesn't erase a single one; it just shaves a little off all of them."
+  "tr": "<span class=\"who\">Budget officer · AbaBot</span>I like Lasso. At α = 0.1 it erases 98 of 164 to 0, so the numbers to memorize drop to 66 (+ intercept). Ridge doesn't erase a single one; it just shaves a little off all of them."
  },
  "f1d003bdb8a5": {
   "ko": "차수별 성적, 4차의 폭주, 릿지로 잡기, α를 고르는 법, 규제 3형제 비교",
@@ -3485,11 +3485,11 @@
   "where": "페이지 HTML · 5-3",
   "tr": "<span class=\"who\">Technical interviewer · the Fruit Fly</span>Degree 4 scared me most. If we'd looked only at training scores, we'd have picked it as the top candidate at 0.98. An employee who calls the strength of a never-seen mix negative."
  },
- "93c5bb4f7713": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>숫자 165개로 매뉴얼 씨보다 MAE 2MPa 덜 틀리네. 나는 라쏘 쪽이 좋아. 반 넘게 지우고도 점수가 거의 같으니까 가성비 최고지.",
-  "ctx": "-who=\"robo\" data-mood=\"happy\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>숫자 165개로 매뉴얼 씨보다 MAE 2MPa 덜 틀리네. 나는 라쏘 쪽이 좋아. 반 넘게 지우고도 점수가 거의 같으니까 가성비 최고지.⟧</div></div>",
+ "d1aeaac669bd": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>숫자 165개로 매뉴얼 씨보다 MAE 2MPa 덜 틀리네. 나는 라쏘 쪽이 좋아. 반 넘게 지우고도 점수가 거의 같으니까 가성비 최고지.",
+  "ctx": "-who=\"robo\" data-mood=\"happy\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>숫자 165개로 매뉴얼 씨보다 MAE 2MPa 덜 틀리네. 나는 라쏘 쪽이 좋아. 반 넘게 지우고도 점수가 거의 같으니까 가성비 최고지.⟧</div></div>",
   "where": "페이지 HTML · 5-3",
-  "tr": "<span class=\"who\">Budget officer · Money-Robo</span>With 165 numbers it's 2 MPa less wrong than Mr. Manual on MAE. I prefer the Lasso one. It erases more than half and the score is almost the same, so it's the best value for money."
+  "tr": "<span class=\"who\">Budget officer · AbaBot</span>With 165 numbers it's 2 MPa less wrong than Mr. Manual on MAE. I prefer the Lasso one. It erases more than half and the score is almost the same, so it's the best value for money."
  },
  "325dbc1f4936": {
   "ko": "<b>데이터와 계산.</b> 실기 과제지는 UCI 콘크리트 압축 강도 데이터 1,030건이며, 시험지는 test_size=0.25, stratify=강도 3등급, random_state=42로 나눈 258건이다. 회귀팀 합격선은 매뉴얼 씨의 현장 경험식(에이브럼스 식 f28 = 96.5 / 7^(물-결합재비) MPa에 ACI 209R의 재령 보정 t / (4 + 0.85t)를 곱한 것, 물-시멘트비 대신 물-결합재비로 넓혀 씀)이 시험지에서 낸 R² 0.735다. 상수는 교과서 값을 그대로 썼으며 특정 공장의 설계 기준을 대신하지 않는다. 01장·04장·05장·06장과 면접 결과의 숫자는 이 페이지가 브라우저에서 직접 계산한다. 다항 특징은 scikit-learn PolynomialFeatures(include_bias=False)와 같은 순서로 만들고(3차 164개, 상수 열까지 세면 165개), 릿지는 닫힌 해(촐레스키 분해), 라쏘·엘라스틱넷은 scikit-learn과 같은 목적 함수를 좌표 하강으로 푼다. 3차까지는 브라우저 계산이 충분히 빨라 차수나 특징을 줄인 시연용 모형을 쓰지 않았다. 01장의 곡선 그림만 설명을 위해 28일 배합 중 12건, 특징 하나(물-결합재비)로 줄인 장난감 문제다. 4차 다항 회귀(특징 494개, 규제 없음)는 풀이가 매우 불안정해(조건수 약 10⁶~10⁷) 시험 R²가 계산 방법에 따라 크게 달라진다. 브라우저(정규방정식)는 약 −23.6, Colab(scikit-learn LinearRegression)은 −6.18, 다항 뒤 한 번 더 표준화하면 −11.3이 나온다. 숫자는 달라도 '훈련 0.98, 시험 크게 음수'라는 결론은 같다. 교차 검증은 훈련 배합을 번갈아 다섯 칸에 넣는 방식(Colab의 PredefinedSplit과 같음)이다. 03장의 'AI가 낸 코드'는 흔한 실수를 모아 일부러 만든 예시이며 특정 AI 서비스의 실제 답이 아니다.",

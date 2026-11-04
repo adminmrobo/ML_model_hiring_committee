@@ -7,11 +7,11 @@
   - 위원장 박사 → The Chair (Doctor) · 위원장 · 박사 → The Chair · Doctor
   - 인사 담당 조수 → The HR Assistant · 인사 담당 · 조수 → HR · the Assistant
   - 실무 면접관 초파리 → The Fruit Fly (technical interviewer) · 실무 면접관 · 초파리 연구원 → Technical interviewer · the Fruit Fly
-  - 예산 담당 Money-Robo → Money-Robo (budget officer) · 예산 담당 · Money-Robo → Budget officer · Money-Robo
+  - 예산 담당 주판봇 → AbaBot (budget officer) · 예산 담당 · 주판봇 → Budget officer · AbaBot
   - 기존 직원 · 매뉴얼 씨 → Current employee · Mr. Manual
   - 지원자 · X → Candidate · X (model name as in glossary)
 - Section references: "03장" → "Section 03", "B장" → "Section B". 00장 = Section 00 (the one-page application sheet).
-- Money: 0원 → $0; Money-Robo's costs are metaphors for compute (keep the joke).
+- Money: 0원 → $0; AbaBot's costs are metaphors for compute (keep the joke).
 - Mr. Manual speaks like a regulation: "Article 1. …".
 - Author: Ahn Sangsun (CEO, M-Robo Co., Ltd.).
 - Shared fragments already fixed in common.json: '개' → " ", '건' → " more", '번' → " steps", '장' → " images". Do not re-translate common keys (they are not in your episode file).

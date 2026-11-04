@@ -1727,9 +1727,9 @@
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },
- "ff20edf0c662": {
-  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-4 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 시그마 기호가 그려진 지원자 로지스틱 회귀의 사원증이 떠 있다",
-  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-4 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 Money-Robo가 앉아 있다. 앞쪽 의자 위에 시그마 기호가 그려진 지원자 로지스틱 회귀의 사원증이 떠 있다⟧\"></canvas>",
+ "b056ac61b202": {
+  "ko": "면접실. 벽에 '모델 채용 위원회 · 5-4 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 시그마 기호가 그려진 지원자 로지스틱 회귀의 사원증이 떠 있다",
+  "ctx": "<canvas class=\"stagecv\" id=\"heroCv\" width=\"1100\" height=\"330\" role=\"img\" aria-label=\"⟦면접실. 벽에 '모델 채용 위원회 · 5-4 면접' 현수막이 걸려 있고, 긴 탁자 뒤에 위원장 박사, 인사 담당 조수, 실무 면접관 초파리 연구원, 예산 담당 주판봇이 앉아 있다. 앞쪽 의자 위에 시그마 기호가 그려진 지원자 로지스틱 회귀의 사원증이 떠 있다⟧\"></canvas>",
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },
@@ -1793,9 +1793,9 @@
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },
- "d382e039133b": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자가 몇 개야? 싸고 빠르면 일단 마음에 들어. 레미콘 한 차 버리는 값이 얼만데.",
-  "ctx": "ta-who=\"robo\" data-mood=\"calc\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>외울 숫자가 몇 개야? 싸고 빠르면 일단 마음에 들어. 레미콘 한 차 버리는 값이 얼만데.⟧</div></div>",
+ "2797e19e4855": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>외울 숫자가 몇 개야? 싸고 빠르면 일단 마음에 들어. 레미콘 한 차 버리는 값이 얼만데.",
+  "ctx": "ta-who=\"robo\" data-mood=\"calc\" data-move=\"bob\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>외울 숫자가 몇 개야? 싸고 빠르면 일단 마음에 들어. 레미콘 한 차 버리는 값이 얼만데.⟧</div></div>",
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },
@@ -2387,9 +2387,9 @@
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },
- "9c40c4a6ac81": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>수습비는 싸네. 한 걸음에 곱하기 몇 번, 다 외워도 숫자 세 개(w₁, w₂, b)야. 특징 여덟 개를 다 써도 아홉 개면 끝이고.",
-  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"nod\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>수습비는 싸네. 한 걸음에 곱하기 몇 번, 다 외워도 숫자 세 개(w₁, w₂, b)야. 특징 여덟 개를 다 써도 아홉 개면 끝이고.⟧</div></div>",
+ "c27f00ebc50c": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>수습비는 싸네. 한 걸음에 곱하기 몇 번, 다 외워도 숫자 세 개(w₁, w₂, b)야. 특징 여덟 개를 다 써도 아홉 개면 끝이고.",
+  "ctx": "a-who=\"robo\" data-mood=\"count\" data-move=\"nod\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>수습비는 싸네. 한 걸음에 곱하기 몇 번, 다 외워도 숫자 세 개(w₁, w₂, b)야. 특징 여덟 개를 다 써도 아홉 개면 끝이고.⟧</div></div>",
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },
@@ -2665,7 +2665,7 @@
  },
  "003eb83200dd": {
   "ko": "합격과 불합격, 서랍은 둘이다. 로지스틱 회귀는 배합마다 확률을 적고, 문턱 0.5를 넘은 카드만 합격 서랍에 넣는다.",
-  "ctx": "가 가득 든 서랍 하나를 당겨 열고 있다. 옆에서 Money-Robo가 떠서 서랍을 가리키고, 아래 책상에는 초록 갓 스탠드가 켜져 있다\"><figcaption>⟦합격과 불합격, 서랍은 둘이다. 로지스틱 회귀는 배합마다 확률을 적고, 문턱 0.5를 넘은 카드만 합격 서랍에 넣는다.⟧</figcaption></figure>",
+  "ctx": "사다리에 올라 카드가 가득 든 서랍 하나를 당겨 열고 있다. 옆에서 주판봇이 서랍을 가리키고, 아래 책상에는 초록 갓 스탠드가 켜져 있다\"><figcaption>⟦합격과 불합격, 서랍은 둘이다. 로지스틱 회귀는 배합마다 확률을 적고, 문턱 0.5를 넘은 카드만 합격 서랍에 넣는다.⟧</figcaption></figure>",
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },
@@ -2699,9 +2699,9 @@
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },
- "ab345b0d3bd3": {
-  "ko": "<span class=\"who\">예산 담당 Money-Robo</span>숫자 아홉 개로 매뉴얼 씨보다 10%p 낫다니 가성비 최고지. 임계값만 올리면 레미콘 회수 비용도 아끼고.",
-  "ctx": "-who=\"robo\" data-mood=\"happy\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 Money-Robo</span>숫자 아홉 개로 매뉴얼 씨보다 10%p 낫다니 가성비 최고지. 임계값만 올리면 레미콘 회수 비용도 아끼고.⟧</div></div>",
+ "d2f4b83294c5": {
+  "ko": "<span class=\"who\">예산 담당 주판봇</span>숫자 아홉 개로 매뉴얼 씨보다 10%p 낫다니 가성비 최고지. 임계값만 올리면 레미콘 회수 비용도 아끼고.",
+  "ctx": "-who=\"robo\" data-mood=\"happy\" data-move=\"jump\" alt=\"\" aria-hidden=\"true\"><div class=\"bub\">⟦<span class=\"who\">예산 담당 주판봇</span>숫자 아홉 개로 매뉴얼 씨보다 10%p 낫다니 가성비 최고지. 임계값만 올리면 레미콘 회수 비용도 아끼고.⟧</div></div>",
   "where": "페이지 HTML · 5-4",
   "tr": ""
  },

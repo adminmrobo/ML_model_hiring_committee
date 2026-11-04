@@ -55,8 +55,8 @@ function drawDigit(ctx,px,x,y,s,ink){var c=s/8;for(var j=0;j<64;j++){var v=px[j]
 var DIGCOL=['#1f6fe5','#c0392b','#2f9d63','#d0782b','#8e5bd6','#17a2b8','#c23b6e','#7a6a12','#4a5568','#0f766e'];
 
 /* ══ 등장인물 ══════════════════════════════════════════════════════ */
-var CAST_SHORT={doc:'박사',asst:'조수',fly:'초파리',robo:'Money-Robo'}; /* 네 컷 말풍선 이름표 */
-var CAST={doc:'위원장 박사',asst:'인사 담당 조수',fly:'실무 면접관 초파리',robo:'예산 담당 Money-Robo'};
+var CAST_SHORT={doc:'박사',asst:'조수',fly:'초파리',robo:'주판봇'}; /* 네 컷 말풍선 이름표 */
+var CAST={doc:'위원장 박사',asst:'인사 담당 조수',fly:'실무 면접관 초파리',robo:'예산 담당 주판봇'};
 var DEFAULT={doc:'doc_front',asst:'asst_smile',fly:'fly_clip',robo:'robo_smile'};
 function sprite(who,mood){var k=who+'_'+mood;return SPR[k]||SPR[DEFAULT[who]]||'';}
 function hydrate(root){root=root||document;
@@ -118,7 +118,7 @@ function updateBoard(){var b=$('board');if(!b)return;var n=0,cur=epIdx(EP.n);EPI
 function Interview(id,o){var el=$(id);
   el.innerHTML='<div class="iv-head"><span class="lab">면접 결과 발표 · '+EP.n+'</span><h3>'+o.title+'</h3></div><p class="iv-q">'+o.q+'</p>'+
    '<div class="iv-panel"><div class="ask fly"><img data-who="fly" data-mood="point" alt="" aria-hidden="true"><span class="nm">실무 면접관 · 초파리</span><q>'+o.fly+'</q><span class="ans" hidden></span></div>'+
-   '<div class="ask robo"><img data-who="robo" data-mood="calc" alt="" aria-hidden="true"><span class="nm">예산 담당 · Money-Robo</span><q>'+o.robo+'</q><span class="ans" hidden></span></div></div>'+
+   '<div class="ask robo"><img data-who="robo" data-mood="calc" alt="" aria-hidden="true"><span class="nm">예산 담당 · 주판봇</span><q>'+o.robo+'</q><span class="ans" hidden></span></div></div>'+
    '<div class="iv-go"><button class="btn go">면접 결과 발표 ▶</button><span class="muted" style="font-size:13.5px">합격일지 먼저 맞혀 보세요.</span><div class="prog" hidden><i></i></div></div><div class="result" hidden aria-live="polite"></div>';
   hydrate(el);
   var btn=el.querySelector('.go'),prog=el.querySelector('.prog'),bar=prog.querySelector('i'),res=el.querySelector('.result'),done=false;

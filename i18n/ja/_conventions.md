@@ -7,7 +7,7 @@
   - 위원장 박사 → 委員長の博士 · 위원장 · 박사 → 委員長・博士
   - 인사 담당 조수 → 人事担当の助手 · 인사 담당 · 조수 → 人事担当・助手
   - 실무 면접관 초파리 → 実務面接官のショウジョウバエ · 실무 면접관 · 초파리 연구원 → 実務面接官・ショウジョウバエ研究員
-  - 예산 담당 Money-Robo → 予算担当 Money-Robo · 예산 담당 · Money-Robo → 予算担当・Money-Robo
+  - 예산 담당 주판봇 → 予算担当アバボット · 예산 담당 · 주판봇 → 予算担当・アバボット
   - 기존 직원 · 매뉴얼 씨 → 既存社員・マニュアルさん · 지원자 · X → 応募者・X
   - Short comic names: 박사 → 博士, 조수 → 助手, 초파리 → ハエ.
 - Teams: 入門チーム · 回帰チーム · 分類チーム · 兼用チーム · クラスタリングチーム · 次元削減チーム. 教師あり本部 / 教師なし本部.
@@ -15,7 +15,7 @@
 - Money: 0원 → 0円 (metaphor for compute cost; keep the joke).
 - Mr. Manual = マニュアルさん, speaks like a regulation: "第1条 …… 第2条 ……".
 - Author: "アン・サンソン（M-Robo 代表）".
-- Style: explanations in である調 (plain textbook style). Dialogue: 博士 polite です・ます, 助手 brisk です・ます, ハエ blunt casual (だ/だろ), Money-Robo casual and money-minded.
+- Style: explanations in である調 (plain textbook style). Dialogue: 博士 polite です・ます, 助手 brisk です・ます, ハエ blunt casual (だ/だろ), アバボット casual and money-minded.
 - Punctuation: 、。「」（）full-width in Japanese sentences; half-width around numbers/code/math. No spaces between Japanese words; keep a space only where it separates numbers/Latin words.
 - Counters after numbers: 장 → 枚, 개 → 個 (or ∅), 건 → 件 (mixes: 件 or 配合), 번 → 回, 묶음 → クラスタ (or 個), 일 → 日.
 - Particle-only fragments ('는','은','이라고','라고'…): ∅ (the single character ∅ = intentionally empty; empty tr = untranslated). Japanese word order often needs the verb at the end — reshape neighbouring fragments with ctx.

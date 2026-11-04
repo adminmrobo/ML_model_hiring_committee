@@ -1083,9 +1083,9 @@
   "t": "Meva pashshasi (texnik suhbatdosh)",
   "n": ""
  },
- "예산 담당 Money-Robo": {
-  "t": "Money-Robo (byudjet masʼuli)",
-  "n": "Money-Robo oʻzgarmaydi"
+ "예산 담당 주판봇": {
+  "t": "AbaBot (byudjet masʼuli)",
+  "n": "AbaBot oʻzgarmaydi"
  },
  "매뉴얼 씨": {
   "t": "Manual janob",
@@ -1178,5 +1178,9 @@
  "강도 3등급": {
   "t": "uch mustahkamlik darajasi (past / oʻrta / yuqori)",
   "n": "<25, 25–45, ≥45 MPa"
+ },
+ "주판봇": {
+  "t": "AbaBot",
+  "n": "series-fixed character name (lab robot)"
  }
 }
