@@ -1,0 +1,277 @@
+{
+ "version": "1.0",
+ "page": "5-0_job_posting",
+ "nodes": [
+  {
+   "id": "lab:method/manual-baseline",
+   "type": "Method",
+   "label": {
+    "ko": "매뉴얼 씨",
+    "en": "Mr. Manual baseline"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "1차 공채의 기본선. 사람이 정한 규칙으로 판정하는 기준 모델."
+   }
+  },
+  {
+   "id": "lab:concept/classification",
+   "type": "Concept",
+   "label": {
+    "ko": "분류",
+    "en": "Classification"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "범주를 맞히는 문제."
+   }
+  },
+  {
+   "id": "lab:concept/regression",
+   "type": "Concept",
+   "label": {
+    "ko": "회귀",
+    "en": "Regression"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "숫자를 맞히는 문제."
+   }
+  },
+  {
+   "id": "lab:concept/prompt",
+   "type": "Concept",
+   "label": {
+    "ko": "프롬프트",
+    "en": "prompt"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#prompt",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "AI에게 무엇을 만들지 알려 주는 글."
+   }
+  },
+  {
+   "id": "lab:concept/flowchart",
+   "type": "Concept",
+   "label": {
+    "ko": "플로우차트",
+    "en": "Flowchart"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "마름모(조건)와 화살표로 판단 순서를 그린 그림."
+   }
+  },
+  {
+   "id": "lab:method/logistic-regression",
+   "type": "Method",
+   "label": {
+    "ko": "로지스틱 회귀 (다항)",
+    "en": "Multinomial logistic regression"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#autoInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "정답별 점수 → 소프트맥스 → 확률"
+   }
+  },
+  {
+   "id": "lab:concept/machine-learning",
+   "type": "Concept",
+   "label": {
+    "ko": "기계 학습",
+    "en": "machine learning"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "ai",
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "데이터에서 규칙을 배워 새 데이터를 다루는 방법."
+   }
+  },
+  {
+   "id": "lab:topic/rule-vs-learning",
+   "type": "Topic",
+   "label": {
+    "ko": "규칙 기반 vs 학습 기반",
+    "en": "Rule-based vs learned systems"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/prompting",
+   "type": "Topic",
+   "label": {
+    "ko": "프롬프팅",
+    "en": "Prompting"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#kg",
+   "level": 4,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/glm-logistic",
+   "type": "Topic",
+   "label": {
+    "ko": "로지스틱 회귀(GLM)",
+    "en": "Logistic regression (GLM)"
+   },
+   "page": "5-0_job_posting",
+   "anchor": "#kg",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "stats"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:method/manual-baseline",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/prompt",
+   "p": "lab:broader",
+   "o": "lab:topic/prompting",
+   "anchor": "#prompt",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/flowchart",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/logistic-regression",
+   "p": "lab:broader",
+   "o": "lab:topic/glm-logistic",
+   "anchor": "#autoInfo",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/machine-learning",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/regression",
+   "p": "lab:contrastsWith",
+   "o": "lab:concept/classification",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:concept/machine-learning",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:method/logistic-regression",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  }
+ ]
+}

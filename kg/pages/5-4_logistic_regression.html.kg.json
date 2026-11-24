@@ -1,0 +1,517 @@
+{
+ "version": "1.0",
+ "page": "5-4_logistic_regression",
+ "nodes": [
+  {
+   "id": "lab:method/logistic-regression",
+   "type": "Method",
+   "label": {
+    "ko": "로지스틱 회귀 (다항)",
+    "en": "Multinomial logistic regression"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "정답별 점수 → 소프트맥스 → 확률"
+   }
+  },
+  {
+   "id": "lab:concept/classification",
+   "type": "Concept",
+   "label": {
+    "ko": "분류",
+    "en": "Classification"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "범주를 맞히는 문제."
+   }
+  },
+  {
+   "id": "lab:concept/loss",
+   "type": "Concept",
+   "label": {
+    "ko": "손실",
+    "en": "loss"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "dl",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "그린 그림과 정답이 얼마나 다른지 나타내는 숫자. 이 페이지에서는 픽셀 차이의 제곱 평균."
+   }
+  },
+  {
+   "id": "lab:concept/sigmoid",
+   "type": "Concept",
+   "label": {
+    "ko": "시그모이드",
+    "en": "Sigmoid"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "점수를 0~1 사이 확률로 바꾸는 함수."
+   }
+  },
+  {
+   "id": "lab:concept/regularization",
+   "type": "Concept",
+   "label": {
+    "ko": "규제",
+    "en": "regularization"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#comicIntro",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "ai",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "계수에 벌점을 줘 0 쪽으로 당기기."
+   }
+  },
+  {
+   "id": "lab:concept/prompt",
+   "type": "Concept",
+   "label": {
+    "ko": "프롬프트",
+    "en": "prompt"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#prompt",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "AI에게 무엇을 만들지 알려 주는 글."
+   }
+  },
+  {
+   "id": "lab:concept/regression",
+   "type": "Concept",
+   "label": {
+    "ko": "회귀",
+    "en": "Regression"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "숫자를 맞히는 문제."
+   }
+  },
+  {
+   "id": "lab:term/gradient-descent",
+   "type": "Term",
+   "label": {
+    "ko": "경사하강",
+    "en": "gradient descent"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#m4",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "math",
+    "ai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "손실이 줄어드는 방향으로 가중치를 조금씩 옮기는 최적화 방법."
+   }
+  },
+  {
+   "id": "lab:method/manual-baseline",
+   "type": "Method",
+   "label": {
+    "ko": "매뉴얼 씨",
+    "en": "Mr. Manual baseline"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "1차 공채의 기본선. 사람이 정한 규칙으로 판정하는 기준 모델."
+   }
+  },
+  {
+   "id": "lab:method/standardization",
+   "type": "Method",
+   "label": {
+    "ko": "표준화",
+    "en": "standardization"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#concTbl",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "특징마다 평균을 빼고 표준편차로 나눠 같은 눈금으로 맞추는 일."
+   }
+  },
+  {
+   "id": "lab:concept/decision-boundary",
+   "type": "Concept",
+   "label": {
+    "ko": "판단 경계",
+    "en": "Decision boundary"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "crime",
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "AI의 점수가 0이 되는 선. 이 선의 어느 쪽에 있느냐로 답이 갈린다."
+   }
+  },
+  {
+   "id": "lab:topic/glm-logistic",
+   "type": "Topic",
+   "label": {
+    "ko": "로지스틱 회귀(GLM)",
+    "en": "Logistic regression (GLM)"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "stats"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/loss-function",
+   "type": "Topic",
+   "label": {
+    "ko": "손실 함수",
+    "en": "Loss function"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/activation-function",
+   "type": "Topic",
+   "label": {
+    "ko": "활성화 함수",
+    "en": "Activation function"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/weight-decay",
+   "type": "Topic",
+   "label": {
+    "ko": "가중치 감쇠(L2)",
+    "en": "Weight decay (L2)"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/prompting",
+   "type": "Topic",
+   "label": {
+    "ko": "프롬프팅",
+    "en": "Prompting"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 4,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/gradient-descent",
+   "type": "Topic",
+   "label": {
+    "ko": "경사하강법",
+    "en": "Gradient descent"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/rule-vs-learning",
+   "type": "Topic",
+   "label": {
+    "ko": "규칙 기반 vs 학습 기반",
+    "en": "Rule-based vs learned systems"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/feature-engineering",
+   "type": "Topic",
+   "label": {
+    "ko": "특징 공학",
+    "en": "Feature engineering"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/ai-safety",
+   "type": "Topic",
+   "label": {
+    "ko": "안전성",
+    "en": "AI safety"
+   },
+   "page": "5-4_logistic_regression",
+   "anchor": "#kg",
+   "level": 4,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:method/logistic-regression",
+   "p": "lab:broader",
+   "o": "lab:topic/glm-logistic",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/loss",
+   "p": "lab:broader",
+   "o": "lab:topic/loss-function",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/sigmoid",
+   "p": "lab:broader",
+   "o": "lab:topic/activation-function",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/regularization",
+   "p": "lab:broader",
+   "o": "lab:topic/weight-decay",
+   "anchor": "#comicIntro",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/prompt",
+   "p": "lab:broader",
+   "o": "lab:topic/prompting",
+   "anchor": "#prompt",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:term/gradient-descent",
+   "p": "lab:broader",
+   "o": "lab:topic/gradient-descent",
+   "anchor": "#m4",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/manual-baseline",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/standardization",
+   "p": "lab:broader",
+   "o": "lab:topic/feature-engineering",
+   "anchor": "#concTbl",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/decision-boundary",
+   "p": "lab:broader",
+   "o": "lab:topic/ai-safety",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/regression",
+   "p": "lab:contrastsWith",
+   "o": "lab:concept/classification",
+   "anchor": "#series",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:concept/sigmoid",
+   "p": "lab:partOf",
+   "o": "lab:method/logistic-regression",
+   "anchor": "#series",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:concept/regularization",
+   "p": "lab:partOf",
+   "o": "lab:method/logistic-regression",
+   "anchor": "#comicIntro",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  }
+ ]
+}

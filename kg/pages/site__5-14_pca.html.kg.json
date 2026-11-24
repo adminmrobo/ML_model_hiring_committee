@@ -1,0 +1,555 @@
+{
+ "version": "1.0",
+ "page": "site__5-14_pca",
+ "nodes": [
+  {
+   "id": "lab:method/pca",
+   "type": "Term",
+   "label": {
+    "ko": "PCA",
+    "en": "principal component analysis"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "math"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "주성분 분석. 분산이 가장 큰 방향의 축으로 투영하는 선형 차원 축소."
+   }
+  },
+  {
+   "id": "lab:concept/variance",
+   "type": "Concept",
+   "label": {
+    "ko": "분산",
+    "en": "variance"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "math",
+    "econ"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "값이 평균에서 흩어진 정도. 주성분이 담은 분산의 몫으로 정보량을 가늠한다."
+   }
+  },
+  {
+   "id": "lab:method/manual-baseline",
+   "type": "Method",
+   "label": {
+    "ko": "매뉴얼 씨",
+    "en": "Mr. Manual baseline"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#m2",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "1차 공채의 기본선. 사람이 정한 규칙으로 판정하는 기준 모델."
+   }
+  },
+  {
+   "id": "lab:concept/covariance",
+   "type": "Concept",
+   "label": {
+    "ko": "공분산",
+    "en": "covariance"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "fin",
+    "math"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "두 변수가 평균에서 같은 방향으로 벗어나는 정도. 단위가 남음."
+   }
+  },
+  {
+   "id": "lab:concept/prompt",
+   "type": "Concept",
+   "label": {
+    "ko": "프롬프트",
+    "en": "prompt"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#prompt",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "AI에게 무엇을 만들지 알려 주는 글."
+   }
+  },
+  {
+   "id": "lab:method/standardization",
+   "type": "Method",
+   "label": {
+    "ko": "표준화",
+    "en": "standardization"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#pxInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "특징마다 평균을 빼고 표준편차로 나눠 같은 눈금으로 맞추는 일."
+   }
+  },
+  {
+   "id": "lab:concept/dimensionality-reduction",
+   "type": "Concept",
+   "label": {
+    "ko": "차원 축소 (접기)",
+    "en": "Dimensionality reduction"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "변수 수를 줄여 요약하는 일"
+   }
+  },
+  {
+   "id": "lab:concept/reconstruction",
+   "type": "Concept",
+   "label": {
+    "ko": "복원",
+    "en": "reconstruction"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "지도 위 숫자로 원래 그림을 다시 그리는 것."
+   }
+  },
+  {
+   "id": "lab:metric/accuracy",
+   "type": "Metric",
+   "label": {
+    "ko": "정확도",
+    "en": "Accuracy"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#m2",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "맞힌 비율. 불균형 데이터에서 속기 쉽다."
+   }
+  },
+  {
+   "id": "lab:concept/curvature-eigenvalue",
+   "type": "Concept",
+   "label": {
+    "ko": "고유값(굽음)",
+    "en": "Curvature eigenvalue"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#scrInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "math",
+    "ai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "헤시안을 어느 방향으로 봐도 변하지 않는 굽음 숫자."
+   }
+  },
+  {
+   "id": "lab:metric/explained-variance-ratio",
+   "type": "Metric",
+   "label": {
+    "ko": "설명분산 비율",
+    "en": "Explained variance ratio"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "data",
+    "stats",
+    "ai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "주성분 하나가 담는 분산 비율"
+   }
+  },
+  {
+   "id": "lab:method/power-iteration",
+   "type": "Method",
+   "label": {
+    "ko": "거듭제곱법",
+    "en": "power iteration"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#m4",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "행렬을 곱하고 다시 맞추기를 되풀이해 가장 큰 고유벡터를 찾는다."
+   }
+  },
+  {
+   "id": "lab:topic/pca",
+   "type": "Topic",
+   "label": {
+    "ko": "주성분 분석",
+    "en": "Principal component analysis"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/dispersion",
+   "type": "Topic",
+   "label": {
+    "ko": "퍼짐",
+    "en": "Measures of dispersion"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "stats"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/rule-vs-learning",
+   "type": "Topic",
+   "label": {
+    "ko": "규칙 기반 vs 학습 기반",
+    "en": "Rule-based vs learned systems"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/correlation",
+   "type": "Topic",
+   "label": {
+    "ko": "상관",
+    "en": "Correlation"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "stats"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/prompting",
+   "type": "Topic",
+   "label": {
+    "ko": "프롬프팅",
+    "en": "Prompting"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#kg",
+   "level": 4,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/feature-engineering",
+   "type": "Topic",
+   "label": {
+    "ko": "특징 공학",
+    "en": "Feature engineering"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/accuracy-metrics",
+   "type": "Topic",
+   "label": {
+    "ko": "정확도·손실 지표",
+    "en": "Accuracy and loss metrics"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/calculus-optimization-math",
+   "type": "Topic",
+   "label": {
+    "ko": "미적분과 최적화 수학",
+    "en": "Calculus for optimization"
+   },
+   "page": "site__5-14_pca",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:method/pca",
+   "p": "lab:broader",
+   "o": "lab:topic/pca",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/variance",
+   "p": "lab:broader",
+   "o": "lab:topic/dispersion",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/manual-baseline",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#m2",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/covariance",
+   "p": "lab:broader",
+   "o": "lab:topic/correlation",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/prompt",
+   "p": "lab:broader",
+   "o": "lab:topic/prompting",
+   "anchor": "#prompt",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/standardization",
+   "p": "lab:broader",
+   "o": "lab:topic/feature-engineering",
+   "anchor": "#pxInfo",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/dimensionality-reduction",
+   "p": "lab:broader",
+   "o": "lab:topic/pca",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/reconstruction",
+   "p": "lab:broader",
+   "o": "lab:topic/pca",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:metric/accuracy",
+   "p": "lab:broader",
+   "o": "lab:topic/accuracy-metrics",
+   "anchor": "#m2",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/curvature-eigenvalue",
+   "p": "lab:broader",
+   "o": "lab:topic/calculus-optimization-math",
+   "anchor": "#scrInfo",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:metric/explained-variance-ratio",
+   "p": "lab:broader",
+   "o": "lab:topic/pca",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/reconstruction",
+   "p": "lab:partOf",
+   "o": "lab:method/pca",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:method/power-iteration",
+   "p": "lab:partOf",
+   "o": "lab:method/pca",
+   "anchor": "#m4",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:concept/variance",
+   "p": "lab:motivates",
+   "o": "lab:concept/covariance",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:method/pca",
+   "p": "lab:partOf",
+   "o": "lab:concept/dimensionality-reduction",
+   "anchor": "#series",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:method/pca",
+   "p": "lab:evaluatedBy",
+   "o": "lab:concept/reconstruction",
+   "anchor": "#series",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  }
+ ]
+}

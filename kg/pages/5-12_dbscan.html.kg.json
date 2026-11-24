@@ -1,0 +1,234 @@
+{
+ "version": "1.0",
+ "page": "5-12_dbscan",
+ "nodes": [
+  {
+   "id": "lab:method/k-means",
+   "type": "Method",
+   "label": {
+    "ko": "k-평균",
+    "en": "k-means"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#toyInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "k개 중심을 두고, 가까운 중심으로 묶고 중심을 평균으로 옮기기를 되풀이하는 방법."
+   }
+  },
+  {
+   "id": "lab:concept/prompt",
+   "type": "Concept",
+   "label": {
+    "ko": "프롬프트",
+    "en": "prompt"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#prompt",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "AI에게 무엇을 만들지 알려 주는 글."
+   }
+  },
+  {
+   "id": "lab:method/manual-baseline",
+   "type": "Method",
+   "label": {
+    "ko": "매뉴얼 씨",
+    "en": "Mr. Manual baseline"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "1차 공채의 기본선. 사람이 정한 규칙으로 판정하는 기준 모델."
+   }
+  },
+  {
+   "id": "lab:concept/centroid",
+   "type": "Concept",
+   "label": {
+    "ko": "중심",
+    "en": "centroid"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#toyInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "묶음에 든 데이터들의 평균 위치."
+   }
+  },
+  {
+   "id": "lab:concept/curse-of-dimensionality",
+   "type": "Concept",
+   "label": {
+    "ko": "축이 너무 많으면 모두 비슷하게 멀어진다",
+    "en": "Curse of dimensionality"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "geom",
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "n축 공의 부피가 겉껍질에 몰린다(0.9ⁿ)"
+   }
+  },
+  {
+   "id": "lab:topic/prompting",
+   "type": "Topic",
+   "label": {
+    "ko": "프롬프팅",
+    "en": "Prompting"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#kg",
+   "level": 4,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/rule-vs-learning",
+   "type": "Topic",
+   "label": {
+    "ko": "규칙 기반 vs 학습 기반",
+    "en": "Rule-based vs learned systems"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/clustering",
+   "type": "Topic",
+   "label": {
+    "ko": "군집화",
+    "en": "Clustering"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/high-dim-geometry",
+   "type": "Topic",
+   "label": {
+    "ko": "고차원 공간의 기하",
+    "en": "Geometry of high-dimensional space"
+   },
+   "page": "5-12_dbscan",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "geom"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/prompt",
+   "p": "lab:broader",
+   "o": "lab:topic/prompting",
+   "anchor": "#prompt",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/manual-baseline",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/centroid",
+   "p": "lab:broader",
+   "o": "lab:topic/clustering",
+   "anchor": "#toyInfo",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/curse-of-dimensionality",
+   "p": "lab:broader",
+   "o": "lab:topic/high-dim-geometry",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/centroid",
+   "p": "lab:partOf",
+   "o": "lab:method/k-means",
+   "anchor": "#toyInfo",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  }
+ ]
+}

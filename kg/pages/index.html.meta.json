@@ -1,0 +1,33 @@
+{
+ "title": "5-0 채용 공고 — 판단을 데이터로 | 모델 채용 위원회",
+ "number": "17",
+ "series": "5-0 채용 공고 — 판단을 데이터로",
+ "date": "2026-11-24",
+ "version": "1.1",
+ "creator": [
+  {
+   "name": "안상선",
+   "role": "author"
+  }
+ ],
+ "contributor": [
+  {
+   "name": "AI 보조 제작",
+   "role": "assistant"
+  }
+ ],
+ "about": [
+  "lab:method/manual-baseline",
+  "lab:concept/classification",
+  "lab:concept/regression",
+  "lab:concept/prompt",
+  "lab:concept/flowchart"
+ ],
+ "basedOn": [],
+ "educationalLevel": "입문~중급",
+ "license": "",
+ "url": "https://adminmrobo.github.io/ML_model_hiring_committee/index.html",
+ "registry": "KG_00_registry 0.3",
+ "seeAlso": "",
+ "suggestedCitation": "안상선 (2026). 5-0 채용 공고 — 판단을 데이터로 | 모델 채용 위원회. 5-0 채용 공고 — 판단을 데이터로, v1.1."
+}

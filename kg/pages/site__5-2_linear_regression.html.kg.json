@@ -1,0 +1,572 @@
+{
+ "version": "1.0",
+ "page": "site__5-2_linear_regression",
+ "nodes": [
+  {
+   "id": "lab:term/gradient-descent",
+   "type": "Term",
+   "label": {
+    "ko": "경사하강",
+    "en": "gradient descent"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "math",
+    "ai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "손실이 줄어드는 방향으로 가중치를 조금씩 옮기는 최적화 방법."
+   }
+  },
+  {
+   "id": "lab:method/standardization",
+   "type": "Method",
+   "label": {
+    "ko": "표준화",
+    "en": "standardization"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#concTbl",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "특징마다 평균을 빼고 표준편차로 나눠 같은 눈금으로 맞추는 일."
+   }
+  },
+  {
+   "id": "lab:method/normal-equation",
+   "type": "Method",
+   "label": {
+    "ko": "정규방정식",
+    "en": "Normal equation"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "math",
+    "stats"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "β = (XᵀX)⁻¹Xᵀy. 선형회귀를 한 번에"
+   }
+  },
+  {
+   "id": "lab:concept/prompt",
+   "type": "Concept",
+   "label": {
+    "ko": "프롬프트",
+    "en": "prompt"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#prompt",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "AI에게 무엇을 만들지 알려 주는 글."
+   }
+  },
+  {
+   "id": "lab:concept/gradient",
+   "type": "Concept",
+   "label": {
+    "ko": "기울기",
+    "en": "gradient"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#twoInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "math",
+    "ai",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "변수를 아주 조금 바꿨을 때 손실이 얼마나 변하는지. 손실을 줄이려면 기울기 반대쪽으로 고친다."
+   }
+  },
+  {
+   "id": "lab:method/manual-baseline",
+   "type": "Method",
+   "label": {
+    "ko": "매뉴얼 씨",
+    "en": "Mr. Manual baseline"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "1차 공채의 기본선. 사람이 정한 규칙으로 판정하는 기준 모델."
+   }
+  },
+  {
+   "id": "lab:method/least-squares",
+   "type": "Concept",
+   "label": {
+    "ko": "최소제곱",
+    "en": "least squares"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "fin",
+    "stats"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "잔차 제곱합이 최소가 되도록 계수를 찾는 방법."
+   }
+  },
+  {
+   "id": "lab:method/logistic-regression",
+   "type": "Method",
+   "label": {
+    "ko": "로지스틱 회귀 (다항)",
+    "en": "Multinomial logistic regression"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#comicIntro",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "정답별 점수 → 소프트맥스 → 확률"
+   }
+  },
+  {
+   "id": "lab:concept/loss",
+   "type": "Concept",
+   "label": {
+    "ko": "손실",
+    "en": "loss"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "dl",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "그린 그림과 정답이 얼마나 다른지 나타내는 숫자. 이 페이지에서는 픽셀 차이의 제곱 평균."
+   }
+  },
+  {
+   "id": "lab:concept/learning-rate",
+   "type": "Term",
+   "label": {
+    "ko": "학습률",
+    "en": "Learning rate"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#loopChips",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "math",
+    "ai",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "새 나무의 예측을 반영하는 배수."
+   }
+  },
+  {
+   "id": "lab:concept/feature-engineering",
+   "type": "Concept",
+   "label": {
+    "ko": "특성공학(PolynomialFeatures)",
+    "en": "feature engineering"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "ai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "원시 데이터에서 모델이 더 잘 배우도록 특성을 새로 만들거나 바꾸는 과정."
+   }
+  },
+  {
+   "id": "lab:method/gradient-descent",
+   "type": "Method",
+   "label": {
+    "ko": "경사하강법",
+    "en": "Gradient descent"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "fin",
+    "math",
+    "ai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "예측 → 오차 → 책임 나누기 → 반대 방향으로 조금 옮기기를 반복한다."
+   }
+  },
+  {
+   "id": "lab:topic/gradient-descent",
+   "type": "Topic",
+   "label": {
+    "ko": "경사하강법",
+    "en": "Gradient descent"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/feature-engineering",
+   "type": "Topic",
+   "label": {
+    "ko": "특징 공학",
+    "en": "Feature engineering"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/regression-analysis",
+   "type": "Topic",
+   "label": {
+    "ko": "회귀분석(단순·다중)",
+    "en": "Regression analysis (simple and multiple)"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "stats"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/prompting",
+   "type": "Topic",
+   "label": {
+    "ko": "프롬프팅",
+    "en": "Prompting"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#kg",
+   "level": 4,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/calculus-optimization-math",
+   "type": "Topic",
+   "label": {
+    "ko": "미적분과 최적화 수학",
+    "en": "Calculus for optimization"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/rule-vs-learning",
+   "type": "Topic",
+   "label": {
+    "ko": "규칙 기반 vs 학습 기반",
+    "en": "Rule-based vs learned systems"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/glm-logistic",
+   "type": "Topic",
+   "label": {
+    "ko": "로지스틱 회귀(GLM)",
+    "en": "Logistic regression (GLM)"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#kg",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "stats"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/loss-function",
+   "type": "Topic",
+   "label": {
+    "ko": "손실 함수",
+    "en": "Loss function"
+   },
+   "page": "site__5-2_linear_regression",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:term/gradient-descent",
+   "p": "lab:broader",
+   "o": "lab:topic/gradient-descent",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/standardization",
+   "p": "lab:broader",
+   "o": "lab:topic/feature-engineering",
+   "anchor": "#concTbl",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/normal-equation",
+   "p": "lab:broader",
+   "o": "lab:topic/regression-analysis",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/prompt",
+   "p": "lab:broader",
+   "o": "lab:topic/prompting",
+   "anchor": "#prompt",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/gradient",
+   "p": "lab:broader",
+   "o": "lab:topic/calculus-optimization-math",
+   "anchor": "#twoInfo",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/manual-baseline",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/least-squares",
+   "p": "lab:broader",
+   "o": "lab:topic/regression-analysis",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/logistic-regression",
+   "p": "lab:broader",
+   "o": "lab:topic/glm-logistic",
+   "anchor": "#comicIntro",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/loss",
+   "p": "lab:broader",
+   "o": "lab:topic/loss-function",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/learning-rate",
+   "p": "lab:broader",
+   "o": "lab:topic/gradient-descent",
+   "anchor": "#loopChips",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/feature-engineering",
+   "p": "lab:broader",
+   "o": "lab:topic/feature-engineering",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/gradient-descent",
+   "p": "lab:broader",
+   "o": "lab:topic/gradient-descent",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/learning-rate",
+   "p": "lab:partOf",
+   "o": "lab:method/gradient-descent",
+   "anchor": "#loopChips",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:concept/loss",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:concept/gradient",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:concept/gradient",
+   "p": "lab:partOf",
+   "o": "lab:method/gradient-descent",
+   "anchor": "#twoInfo",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:method/gradient-descent",
+   "p": "lab:partOf",
+   "o": "lab:method/logistic-regression",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:method/gradient-descent",
+   "p": "lab:hasPart",
+   "o": "lab:concept/learning-rate",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:method/gradient-descent",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/gradient",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  }
+ ]
+}

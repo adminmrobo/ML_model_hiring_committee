@@ -1,0 +1,323 @@
+{
+ "version": "1.0",
+ "page": "5-11_hierarchical",
+ "nodes": [
+  {
+   "id": "lab:concept/prompt",
+   "type": "Concept",
+   "label": {
+    "ko": "프롬프트",
+    "en": "prompt"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#prompt",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "AI에게 무엇을 만들지 알려 주는 글."
+   }
+  },
+  {
+   "id": "lab:concept/distance",
+   "type": "Concept",
+   "label": {
+    "ko": "거리",
+    "en": "distance"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "geom",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "두 데이터가 얼마나 다른지 나타내는 숫자."
+   }
+  },
+  {
+   "id": "lab:method/manual-baseline",
+   "type": "Method",
+   "label": {
+    "ko": "매뉴얼 씨",
+    "en": "Mr. Manual baseline"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "1차 공채의 기본선. 사람이 정한 규칙으로 판정하는 기준 모델."
+   }
+  },
+  {
+   "id": "lab:concept/dendrogram",
+   "type": "Concept",
+   "label": {
+    "ko": "덴드로그램",
+    "en": "dendrogram"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "계층 군집이 만든 나무 그림. 높이가 합쳐질 때의 거리다."
+   }
+  },
+  {
+   "id": "lab:concept/euclidean-distance",
+   "type": "Concept",
+   "label": {
+    "ko": "유클리드 거리",
+    "en": "Euclidean distance"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#pxInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "fin",
+    "geom",
+    "math"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "두 점 사이의 직선 거리. 칸별 차이의 제곱합의 제곱근."
+   }
+  },
+  {
+   "id": "lab:concept/variance",
+   "type": "Concept",
+   "label": {
+    "ko": "분산",
+    "en": "variance"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "math",
+    "econ"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "값이 평균에서 흩어진 정도. 주성분이 담은 분산의 몫으로 정보량을 가늠한다."
+   }
+  },
+  {
+   "id": "lab:concept/dispersion",
+   "type": "Concept",
+   "label": {
+    "ko": "흩어짐(분산·표준편차)",
+    "en": "dispersion (variance, standard deviation)"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "stats",
+    "biz"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "값들이 평균 주위에 얼마나 퍼져 있는지를 나타내는 정도. 분산은 편차 제곱의 평균, 표준편차는 그 제곱근."
+   }
+  },
+  {
+   "id": "lab:topic/prompting",
+   "type": "Topic",
+   "label": {
+    "ko": "프롬프팅",
+    "en": "Prompting"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#kg",
+   "level": 4,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/distance-angle",
+   "type": "Topic",
+   "label": {
+    "ko": "거리와 각",
+    "en": "Distance and angle"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "geom"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/rule-vs-learning",
+   "type": "Topic",
+   "label": {
+    "ko": "규칙 기반 vs 학습 기반",
+    "en": "Rule-based vs learned systems"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/clustering",
+   "type": "Topic",
+   "label": {
+    "ko": "군집화",
+    "en": "Clustering"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/dispersion",
+   "type": "Topic",
+   "label": {
+    "ko": "퍼짐",
+    "en": "Measures of dispersion"
+   },
+   "page": "5-11_hierarchical",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "stats"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/prompt",
+   "p": "lab:broader",
+   "o": "lab:topic/prompting",
+   "anchor": "#prompt",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/distance",
+   "p": "lab:broader",
+   "o": "lab:topic/distance-angle",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/manual-baseline",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/dendrogram",
+   "p": "lab:broader",
+   "o": "lab:topic/clustering",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/euclidean-distance",
+   "p": "lab:broader",
+   "o": "lab:topic/distance-angle",
+   "anchor": "#pxInfo",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/variance",
+   "p": "lab:broader",
+   "o": "lab:topic/dispersion",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/dispersion",
+   "p": "lab:broader",
+   "o": "lab:topic/dispersion",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/variance",
+   "p": "lab:partOf",
+   "o": "lab:concept/dispersion",
+   "anchor": "#overview",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  }
+ ]
+}

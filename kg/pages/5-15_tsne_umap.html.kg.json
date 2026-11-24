@@ -1,0 +1,456 @@
+{
+ "version": "1.0",
+ "page": "5-15_tsne_umap",
+ "nodes": [
+  {
+   "id": "lab:method/tsne",
+   "type": "Concept",
+   "label": {
+    "ko": "t-SNE",
+    "en": "t-SNE"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "가까운 점의 이웃 구조를 지키며 2·3차원으로 줄이는 비선형 차원 축소."
+   }
+  },
+  {
+   "id": "lab:method/pca",
+   "type": "Term",
+   "label": {
+    "ko": "PCA",
+    "en": "principal component analysis"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#nbInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "math"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "주성분 분석. 분산이 가장 큰 방향의 축으로 투영하는 선형 차원 축소."
+   }
+  },
+  {
+   "id": "lab:concept/tsne-umap",
+   "type": "Concept",
+   "label": {
+    "ko": "t-SNE·UMAP",
+    "en": "t-SNE and UMAP"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24"
+  },
+  {
+   "id": "lab:method/manual-baseline",
+   "type": "Method",
+   "label": {
+    "ko": "매뉴얼 씨",
+    "en": "Mr. Manual baseline"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "1차 공채의 기본선. 사람이 정한 규칙으로 판정하는 기준 모델."
+   }
+  },
+  {
+   "id": "lab:concept/dimensionality-reduction",
+   "type": "Concept",
+   "label": {
+    "ko": "차원 축소 (접기)",
+    "en": "Dimensionality reduction"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#nbInfo",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ai",
+    "ml"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "변수 수를 줄여 요약하는 일"
+   }
+  },
+  {
+   "id": "lab:concept/prompt",
+   "type": "Concept",
+   "label": {
+    "ko": "프롬프트",
+    "en": "prompt"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#prompt",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai",
+    "llm"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "AI에게 무엇을 만들지 알려 주는 글."
+   }
+  },
+  {
+   "id": "lab:metric/accuracy",
+   "type": "Metric",
+   "label": {
+    "ko": "정확도",
+    "en": "Accuracy"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#m2",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "stats",
+    "biz",
+    "fin"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "맞힌 비율. 불균형 데이터에서 속기 쉽다."
+   }
+  },
+  {
+   "id": "lab:concept/distance",
+   "type": "Concept",
+   "label": {
+    "ko": "거리",
+    "en": "distance"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "geom",
+    "genai"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "두 데이터가 얼마나 다른지 나타내는 숫자."
+   }
+  },
+  {
+   "id": "lab:concept/kl-divergence",
+   "type": "Concept",
+   "label": {
+    "ko": "KL 발산",
+    "en": "KL divergence"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#overview",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "ai",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "두 분포가 얼마나 다른지 재는 값. VAE에서는 각 구름과 표준 정규분포의 차이다."
+   }
+  },
+  {
+   "id": "lab:dataset/digits",
+   "type": "Dataset",
+   "label": {
+    "ko": "손글씨 숫자",
+    "en": "handwritten digits"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#series",
+   "level": 2,
+   "status": "known",
+   "confidence": "medium",
+   "coverage": "explained",
+   "domain": [
+    "ml",
+    "genai",
+    "dl"
+   ],
+   "match": [],
+   "auto": "autokg-2026-11-24",
+   "definition": {
+    "ko": "scikit-learn에 들어 있는 8×8 손글씨 숫자 1,797장."
+   }
+  },
+  {
+   "id": "lab:topic/tsne-umap",
+   "type": "Topic",
+   "label": {
+    "ko": "t-SNE·UMAP",
+    "en": "t-SNE and UMAP"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/pca",
+   "type": "Topic",
+   "label": {
+    "ko": "주성분 분석",
+    "en": "Principal component analysis"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/rule-vs-learning",
+   "type": "Topic",
+   "label": {
+    "ko": "규칙 기반 vs 학습 기반",
+    "en": "Rule-based vs learned systems"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/prompting",
+   "type": "Topic",
+   "label": {
+    "ko": "프롬프팅",
+    "en": "Prompting"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#kg",
+   "level": 4,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/accuracy-metrics",
+   "type": "Topic",
+   "label": {
+    "ko": "정확도·손실 지표",
+    "en": "Accuracy and loss metrics"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#kg",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/distance-angle",
+   "type": "Topic",
+   "label": {
+    "ko": "거리와 각",
+    "en": "Distance and angle"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "geom"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:topic/information-theory",
+   "type": "Topic",
+   "label": {
+    "ko": "정보 이론",
+    "en": "Information theory"
+   },
+   "page": "5-15_tsne_umap",
+   "anchor": "#kg",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "mentioned",
+   "domain": [
+    "ai"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:method/tsne",
+   "p": "lab:broader",
+   "o": "lab:topic/tsne-umap",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/pca",
+   "p": "lab:broader",
+   "o": "lab:topic/pca",
+   "anchor": "#nbInfo",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/tsne-umap",
+   "p": "lab:broader",
+   "o": "lab:topic/tsne-umap",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/manual-baseline",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#series",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/dimensionality-reduction",
+   "p": "lab:broader",
+   "o": "lab:topic/pca",
+   "anchor": "#nbInfo",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/prompt",
+   "p": "lab:broader",
+   "o": "lab:topic/prompting",
+   "anchor": "#prompt",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:metric/accuracy",
+   "p": "lab:broader",
+   "o": "lab:topic/accuracy-metrics",
+   "anchor": "#m2",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/distance",
+   "p": "lab:broader",
+   "o": "lab:topic/distance-angle",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:concept/kl-divergence",
+   "p": "lab:broader",
+   "o": "lab:topic/information-theory",
+   "anchor": "#overview",
+   "confidence": "medium"
+  },
+  {
+   "s": "lab:method/pca",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:method/tsne",
+   "anchor": "#nbInfo",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:method/pca",
+   "p": "lab:evaluatedOn",
+   "o": "lab:dataset/digits",
+   "anchor": "#nbInfo",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  },
+  {
+   "s": "lab:method/pca",
+   "p": "lab:partOf",
+   "o": "lab:concept/dimensionality-reduction",
+   "anchor": "#nbInfo",
+   "confidence": "medium",
+   "note": "다른 해설 페이지에서 확인된 관계"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "title": "5-4 로지스틱 회귀 | 모델 채용 위원회",
+ "number": "11",
+ "series": "5-0 채용 공고 — 판단을 데이터로",
+ "date": "2026-11-24",
+ "version": "1.1",
+ "creator": [
+  {
+   "name": "안상선",
+   "role": "author"
+  }
+ ],
+ "contributor": [
+  {
+   "name": "AI 보조 제작",
+   "role": "assistant"
+  }
+ ],
+ "about": [
+  "lab:method/logistic-regression",
+  "lab:concept/classification",
+  "lab:concept/loss",
+  "lab:concept/sigmoid",
+  "lab:concept/regularization"
+ ],
+ "basedOn": [],
+ "educationalLevel": "입문~중급",
+ "license": "",
+ "url": "https://adminmrobo.github.io/ML_model_hiring_committee/5-4_logistic_regression.html",
+ "registry": "KG_00_registry 0.3",
+ "seeAlso": "",
+ "suggestedCitation": "안상선 (2026). 5-4 로지스틱 회귀 | 모델 채용 위원회. 5-0 채용 공고 — 판단을 데이터로, v1.1."
+}
